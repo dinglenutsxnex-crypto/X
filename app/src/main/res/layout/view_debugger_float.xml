@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/debugger_bubble"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@drawable/ic_debugger"
+        android:background="#CC006064"
+        android:padding="10dp"
+        android:elevation="8dp" />
+
+    <LinearLayout
+        android:id="@+id/debugger_panel"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#EE0A0A0A"
+        android:elevation="8dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="8dp"
+            android:background="#00BCD4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="⚙ DEBUGGER"
+                android:textColor="#0D0D0D"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:letterSpacing="0.15" />
+
+            <ImageView
+                android:id="@+id/btn_collapse"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:padding="4dp"
+                android:tint="#0D0D0D" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/section_process_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SELECT PROCESS"
+                android:textColor="#00BCD4"
+                android:textSize="10sp"
+                android:letterSpacing="0.2"
+                android:paddingStart="12dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="4dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_processes"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scrollbars="vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:padding="8dp">
+
+                <Button
+                    android:id="@+id/btn_refresh_processes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:text="REFRESH"
+                    android:textSize="11sp"
+                    android:textColor="#00BCD4"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/section_logging"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="12dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="8dp">
+
+                <TextView
+                    android:id="@+id/tv_selected_process"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textColor="#00BCD4"
+                    android:textSize="11sp"
+                    android:ellipsize="middle"
+                    android:singleLine="true" />
+
+                <Button
+                    android:id="@+id/btn_stop_logging"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:text="STOP"
+                    android:textSize="10sp"
+                    android:textColor="#FF5252"
+                    android:background="@android:color/transparent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp">
+
+                <Button
+                    android:id="@+id/btn_filter_all"
+                    android:layout_width="0dp"
+                    android:layout_height="28dp"
+                    android:layout_weight="1"
+                    android:text="ALL"
+                    android:textSize="10sp"
+                    android:textColor="#00BCD4"
+                    android:background="@android:color/transparent" />
+
+                <Button
+                    android:id="@+id/btn_filter_error"
+                    android:layout_width="0dp"
+                    android:layout_height="28dp"
+                    android:layout_weight="1"
+                    android:text="ERROR"
+                    android:textSize="10sp"
+                    android:textColor="#FF5252"
+                    android:background="@android:color/transparent" />
+
+                <Button
+                    android:id="@+id/btn_clear_logs"
+                    android:layout_width="0dp"
+                    android:layout_height="28dp"
+                    android:layout_weight="1"
+                    android:text="CLEAR"
+                    android:textSize="10sp"
+                    android:textColor="#888888"
+                    android:background="@android:color/transparent" />
+            </LinearLayout>
+
+            <ScrollView
+                android:id="@+id/scroll_logs"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="#111111"
+                android:fillViewport="true">
+
+                <TextView
+                    android:id="@+id/tv_logs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textColor="#CCCCCC"
+                    android:textSize="10sp"
+                    android:fontFamily="monospace"
+                    android:text="Waiting for logs..." />
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
