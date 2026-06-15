@@ -78,10 +78,10 @@ dependencies {
 
     
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    implementation 'com.gitee.cbfg5210:RVAdapter:0.3.7'
+    implementation 'com.github.cbfg5210:RVAdapter:0.3.7'
 
     
-    implementation 'com.github.Othershe:CornerLabelView:1.0.0'
+    implementation 'com.github.shehuan:CornerLabelView:1.0.0'
     
     implementation 'com.github.nukc:StateView:1.1.4'
     
