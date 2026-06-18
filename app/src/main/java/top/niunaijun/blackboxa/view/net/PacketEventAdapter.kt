@@ -73,7 +73,7 @@ class PacketEventAdapter : RecyclerView.Adapter<PacketEventAdapter.VH>() {
         h.parsedText = ""
         h.showingRaw = true
         h.btnToggle.visibility = View.GONE
-        h.btnParse.text = "PARSE"
+        h.tvParseLabel.text = "PARSE"
         h.btnMore.visibility = if (truncated) View.VISIBLE else View.GONE
 
         h.tvData.text = h.rawText
