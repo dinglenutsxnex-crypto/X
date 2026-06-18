@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CornerLabelView">
+        <attr name="text" format="string" />
+        <attr name="text_color" format="color" />
+        <attr name="text_size" format="dimension" />
+        <attr name="bg_color" format="color" />
+        <attr name="position" format="string" />
+        <attr name="side_length" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="SimpleSearchView">
+        <attr name="type" format="string" />
+    </declare-styleable>
+</resources>
