@@ -15,7 +15,7 @@ import top.niunaijun.blackboxa.util.getString
 class FakeLocationAdapter : RVHolderFactory() {
 
     override fun createViewHolder(parent: ViewGroup?, viewType: Int, item: Any): RVHolder<out Any> {
-        return FakeLocationVH(inflate(R.layout.item_fake,parent))
+        return FakeLocationVH(inflateLayout(R.layout.item_fake,parent))
     }
 
     class FakeLocationVH(itemView:View):RVHolder<FakeLocationBean>(itemView){
