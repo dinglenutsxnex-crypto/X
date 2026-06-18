@@ -88,7 +88,7 @@ class AppsFragment : Fragment() {
             viewBinding.stateView.showEmpty()
 
             mAdapter =
-                RVAdapter<AppInfo>(requireContext(), AppsAdapter()).bind(viewBinding.recyclerView)
+                RVAdapter<AppInfo>(requireContext(), AppsAdapter())
 
             viewBinding.recyclerView.adapter = mAdapter
             

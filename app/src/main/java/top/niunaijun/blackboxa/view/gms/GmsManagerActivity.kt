@@ -77,7 +77,7 @@ class GmsManagerActivity : LoadingActivity() {
     }
 
     private fun initRecyclerView() {
-        mAdapter = RVAdapter<GmsBean>(this, GmsAdapter()).bind(viewBinding.recyclerView)
+        mAdapter = RVAdapter<GmsBean>(this, GmsAdapter())
             .setItemClickListener { view, item, _ ->
                 val checkbox = view.findViewById<Switch>(R.id.checkbox)
                 if (item.isInstalledGms) {

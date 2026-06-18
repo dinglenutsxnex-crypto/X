@@ -1,33 +1,36 @@
 package cbfg.rvadapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class RVAdapter<T : Any>(private val factory: RVHolderFactory) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class RVAdapter<T>(
+    private val context: Context,
+    private val factory: RVHolderFactory
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    val items = mutableListOf<T>()
+    private val items = mutableListOf<T>()
+    private var onItemClick: ((View, T, Int) -> Unit)? = null
+    private var onItemLongClick: ((View, T, Int) -> Unit)? = null
 
-    abstract fun onCreateViewHolderAdapter(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return onCreateViewHolderAdapter(parent, viewType)
+    fun setItemClickListener(listener: (View, T, Int) -> Unit) {
+        onItemClick = listener
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val item = items[position]
-        holder.itemView.setOnClickListener {
-            onItemClick?.invoke(it, item, position)
-        }
-        holder.itemView.setOnLongClickListener {
-            onItemLongClick?.invoke(it, item, position)
-            true
-        }
+    fun setItemLongClickListener(listener: (View, T, Int) -> Unit) {
+        onItemLongClick = listener
     }
 
-    var onItemClick: ((View, T, Int) -> Unit)? = null
-    var onItemLongClick: ((View, T, Int) -> Unit)? = null
+    @Suppress("UNCHECKED_CAST")
+    fun getItems(): List<T> = items.toList()
+
+    fun setItems(newItems: List<T>) {
+        items.clear()
+        items.addAll(newItems)
+        notifyDataSetChanged()
+    }
 
     fun addItem(item: T) {
         items.add(item)
@@ -50,5 +53,21 @@ abstract class RVAdapter<T : Any>(private val factory: RVHolderFactory) : Recycl
 
     override fun getItemCount(): Int = items.size
 
-    override fun getItemViewType(position: Int): Int = position
+    @Suppress("UNCHECKED_CAST")
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        val item = if (viewType < items.size) items[viewType] else Any()
+        return factory.createViewHolder(parent, viewType, item)
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val item = items[position]
+        holder.itemView.setOnClickListener { onItemClick?.invoke(it, item, position) }
+        holder.itemView.setOnLongClickListener {
+            onItemLongClick?.invoke(it, item, position)
+            true
+        }
+        // Call bind on the holder if it extends RVHolder
+        (holder as? RVHolder<T>)?.setContent(item, false, null)
+    }
 }
