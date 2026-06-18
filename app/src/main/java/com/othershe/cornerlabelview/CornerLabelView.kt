@@ -66,20 +66,39 @@ class CornerLabelView @JvmOverloads constructor(
         updateBg()
         
         if (attrs != null) {
-            val ta = context.obtainStyledAttributes(attrs, intArrayOf(
-                android.R.attr.text,
-                android.R.attr.textColor,
-                android.R.attr.textSize,
-                android.R.attr.background
-            ))
             try {
-                text = ta.getString(0) ?: ""
-                textColor = ta.getColor(1, Color.WHITE)
-                textSize = ta.getDimension(2, 10f)
-                val bg = ta.getDrawable(3)
-                if (bg != null) background = bg
-            } finally {
-                ta.recycle()
+                val ta = context.obtainStyledAttributes(attrs, intArrayOf(
+                    android.R.attr.text,
+                    android.R.attr.textColor,
+                    android.R.attr.textSize,
+                    android.R.attr.background
+                ))
+                try {
+                    text = ta.getString(0) ?: ""
+                    textColor = ta.getColor(1, Color.WHITE)
+                    textSize = ta.getDimension(2, 10f)
+                    val bg = ta.getDrawable(3)
+                    if (bg != null) background = bg
+                } finally {
+                    ta.recycle()
+                }
+                
+                // Custom attrs
+                val styleable = Class.forName("${context.packageName}.R\$styleable")
+                val styleableArr = styleable.getField("CornerLabelView").get(null) as IntArray
+                val a = context.obtainStyledAttributes(attrs, styleableArr)
+                try {
+                    bgColor = a.getColor(3, Color.RED)
+                    position = a.getString(4) ?: "left_top"
+                    sideLength = a.getDimension(5, 44f)
+                    updateBg()
+                } catch (e: Exception) {
+                    // Ignore
+                } finally {
+                    a.recycle()
+                }
+            } catch (e: Exception) {
+                // Ignore on early compilation
             }
         }
     }
