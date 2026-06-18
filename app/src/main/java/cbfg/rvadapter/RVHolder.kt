@@ -18,11 +18,3 @@ abstract class RVHolder<T>(itemView: View) : RecyclerView.ViewHolder(itemView) {
         }
     }
 }
-
-abstract class RVHolderFactory {
-    abstract fun createViewHolder(parent: ViewGroup?, viewType: Int, item: Any): RVHolder<out Any>
-
-    protected fun inflateLayout(layoutId: Int, parent: ViewGroup?): View {
-        return LayoutInflater.from(parent?.context).inflate(layoutId, parent, false)
-    }
-}

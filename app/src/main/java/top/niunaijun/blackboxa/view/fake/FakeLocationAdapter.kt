@@ -22,6 +22,9 @@ class FakeLocationAdapter : RVHolderFactory() {
 
         private val binding = ItemFakeBinding.bind(itemView)
 
+        override fun bind(item: FakeLocationBean) {}
+
+
         override fun setContent(item: FakeLocationBean, isSelected: Boolean, payload: Any?) {
             binding.icon.setImageDrawable(item.icon)
             binding.name.text = item.name

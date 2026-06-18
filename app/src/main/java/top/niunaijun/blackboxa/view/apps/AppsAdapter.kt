@@ -40,6 +40,9 @@ class AppsAdapter : RVHolderFactory() {
 
     class AppsVH(itemView: View) : RVHolder<AppInfo>(itemView) {
         val binding = ItemAppBinding.bind(itemView)
+
+        override fun bind(item: AppInfo) {}
+
         private var currentIcon: Drawable? = null
         private var isAttached = false
 
@@ -151,6 +154,9 @@ class AppsAdapter : RVHolderFactory() {
     
     class FallbackAppsVH(itemView: View) : RVHolder<AppInfo>(itemView) {
         val binding = ItemAppBinding.bind(itemView)
+
+        override fun bind(item: AppInfo) {}
+
 
         override fun setContent(item: AppInfo, isSelected: Boolean, payload: Any?) {
             try {
