@@ -10,7 +10,7 @@
     <string name="xp_setting">Xposed Setting</string>
     <string name="fake_location">Fake Location(Preview)</string>
     <string name="real_location">Real Location</string>
-    <string name="set_location">Set Fake Location Successfully:%s-%s</string>
+    <string name="set_location">Set Fake Location Successfully:%1$s-%2$s</string>
     <string name="close_fake_location">Disable FakeLocation</string>
     <string name="close_app_fake_location">Disable FakeLocation for %s</string>
     <string name="close_fake_location_success">Disable FakeLocation for %s Successfully</string>
