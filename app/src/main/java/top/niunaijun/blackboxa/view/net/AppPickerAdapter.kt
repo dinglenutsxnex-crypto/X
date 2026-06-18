@@ -25,18 +25,20 @@ class AppPickerAdapter(
         private const val TYPE_ALL = 0
         private const val TYPE_APP = 1
 
-        fun loadContainerApps(): List<AppEntry> {
+        fun loadInstalledApps(pm: PackageManager): List<AppEntry> {
             return try {
-                val core = BlackBoxCore.get()
-                // BlackBox users are usually indexed from 0
-                val apps = core.getInstalledApplications(0, 0) 
-                apps.map { ai ->
-                    AppEntry(
-                        packageName = ai.packageName,
-                        label       = core.packageManager.getApplicationLabel(ai).toString(),
-                        icon        = core.packageManager.getApplicationIcon(ai)
-                    )
-                }.sortedBy { it.label.lowercase() }
+                pm.getInstalledApplications(PackageManager.GET_META_DATA)
+                    .filter { (it.flags and ApplicationInfo.FLAG_SYSTEM) == 0 }
+                    .mapNotNull { ai ->
+                        runCatching {
+                            AppEntry(
+                                packageName = ai.packageName,
+                                label       = pm.getApplicationLabel(ai).toString(),
+                                icon        = pm.getApplicationIcon(ai.packageName)
+                            )
+                        }.getOrNull()
+                    }
+                    .sortedBy { it.label.lowercase() }
             } catch (e: Exception) {
                 emptyList()
             }
