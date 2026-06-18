@@ -47,13 +47,16 @@ class SimpleSearchView @JvmOverloads constructor(
     }
 
     fun setText(text: String) {}
-    fun setQuery(query: String) { setText(query) }
+    fun setQuery(query: String, submit: Boolean = false) { setText(query) }
     fun clearText() {}
     fun getText(): String = ""
     fun showSearch(clear: Boolean = false) {}
     fun hideSearch() {}
+    fun isSearchOpen(): Boolean = false
+    fun closeSearch() { hideSearch() }
+    fun setMenuItem(menuItem: Any?) {}  // Placeholder
 
-    abstract class OnQueryTextListener {
+    open class OnQueryTextListener {
         open fun onQueryTextChange(newText: String): Boolean = false
         open fun onQueryTextCleared(): Boolean = false
         open fun onQueryTextSubmit(query: String): Boolean = false
