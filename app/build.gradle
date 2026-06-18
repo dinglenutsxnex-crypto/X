@@ -78,11 +78,9 @@ dependencies {
 
     
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    // Working JitPack versions
-    implementation 'com.github.cbfg5210:RVAdapter:0.1'
-    implementation 'com.github.shehuan:CornerLabelView:1.0.0'
-    implementation 'com.github.nukc:StateView:3.0.6'
-    implementation 'com.github.Ferfalk:SimpleSearchView:0.2.0'
+    // Replaced broken JitPack libraries with Maven Central alternatives
+    implementation 'dev.rikka.rikkax.recyclerview:recyclerview-adapter:1.3.0'
+    // CornerLabelView, StateView, SimpleSearchView - temporarily disabled
     implementation 'com.tbuonomo:dotsindicator:4.2'
     
     implementation 'org.osmdroid:osmdroid-android:6.1.11'
