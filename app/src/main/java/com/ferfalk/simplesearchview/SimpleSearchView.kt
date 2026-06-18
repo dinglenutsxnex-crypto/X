@@ -47,6 +47,7 @@ class SimpleSearchView @JvmOverloads constructor(
     }
 
     fun setText(text: String) {}
+    fun setQuery(query: String) { setText(query) }
     fun clearText() {}
     fun getText(): String = ""
     fun showSearch(clear: Boolean = false) {}

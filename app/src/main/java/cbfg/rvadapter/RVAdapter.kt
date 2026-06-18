@@ -52,6 +52,13 @@ class RVAdapter<T : Any>(
         }
     }
 
+    fun replaceAt(position: Int, item: T) {
+        if (position in items.indices) {
+            items[position] = item
+            notifyItemChanged(position)
+        }
+    }
+
     override fun getItemCount(): Int = items.size
 
     override fun getItemViewType(position: Int): Int = position
