@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0D1117">
+
+    <!-- ══ Status bar ══════════════════════════════════════════════════════ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="#161B22">
+
+        <!-- VPN status dot + label -->
+        <TextView
+            android:id="@+id/tv_vpn_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="VPN INACTIVE"
+            android:textColor="#546E7A"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:textStyle="bold" />
+
+        <!-- Connection count -->
+        <TextView
+            android:id="@+id/tv_conn_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 connections"
+            android:textColor="#37474F"
+            android:textSize="10sp"
+            android:fontFamily="monospace"
+            android:paddingEnd="12dp" />
+
+        <!-- Clear all -->
+        <TextView
+            android:id="@+id/btn_clear_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLR"
+            android:textColor="#546E7A"
+            android:textSize="10sp"
+            android:fontFamily="monospace"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:background="@drawable/bg_filter_active" />
+    </LinearLayout>
+
+    <!-- ══ Control card ════════════════════════════════════════════════════ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="#161B22">
+
+        <!-- App picker -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingEnd="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TARGET"
+                android:textColor="#37474F"
+                android:textSize="8sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.12" />
+
+            <TextView
+                android:id="@+id/tv_target_app"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:gravity="center_vertical"
+                android:text="All Traffic  ▾"
+                android:textColor="#80DEEA"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/bg_log_area"
+                android:ellipsize="end"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <!-- Start / Stop button -->
+        <TextView
+            android:id="@+id/btn_vpn_start"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:text="START"
+            android:textColor="#80DEEA"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:background="@drawable/bg_filter_active" />
+    </LinearLayout>
+
+    <!-- ══ Protocol filter bar ══════════════════════════════════════════════ -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:scrollbars="none"
+        android:background="#0D1117">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+
+            <TextView android:id="@+id/filter_all"
+                style="@style/FilterChip" android:text="ALL" android:textColor="#80DEEA" />
+            <TextView android:id="@+id/filter_http"
+                style="@style/FilterChip" android:text="HTTP" android:textColor="#546E7A" />
+            <TextView android:id="@+id/filter_tls"
+                style="@style/FilterChip" android:text="TLS" android:textColor="#546E7A" />
+            <TextView android:id="@+id/filter_ws"
+                style="@style/FilterChip" android:text="WS" android:textColor="#546E7A" />
+            <TextView android:id="@+id/filter_tcp"
+                style="@style/FilterChip" android:text="TCP" android:textColor="#546E7A" />
+            <TextView android:id="@+id/filter_udp"
+                style="@style/FilterChip" android:text="UDP" android:textColor="#546E7A" />
+            <TextView android:id="@+id/filter_dns"
+                style="@style/FilterChip" android:text="DNS" android:textColor="#546E7A" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- ══ Sub-filter bar (status + direction) ══════════════════════════════ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="#0A0E14">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="STATUS:"
+            android:textColor="#263238"
+            android:textSize="8sp"
+            android:fontFamily="monospace"
+            android:paddingEnd="8dp" />
+
+        <TextView android:id="@+id/btn_filter_alive"
+            style="@style/SubFilterChip" android:text="LIVE" android:textColor="#546E7A" />
+        <TextView android:id="@+id/btn_filter_closed"
+            style="@style/SubFilterChip" android:text="DONE" android:textColor="#546E7A" />
+
+        <View android:layout_width="1dp" android:layout_height="16dp"
+            android:background="#1F3040" android:layout_marginStart="8dp" android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DIR:"
+            android:textColor="#263238"
+            android:textSize="8sp"
+            android:fontFamily="monospace"
+            android:paddingEnd="8dp" />
+
+        <TextView android:id="@+id/btn_filter_out"
+            style="@style/SubFilterChip" android:text="OUT" android:textColor="#546E7A" />
+        <TextView android:id="@+id/btn_filter_in"
+            style="@style/SubFilterChip" android:text="IN" android:textColor="#546E7A" />
+    </LinearLayout>
+
+    <!-- Thin separator -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#0D1B2A" />
+
+    <!-- ══ Connection list ══════════════════════════════════════════════════ -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_connections"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:clipToPadding="false"
+            android:paddingBottom="8dp"
+            android:visibility="gone" />
+
+        <!-- Empty state -->
+        <LinearLayout
+            android:id="@+id/tv_empty_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/ic_network"
+                android:alpha="0.12"
+                android:contentDescription="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No connections yet"
+                android:textColor="#263238"
+                android:textSize="13sp"
+                android:fontFamily="monospace"
+                android:paddingTop="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select a target app and press START"
+                android:textColor="#1F3040"
+                android:textSize="10sp"
+                android:fontFamily="monospace"
+                android:paddingTop="4dp" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

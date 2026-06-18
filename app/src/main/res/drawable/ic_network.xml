@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Globe / network circle -->
+    <path
+        android:fillColor="#00BCD4"
+        android:pathData="M24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44 C35.05,44 44,35.05 44,24 C44,12.95 35.05,4 24,4Z
+                          M24,40 C20.13,40 16.6,38.45 14.04,35.93 L22,28 L22,30 C22,31.1 22.9,32 24,32 C25.1,32 26,31.1 26,30 L26,26 L30,22 L30,19 L33.93,15.07 C36.45,17.6 38,21.13 38,24 C38,32.84 31.84,40 24,40Z" />
+
+    <!-- Packet arrows -->
+    <path
+        android:fillColor="#E0F7FA"
+        android:pathData="M16,20 L8,20 L12,16 Z" />
+    <path
+        android:fillColor="#E0F7FA"
+        android:pathData="M32,28 L40,28 L36,32 Z" />
+    <rect
+        android:fillColor="#E0F7FA"
+        android:x="8dp" android:y="18.5dp"
+        android:width="24dp" android:height="3dp" />
+    <rect
+        android:fillColor="#E0F7FA"
+        android:x="16dp" android:y="26.5dp"
+        android:width="24dp" android:height="3dp" />
+</vector>

@@ -78,8 +78,13 @@ dependencies {
 
     
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    // Self-contained RVAdapter implementation (JitPack library unavailable)
-    // CornerLabelView, StateView, SimpleSearchView - temporarily disabled
+    implementation 'com.gitee.cbfg5210:RVAdapter:0.3.7'
+
+    
+    implementation 'com.github.Othershe:CornerLabelView:1.0.0'
+    
+    
+    implementation 'com.github.Ferfalk:SimpleSearchView:0.2.0'
     implementation 'com.tbuonomo:dotsindicator:4.2'
     
     implementation 'org.osmdroid:osmdroid-android:6.1.11'

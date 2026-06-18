@@ -30,6 +30,7 @@ import top.niunaijun.blackboxa.util.toast
 import top.niunaijun.blackboxa.view.base.LoadingActivity
 import top.niunaijun.blackboxa.view.debugger.DebuggerActivity
 import top.niunaijun.blackboxa.view.main.MainActivity
+import top.niunaijun.blackboxa.view.net.NetworkAnalyzerActivity
 import java.util.*
 import kotlin.math.abs
 
@@ -49,8 +50,9 @@ class AppsFragment : Fragment() {
 
     companion object {
         private const val TAG = "AppsFragment"
-        const val DEBUGGER_PACKAGE = "com.hammerscale.debugger"
-        
+        const val DEBUGGER_PACKAGE    = "com.hammerscale.debugger"
+        const val NET_ANALYZER_PACKAGE = "com.hammerscale.netanalyzer"
+
         fun newInstance(userID:Int): AppsFragment {
             val fragment = AppsFragment()
             val bundle = bundleOf("userID" to userID)
@@ -65,6 +67,15 @@ class AppsFragment : Fragment() {
             AppInfo("Debugger", icon, DEBUGGER_PACKAGE, "", false)
         } catch (e: Exception) {
             AppInfo("Debugger", null, DEBUGGER_PACKAGE, "", false)
+        }
+    }
+
+    private fun buildNetAnalyzerEntry(): AppInfo {
+        return try {
+            val icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_network)
+            AppInfo("Net Analyzer", icon, NET_ANALYZER_PACKAGE, "", false)
+        } catch (e: Exception) {
+            AppInfo("Net Analyzer", null, NET_ANALYZER_PACKAGE, "", false)
         }
     }
 
@@ -88,7 +99,7 @@ class AppsFragment : Fragment() {
             viewBinding.stateView.showEmpty()
 
             mAdapter =
-                RVAdapter<AppInfo>(requireContext(), AppsAdapter())
+                RVAdapter<AppInfo>(requireContext(), AppsAdapter()).bind(viewBinding.recyclerView)
 
             viewBinding.recyclerView.adapter = mAdapter
             
@@ -159,11 +170,13 @@ class AppsFragment : Fragment() {
 
             mAdapter.setItemClickListener { _, data, _ ->
                 try {
-                    if (data.packageName == DEBUGGER_PACKAGE) {
-                        DebuggerActivity.start(requireContext())
-                    } else {
-                        showLoading()
-                        viewModel.launchApk(data.packageName, userID)
+                    when (data.packageName) {
+                        DEBUGGER_PACKAGE     -> DebuggerActivity.start(requireContext())
+                        NET_ANALYZER_PACKAGE -> NetworkAnalyzerActivity.start(requireContext())
+                        else -> {
+                            showLoading()
+                            viewModel.launchApk(data.packageName, userID)
+                        }
                     }
                 } catch (e: Exception) {
                     Log.e(TAG, "Error launching app: ${e.message}")
@@ -351,7 +364,7 @@ class AppsFragment : Fragment() {
         try {
             mAdapter.setItemLongClickListener { view, data, _ ->
                 try {
-                    if (data.packageName == DEBUGGER_PACKAGE) {
+                    if (data.packageName == DEBUGGER_PACKAGE || data.packageName == NET_ANALYZER_PACKAGE) {
                         return@setItemLongClickListener
                     }
                     popupMenu = PopupMenu(requireContext(),view).also {
@@ -403,9 +416,9 @@ class AppsFragment : Fragment() {
             viewModel.appsLiveData.observe(viewLifecycleOwner) {
                 try {
                     if (it != null) {
-                        val listWithDebugger = mutableListOf(buildDebuggerEntry())
-                        listWithDebugger.addAll(it)
-                        mAdapter.setItems(listWithDebugger)
+                        val listWithTools = mutableListOf(buildDebuggerEntry(), buildNetAnalyzerEntry())
+                        listWithTools.addAll(it)
+                        mAdapter.setItems(listWithTools)
                         viewBinding.stateView.showContent()
                     }
                 } catch (e: Exception) {

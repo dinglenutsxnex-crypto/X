@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0D1117">
+
+    <!-- Toolbar row: back | title | copy-all | download -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#161B22"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+        <!-- Back -->
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="12dp"
+            android:src="@drawable/ic_arrow_back"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tv_detail_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Request Detail"
+            android:textSize="13sp"
+            android:textColor="#CFD8DC"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:ellipsize="end" />
+
+        <!-- Copy All -->
+        <LinearLayout
+            android:id="@+id/btn_detail_copy_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:background="#1A80DEEA"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginEnd="6dp">
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_copy"
+                android:layout_marginEnd="4dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COPY ALL"
+                android:fontFamily="monospace"
+                android:textSize="10sp"
+                android:textColor="#80DEEA" />
+        </LinearLayout>
+
+        <!-- Download this connection -->
+        <ImageView
+            android:id="@+id/btn_detail_download"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="12dp"
+            android:src="@drawable/ic_download"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Download"
+            android:layout_marginEnd="4dp" />
+    </LinearLayout>
+
+    <!-- Connection summary row -->
+    <TextView
+        android:id="@+id/tv_detail_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:fontFamily="monospace"
+        android:textSize="11sp"
+        android:lineSpacingExtra="2dp"
+        android:textColor="#69F0AE"
+        android:background="#161B22" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#21262D" />
+
+    <!-- Packet event list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_events"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp" />
+
+</LinearLayout>

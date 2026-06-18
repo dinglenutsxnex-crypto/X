@@ -19,9 +19,6 @@ class ListAdapter : RVHolderFactory() {
     class ListVH(itemView:View) :RVHolder<InstalledAppBean>(itemView){
 
         val binding = ItemPackageBinding.bind(itemView)
-
-        override fun bind(item: InstalledAppBean) {}
-
         override fun setContent(item: InstalledAppBean, isSelected: Boolean, payload: Any?) {
             binding.icon.setImageDrawable(item.icon)
             binding.name.text = item.name

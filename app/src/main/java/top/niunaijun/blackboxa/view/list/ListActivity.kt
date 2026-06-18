@@ -118,7 +118,7 @@ class ListActivity : BaseActivity() {
     }
 
     override fun onBackPressed() {
-        if (viewBinding.searchView.isSearchOpen()) {
+        if (viewBinding.searchView.isSearchOpen) {
             viewBinding.searchView.closeSearch()
         } else {
             super.onBackPressed()

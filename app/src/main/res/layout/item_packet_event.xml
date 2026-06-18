@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#0D1117"
+    android:layout_marginBottom="2dp">
+
+    <!-- Direction + timestamp header bar -->
+    <TextView
+        android:id="@+id/tv_event_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:fontFamily="monospace"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.04" />
+
+    <!-- Hex + ASCII dump -->
+    <TextView
+        android:id="@+id/tv_event_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="4dp"
+        android:fontFamily="monospace"
+        android:textSize="10.5sp"
+        android:lineSpacingExtra="1dp"
+        android:scrollHorizontally="false"
+        android:textIsSelectable="true" />
+
+    <!-- Action buttons row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="6dp">
+
+        <!-- Copy button with icon -->
+        <LinearLayout
+            android:id="@+id/btn_event_copy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#1A80DEEA"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_copy"
+                android:layout_marginEnd="4dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COPY"
+                android:fontFamily="monospace"
+                android:textSize="10sp"
+                android:textColor="#80DEEA" />
+        </LinearLayout>
+
+        <View android:layout_width="6dp" android:layout_height="1dp" />
+
+        <!-- Parse button with icon -->
+        <LinearLayout
+            android:id="@+id/btn_event_parse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#1ACE93D8"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_parse"
+                android:layout_marginEnd="4dp" />
+            <TextView
+                android:id="@+id/tv_parse_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PARSE"
+                android:fontFamily="monospace"
+                android:textSize="10sp"
+                android:textColor="#CE93D8" />
+        </LinearLayout>
+
+        <View android:layout_width="6dp" android:layout_height="1dp" />
+
+        <!-- Toggle raw/parsed button with icon -->
+        <LinearLayout
+            android:id="@+id/btn_event_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#1AFFD54F"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone">
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_swap"
+                android:layout_marginEnd="4dp" />
+            <TextView
+                android:id="@+id/tv_toggle_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RAW"
+                android:fontFamily="monospace"
+                android:textSize="10sp"
+                android:textColor="#FFD54F" />
+        </LinearLayout>
+
+        <View android:layout_width="6dp" android:layout_height="1dp" />
+
+        <!-- Load More button — shown when hex dump is truncated -->
+        <TextView
+            android:id="@+id/btn_event_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOAD MORE"
+            android:fontFamily="monospace"
+            android:textSize="10sp"
+            android:textColor="#546E7A"
+            android:background="#1A546E7A"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#21262D" />
+
+</LinearLayout>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:background="@drawable/bg_connection_card"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="4dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <!-- Circular letter avatar -->
+    <TextView
+        android:id="@+id/tv_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:fontFamily="monospace"
+        android:layout_marginEnd="10dp" />
+
+    <!-- Center info block -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <!-- Row 1: proto badge + host + port -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_proto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="8.5sp"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
+                android:layout_marginEnd="6dp" />
+
+            <TextView
+                android:id="@+id/tv_host"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#CFD8DC"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/tv_port"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#37474F"
+                android:textSize="10sp"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- Row 2: method + path + resp_code -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="2dp">
+
+            <TextView
+                android:id="@+id/tv_method"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFD54F"
+                android:textSize="9.5sp"
+                android:fontFamily="monospace"
+                android:layout_marginEnd="5dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_path"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#4DD0E1"
+                android:textSize="9.5sp"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_resp_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="9.5sp"
+                android:fontFamily="monospace"
+                android:layout_marginStart="4dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Row 3: datetime + traffic bytes -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#37474F"
+                android:textSize="9sp"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:id="@+id/tv_bytes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#37474F"
+                android:textSize="9sp"
+                android:fontFamily="monospace"
+                android:gravity="end" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Right: live/done status -->
+    <TextView
+        android:id="@+id/tv_conn_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="6dp"
+        android:textSize="9.5sp"
+        android:fontFamily="monospace"
+        android:textStyle="bold" />
+
+</LinearLayout>

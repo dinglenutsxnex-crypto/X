@@ -42,7 +42,7 @@ class FakeManagerActivity : BaseActivity() {
 
         initToolbar(viewBinding.toolbarLayout.toolbar, R.string.fake_location, true)
 
-        mAdapter = RVAdapter<FakeLocationBean>(this, FakeLocationAdapter())
+        mAdapter = RVAdapter<FakeLocationBean>(this,FakeLocationAdapter()).bind(viewBinding.recyclerView)
             .setItemClickListener { _, data, _ ->
 
                 val intent = Intent(this, FollowMyLocationOverlay::class.java)
@@ -160,7 +160,7 @@ class FakeManagerActivity : BaseActivity() {
 
 
     override fun onBackPressed() {
-        if (viewBinding.searchView.isSearchOpen()) {
+        if (viewBinding.searchView.isSearchOpen) {
             viewBinding.searchView.closeSearch()
         } else {
             super.onBackPressed()

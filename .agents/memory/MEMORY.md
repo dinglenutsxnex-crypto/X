@@ -1,1 +1,3 @@
-- [ContainerHost architecture](container-host-architecture.md) — never invoke guest Application via reflection; load dex for inspection only, launch real app via system intent.
+- [Service context theme crash](service-theme-crash.md) — inflating layouts in a Service needs ContextThemeWrapper or ?attr/ refs crash with UnsupportedOperationException
+- [DebuggerFloat overlay rules](debugger-float-rules.md) — critical constraints for the overlay service to prevent freeze/crash
+- [Network Analyzer architecture](net-analyzer-arch.md) — VPN-based packet capture design decisions and gotchas

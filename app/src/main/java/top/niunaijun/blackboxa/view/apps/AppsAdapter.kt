@@ -30,19 +30,16 @@ class AppsAdapter : RVHolderFactory() {
 
     override fun createViewHolder(parent: ViewGroup?, viewType: Int, item: Any): RVHolder<out Any> {
         return try {
-            AppsVH(inflateLayout(R.layout.item_app, parent))
+            AppsVH(inflate(R.layout.item_app, parent))
         } catch (e: Exception) {
             Log.e(TAG, "Error creating ViewHolder: ${e.message}")
             
-            FallbackAppsVH(inflateLayout(R.layout.item_app, parent))
+            FallbackAppsVH(inflate(R.layout.item_app, parent))
         }
     }
 
     class AppsVH(itemView: View) : RVHolder<AppInfo>(itemView) {
         val binding = ItemAppBinding.bind(itemView)
-
-        override fun bind(item: AppInfo) {}
-
         private var currentIcon: Drawable? = null
         private var isAttached = false
 
@@ -154,9 +151,6 @@ class AppsAdapter : RVHolderFactory() {
     
     class FallbackAppsVH(itemView: View) : RVHolder<AppInfo>(itemView) {
         val binding = ItemAppBinding.bind(itemView)
-
-        override fun bind(item: AppInfo) {}
-
 
         override fun setContent(item: AppInfo, isSelected: Boolean, payload: Any?) {
             try {
