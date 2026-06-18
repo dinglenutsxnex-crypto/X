@@ -1,12 +1,13 @@
 package com.ferfalk.simplesearchview
 
 import android.content.Context
-import android.util.AttributeSet
+import android.utils.TypedValue
+import android.view.View
 import android.widget.FrameLayout
 
 class SimpleSearchView @JvmOverloads constructor(
     context: Context,
-    attrs: AttributeSet? = null,
+    attrs: android.util.AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
@@ -15,9 +16,12 @@ class SimpleSearchView @JvmOverloads constructor(
 
     init {
         if (attrs != null) {
-            val a = context.obtainStyledAttributes(attrs, R.styleable.SimpleSearchView)
+            val a = context.obtainStyledAttributes(attrs, intArrayOf(
+                android.R.attr.background
+            ))
             try {
-                type = a.getString(R.styleable.SimpleSearchView_type) ?: "card"
+                val bg = a.getDrawable(0)
+                if (bg != null) background = bg
             } finally {
                 a.recycle()
             }

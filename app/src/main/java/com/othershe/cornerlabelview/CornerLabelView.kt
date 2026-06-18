@@ -69,24 +69,17 @@ class CornerLabelView @JvmOverloads constructor(
             val ta = context.obtainStyledAttributes(attrs, intArrayOf(
                 android.R.attr.text,
                 android.R.attr.textColor,
-                android.R.attr.textSize
+                android.R.attr.textSize,
+                android.R.attr.background
             ))
             try {
                 text = ta.getString(0) ?: ""
                 textColor = ta.getColor(1, Color.WHITE)
                 textSize = ta.getDimension(2, 10f)
+                val bg = ta.getDrawable(3)
+                if (bg != null) background = bg
             } finally {
                 ta.recycle()
-            }
-            
-            val a = context.obtainStyledAttributes(attrs, R.styleable.CornerLabelView)
-            try {
-                bgColor = a.getColor(R.styleable.CornerLabelView_bg_color, Color.RED)
-                position = a.getString(R.styleable.CornerLabelView_position) ?: "left_top"
-                sideLength = a.getDimension(R.styleable.CornerLabelView_side_length, 44f)
-                updateBg()
-            } finally {
-                a.recycle()
             }
         }
     }

@@ -30,11 +30,11 @@ class AppsAdapter : RVHolderFactory() {
 
     override fun createViewHolder(parent: ViewGroup?, viewType: Int, item: Any): RVHolder<out Any> {
         return try {
-            AppsVH(inflate(R.layout.item_app, parent))
+            AppsVH(inflateLayout(R.layout.item_app, parent))
         } catch (e: Exception) {
             Log.e(TAG, "Error creating ViewHolder: ${e.message}")
             
-            FallbackAppsVH(inflate(R.layout.item_app, parent))
+            FallbackAppsVH(inflateLayout(R.layout.item_app, parent))
         }
     }
 
