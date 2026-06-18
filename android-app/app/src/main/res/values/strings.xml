@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RootDroid Inspector</string>
+    <string name="notification_channel_name">Inspector Service</string>
+    <string name="notification_channel_desc">Keeps the overlay active while inspecting an app</string>
+    <string name="notification_title">RootDroid Inspector</string>
+    <string name="notification_text">Inspecting: %1$s</string>
+</resources>

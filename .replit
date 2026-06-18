@@ -1,7 +1,6 @@
-modules = ["java-graalvm22.3"]
-[agent]
-expertMode = true
-stack = "BEST_EFFORT_FALLBACK"
-
+modules = ["python-3.11"]
 [nix]
 channel = "stable-25_05"
+
+[agent]
+expertMode = true

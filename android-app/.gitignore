@@ -1,0 +1,17 @@
+.gradle/
+local.properties
+*.jks
+*.keystore
+keystore.jks
+
+# Build outputs
+app/build/
+build/
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# Generated
+app/src/main/java/com/rootdroid/inspector/BuildConfig.java

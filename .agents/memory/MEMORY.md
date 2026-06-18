@@ -1,0 +1,1 @@
+- [ContainerHost architecture](container-host-architecture.md) — never invoke guest Application via reflection; load dex for inspection only, launch real app via system intent.
