@@ -195,7 +195,7 @@ class TcpSession(
         }
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
+    // ── Helpers ─────────────────────────────────────────────────────────
 
     private fun sendToTun(flags: Int, seq: Long, ack: Long, payload: ByteArray = ByteArray(0)) {
         val pkt = PacketFactory.buildTcp(
@@ -241,10 +241,10 @@ class TcpSession(
                     if (rec.path.isEmpty()) rec.path = if (req.isWs) "WS:${req.path}" else req.path
                 }
                 // Try TLS SNI
-                if (rec.protocol == Protocol.HTTPS || rec.protocol == Protocol.WSS) {
-                    PacketParser.extractSni(payload)?.let { sni ->
-                        if (rec.host.isBlank() || rec.host == PacketParser.formatIp(dstIp)) rec.host = sni
-                    }
+                PacketParser.extractSni(payload)?.takeIf {
+                    rec.protocol == Protocol.HTTPS || rec.protocol == Protocol.WSS
+                }?.let { sni ->
+                    if (rec.host.isBlank() || rec.host == PacketParser.formatIp(dstIp)) rec.host = sni
                 }
             } else {
                 // Try HTTP response

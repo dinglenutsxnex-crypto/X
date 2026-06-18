@@ -126,10 +126,10 @@ class ConnectionAdapter(
 
         // ── Status dot ─────────────────────────────────────────────────────────
         val (statusText, statusColor) = when (rec.status) {
-            ConnStatus.ALIVE   -> "LIVE" to "#69F0AE"
-            ConnStatus.CLOSING -> "FIN"  to "#FFD54F"
-            ConnStatus.CLOSED  -> "DONE" to "#546E7A"
-            ConnStatus.ERROR   -> "ERR"  to "#EF9A9A"
+            ConnStatus.ALIVE   -> "LIVE" to "#FFFFFF"
+            ConnStatus.CLOSING -> "FIN"  to "#888888"
+            ConnStatus.CLOSED  -> "DONE" to "#444444"
+            ConnStatus.ERROR   -> "ERR"  to "#FF5555"
         }
         h.tvStatus.text = statusText
         h.tvStatus.setTextColor(Color.parseColor(statusColor))
@@ -150,21 +150,21 @@ class ConnectionAdapter(
     }
 
     private fun protoColorFor(label: String): String = when (label) {
-        "HTTP"  -> "#006064"
-        "TLS"   -> "#BF360C"
-        "WS"    -> "#F57F17"
-        "WSS"   -> "#E65100"
-        "DNS"   -> "#4A148C"
-        "UDP"   -> "#1B5E20"
-        "TCP"   -> "#0D47A1"
-        else    -> "#263238"
+        "HTTP"  -> "#222222"
+        "TLS"   -> "#222222"
+        "WS"    -> "#222222"
+        "WSS"   -> "#222222"
+        "DNS"   -> "#222222"
+        "UDP"   -> "#222222"
+        "TCP"   -> "#222222"
+        else    -> "#111111"
     }
 
     private fun respCodeColor(code: Int): Int = when {
-        code < 300 -> Color.parseColor("#69F0AE")
-        code < 400 -> Color.parseColor("#FFD54F")
-        code < 500 -> Color.parseColor("#FF8A65")
-        else       -> Color.parseColor("#EF9A9A")
+        code < 300 -> Color.parseColor("#FFFFFF")
+        code < 400 -> Color.parseColor("#888888")
+        code < 500 -> Color.parseColor("#FF5555")
+        else       -> Color.parseColor("#FF5555")
     }
 
     private fun fmtBytes(b: Long): String = when {

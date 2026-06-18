@@ -11,18 +11,18 @@
         android:background="@drawable/bg_debugger_bubble"
         android:elevation="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:layout_gravity="center"
-            android:text="🐛"
-            android:textSize="22sp" />
+            android:src="@drawable/ic_debugger_white"
+            android:contentDescription="Debugger" />
     </FrameLayout>
 
-    <!-- ── Panel ── -->
+    <!-- ── Panel (320dp * 1.3 = 416dp) ── -->
     <LinearLayout
         android:id="@+id/debugger_panel"
-        android:layout_width="320dp"
+        android:layout_width="416dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/bg_debugger_panel"
@@ -43,8 +43,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="◈  HAMMERSCALE DBG"
-                android:textColor="#E0F7FA"
+                android:text="HAMMERSCALE DEBUGGER"
+                android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:textSize="12sp"
                 android:fontFamily="monospace"
@@ -56,7 +56,7 @@
                 android:layout_height="32dp"
                 android:gravity="center"
                 android:text="✕"
-                android:textColor="#E0F7FA"
+                android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -83,8 +83,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="▸ RUNNING PROCESSES"
-                    android:textColor="#4DD0E1"
+                    android:text="RUNNING PROCESSES"
+                    android:textColor="#BBBBBB"
                     android:textSize="9sp"
                     android:fontFamily="monospace"
                     android:letterSpacing="0.15" />
@@ -95,8 +95,8 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp"
-                    android:text="⟳ REFRESH"
-                    android:textColor="#4DD0E1"
+                    android:text="REFRESH"
+                    android:textColor="#FFFFFF"
                     android:textSize="9sp"
                     android:fontFamily="monospace" />
             </LinearLayout>
@@ -107,7 +107,7 @@
                 android:layout_height="1dp"
                 android:layout_marginStart="14dp"
                 android:layout_marginEnd="14dp"
-                android:background="#1F3040" />
+                android:background="#333333" />
 
             <!-- Process list -->
             <androidx.recyclerview.widget.RecyclerView
@@ -127,7 +127,7 @@
                 android:paddingEnd="14dp"
                 android:paddingBottom="4dp"
                 android:text="Launch an app inside the container first"
-                android:textColor="#37474F"
+                android:textColor="#666666"
                 android:textSize="9sp"
                 android:fontFamily="monospace" />
         </LinearLayout>
@@ -146,7 +146,7 @@
                 android:layout_height="34dp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:background="#0D00BCD4"
+                android:background="#1AFFFFFF"
                 android:paddingStart="14dp"
                 android:paddingEnd="4dp">
 
@@ -155,8 +155,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="● Attached"
-                    android:textColor="#4DD0E1"
+                    android:text="Attached"
+                    android:textColor="#FFFFFF"
                     android:textSize="10sp"
                     android:fontFamily="monospace"
                     android:ellipsize="middle"
@@ -168,8 +168,8 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp"
-                    android:text="◼ DETACH"
-                    android:textColor="#EF9A9A"
+                    android:text="DETACH"
+                    android:textColor="#FF5555"
                     android:textSize="9sp"
                     android:fontFamily="monospace" />
             </LinearLayout>
@@ -194,7 +194,7 @@
                     android:text="ALL"
                     android:textSize="9sp"
                     android:fontFamily="monospace"
-                    android:textColor="#80DEEA"
+                    android:textColor="#FFFFFF"
                     android:background="@drawable/bg_filter_active"
                     android:layout_marginEnd="3dp" />
 
@@ -207,7 +207,7 @@
                     android:text="ERR"
                     android:textSize="9sp"
                     android:fontFamily="monospace"
-                    android:textColor="#EF9A9A"
+                    android:textColor="#FF5555"
                     android:background="@android:color/transparent"
                     android:layout_marginEnd="3dp" />
 
@@ -220,7 +220,7 @@
                     android:text="TRACE"
                     android:textSize="9sp"
                     android:fontFamily="monospace"
-                    android:textColor="#FFF176"
+                    android:textColor="#FFFF55"
                     android:background="@android:color/transparent"
                     android:layout_marginEnd="3dp" />
 
@@ -233,7 +233,7 @@
                     android:text="CLR"
                     android:textSize="9sp"
                     android:fontFamily="monospace"
-                    android:textColor="#546E7A"
+                    android:textColor="#888888"
                     android:background="@android:color/transparent" />
             </LinearLayout>
 
@@ -244,8 +244,8 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="14dp"
                 android:paddingBottom="2dp"
-                android:text="▶  ALL LOGS"
-                android:textColor="#37474F"
+                android:text="ALL LOGS"
+                android:textColor="#888888"
                 android:textSize="8sp"
                 android:fontFamily="monospace" />
 
@@ -266,11 +266,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:textColor="#A5D6A7"
+                    android:textColor="#FFFFFF"
                     android:textSize="9sp"
                     android:fontFamily="monospace"
                     android:lineSpacingMultiplier="1.3"
-                    android:text="Waiting for process attach…" />
+                    android:text="Waiting for process attach..." />
             </ScrollView>
         </LinearLayout>
 

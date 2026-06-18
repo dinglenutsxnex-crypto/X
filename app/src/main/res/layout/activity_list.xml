@@ -5,7 +5,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".view.list.ListActivity">
+    android:background="#000000"
+    tools:context=".view.list.ListActivity">
 
     <FrameLayout
             android:layout_width="match_parent"

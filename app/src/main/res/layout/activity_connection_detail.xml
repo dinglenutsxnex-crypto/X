@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#0D1117">
+    android:background="#000000">
 
     <!-- Toolbar row: back | title | copy-all | download -->
     <LinearLayout
@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:background="#161B22"
+        android:background="#111111"
         android:paddingTop="4dp"
         android:paddingBottom="4dp">
 
@@ -52,7 +52,7 @@
             android:paddingEnd="10dp"
             android:paddingTop="6dp"
             android:paddingBottom="6dp"
-            android:background="#1A80DEEA"
+            android:background="#333333"
             android:clickable="true"
             android:focusable="true"
             android:layout_marginEnd="6dp">
@@ -67,7 +67,7 @@
                 android:text="COPY ALL"
                 android:fontFamily="monospace"
                 android:textSize="10sp"
-                android:textColor="#80DEEA" />
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
         <!-- Download this connection -->
@@ -96,8 +96,8 @@
         android:fontFamily="monospace"
         android:textSize="11sp"
         android:lineSpacingExtra="2dp"
-        android:textColor="#69F0AE"
-        android:background="#161B22" />
+        android:textColor="#FFFFFF"
+        android:background="#111111" />
 
     <View
         android:layout_width="match_parent"

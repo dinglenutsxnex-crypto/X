@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <!-- ── Bubble ── -->
+    <FrameLayout
+        android:id="@+id/analyzer_bubble"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:background="@drawable/bg_debugger_bubble"
+        android:elevation="10dp">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_network_white"
+            android:contentDescription="Network Analyzer" />
+    </FrameLayout>
+
+    <!-- ── Panel (416dp) ── -->
+    <LinearLayout
+        android:id="@+id/analyzer_panel"
+        android:layout_width="416dp"
+        android:layout_height="500dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_debugger_panel"
+        android:elevation="10dp"
+        android:visibility="gone">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="14dp"
+            android:paddingEnd="10dp"
+            android:background="@drawable/bg_debugger_header">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HAMMERSCALE NETWORK"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.08" />
+
+            <TextView
+                android:id="@+id/btn_collapse"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:text="✕"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Status Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#1AFFFFFF"
+            android:paddingStart="14dp"
+            android:paddingEnd="4dp">
+
+            <TextView
+                android:id="@+id/tv_vpn_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="VPN INACTIVE"
+                android:textColor="#888888"
+                android:textSize="10sp"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:id="@+id/btn_vpn_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="START"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- Target App -->
+        <TextView
+            android:id="@+id/tv_target_app"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:gravity="center_vertical"
+            android:paddingStart="14dp"
+            android:text="All Container Traffic"
+            android:textColor="#BBBBBB"
+            android:textSize="10sp"
+            android:fontFamily="monospace"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <!-- Protocol Filter -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:scrollbars="none">
+            <LinearLayout
+                android:id="@+id/filter_container"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+                <TextView android:id="@+id/filter_all" style="@style/FilterChip" android:text="ALL" android:textColor="#FFFFFF" android:background="@drawable/bg_filter_active" />
+                <TextView android:id="@+id/filter_http" style="@style/FilterChip" android:text="HTTP" android:textColor="#888888" />
+                <TextView android:id="@+id/filter_tls" style="@style/FilterChip" android:text="TLS" android:textColor="#888888" />
+                <TextView android:id="@+id/filter_ws" style="@style/FilterChip" android:text="WS" android:textColor="#888888" />
+                <TextView android:id="@+id/filter_tcp" style="@style/FilterChip" android:text="TCP" android:textColor="#888888" />
+                <TextView android:id="@+id/filter_udp" style="@style/FilterChip" android:text="UDP" android:textColor="#888888" />
+                <TextView android:id="@+id/filter_dns" style="@style/FilterChip" android:text="DNS" android:textColor="#888888" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_connections"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="4dp"
+            android:clipToPadding="false" />
+
+        <!-- Footer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="14dp"
+            android:paddingEnd="10dp"
+            android:background="#0A0A0A">
+            <TextView
+                android:id="@+id/tv_conn_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0 connections"
+                android:textColor="#666666"
+                android:textSize="9sp"
+                android:fontFamily="monospace" />
+            <TextView
+                android:id="@+id/btn_clear_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CLEAR"
+                android:textColor="#888888"
+                android:textSize="9sp"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

@@ -63,19 +63,19 @@ class AppsFragment : Fragment() {
 
     private fun buildDebuggerEntry(): AppInfo {
         return try {
-            val icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_debugger)
-            AppInfo("Debugger", icon, DEBUGGER_PACKAGE, "", false)
+            val icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_debugger_white)
+            AppInfo("DEBUGGER", icon, DEBUGGER_PACKAGE, "", false)
         } catch (e: Exception) {
-            AppInfo("Debugger", null, DEBUGGER_PACKAGE, "", false)
+            AppInfo("DEBUGGER", null, DEBUGGER_PACKAGE, "", false)
         }
     }
 
     private fun buildNetAnalyzerEntry(): AppInfo {
         return try {
-            val icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_network)
-            AppInfo("Net Analyzer", icon, NET_ANALYZER_PACKAGE, "", false)
+            val icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_network_white)
+            AppInfo("NETWORK", icon, NET_ANALYZER_PACKAGE, "", false)
         } catch (e: Exception) {
-            AppInfo("Net Analyzer", null, NET_ANALYZER_PACKAGE, "", false)
+            AppInfo("NETWORK", null, NET_ANALYZER_PACKAGE, "", false)
         }
     }
 

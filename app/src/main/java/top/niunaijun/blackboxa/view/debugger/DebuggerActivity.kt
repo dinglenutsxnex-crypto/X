@@ -32,7 +32,7 @@ class DebuggerActivity : AppCompatActivity() {
             title = "Debugger"
         }
 
-        val btnStart = findViewById<Button>(R.id.btn_start_debugger)
+        val btnStart = findViewById<TextView>(R.id.btn_start_debugger)
         val tvHint = findViewById<TextView>(R.id.tv_overlay_hint)
 
         btnStart.setOnClickListener {

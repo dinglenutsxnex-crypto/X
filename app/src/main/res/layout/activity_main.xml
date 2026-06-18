@@ -4,7 +4,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.main.MainActivity">
+        tools:context=".view.main.MainActivity"
+    android:background="#000000">
 
     <include
             android:id="@+id/toolbar_layout"
@@ -44,7 +45,9 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/viewPager"
-            app:progressMode="true" />
+            app:progressMode="true"
+            app:dotsColor="#444444"
+            app:selectedDotColor="#FFFFFF" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
@@ -55,6 +58,8 @@
             android:contentDescription="TODO"
             android:src="@drawable/ic_add"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
+            app:layout_constraintRight_toRightOf="parent"
+            app:backgroundTint="#FFFFFF"
+            app:tint="#000000" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

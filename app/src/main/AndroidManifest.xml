@@ -81,6 +81,10 @@
             android:parentActivityName=".view.net.NetworkAnalyzerActivity" />
 
         <service
+            android:name=".view.net.NetworkAnalyzerFloatingService"
+            android:exported="false" />
+
+        <service
             android:name=".view.net.NetworkAnalyzerVpnService"
             android:exported="false"
             android:permission="android.permission.BIND_VPN_SERVICE">

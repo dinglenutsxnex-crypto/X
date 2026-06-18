@@ -305,7 +305,7 @@ class DebuggerFloatingService : Service() {
             floatView?.findViewById<LinearLayout>(R.id.section_process_select)?.visibility = View.GONE
             floatView?.findViewById<LinearLayout>(R.id.section_logging)?.visibility = View.VISIBLE
             floatView?.findViewById<TextView>(R.id.tv_selected_process)?.text =
-                "📦 ${info.name}   PID: ${info.pid}"
+                "PKG: ${info.name}   PID: ${info.pid}"
 
             logBuffer.clear()
             logBuffer.append("[Debugger] ══════════════════════════\n")
@@ -383,20 +383,20 @@ class DebuggerFloatingService : Service() {
             return when {
                 t.startsWith("at ") -> {
                     val method = t.removePrefix("at ").substringBefore("(")
-                    "  📍 ${method.substringAfterLast('.')}  [${method.substringBeforeLast('.')}]\n"
+                    "  > ${method.substringAfterLast('.')}  [${method.substringBeforeLast('.')}]\n"},{find:
                 }
                 else -> {
                     val kw = LIFECYCLE_KEYWORDS.firstOrNull { raw.contains(it) } ?: ""
-                    "🔄 $kw  |  $raw\n"
+                    "$kw  |  $raw\n"
                 }
             }
         }
         return when {
-            raw.contains(" E ") || raw.contains(" E/") -> "❌ $raw\n"
-            raw.contains(" W ") || raw.contains(" W/") -> "⚠️ $raw\n"
-            raw.contains(" D ") || raw.contains(" D/") -> "🔵 $raw\n"
-            raw.contains(" I ") || raw.contains(" I/") -> "ℹ️ $raw\n"
-            raw.trimStart().startsWith("at ")          -> "💥 $raw\n"
+            raw.contains(" E ") || raw.contains(" E/") -> "E: $raw\n"
+            raw.contains(" W ") || raw.contains(" W/") -> "W: $raw\n"
+            raw.contains(" D ") || raw.contains(" D/") -> "D: $raw\n"
+            raw.contains(" I ") || raw.contains(" I/") -> "I: $raw\n"
+            raw.trimStart().startsWith("at ")          -> "!: $raw\n"
             else                                        -> "$raw\n"
         }
     }

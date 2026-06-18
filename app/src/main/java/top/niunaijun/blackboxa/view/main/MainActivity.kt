@@ -123,14 +123,7 @@ class MainActivity : LoadingActivity() {
 
     private fun applyHammerscaleTitle() {
         try {
-            val title = "[ HAMMERSCALE ]"
-            val spannable = SpannableString(title)
-            val cyanColor = Color.parseColor("#00BCD4")
-            val grayColor = Color.parseColor("#AAAAAA")
-            spannable.setSpan(ForegroundColorSpan(grayColor), 0, 1, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE)
-            spannable.setSpan(ForegroundColorSpan(cyanColor), 2, 13, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE)
-            spannable.setSpan(ForegroundColorSpan(grayColor), 14, 15, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE)
-            viewBinding.toolbarLayout.toolbar.title = spannable
+            viewBinding.toolbarLayout.toolbar.title = "HAMMERSCALE"
         } catch (e: Exception) {
             Log.e(TAG, "Error applying HAMMERSCALE title: ${e.message}")
         }
