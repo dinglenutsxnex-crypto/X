@@ -24,6 +24,25 @@ class AppPickerAdapter(
     companion object {
         private const val TYPE_ALL = 0
         private const val TYPE_APP = 1
+
+        fun loadInstalledApps(pm: PackageManager): List<AppEntry> {
+            return try {
+                pm.getInstalledApplications(PackageManager.GET_META_DATA)
+                    .filter { (it.flags and ApplicationInfo.FLAG_SYSTEM) == 0 }
+                    .mapNotNull { ai ->
+                        runCatching {
+                            AppEntry(
+                                packageName = ai.packageName,
+                                label       = pm.getApplicationLabel(ai).toString(),
+                                icon        = pm.getApplicationIcon(ai.packageName)
+                            )
+                        }.getOrNull()
+                    }
+                    .sortedBy { it.label.lowercase() }
+            } catch (e: Exception) {
+                emptyList()
+            }
+        }
     }
 
     private val apps = mutableListOf<AppEntry>()
@@ -63,26 +82,5 @@ class AppPickerAdapter(
         val ivIcon:  ImageView = view.findViewById(R.id.iv_app_icon)
         val tvLabel: TextView  = view.findViewById(R.id.tv_app_label)
         val tvPkg:   TextView  = view.findViewById(R.id.tv_app_pkg)
-    }
-
-    companion object {
-        fun loadInstalledApps(pm: PackageManager): List<AppEntry> {
-            return try {
-                pm.getInstalledApplications(PackageManager.GET_META_DATA)
-                    .filter { (it.flags and ApplicationInfo.FLAG_SYSTEM) == 0 }
-                    .mapNotNull { ai ->
-                        runCatching {
-                            AppEntry(
-                                packageName = ai.packageName,
-                                label       = pm.getApplicationLabel(ai).toString(),
-                                icon        = pm.getApplicationIcon(ai.packageName)
-                            )
-                        }.getOrNull()
-                    }
-                    .sortedBy { it.label.lowercase() }
-            } catch (e: Exception) {
-                emptyList()
-            }
-        }
     }
 }
