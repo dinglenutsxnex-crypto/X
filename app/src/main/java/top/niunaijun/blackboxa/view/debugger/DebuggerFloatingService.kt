@@ -383,7 +383,7 @@ class DebuggerFloatingService : Service() {
             return when {
                 t.startsWith("at ") -> {
                     val method = t.removePrefix("at ").substringBefore("(")
-                    "  > ${method.substringAfterLast('.')}  [${method.substringBeforeLast('.')}]\n"},{find:
+                    "  > ${method.substringAfterLast('.')}  [${method.substringBeforeLast('.')}]\n"
                 }
                 else -> {
                     val kw = LIFECYCLE_KEYWORDS.firstOrNull { raw.contains(it) } ?: ""

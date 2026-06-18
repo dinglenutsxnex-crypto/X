@@ -28,13 +28,13 @@ class AppPickerAdapter(
         fun loadContainerApps(): List<AppEntry> {
             return try {
                 val core = BlackBoxCore.get()
-                // BlackBox users are usually indexed from 0
-                val apps = core.getInstalledApplications(0, 0) 
+                val pm = BlackBoxCore.getContext().packageManager
+                val apps = core.getInstalledApplications(0, 0)
                 apps.map { ai ->
                     AppEntry(
                         packageName = ai.packageName,
-                        label       = core.packageManager.getApplicationLabel(ai).toString(),
-                        icon        = core.packageManager.getApplicationIcon(ai)
+                        label       = pm.getApplicationLabel(ai).toString(),
+                        icon        = pm.getApplicationIcon(ai)
                     )
                 }.sortedBy { it.label.lowercase() }
             } catch (e: Exception) {
