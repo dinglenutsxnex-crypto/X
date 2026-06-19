@@ -51,12 +51,14 @@ static inline bool isReadablePtr(const void *p) {
     return true;
 }
 
-// Safe string accessor: returns ptr only if it looks like a real char pointer
-// (non-null, not suspiciously low, first byte is printable ASCII or null).
+// Safe string accessor: returns ptr only if the pointer itself is readable.
+// We do NOT inspect the first byte — il2cpp metadata strings live in a
+// read-only mapped segment and can start with bytes outside printable ASCII,
+// which caused the old safeStr to silently drop every method name.
+// If the struct pointer passed isReadablePtr() the string is safe to read;
+// a garbled log line is harmless, a silent drop is not.
 static inline const char *safeStr(const char *s) {
     if (!isReadablePtr(s)) return nullptr;
-    unsigned char c = static_cast<unsigned char>(*s);
-    if (c != 0 && (c < 0x20 || c > 0x7e)) return nullptr;
     return s;
 }
 
