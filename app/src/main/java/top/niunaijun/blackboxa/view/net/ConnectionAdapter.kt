@@ -150,14 +150,14 @@ class ConnectionAdapter(
     }
 
     private fun protoColorFor(label: String): String = when (label) {
-        "HTTP"  -> "#222222"
-        "TLS"   -> "#222222"
-        "WS"    -> "#222222"
-        "WSS"   -> "#222222"
-        "DNS"   -> "#222222"
-        "UDP"   -> "#222222"
-        "TCP"   -> "#222222"
-        else    -> "#111111"
+        "HTTP"  -> "#1565C0"
+        "TLS"   -> "#00695C"
+        "WS"    -> "#6A1B9A"
+        "WSS"   -> "#4A148C"
+        "DNS"   -> "#E65100"
+        "UDP"   -> "#558B2F"
+        "TCP"   -> "#37474F"
+        else    -> "#424242"
     }
 
     private fun respCodeColor(code: Int): Int = when {

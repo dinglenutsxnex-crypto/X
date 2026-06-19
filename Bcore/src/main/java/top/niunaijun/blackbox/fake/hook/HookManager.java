@@ -174,6 +174,7 @@ public class HookManager {
             addInjector(new IVibratorServiceProxy());
             addInjector(new IPersistentDataBlockServiceProxy());
             addInjector(AppInstrumentation.get());
+            addInjector(MethodTracer.get());
             
             addInjector(new IWifiManagerProxy());
             addInjector(new IWifiScannerProxy());

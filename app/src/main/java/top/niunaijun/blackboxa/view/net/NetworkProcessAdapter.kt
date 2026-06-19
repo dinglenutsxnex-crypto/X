@@ -1,4 +1,4 @@
-package top.niunaijun.blackboxa.view.debugger
+package top.niunaijun.blackboxa.view.net
 
 import android.graphics.Color
 import android.graphics.drawable.Drawable
@@ -11,17 +11,16 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import top.niunaijun.blackboxa.R
+import top.niunaijun.blackboxa.view.debugger.ProcessInfo
 
-class ProcessListAdapter(
+class NetworkProcessAdapter(
     private val onSelect: (ProcessInfo) -> Unit
-) : ListAdapter<ProcessInfo, ProcessListAdapter.ViewHolder>(DIFF) {
+) : ListAdapter<ProcessInfo, NetworkProcessAdapter.ViewHolder>(DIFF) {
 
     private var selectedPid: Int = -1
 
     fun setSelectedPid(pid: Int) {
-        val oldPid = selectedPid
         selectedPid = pid
-        // Refresh items to show selection
         notifyDataSetChanged()
     }
 
@@ -58,14 +57,13 @@ class ProcessListAdapter(
         if (icon != null) {
             holder.ivIcon.setImageDrawable(icon)
         } else {
-            holder.ivIcon.setImageResource(R.drawable.ic_debugger_white)
+            holder.ivIcon.setImageResource(R.drawable.ic_network_white)
         }
 
         holder.tvName.text = item.name
         holder.tvPkg.text = item.packageName
         holder.tvPid.text = "PID: ${item.pid}"
-        
-        // Selection highlight
+
         if (item.pid == selectedPid) {
             holder.itemView.setBackgroundColor(0x334CAF50.toInt())
             holder.tvName.setTextColor(0xFF4CAF50.toInt())

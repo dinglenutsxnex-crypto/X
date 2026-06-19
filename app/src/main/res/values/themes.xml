@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     
-    <style name="Theme.BlackBox" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.BlackBox" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primary_dark</item>
@@ -14,6 +14,18 @@
         <item name="android:windowBackground">#000000</item>
 
         <item name="actionMenuTextColor">@color/primary_text</item>
+
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+        <item name="android:textColorHint">@color/secondary_text</item>
+
+        <!-- Force all Material surfaces dark so SwitchPreferenceCompat toggles
+             and other surface-colored widgets stay visible on black backgrounds. -->
+        <item name="colorSurface">#121212</item>
+        <item name="colorOnSurface">@color/primary_text</item>
+        <item name="colorSurfaceVariant">#1E1E1E</item>
+        <item name="colorOnSurfaceVariant">@color/secondary_text</item>
+        <item name="android:colorBackground">#000000</item>
 
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>

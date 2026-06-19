@@ -12,17 +12,6 @@ import java.util.concurrent.Executors
 import java.util.concurrent.ScheduledExecutorService
 import java.util.concurrent.TimeUnit
 
-/**
- * Core VPN service for the Network Analyzer.
- *
- * - Opens a TUN interface routed for all traffic (0.0.0.0/0).
- * - If [TARGET_PACKAGE] extra is provided the VPN is scoped to that package only.
- * - Reads raw IPv4 packets, relays TCP via [TcpSession] and UDP via [UdpSession].
- * - Updates [NetworkAnalyzerVpnService.tracker] with live connection data.
- *
- * FLAG note: if the device has no target package selected, we allow all traffic.
- * The VPN stops cleanly when [onRevoke] / [stopSelf] is called.
- */
 class NetworkAnalyzerVpnService : VpnService() {
 
     companion object {
@@ -37,11 +26,10 @@ class NetworkAnalyzerVpnService : VpnService() {
         private const val TUN_MTU   = 16_384
         private const val READ_BUF  = TUN_MTU + 20
 
-        // Singleton tracker — activity observes this directly
         val tracker = ConnectionTracker()
-    }
 
-    // ── State ─────────────────────────────────────────────────────────────────
+        @Volatile var vpnEstablished: Boolean = false
+    }
 
     private var tunPfd: ParcelFileDescriptor? = null
     private var tunInput: FileInputStream? = null
@@ -51,18 +39,14 @@ class NetworkAnalyzerVpnService : VpnService() {
     private val tcpSessions = ConcurrentHashMap<String, TcpSession>()
     private val udpSessions = ConcurrentHashMap<String, UdpSession>()
 
-    // Read loop runs on a dedicated thread
     private val readerExecutor = Executors.newSingleThreadExecutor { r ->
         Thread(r, "vpn-reader").also { it.isDaemon = true }
     }
 
-    // Session cleanup runs periodically
     private val cleanupExecutor: ScheduledExecutorService =
         Executors.newSingleThreadScheduledExecutor { r ->
             Thread(r, "vpn-cleanup").also { it.isDaemon = true }
         }
-
-    // ── Service lifecycle ─────────────────────────────────────────────────────
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         if (intent?.action == ACTION_STOP) {
@@ -71,14 +55,16 @@ class NetworkAnalyzerVpnService : VpnService() {
             return START_NOT_STICKY
         }
 
-        Log.i(TAG, "Starting VPN — container-only mode")
+        val targetPkg = intent?.getStringExtra(EXTRA_PACKAGE)
+        Log.i(TAG, "Starting VPN — Target: ${targetPkg ?: "ALL CONTAINER"}")
         tracker.clear()
-        startVpn()
+        startVpn(targetPkg)
         return START_STICKY
     }
 
     override fun onRevoke() {
         Log.i(TAG, "VPN revoked by system")
+        vpnEstablished = false
         stopVpn()
         super.onRevoke()
     }
@@ -88,9 +74,7 @@ class NetworkAnalyzerVpnService : VpnService() {
         super.onDestroy()
     }
 
-    // ── VPN setup ─────────────────────────────────────────────────────────────
-
-    private fun startVpn() {
+    private fun startVpn(targetPkg: String?) {
         try {
             val builder = Builder()
                 .setSession("NetAnalyzer")
@@ -99,10 +83,13 @@ class NetworkAnalyzerVpnService : VpnService() {
                 .addDnsServer(DNS_SERVER)
                 .addRoute("0.0.0.0", 0)
 
-            // Always restrict to the BlackBox host package — this ensures ONLY traffic
-            // from apps running inside the container is captured, never host-device traffic.
-            runCatching { builder.addAllowedApplication(packageName) }
-                .onFailure { Log.w(TAG, "addAllowedApplication(self) failed: ${it.message}") }
+            // We always allow the host package because the container apps run in its processes
+            builder.addAllowedApplication(packageName)
+            
+            // If a specific guest app is targeted, we still capture via the host process,
+            // but the UI will filter by IP/Port if needed.
+            // Note: In BlackBox, guest apps share the host's UID, so addAllowedApplication(guest)
+            // might not work as expected. We capture all container traffic and filter in UI.
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 builder.setMetered(false)
@@ -110,7 +97,7 @@ class NetworkAnalyzerVpnService : VpnService() {
 
             val pfd = builder.establish()
             if (pfd == null) {
-                Log.e(TAG, "VPN establish() returned null — permission not granted?")
+                Log.e(TAG, "VPN establish() returned null")
                 stopSelf()
                 return
             }
@@ -118,22 +105,21 @@ class NetworkAnalyzerVpnService : VpnService() {
             tunPfd = pfd
             tunInput  = FileInputStream(pfd.fileDescriptor)
             tunOutput = FileOutputStream(pfd.fileDescriptor)
+            vpnEstablished = true
 
-            // Start packet read loop
             readerExecutor.submit(::readLoop)
-
-            // Schedule UDP session cleanup every 15 seconds
             cleanupExecutor.scheduleAtFixedRate(::cleanupSessions, 15, 15, TimeUnit.SECONDS)
 
             Log.i(TAG, "VPN up. TUN=$TUN_IP/$TUN_MASK")
         } catch (e: Exception) {
-            Log.e(TAG, "startVpn error: ${e.message}", e)
+            Log.e(TAG, "startVpn error: ${it.message}", e)
             stopSelf()
         }
     }
 
     private fun stopVpn() {
         Log.i(TAG, "Stopping VPN")
+        vpnEstablished = false
         readerExecutor.shutdownNow()
         cleanupExecutor.shutdownNow()
 
@@ -148,13 +134,10 @@ class NetworkAnalyzerVpnService : VpnService() {
         tunOutput = null
     }
 
-    // ── Read loop ─────────────────────────────────────────────────────────────
-
     private fun readLoop() {
         val buf = ByteArray(READ_BUF)
         val input = tunInput ?: return
 
-        Log.i(TAG, "VPN read loop started")
         while (!Thread.currentThread().isInterrupted) {
             try {
                 val n = input.read(buf)
@@ -169,19 +152,14 @@ class NetworkAnalyzerVpnService : VpnService() {
                 }
             }
         }
-        Log.i(TAG, "VPN read loop stopped")
     }
 
-    // ── Packet dispatch ───────────────────────────────────────────────────────
-
     private fun processPacket(buf: ByteArray, n: Int) {
-        // Only handle IPv4
         if (!PacketParser.isIpv4(buf)) return
         if (n < PacketParser.IP_HEADER_MIN) return
 
-        // Skip fragmented packets (fragment offset ≠ 0 or MF bit set for non-zero fragments)
         val flagsFrag = PacketParser.getUShort(buf, 6)
-        if ((flagsFrag and 0x3FFF) != 0) return   // has fragment offset or MF
+        if ((flagsFrag and 0x3FFF) != 0) return
 
         val ipHdrLen = PacketParser.ipHeaderLen(buf)
         val proto    = PacketParser.ipProtocol(buf)
@@ -191,11 +169,8 @@ class NetworkAnalyzerVpnService : VpnService() {
         when (proto) {
             PacketParser.PROTO_TCP -> handleTcp(buf, n, ipHdrLen, srcIp, dstIp)
             PacketParser.PROTO_UDP -> handleUdp(buf, n, ipHdrLen, srcIp, dstIp)
-            // ICMP and others: ignore (will time out naturally)
         }
     }
-
-    // ── TCP dispatch ──────────────────────────────────────────────────────────
 
     private fun handleTcp(buf: ByteArray, n: Int, ipHdrLen: Int, srcIp: ByteArray, dstIp: ByteArray) {
         val tcpOff = ipHdrLen
@@ -206,21 +181,15 @@ class NetworkAnalyzerVpnService : VpnService() {
         val flags   = PacketParser.tcpFlags(buf, tcpOff)
         val key     = sessionKey(PacketParser.PROTO_TCP, srcIp, srcPort, dstIp, dstPort)
 
-        // On SYN (new connection), create session and record
         if (PacketParser.hasSyn(flags) && !PacketParser.hasAck(flags)) {
-            if (tcpSessions.containsKey(key)) {
-                // Retransmitted SYN — ignore duplicate
-                return
-            }
+            if (tcpSessions.containsKey(key)) return
             val out = tunOutput ?: return
 
-            // Detect protocol from first payload or port
             val tcpHdrLen = PacketParser.tcpHeaderLen(buf, tcpOff)
             val payStart  = tcpOff + tcpHdrLen
             val payLoad   = if (payStart < n) buf.copyOfRange(payStart, n) else ByteArray(0)
             val proto     = PacketParser.detectProtocol(dstPort, payLoad, isTcp = true)
 
-            // Create ConnectionRecord
             tracker.getOrCreate(key) {
                 ConnectionRecord(
                     id       = ConnectionRecord.nextId(),
@@ -231,7 +200,6 @@ class NetworkAnalyzerVpnService : VpnService() {
                     dstPort  = dstPort
                 ).also { rec ->
                     rec.host = PacketParser.formatIp(dstIp)
-                    // Try early SNI / HTTP inspection even on SYN payload (rare)
                     if (payLoad.isNotEmpty()) {
                         PacketParser.extractSni(payLoad)?.let { rec.host = it }
                         PacketParser.parseHttpRequest(payLoad)?.let {
@@ -249,17 +217,14 @@ class NetworkAnalyzerVpnService : VpnService() {
                 tunOutput = out, tunLock = tunLock,
                 tracker = tracker, sessionKey = key
             )
-            // Protect the socket from looping back through VPN
             protect(session.socket)
             tcpSessions[key] = session
             session.handlePacket(buf.copyOf(n), n)
             return
         }
 
-        // Deliver to existing session
         val session = tcpSessions[key]
         if (session == null) {
-            // RST unknown sessions to clean up client side
             if (!PacketParser.hasRst(flags)) {
                 sendTcpRst(srcIp, srcPort, dstIp, dstPort,
                     ack = PacketParser.tcpSeq(buf, tcpOff) + 1)
@@ -268,14 +233,10 @@ class NetworkAnalyzerVpnService : VpnService() {
         }
 
         session.handlePacket(buf.copyOf(n), n)
-
-        // Clean up closed sessions
         if (session.state == TcpSession.State.CLOSED) {
             tcpSessions.remove(key)
         }
     }
-
-    // ── UDP dispatch ──────────────────────────────────────────────────────────
 
     private fun handleUdp(buf: ByteArray, n: Int, ipHdrLen: Int, srcIp: ByteArray, dstIp: ByteArray) {
         val udpOff  = ipHdrLen
@@ -287,7 +248,6 @@ class NetworkAnalyzerVpnService : VpnService() {
         val payload  = if (payStart < n) buf.copyOfRange(payStart, n) else ByteArray(0)
         val key      = sessionKey(PacketParser.PROTO_UDP, srcIp, srcPort, dstIp, dstPort)
 
-        // Create session if new
         if (!udpSessions.containsKey(key)) {
             val out = tunOutput ?: return
             val session = UdpSession(
@@ -296,8 +256,8 @@ class NetworkAnalyzerVpnService : VpnService() {
                 tunOutput = out, tunLock = tunLock,
                 tracker = tracker, sessionKey = key
             )
-            protect(session.socket)   // must call before session starts sending
-            session.start()           // now safe to start the receive relay
+            protect(session.socket)
+            session.start()
             udpSessions[key] = session
 
             val proto = PacketParser.detectProtocol(dstPort, payload, isTcp = false)
@@ -309,11 +269,8 @@ class NetworkAnalyzerVpnService : VpnService() {
                 ).also { rec -> rec.host = PacketParser.formatIp(dstIp) }
             }
         }
-
         udpSessions[key]?.send(payload)
     }
-
-    // ── Session cleanup ───────────────────────────────────────────────────────
 
     private fun cleanupSessions() {
         try {
@@ -327,15 +284,10 @@ class NetworkAnalyzerVpnService : VpnService() {
                 s.destroy()
                 tcpSessions.remove(k)
             }
-            if (expiredUdp.isNotEmpty() || closedTcp.isNotEmpty()) {
-                Log.d(TAG, "Cleanup: removed ${expiredUdp.size} UDP + ${closedTcp.size} TCP sessions")
-            }
         } catch (e: Exception) {
             Log.w(TAG, "Cleanup error: ${e.message}")
         }
     }
-
-    // ── Utilities ─────────────────────────────────────────────────────────────
 
     private fun sessionKey(proto: Int, srcIp: ByteArray, srcPort: Int, dstIp: ByteArray, dstPort: Int): String {
         val s = PacketParser.formatIp(srcIp)
@@ -354,7 +306,4 @@ class NetworkAnalyzerVpnService : VpnService() {
             synchronized(tunLock) { tunOutput?.write(pkt) }
         }
     }
-
-    // Public so TcpSession/UdpSession can call protect() via the service reference —
-    // but here we inline protect() directly in the dispatchers above.
 }

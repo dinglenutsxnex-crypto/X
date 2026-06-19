@@ -1,0 +1,1015 @@
+[Debugger] ══════════════════════════
+[Debugger] Attached: top.niunaijun.blackbox:p0
+[Debugger] PID: 29264
+[Debugger] ══════════════════════════
+[Debugger] Logcat stream started (PID 29264)
+--------- beginning of main
+I: 06-19 11:01:02.947 29264 29264 I libc    : SetHeapTaggingLevel: tag level set to 0
+I: 06-19 11:01:02.956 29264 29264 I jun.blackbox:p0: Using generational CollectorTypeCMC GC.
+D: 06-19 11:01:02.964 29264 29264 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+D: 06-19 11:01:02.966 29264 29264 D ActivityThread: setConscryptValidator
+D: 06-19 11:01:02.966 29264 29264 D ActivityThread: setConscryptValidator - put
+D: 06-19 11:01:02.980 29264 29264 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+D: 06-19 11:01:02.983 29264 29264 D nativeloader: Configuring clns-9 for other apk /data/app/~~1o28tRRRNyVqtC9xfE3ndQ==/top.niunaijun.blackbox-3_-ZRFsaRJ8m4dzNWzkRJA==/base.apk. target_sdk_version=28, uses_libraries=, library_path=/data/app/~~1o28tRRRNyVqtC9xfE3ndQ==/top.niunaijun.blackbox-3_-ZRFsaRJ8m4dzNWzkRJA==/lib/arm64:/data/app/~~1o28tRRRNyVqtC9xfE3ndQ==/top.niunaijun.blackbox-3_-ZRFsaRJ8m4dzNWzkRJA==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/top.niunaijun.blackbox
+D: 06-19 11:01:02.983 29264 29264 D nativeloader: Extending system_exposed_libraries: libface_landmark.arcsoft.so:libaudiomirroring_jni.audiomirroring.samsung.so:libBeauty_v4.camera.samsung.so:libexifa.camera.samsung.so:libjpega.camera.samsung.so:libOpenCv.camera.samsung.so:libC2paDps.camera.samsung.so:libImageScreener.camera.samsung.so:libFace_Landmark_API.camera.samsung.so:libHpr_RecGAE_cvFeature_v1.0.camera.samsung.so:libHprFace_GAE_api.camera.samsung.so:libHprFace_GAE_jni.camera.samsung.so:libQREngine.camera.samsung.so:libInteractiveSegmentation.camera.samsung.so:libsmart_cropping.camera.samsung.so:libStride.camera.samsung.so:libStrideTensorflowLite.camera.samsung.so:libFacePreProcessing_jni.camera.samsung.so:libhumantracking_util.camera.samsung.so:libsecimaging.camera.samsung.so:libsurfaceutil.camera.samsung.so:libsce_v1.crypto.samsung.so:lib_vnd_client.dk.samsung.so:lib_native_client.dk.samsung.so:lib_nativeJni.dk.samsung.so:lib.engmodejni.samsung.so:libSFEffect.fonteffect.samsung.so:libknox_remotedesktopclient.knox.samsung.so:libheifcapture_jni.media
+06-19 11:01:02.990 29264 29264 V GraphicsEnvironment: Currently set values for:
+06-19 11:01:02.990 29264 29264 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+06-19 11:01:02.990 29264 29264 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+06-19 11:01:02.990 29264 29264 V GraphicsEnvironment: top.niunaijun.blackbox is not listed in per-application setting
+06-19 11:01:02.990 29264 29264 V GraphicsEnvironment: ANGLE allowlist from config: com.dreamgames.royalmatch com.dts.freefiremax com.dxx.firenow com.gramgames.mergedragons com.ludo.king com.mojang.minecraftpe com.my.defense com.nintendo.zaka com.os.airforce com.playrix.fishdomdd.gplay io.teslatech.callbreak jp.konami.prospia net.peakgames.toonblast
+06-19 11:01:02.990 29264 29264 V GraphicsEnvironment: top.niunaijun.blackbox is not listed in ANGLE allowlist or settings, returning default
+06-19 11:01:02.990 29264 29264 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+D: 06-19 11:01:02.994 29264 29264 D SimpleCrashFix: Installing essential crash fix...
+D: 06-19 11:01:02.994 29264 29264 D SimpleCrashFix: Global exception handler installed successfully
+D: 06-19 11:01:02.994 29264 29264 D ContextWrapperHook: Installing ContextWrapper hook...
+D: 06-19 11:01:02.994 29264 29264 D ContextWrapperHook: ContextWrapper.getResources() method hooked successfully
+D: 06-19 11:01:02.994 29264 29264 D ContextWrapperHook: ContextWrapper hook installed successfully
+D: 06-19 11:01:02.994 29264 29264 D SimpleCrashFix: Context wrapper hook installed
+D: 06-19 11:01:02.994 29264 29264 D SimpleCrashFix: Essential crash fix installed successfully
+D: 06-19 11:01:02.994 29264 29264 D BlackBoxCore: Simple crash fix installed at class loading time
+D: 06-19 11:01:02.994 29264 29264 D BlackBoxCore: Stack trace filter installed at class loading time
+D: 06-19 11:01:02.994 29264 29264 D SocialMediaCrashPrevention: Initializing social media app crash prevention...
+D: 06-19 11:01:02.995 29264 29264 D SocialMediaCrashPrevention: WebView constructor hook prepared
+D: 06-19 11:01:02.995 29264 29264 D SocialMediaCrashPrevention: WebView crash prevention installed
+D: 06-19 11:01:02.995 29264 29264 D SocialMediaCrashPrevention: AttributionSource crash prevention installed
+W: 06-19 11:01:02.995 29264 29264 W SocialMediaCrashPrevention: Host context is null, attempting to recover
+D: 06-19 11:01:02.995 29264 29264 D SocialMediaCrashPrevention: Successfully recovered context
+D: 06-19 11:01:02.995 29264 29264 D SocialMediaCrashPrevention: Context crash prevention installed
+D: 06-19 11:01:02.995 29264 29264 D SocialMediaCrashPrevention: Permission crash prevention installed
+D: 06-19 11:01:02.995 29264 29264 D SocialMediaCrashPrevention: Media crash prevention installed
+D: 06-19 11:01:02.995 29264 29264 D SocialMediaCrashPrevention: Social media app crash prevention initialized successfully
+D: 06-19 11:01:02.995 29264 29264 D BlackBoxCore: Social media app crash prevention initialized at class loading time
+D: 06-19 11:01:02.995 29264 29264 D DexCrashPrevention: Initializing DEX crash prevention...
+D: 06-19 11:01:02.995 29264 29264 D DexCrashPrevention: Installing proactive DEX corruption prevention
+D: 06-19 11:01:02.995 29264 29264 D DexCrashPrevention: Installing DEX file validation
+D: 06-19 11:01:02.995 29264 29264 D DexCrashPrevention: DEX file validation hooks prepared
+D: 06-19 11:01:02.995 29264 29264 D DexCrashPrevention: Installing ClassLoader monitoring
+D: 06-19 11:01:02.995 29264 29264 D DexCrashPrevention: Monitoring ClassLoader: dalvik.system.PathClassLoader
+D: 06-19 11:01:02.995 29264 29264 D DexCrashPrevention: Installing APK integrity checks
+D: 06-19 11:01:02.995 29264 29264 D DexCrashPrevention: Periodic APK integrity checks prepared
+D: 06-19 11:01:02.995 29264 29264 D DexCrashPrevention: DEX crash prevention initialized successfully
+D: 06-19 11:01:02.995 29264 29264 D BlackBoxCore: DEX crash prevention initialized at class loading time
+D: 06-19 11:01:02.995 29264 29264 D NativeCrashPrevention: Initializing native crash prevention...
+D: 06-19 11:01:02.995 29264 29264 D NativeCrashPrevention: Signal handlers prepared (requires native implementation)
+D: 06-19 11:01:02.995 29264 29264 D NativeCrashPrevention: Installing native library monitoring
+D: 06-19 11:01:02.995 29264 29264 D NativeCrashPrevention: Native library monitoring prepared
+D: 06-19 11:01:02.995 29264 29264 D NativeCrashPrevention: Installing memory protection
+D: 06-19 11:01:02.995 29264 29264 D NativeCrashPrevention: Memory monitoring setup - Max: 268435456, Total: 268435456, Free: 261184704
+D: 06-19 11:01:02.995 29264 29264 D NativeCrashPrevention: Installing thread protection
+D: 06-19 11:01:02.995 29264 29264 D NativeCrashPrevention: Thread monitoring setup - Active threads: 11
+D: 06-19 11:01:02.995 29264 29264 D NativeCrashPrevention: Native crash prevention initialized successfully
+D: 06-19 11:01:02.995 29264 29264 D BlackBoxCore: Native crash prevention initialized at class loading time
+D: 06-19 11:01:02.995 29264 29264 D CrashMonitor: Initializing comprehensive crash monitoring system...
+D: 06-19 11:01:02.995 29264 29264 D CrashMonitor: Registered 5 recovery strategies
+D: 06-19 11:01:02.995 29264 29264 D CrashMonitor: System error handler prepared
+D: 06-19 11:01:02.995 29264 29264 D CrashMonitor: Global crash handlers installed
+D: 06-19 11:01:02.995 29264 29264 D CrashMonitor: Crash monitoring started
+D: 06-19 11:01:02.995 29264 29264 D CrashMonitor: Crash monitoring system initialized successfully
+D: 06-19 11:01:02.995 29264 29264 D BlackBoxCore: Comprehensive crash monitoring initialized at class loading time
+D: 06-19 11:01:02.995 29264 29264 D Lib Injection: Custom closed code initialized!
+D: 06-19 11:01:02.999 29264 29264 D VirtualSpoof: Spoof installed successfully
+D: 06-19 11:01:02.999 29264 29264 D VirtualSpoof: VirtualSpoof: __system_property_get hook loaded
+D: 06-19 11:01:02.999 29264 29264 D AntiDetection: Installing anti-detection hooks...
+D: 06-19 11:01:02.999 29264 29264 D AntiDetection: File system hooks installed
+D: 06-19 11:01:02.999 29264 29264 D AntiDetection: Anti-detection hooks installation complete
+D: 06-19 11:01:02.999 29264 29264 D nativeloader: Load /data/app/~~1o28tRRRNyVqtC9xfE3ndQ==/top.niunaijun.blackbox-3_-ZRFsaRJ8m4dzNWzkRJA==/lib/arm64/libblackbox.so using class loader ns clns-9 (caller=/data/app/~~1o28tRRRNyVqtC9xfE3ndQ==/top.niunaijun.blackbox-3_-ZRFsaRJ8m4dzNWzkRJA==/base.apk): ok
+D: 06-19 11:01:03.000 29264 29264 D NativeCore: set disableHiddenApi
+D: 06-19 11:01:03.000 29264 29264 D NativeCore: found: 75cb39d000-75cb551000 r--p 00000000 fe:35 85                             /apex/com.android.art/lib64/libart.so
+D: 06-19 11:01:03.001 29264 29264 D NativeCore: update path: /apex/com.android.art/lib64/libart.so
+D: 06-19 11:01:03.001 29264 29264 D NativeCore: get module base /apex/com.android.art/lib64/libart.so: 75cb39d000
+E: 06-19 11:01:03.001 29264 29264 E NativeCore: HiddenAPI: Didn't find setHiddenApiExemptions in any form
+D: 06-19 11:01:03.001 29264 29264 D NativeCore: set disableHiddenApi Fail!!!
+D: 06-19 11:01:03.001 29264 29264 D NativeCore: set disableResourceLoading
+D: 06-19 11:01:03.001 29264 29264 D NativeCore: ResourceLoading: Could not find ApkAssets.nativeLoad symbol
+D: 06-19 11:01:03.001 29264 29264 D NativeCore: ResourceLoading: Found open function at 0x7867082d80
+D: 06-19 11:01:03.001 29264 29264 D NativeCore: ResourceLoading: Native resource loading hooks initialized (without system properties)
+W: 06-19 11:01:03.001 29264 29264 W BlackBoxCore: Could not access ResourcesManager overlay field: No field mDisableOverlayLoading in class Landroid/app/ResourcesManager; (declaration of 'android.app.ResourcesManager' appears in /system/framework/framework.jar)
+W: 06-19 11:01:03.001 29264 29264 W BlackBoxCore: Could not access WindowManager leak field: No field mIgnoreWindowLeaks in class Landroid/view/WindowManager; (declaration of 'android.view.WindowManager' appears in /system/framework/framework.jar!classes4.dex)
+D: 06-19 11:01:03.001 29264 29264 D SimpleCrashFix: Simple crash fix already installed
+D: 06-19 11:01:03.001 29264 29264 D BlackBoxCore: System hooks installed successfully
+D: 06-19 11:01:03.009 29264 29278 D BlackBoxCore: VPN service started successfully for internet access
+D: 06-19 11:01:03.015 29264 29264 D ClassLoaderProxy: Added host class loader as fallback
+D: 06-19 11:01:03.015 29264 29264 D ClassLoaderProxy: Added system class loader as fallback
+D: 06-19 11:01:03.015 29264 29264 D ClassLoaderProxy: Added boot class loader as fallback
+D: 06-19 11:01:03.037 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IMediaRouterServiceProxy@befda13
+D: 06-19 11:01:03.040 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IWifiScannerProxy@4ffce5a
+D: 06-19 11:01:03.048 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IGraphicsStatsProxy@5421267
+D: 06-19 11:01:03.049 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IActivityTaskManagerProxy@35cf180
+D: 06-19 11:01:03.052 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.INetworkManagementServiceProxy@7de6357
+D: 06-19 11:01:03.053 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IPhoneSubInfoProxy@4fbab0
+D: 06-19 11:01:03.055 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IAudioServiceProxy@46c664f
+D: 06-19 11:01:03.055 29264 29264 D AudioServiceProxy: Failed Android 16+ path, trying alternative: Method was null!
+D: 06-19 11:01:03.056 29264 29264 D AudioServiceProxy: Failed alternative path: Method was null!
+D: 06-19 11:01:03.056 29264 29264 D AudioServiceProxy: Successfully obtained IAudioService interface
+D: 06-19 11:01:03.062 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IStorageStatsManagerProxy@75d81ba
+D: 06-19 11:01:03.063 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IContextHubServiceProxy@f68d047
+D: 06-19 11:01:03.065 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IAppOpsManagerProxy@7be8e12
+D: 06-19 11:01:03.068 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.ILocationManagerProxy@d2fff55
+D: 06-19 11:01:03.069 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IPowerManagerProxy@d5f5636
+D: 06-19 11:01:03.070 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.HCallbackProxy@79751d3
+D: 06-19 11:01:03.071 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.WorkManagerProxy@26f6e3c
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: Failed to get WorkManager instance
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: java.lang.NoSuchMethodException: u0.s.getInstance [class android.content.Context]
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at java.lang.Class.getMethod(Class.java:2942)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at java.lang.Class.getMethod(Class.java:2442)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at top.niunaijun.blackbox.fake.service.WorkManagerProxy.getWho(SourceFile:20)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at top.niunaijun.blackbox.fake.hook.ClassInvocationStub.injectHook(SourceFile:1)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at top.niunaijun.blackbox.fake.hook.HookManager.injectAll(SourceFile:45)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at top.niunaijun.blackbox.fake.hook.HookManager.init(SourceFile:737)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at top.niunaijun.blackbox.BlackBoxCore.doAttachBaseContext(SourceFile:475)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at t2.b.a(SourceFile:27)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at top.niunaijun.blackboxa.app.App.attachBaseContext(SourceFile:75)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at android.app.Application.attach(Application.java:365)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at android.app.Instrumentation.newApplication(Instrumentation.java:1351)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1601)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1533)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:8673)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(ActivityThread.java:0)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2873)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at android.os.Handler.dispatchMessage(Handler.java:110)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at android.os.Looper.loopOnce(Looper.java:273)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at android.os.Looper.loop(Looper.java:363)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at android.app.ActivityThread.main(ActivityThread.java:10060)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at java.lang.reflect.Method.invoke(Native Method)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:632)
+W: 06-19 11:01:03.077 29264 29264 W WorkManagerProxy: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:975)
+D: 06-19 11:01:03.077 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IStorageManagerProxy@5d8651a
+D: 06-19 11:01:03.078 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IVibratorServiceProxy@203fe27
+D: 06-19 11:01:03.080 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IVpnManagerProxy@ba01e40
+D: 06-19 11:01:03.081 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IPermissionManagerProxy@193cc35
+D: 06-19 11:01:03.082 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IDisplayManagerProxy@3a62796
+D: 06-19 11:01:03.085 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IConnectivityManagerProxy@3cfcae9
+D: 06-19 11:01:03.087 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IWebViewUpdateServiceProxy@6c8787a
+D: 06-19 11:01:03.087 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IUserManagerProxy@6ca82b
+D: 06-19 11:01:03.087 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IAttributionSourceProxy@2e5c134
+D: 06-19 11:01:03.087 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.delegate.AppInstrumentation@ee94b5d
+D: 06-19 11:01:03.088 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.FileSystemProxy@5399cd2
+D: 06-19 11:01:03.088 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.ApkAssetsProxy@3bbf1a3
+D: 06-19 11:01:03.088 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.ISettingsSystemProxy@1b7bca0
+D: 06-19 11:01:03.088 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.AndroidIdProxy@a744059
+D: 06-19 11:01:03.088 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IWindowManagerProxy@cf0b41e
+D: 06-19 11:01:03.091 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.SystemLibraryProxy@dfca191
+D: 06-19 11:01:03.091 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.ISettingsProviderProxy@4f128f6
+D: 06-19 11:01:03.091 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.ISensitiveContentProtectionManagerProxy@96d94f7
+D: 06-19 11:01:03.091 29264 29264 D ISensitiveContentProtection: Hooked SensitiveContentProtectionManagerService
+D: 06-19 11:01:03.091 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.INotificationManagerProxy@77ede82
+D: 06-19 11:01:03.093 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.SQLiteDatabaseProxy@498f1c9
+D: 06-19 11:01:03.093 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.WebViewFactoryProxy@94060ce
+D: 06-19 11:01:03.093 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.DeviceIdProxy@b3c2bef
+D: 06-19 11:01:03.093 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IJobServiceProxy@7dbb6fc
+D: 06-19 11:01:03.093 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.GoogleAccountManagerProxy@f81101
+D: 06-19 11:01:03.094 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.FeatureFlagUtilsProxy@a2fec32
+D: 06-19 11:01:03.094 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IAppWidgetManagerProxy@10afd83
+D: 06-19 11:01:03.096 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.context.RestrictionsManagerStub@4f8d72c
+D: 06-19 11:01:03.097 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.ReLinkerProxy@263c71
+D: 06-19 11:01:03.097 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.WebViewProxy@7185a56
+D: 06-19 11:01:03.097 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.ContentResolverProxy@568dad7
+D: 06-19 11:01:03.097 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.context.ContentServiceStub@5d7c5e2
+D: 06-19 11:01:03.098 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IFingerprintManagerProxy@ade4dcf
+D: 06-19 11:01:03.098 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.MediaRecorderProxy@976635c
+D: 06-19 11:01:03.098 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IWifiManagerProxy@ed68665
+D: 06-19 11:01:03.099 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IActivityManagerProxy@5682f3a
+D: 06-19 11:01:03.101 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IXiaomiMiuiServicesProxy@64027c7
+D: 06-19 11:01:03.101 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IDnsResolverProxy@59c1f4
+D: 06-19 11:01:03.101 29264 29264 D IDnsResolverProxy: IDnsResolverProxy: Returning null for getWho to avoid reflection issues
+D: 06-19 11:01:03.101 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.MediaRecorderClassProxy@6081d1d
+D: 06-19 11:01:03.101 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IMediaSessionManagerProxy@bc16b92
+D: 06-19 11:01:03.104 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IActivityClientProxy@dd448bf
+D: 06-19 11:01:03.105 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.libcore.OsStub@bf3bbb6
+D: 06-19 11:01:03.106 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.ISensorPrivacyManagerProxy@f878d
+D: 06-19 11:01:03.106 29264 29264 D SensorPrivacyProxy: Failed Android 16+ path, trying alternative: Method was null!
+D: 06-19 11:01:03.106 29264 29264 D SensorPrivacyProxy: Failed alternative path: Method was null!
+D: 06-19 11:01:03.107 29264 29264 D SensorPrivacyProxy: Successfully obtained ISensorPrivacyManager interface
+D: 06-19 11:01:03.107 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IDevicePolicyManagerProxy@9638a90
+D: 06-19 11:01:03.112 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.ResourcesManagerProxy@deb1b45
+D: 06-19 11:01:03.112 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.AuthenticationProxy@bc7d29a
+D: 06-19 11:01:03.112 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IXiaomiAttributionSourceProxy@35bc7cb
+D: 06-19 11:01:03.112 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.ISystemSensorManagerProxy@6f61ba8
+D: 06-19 11:01:03.112 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IPersistentDataBlockServiceProxy@f2726c1
+D: 06-19 11:01:03.114 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.GmsProxy@7461af2
+E: 06-19 11:01:03.114 29264 29264 E GmsProxy: Failed to get gms service binder
+D: 06-19 11:01:03.114 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IXiaomiSettingsProxy@e3b6543
+D: 06-19 11:01:03.114 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IShortcutManagerProxy@cf6b7c0
+D: 06-19 11:01:03.115 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IDeviceIdentifiersPolicyProxy@7e25fb5
+D: 06-19 11:01:03.116 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.ISystemUpdateProxy@15b4d16
+D: 06-19 11:01:03.116 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.ClassLoaderProxy@cebd06d
+D: 06-19 11:01:03.116 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IAccountManagerProxy@b3724a2
+D: 06-19 11:01:03.117 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.LevelDbProxy@bfde18f
+D: 06-19 11:01:03.117 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IMiuiSecurityManagerProxy@96ccc1c
+D: 06-19 11:01:03.118 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.ILauncherAppsProxy@32ba025
+D: 06-19 11:01:03.119 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.AudioRecordProxy@25f27c6
+D: 06-19 11:01:03.119 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.ITelephonyManagerProxy@9c67387
+D: 06-19 11:01:03.124 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IPackageManagerProxy@7591620
+D: 06-19 11:01:03.127 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IAlarmManagerProxy@a37319b
+D: 06-19 11:01:03.127 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IAccessibilityManagerProxy@e4000e4
+D: 06-19 11:01:03.128 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.ITelephonyRegistryProxy@16b536f
+D: 06-19 11:01:03.131 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IAutofillManagerProxy@183b068
+D: 06-19 11:01:03.131 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.IContentProviderProxy@1744167
+D: 06-19 11:01:03.132 29264 29264 D HookManager: hook: top.niunaijun.blackbox.fake.service.AudioPermissionProxy@7176b14
+D: 06-19 11:01:03.132 29264 29264 D AudioPermissionProxy: Successfully obtained IAudioService interface
+D: 06-19 11:01:03.135 29264 29264 D SimpleCrashFix: Simple crash fix already installed
+D: 06-19 11:01:03.135 29264 29264 D BlackBoxCore: System hooks installed successfully
+D: 06-19 11:01:03.135 29264 29264 D BlackBoxCore: Ensuring proper initialization order...
+D: 06-19 11:01:03.135 29264 29264 D NativeCore: NativeCore init.
+D: 06-19 11:01:03.135 29264 29264 D BlackBoxCore: NativeCore initialized successfully
+W: 06-19 11:01:03.137 29264 29281 W System.err: java.io.IOException: Cannot run program "su": error=2, No such file or directory
+D: 06-19 11:01:03.137 29264 29264 D BlackBoxCore: getService: activity_manager, android.os.BinderProxy@e7a0efe
+W: 06-19 11:01:03.137 29264 29281 W System.err: 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1050)
+W: 06-19 11:01:03.137 29264 29281 W System.err: 	at java.lang.Runtime.exec(Runtime.java:713)
+W: 06-19 11:01:03.137 29264 29281 W System.err: 	at java.lang.Runtime.exec(Runtime.java:537)
+W: 06-19 11:01:03.137 29264 29281 W System.err: 	at java.lang.Runtime.exec(Runtime.java:434)
+W: 06-19 11:01:03.137 29264 29281 W System.err: 	at top.niunaijun.blackbox.utils.ShellUtils.execCommand(SourceFile:8)
+W: 06-19 11:01:03.137 29264 29281 W System.err: 	at top.niunaijun.blackbox.utils.ShellUtils.execCommand(SourceFile:4)
+W: 06-19 11:01:03.137 29264 29281 W System.err: 	at top.niunaijun.blackbox.utils.ShellUtils.checkRootPermission(SourceFile:5)
+W: 06-19 11:01:03.137 29264 29281 W System.err: 	at G2.a.run(SourceFile:14)
+W: 06-19 11:01:03.137 29264 29281 W System.err: 	at java.lang.Thread.run(Thread.java:1572)
+W: 06-19 11:01:03.137 29264 29281 W System.err: Caused by: java.io.IOException: error=2, No such file or directory
+W: 06-19 11:01:03.137 29264 29281 W System.err: 	at java.lang.UNIXProcess.forkAndExec(Native Method)
+W: 06-19 11:01:03.137 29264 29281 W System.err: 	at java.lang.UNIXProcess.<init>(UNIXProcess.java:133)
+W: 06-19 11:01:03.137 29264 29281 W System.err: 	at java.lang.ProcessImpl.start(ProcessImpl.java:141)
+W: 06-19 11:01:03.137 29264 29281 W System.err: 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+W: 06-19 11:01:03.137 29264 29281 W System.err: 	... 8 more
+D: 06-19 11:01:03.137 29264 29281 D d       : Root access available: false
+D: 06-19 11:01:03.137 29264 29264 D BlackBoxCore: getService: package_manager, android.os.BinderProxy@9ad08ac
+D: 06-19 11:01:03.138 29264 29264 D BlackBoxCore: getService: storage_manager, android.os.BinderProxy@8594975
+D: 06-19 11:01:03.138 29264 29264 D BlackBoxCore: getService: user_manager, android.os.BinderProxy@7e41d0a
+D: 06-19 11:01:03.139 29264 29264 D BlackBoxCore: getService: job_manager, android.os.BinderProxy@cb5997b
+D: 06-19 11:01:03.139 29264 29264 D BlackBoxCore: getService: account_manager, android.os.BinderProxy@e380398
+D: 06-19 11:01:03.140 29264 29264 D BlackBoxCore: getService: location_manager, android.os.BinderProxy@e8207f1
+D: 06-19 11:01:03.141 29264 29264 D BlackBoxCore: getService: notification_manager, android.os.BinderProxy@12effd6
+D: 06-19 11:01:03.141 29264 29264 D BlackBoxCore: Services initialized successfully
+D: 06-19 11:01:03.141 29264 29264 D BlackBoxCore: ServiceManager initialized successfully
+D: 06-19 11:01:03.141 29264 29264 D BActivityThread: Found ActivityThread instrumentation, ensuring it's our AppInstrumentation
+D: 06-19 11:01:03.141 29264 29264 D BActivityThread: ActivityThread instrumentation is already our AppInstrumentation
+D: 06-19 11:01:03.141 29264 29264 D BlackBoxCore: BActivityThread hooks initialized successfully
+D: 06-19 11:01:03.141 29264 29264 D BlackBoxCore: Proper initialization order ensured
+D: 06-19 11:01:03.147 29264 29264 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:03.147 29264 29264 D BlackManager: Transaction throttler reset
+D: 06-19 11:01:03.147 29264 29264 D BlackBoxCore: BlackBox initialization completed in 12ms
+D: 06-19 11:01:03.148 29264 29264 D d       : Services became available, triggering app list refresh
+D: 06-19 11:01:03.148 29264 29264 D BlackManager: Creating service for: top.niunaijun.blackbox.core.system.pm.IBPackageManagerService$Stub
+D: 06-19 11:01:03.148 29264 29264 D BlackManager: Successfully created service: package_manager
+D: 06-19 11:01:03.185 29264 29264 D NativeCore: NativeCore init.
+D: 06-19 11:01:03.210 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.210 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.211 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.211 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.211 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.212 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.212 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.212 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.212 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.213 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.213 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.214 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.215 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.215 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.216 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.217 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.217 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.217 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: set addIORule
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: set enableIO
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: AccessFlag:flags = 0x50380002,flag = 0x100
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: Method is not native, skipping hook
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: Skipping hook for non-native method: java/io/UnixFileSystem.canonicalize0
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: AccessFlag:flags = 0x50200102,flag = 0x100
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: register class：java/io/UnixFileSystem, method：getLastModifiedTime0 success!
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: AccessFlag:flags = 0x50200102,flag = 0x100
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: register class：java/io/UnixFileSystem, method：setPermission0 success!
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: AccessFlag:flags = 0x50200102,flag = 0x100
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: register class：java/io/UnixFileSystem, method：createFileExclusively0 success!
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: AccessFlag:flags = 0x50200102,flag = 0x100
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: register class：java/io/UnixFileSystem, method：list0 success!
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: AccessFlag:flags = 0x50200102,flag = 0x100
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: register class：java/io/UnixFileSystem, method：createDirectory0 success!
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: AccessFlag:flags = 0x50000102,flag = 0x100
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: register class：java/io/UnixFileSystem, method：setLastModifiedTime0 success!
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: AccessFlag:flags = 0x50200102,flag = 0x100
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: register class：java/io/UnixFileSystem, method：setReadOnly0 success!
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: AccessFlag:flags = 0x50200102,flag = 0x100
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: register class：java/io/UnixFileSystem, method：getSpace0 success!
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: FileSystemHook: Initializing file system hooks
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: FileSystemHook: Found open function at 0x7867082d80
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: FileSystemHook: Found open64 function at 0x7867082d80
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: AccessFlag:flags = 0x50280108,flag = 0x100
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: register class：java/lang/VMClassLoader, method：findLoadedClass success!
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: AccessFlag:flags = 0x50300119,flag = 0x100
+D: 06-19 11:01:03.218 29264 29264 D NativeCore: register class：android/os/Binder, method：getCallingUid success!
+D: 06-19 11:01:03.219 29264 29264 D NativeCore: AccessFlag:flags = 0x5020010a,flag = 0x100
+D: 06-19 11:01:03.219 29264 29264 D NativeCore: register class：dalvik/system/DexFile, method：openDexFileNative success!
+D: 06-19 11:01:03.220 29264 29264 D d       : beforeCreateApplication: pkg com.psoffritti.video.speed, processName com.psoffritti.video.speed,userID:0
+D: 06-19 11:01:03.220 29264 29264 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+D: 06-19 11:01:03.220 29264 29264 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+D: 06-19 11:01:03.220 29264 29264 D NativeCore: openDexFileNative: /data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/base.apk
+I: 06-19 11:01:03.230 29264 29264 I jun.blackbox:p0: Failed to open image dex files: Dex cache count and dex file count mismatch while trying to initialize from image
+D: 06-19 11:01:03.230 29264 29264 D NativeCore: openDexFileNative: /data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.arm64_v8a.apk
+W: 06-19 11:01:03.231 29264 29264 W jun.blackbox:p0: Failed to find entry 'classes.dex': Entry not found
+D: 06-19 11:01:03.231 29264 29264 D NativeCore: openDexFileNative: /data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.bn.apk
+W: 06-19 11:01:03.231 29264 29264 W jun.blackbox:p0: Failed to find entry 'classes.dex': Entry not found
+D: 06-19 11:01:03.232 29264 29264 D NativeCore: openDexFileNative: /data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.en.apk
+W: 06-19 11:01:03.232 29264 29264 W jun.blackbox:p0: Failed to find entry 'classes.dex': Entry not found
+D: 06-19 11:01:03.232 29264 29264 D NativeCore: openDexFileNative: /data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.gu.apk
+W: 06-19 11:01:03.232 29264 29264 W jun.blackbox:p0: Failed to find entry 'classes.dex': Entry not found
+D: 06-19 11:01:03.232 29264 29264 D NativeCore: openDexFileNative: /data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.kn.apk
+W: 06-19 11:01:03.233 29264 29264 W jun.blackbox:p0: Failed to find entry 'classes.dex': Entry not found
+D: 06-19 11:01:03.233 29264 29264 D NativeCore: openDexFileNative: /data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.mr.apk
+W: 06-19 11:01:03.233 29264 29264 W jun.blackbox:p0: Failed to find entry 'classes.dex': Entry not found
+D: 06-19 11:01:03.234 29264 29264 D NativeCore: openDexFileNative: /data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.ta.apk
+W: 06-19 11:01:03.234 29264 29264 W jun.blackbox:p0: Failed to find entry 'classes.dex': Entry not found
+D: 06-19 11:01:03.234 29264 29264 D NativeCore: openDexFileNative: /data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.te.apk
+W: 06-19 11:01:03.234 29264 29264 W jun.blackbox:p0: Failed to find entry 'classes.dex': Entry not found
+D: 06-19 11:01:03.234 29264 29264 D NativeCore: openDexFileNative: /data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.tvdpi.apk
+W: 06-19 11:01:03.235 29264 29264 W jun.blackbox:p0: Failed to find entry 'classes.dex': Entry not found
+D: 06-19 11:01:03.236 29264 29264 D nativeloader: Configuring clns-10 for other apk /data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/base.apk:/data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.arm64_v8a.apk:/data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.bn.apk:/data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.en.apk:/data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.gu.apk:/data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.kn.apk:/data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.mr.apk:/data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.ta.apk:/data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.te.apk:/data/app/~~
+D: 06-19 11:01:03.372 29264 29264 D FirebaseSessions: Dependency to CRASHLYTICS added.
+I: 06-19 11:01:03.380 29264 29264 I FirebaseApp: Device unlocked: initializing all Firebase APIs for app [DEFAULT]
+D: 06-19 11:01:03.387 29264 29264 D nativeloader: Load /data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.arm64_v8a.apk!/lib/arm64-v8a/libcrashlytics.so using class loader ns clns-10 (caller=/data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/base.apk!classes2.dex): ok
+D: 06-19 11:01:03.388 29264 29264 D BlackManager: Creating service for: top.niunaijun.blackbox.core.system.am.IBActivityManagerService$Stub
+D: 06-19 11:01:03.388 29264 29264 D BlackManager: Successfully created service: activity_manager
+I: 06-19 11:01:03.395 29264 29264 I FirebaseCrashlytics: Initializing Firebase Crashlytics 20.0.4 for com.psoffritti.video.speed
+D: 06-19 11:01:03.425 29264 29285 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:03.428 29264 29285 D PackageManagerStub: GetPackageInfo: Providing fake Google Play Services info
+D: 06-19 11:01:03.429 29264 29264 D FirebaseSessions: Subscriber CRASHLYTICS registered.
+W: 06-19 11:01:03.429 29264 29285 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+E: 06-19 11:01:03.430 29264 29285 E DynamiteModule: Invalid GmsCore APK, remote loading disabled.
+I: 06-19 11:01:03.430 29264 29285 I DynamiteModule: Considering local module com.google.android.gms.measurement.dynamite:155 and remote module com.google.android.gms.measurement.dynamite:0
+I: 06-19 11:01:03.430 29264 29285 I DynamiteModule: Selected local version of com.google.android.gms.measurement.dynamite
+E: 06-19 11:01:03.432 29264 29285 E DynamiteModule: Invalid GmsCore APK, remote loading disabled.
+D: 06-19 11:01:03.455 29264 29291 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:03.455 29264 29287 D TransactionThrottler: Reset transaction throttler
+E: 06-19 11:01:03.457 29264 29291 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+D: 06-19 11:01:03.463 29264 29264 D nativeloader: Load /data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/split_config.arm64_v8a.apk!/lib/arm64-v8a/libdatastore_shared_counter.so using class loader ns clns-10 (caller=/data/app/~~N65428LH5EFJIW1h97MKGw==/com.psoffritti.video.speed-McEEqMMlkxHCT9d4rMF4gQ==/base.apk!classes2.dex): ok
+I: 06-19 11:01:03.464 29264 29287 I FA      : App measurement initialized, version: 133005
+I: 06-19 11:01:03.464 29264 29287 I FA      : To enable debug logging run: adb shell setprop log.tag.FA VERBOSE
+I: 06-19 11:01:03.464 29264 29287 I FA      : To enable faster debug mode event logging run:
+I: 06-19 11:01:03.464 29264 29287 I FA      :   adb shell setprop debug.firebase.analytics.app com.psoffritti.video.speed
+W: 06-19 11:01:03.467 29264 29291 W JobServiceStub: Schedule: args[0] is null, returning RESULT_FAILURE
+W: 06-19 11:01:03.468 29264 29291 W JobServiceStub: Schedule: args[0] is null, returning RESULT_FAILURE
+W: 06-19 11:01:03.468 29264 29291 W JobServiceStub: Schedule: args[0] is null, returning RESULT_FAILURE
+D: 06-19 11:01:03.470 29264 29293 D libcrashlytics: Initializing libcrashlytics version 3.2.0
+D: 06-19 11:01:03.471 29264 29264 D FirebaseSessions: Initializing Firebase Sessions 3.0.4.
+I: 06-19 11:01:03.472 29264 29264 I FirebaseInitProvider: FirebaseApp initialization successful
+D: 06-19 11:01:03.480 29264 29264 D WM-WrkMgrInitializer: Initializing WorkManager with default configuration.
+D: 06-19 11:01:03.486 29264 29293 D libcrashlytics: Initializing native crash handling successful.
+D: 06-19 11:01:03.487 29264 29264 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:03.489 29264 29264 D d       : beforeApplicationOnCreate: pkg com.psoffritti.video.speed, processName com.psoffritti.video.speed
+E: 06-19 11:01:03.489 29264 29287 E FA      : App is missing INTERNET permission
+E: 06-19 11:01:03.490 29264 29287 E FA      : App is missing ACCESS_NETWORK_STATE permission
+D: 06-19 11:01:03.494 29264 29264 D d       : afterApplicationOnCreate: pkg com.psoffritti.video.speed, processName com.psoffritti.video.speed
+E: 06-19 11:01:03.494 29264 29287 E FA      : Uploading is not possible. App measurement disabled
+D: 06-19 11:01:03.494 29264 29264 D ClassInvocationStub: AppOps invoke: Bypassing system for checkOperationRawForDevice, allowing operation
+W: 06-19 11:01:03.495 29264 29264 W RockerManager: Location permission not granted - RockerManager cannot access location
+W: 06-19 11:01:03.495 29264 29264 W RockerManager: Required permissions not granted, RockerManager cannot initialize
+W: 06-19 11:01:03.495 29264 29264 W RockerManager: Please grant: android.permission.SYSTEM_ALERT_WINDOW, android.permission.ACCESS_FINE_LOCATION, android.permission.ACCESS_COARSE_LOCATION
+I: 06-19 11:01:03.497 29264 29293 I FirebaseCrashlytics: Saved version control info
+D: 06-19 11:01:03.500 29264 29295 D FirebaseSessions: Notified CRASHLYTICS of new session cd1632d8943346c79fccd2acff214010
+--------- beginning of system
+D: 06-19 11:01:03.501 29264 29264 D ActivityThread: com.psoffritti.video.speed will use render engine as GL
+D: 06-19 11:01:03.501 29264 29264 D HWUI    : HWUI - treat SMPTE_170M as sRGB
+I: 06-19 11:01:03.504 29264 29303 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+D: 06-19 11:01:03.504 29264 29300 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:03.505 29264 29303 D HWUI    : CacheManager constructor. deviceInfo=(1080, 1920)
+D: 06-19 11:01:03.505 29264 29303 D libMEOW : meow new tls: 0x762e272080
+D: 06-19 11:01:03.506 29264 29303 D libMEOW : meow reload base cfg path: na
+D: 06-19 11:01:03.506 29264 29303 D libMEOW : meow reload overlay cfg path: na
+D: 06-19 11:01:03.506 29264 29303 D libMEOW : applied 0 plugin for [com.psoffritti.video.speed].
+I: 06-19 11:01:03.507 29264 29303 I mali    : Successfully parsed 2 environment variable(s) from /vendor/etc/mali_platform.config.
+I: 06-19 11:01:03.508 29264 29303 I mali    : Successfully parsed 2 environment variable(s) from /vendor/etc/mali_platform.config.
+D: 06-19 11:01:03.510 29264 29264 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:03.511 29264 29264 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:03.516 29264 29264 D AppInstrumentation: callActivityOnCreate: com.psoffritti.video.speed.ui.MainActivity
+D: 06-19 11:01:03.521 29264 29264 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:03.522 29264 29264 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:03.523 29264 29264 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:03.538 29264 29264 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:03.539 29264 29264 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+I: 06-19 11:01:03.540 29264 29264 I DecorView: setWindowBackground: isPopOver=false color=ff141218 d=android.graphics.drawable.ColorDrawable@21061ed
+D: 06-19 11:01:03.549 29264 29264 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+W: 06-19 11:01:03.549 29264 29291 W JobServiceStub: Schedule: args[0] is null, returning RESULT_FAILURE
+I: 06-19 11:01:03.552 29264 29318 I UserMessagingPlatform: Use new ConsentDebugSettings.Builder().addTestDeviceHashedId("1654883292BEA2952023B0AF6A4DAB83") to set this as a debug device.
+D: 06-19 11:01:03.554 29264 29297 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:03.555 29264 29318 D UserMessagingPlatform: Stored info not exists: IDFA_freqCapNumViews
+D: 06-19 11:01:03.555 29264 29318 D UserMessagingPlatform: Stored info not exists: UMP_CoMoAdStoragePurposeConsentStatus
+D: 06-19 11:01:03.555 29264 29318 D UserMessagingPlatform: Stored info not exists: IABTCF_TCString
+D: 06-19 11:01:03.555 29264 29318 D UserMessagingPlatform: Stored info not exists: UMP_CoMoAnalyticsStoragePurposeConsentStatus
+D: 06-19 11:01:03.555 29264 29318 D UserMessagingPlatform: Stored info not exists: UMP_CoMoAdPersonalizationPurposeConsentStatus
+D: 06-19 11:01:03.555 29264 29318 D UserMessagingPlatform: Stored info not exists: UMP_CoMoAdUserDataPurposeConsentStatus
+D: 06-19 11:01:03.555 29264 29318 D UserMessagingPlatform: Stored info not exists: IABTCF_AddtlConsent
+D: 06-19 11:01:03.555 29264 29318 D UserMessagingPlatform: Stored info not exists: IABTCF_idfaFlowControl
+D: 06-19 11:01:03.559 29264 29264 D FirebaseSessions: App foregrounded on com.psoffritti.video.speed
+D: 06-19 11:01:03.559 29264 29264 D FirebaseSessions: Session cd1632d8943346c79fccd2acff214010 is expired
+D: 06-19 11:01:03.560 29264 29264 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:03.562 29264 29264 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:03.562 29264 29295 D FirebaseSessions: Session cd1632d8943346c79fccd2acff214010 is expired
+D: 06-19 11:01:03.565 29264 29264 D TransactionThrottler: Reset transaction throttler
+I: 06-19 11:01:03.573 29264 29317 I TRuntime.CctTransportBackend: Making request to: https://crashlyticsreports-pa.googleapis.com/v1/firelog/legacy/batchlog
+D: 06-19 11:01:03.572 29264 29295 D FirebaseSessions: Cold app start detected
+D: 06-19 11:01:03.574 29264 29295 D FirebaseSessions: Process com.psoffritti.video.speed is stale
+I: 06-19 11:01:03.574 29264 29318 I WebViewFactory: Loading com.google.android.webview version 149.0.7827.91 (code 782709103)
+06-19 11:01:03.579 29264 29318 V ResourcesManager: The following library key has been added: ResourcesKey{ mHash=577b64ab mResDir=null mSplitDirs=[] mOverlayDirs=[] mLibDirs=[/data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk,/system/framework/android.test.base.jar,/system_ext/framework/androidx.window.extensions.jar] mDisplayId=0 mOverrideConfig=v36 mCompatInfo={213dpi always-compat} mLoaders=[]}
+D: 06-19 11:01:03.581 29264 29318 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+D: 06-19 11:01:03.581 29264 29318 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+D: 06-19 11:01:03.581 29264 29318 D NativeCore: openDexFileNative: /data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk
+D: 06-19 11:01:03.582 29264 29293 D FirebaseSessions: Session Event Type: SESSION_START
+D: 06-19 11:01:03.582 29264 29293 D FirebaseSessions: Successfully logged Session Start event.
+D: 06-19 11:01:03.583 29264 29295 D FirebaseSessions: Notified CRASHLYTICS of new session 8097d968698942d8ac30d144c2fdaace
+I: 06-19 11:01:03.587 29264 29287 I FA      : Tag Manager is not found and thus will not be used
+D: 06-19 11:01:03.588 29264 29318 D nativeloader: Configuring clns-11 for other apk /data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/lib/arm64:/data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand
+I: 06-19 11:01:03.589 29264 29264 I ViewRootImpl: dVRR is disabled
+D: 06-19 11:01:03.589 29264 29264 D HardwareRenderer: onDisplayChanged. displayId=0 current wxh=1340x800 mLargest wxh=0x0
+W: 06-19 11:01:03.589 29264 29264 W HWUI    : Unknown dataspace 0
+D: 06-19 11:01:03.589 29264 29264 D HardwareRenderer: Set largestWidth and largestHeight as logical resolution. (1340x800)
+D: 06-19 11:01:03.589 29264 29303 D HWUI    : setMaxSurfaceArea requested wxh=(1340,800) requestedSurfaceArea(1072000) is smaller than defaultSurfaceArea(2073600). Use default.
+D: 06-19 11:01:03.590 29264 29303 D NativeCustomFrequencyManager: [NativeCFMS] BpCustomFrequencyManager::BpCustomFrequencyManager()
+D: 06-19 11:01:03.590 29264 29264 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:03.595 29264 29264 D InputTransport: Input channel constructed: '2c0cab1', fd=147
+D: 06-19 11:01:03.595 29264 29287 D PackageManagerStub: GetPackageInfo: Providing fake Google Play Services info
+I: 06-19 11:01:03.595 29264 29264 I InsetsController: onStateChanged: host=com.psoffritti.video.speed/com.psoffritti.video.speed.ui.MainActivity, from=android.view.ViewRootImpl.onInsetsStateChanged:3026, state=InsetsState: {mDisplayFrame=Rect(0, 0 - 1340, 800), mDisplayCutout=DisplayCutout{insets=Rect(0, 0 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=0 displayHeight=0 physicalDisplayWidth=0 physicalDisplayHeight=0 density={0.0} cutoutSpec={} rotation={0} scale={0.0} physicalPixelDisplaySizeRatio={0.0}}} sideOverrides=null}, mRoundedCorners=RoundedCorners{[RoundedCorner{position=TopLeft, radius=9, center=Point(9, 9)}, RoundedCorner{position=TopRight, radius=9, center=Point(1331, 9)}, RoundedCorner{position=BottomRight, radius=9, center=Point(1331, 791)}, RoundedCorner{position=BottomLeft, radius=9, center=Point(9, 791)}]}  mRoundedCornerFrame=Rect(0, 0 - 1340, 800), mPrivacyIndicatorBounds=PrivacyIndicatorBounds {static bounds=Rect(1282, 0 - 1340, 39) rotation=1}, mDisplayShape=DisplayShape{ spec=-311912193 displayWidth=800 displayHeight=1340 physicalPixelDisplaySizeRatio=1.0 rotation=1 offsetX=0 offsetY=0 scale=1.0}, mSources= { InsetsSource: {887e0000 mType=statusBars mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {887e0005 mType=mandatorySystemGestures mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {887e0006 mType=tappableElement mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {3 mType=ime mFrame=[0,0][0,0] mVisible=false mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {292c0001 mType=navigationBars mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0004 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {292c0005 mType=mandatorySystemGestures mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0006 mType=tappableElement mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0024 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null} }
+W: 06-19 11:01:03.596 29264 29287 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+I: 06-19 11:01:03.597 29264 29264 I VRI[MainActivity]@7e8f97f: synced displayState. AttachInfo displayState=2
+E: 06-19 11:01:03.598 29264 29287 E FA      : Unable to use remote or local measurement implementation. Please register the AppMeasurementService service in the app manifest
+I: 06-19 11:01:03.598 29264 29264 I VRI[MainActivity]@7e8f97f: setView = com.android.internal.policy.DecorView@438c238 IsHRR=false mFlingFrameRateChange=0 TM=true
+I: 06-19 11:01:03.598 29264 29264 I IDS_TAG : Starting IDS observe window
+I: 06-19 11:01:03.598 29264 29264 I IDS_TAG : Getting Shared Preference for com.psoffritti.video.speed.VideoSpeedApplication@ad51726 uid = 10002
+I: 06-19 11:01:03.600 29264 29264 I IDS_TAG : App com.psoffritti.video.speed.VideoSpeedApplication@ad51726 has not finished training
+I: 06-19 11:01:03.603 29264 29264 I IDS_TAG : Closing IDS observe window
+I: 06-19 11:01:03.603 29264 29264 I IDS_TAG : Getting Shared Preference for com.psoffritti.video.speed.VideoSpeedApplication@ad51726 uid = 10002
+I: 06-19 11:01:03.603 29264 29264 I IDS_TAG : IDS count updated to 7 for com.psoffritti.video.speed.VideoSpeedApplication@ad51726
+D: 06-19 11:01:03.606 29264 29264 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+I: 06-19 11:01:03.644 29264 29318 I cr_WVCFactoryProvider: version=149.0.7827.91 (782709103) minSdkVersion=29 multiprocess=true packageId=2 splits=config.arm64_v8a,config.bn,config.en,config.gu,config.kn,config.mr,config.ta,config.te,config.tvdpi
+D: 06-19 11:01:03.648 29264 29318 D nativeloader: Load /data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk!/lib/arm64-v8a/libwebviewchromium.so using class loader ns clns-11 (caller=/data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk): ok
+D: 06-19 11:01:03.653 29264 29318 D nativeloader: Load /system/lib64/libwebviewchromium_plat_support.so using class loader ns clns-11 (caller=/data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk): ok
+E: 06-19 11:01:03.661 29264 29336 E chromium: [0619/110103.658195:ERROR:android_webview/browser/variations/variations_seed_loader.cc:39] Seed missing signature.
+E: 06-19 11:01:03.678 29264 29264 E jun.blackbox:p0: [perfctl] 29264 29264 FPSGO ver:0
+E: 06-19 11:01:03.679 29264 29264 E jun.blackbox:p0: [perfctl] 0 0 0 0
+D: 06-19 11:01:03.679 29264 29264 D BufferQueueConsumer: [](id:725000000000,api:0,p:-1,c:29264) connect: controlledByApp=false
+D: 06-19 11:01:03.680 29264 29264 D BLASTBufferQueue: [VRI[MainActivity]@7e8f97f#0](f:0,a:0) constructor()
+I: 06-19 11:01:03.680 29264 29264 I BLASTBufferQueue_Java: new BLASTBufferQueue, mName= VRI[MainActivity]@7e8f97f mNativeObject= 0x778e243730 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3585 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 android.view.Choreographer.doCallbacks:1367 android.view.Choreographer.doFrame:1292 android.view.Choreographer$FrameDisplayEventReceiver.run:1870 
+I: 06-19 11:01:03.680 29264 29264 I BLASTBufferQueue_Java: update, w= 1340 h= 800 mName = VRI[MainActivity]@7e8f97f mNativeObject= 0x778e243730 sc.mNativeObject= 0x772e2184d0 format= -1 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3590 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 
+D: 06-19 11:01:03.680 29264 29264 D BLASTBufferQueue: [VRI[MainActivity]@7e8f97f#0](f:0,a:0) update width=1340 height=800 format=-1 mTransformHint=4
+I: 06-19 11:01:03.681 29264 29264 I VRI[MainActivity]@7e8f97f: Relayout returned: old=(0,0,1340,800) new=(0,0,1340,800) relayoutAsync=false req=(1340,800)0 dur=6 res=0x3 s={true 0x775e233e50} ch=true seqId=0
+D: 06-19 11:01:03.681 29264 29264 D VRI[MainActivity]@7e8f97f: mThreadedRenderer.initialize() mSurface={isValid=true 0x775e233e50} hwInitialized=true
+D: 06-19 11:01:03.685 29264 29264 D VRI[MainActivity]@7e8f97f: reportNextDraw android.view.ViewRootImpl.performTraversals:5443 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 
+D: 06-19 11:01:03.685 29264 29264 D VRI[MainActivity]@7e8f97f: Setup new sync=wmsSync-VRI[MainActivity]@7e8f97f#0
+I: 06-19 11:01:03.685 29264 29264 I VRI[MainActivity]@7e8f97f: Creating new active sync group VRI[MainActivity]@7e8f97f#1
+D: 06-19 11:01:03.686 29264 29264 D VRI[MainActivity]@7e8f97f: registerCallbacksForSync syncBuffer=false
+I: 06-19 11:01:03.695 29264 29264 I View    : setRequestedFrameRate frameRate=0.0, this=mb{369cffe VFED..... ........ 0,0-1340,698 aid=1073741824}, caller=android.view.ViewGroup.setRequestedFrameRate:9952 sj.a:1 mb.dispatchDraw:98 android.view.View.draw:26345 android.view.View.updateDisplayListIfDirty:25175 
+I: 06-19 11:01:03.695 29264 29264 I View    : setRequestedFrameRate frameRate=-4.0, this=android.view.View{852699c V.ED..... ......I. 0,0-0,0}, caller=sj.a:1 mb.dispatchDraw:107 android.view.View.draw:26345 android.view.View.updateDisplayListIfDirty:25175 android.view.View.draw:26072 
+D: 06-19 11:01:03.695 29264 29333 D VRI[MainActivity]@7e8f97f: Received frameDrawingCallback syncResult=0 frameNum=1.
+I: 06-19 11:01:03.696 29264 29333 I VRI[MainActivity]@7e8f97f: mWNT: t=0x779e250fd0 mBlastBufferQueue=0x778e243730 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl$12.onFrameDraw:15441 android.view.ThreadedRenderer$1.onFrameDraw:718 <bottom of call stack> 
+I: 06-19 11:01:03.696 29264 29333 I VRI[MainActivity]@7e8f97f: Setting up sync and frameCommitCallback
+D: 06-19 11:01:03.699 29264 29303 D jun.blackbox:p0: Can't load libmbrainSDK
+D: 06-19 11:01:03.699 29264 29303 D jun.blackbox:p0: initMbrain failed
+I: 06-19 11:01:03.718 29264 29303 I GrallocExtra: gralloc_extra_query:is_SW3D 0
+I: 06-19 11:01:03.719 29264 29303 I GrallocExtra: gralloc_extra_query:is_SW3D 0
+D: 06-19 11:01:03.719 29264 29303 D BLASTBufferQueue: [VRI[MainActivity]@7e8f97f#0](f:0,a:1) acquireNextBufferLocked size=1340x800 mFrameNumber=1 applyTransaction=true mTimestamp=253302401754173(auto) mPendingTransactions.size=0 graphicBufferId=125687922950147 transform=7
+D: 06-19 11:01:03.719 29264 29303 D jun.blackbox:p0: Can't load libmbrainSDK
+D: 06-19 11:01:03.719 29264 29303 D jun.blackbox:p0: initMbrain failed
+I: 06-19 11:01:03.720 29264 29303 I VRI[MainActivity]@7e8f97f: Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true
+D: 06-19 11:01:03.721 29264 29303 D HWUI    : CFMS:: SetUp Pid : 29264    Tid : 29303
+D: 06-19 11:01:03.721 29264 29264 D VRI[MainActivity]@7e8f97f: reportDrawFinished seqId=0
+D: 06-19 11:01:03.721 29264 29264 D LicenseClient: Connecting to the licensing service...
+D: 06-19 11:01:03.723 29264 29264 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:03.730 29264 29303 D HWUI    : HWUI - treat SMPTE_170M as sRGB
+I: 06-19 11:01:03.747 29264 29264 I View    : setRequestedFrameRate frameRate=NaN, this=mb{369cffe VFED..... ........ 0,0-1340,698 aid=1073741824}, caller=android.view.ViewGroup.setRequestedFrameRate:9952 sj.a:1 mb.dispatchDraw:98 android.view.View.draw:26345 android.view.View.updateDisplayListIfDirty:25175 
+I: 06-19 11:01:03.747 29264 29264 I View    : setRequestedFrameRate frameRate=NaN, this=android.view.View{852699c V.ED..... ........ 0,0-0,0}, caller=sj.a:1 mb.dispatchDraw:107 android.view.View.draw:26345 android.view.View.updateDisplayListIfDirty:25175 android.view.View.draw:26072 
+I: 06-19 11:01:03.772 29264 29264 I cr_LibraryLoader: Successfully loaded native library
+I: 06-19 11:01:03.777 29264 29264 I cr_CachingUmaRecorder: Flushed 44 samples from 22 histograms, 0 samples were dropped.
+I: 06-19 11:01:03.781 29264 29264 I cr_ChildProcLH: ScopedServiceBindingBatch.tryActivate: false
+I: 06-19 11:01:03.781 29264 29264 I InsetsSourceConsumer: applyRequestedVisibilityToControl: visible=true, type=navigationBars, host=com.psoffritti.video.speed/com.psoffritti.video.speed.ui.MainActivity
+I: 06-19 11:01:03.782 29264 29264 I InsetsSourceConsumer: applyRequestedVisibilityToControl: visible=true, type=statusBars, host=com.psoffritti.video.speed/com.psoffritti.video.speed.ui.MainActivity
+D: 06-19 11:01:03.783 29264 29264 D LicenseClient: Connected to the licensing service.
+D: 06-19 11:01:03.783 29264 29348 D LicenseClient: Sending request to license reporting service...
+I: 06-19 11:01:03.785 29264 29264 I cr_CombinedPProvider: #registerProvider() provider:WV.wk@33f2f71 isPolicyCacheEnabled:false policyProvidersSize:0
+I: 06-19 11:01:03.785 29264 29264 I cr_PolicyProvider: #setManagerAndSource() 0
+I: 06-19 11:01:03.786 29264 29264 I cr_DisplayManager: Is Display Topology available: false
+D: 06-19 11:01:03.787 29264 29335 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:03.788 29264 29335 D TransactionThrottler: Reset transaction throttler
+I: 06-19 11:01:03.792 29264 29335 I cr_policy: registerReceiver succeeded after 7ms
+D: 06-19 11:01:03.793 29264 29347 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:03.797 29264 29264 D VRI[MainActivity]@7e8f97f: mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0x775e233e50}
+D: 06-19 11:01:03.798 29264 29347 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:03.798 29264 29264 D InputMethodManagerUtils: startInputInner - Id : 0
+I: 06-19 11:01:03.798 29264 29264 I InputMethodManager: startInputInner - IInputMethodManagerGlobalInvoker.startInputOrWindowGainedFocus
+D: 06-19 11:01:03.800 29264 29348 D LicenseClient: Request to licensing reporting service sent.
+D: 06-19 11:01:03.823 29264 29273 D InputTransport: Input channel constructed: 'ClientS', fd=180
+I: 06-19 11:01:03.851 29264 29264 I cr_CombinedPProvider: #linkNativeInternal() 1
+I: 06-19 11:01:03.858 29264 29264 I cr_AppResProvider: #getApplicationRestrictionsFromUserManager() Only system may: get application restrictions for other user/app com.psoffritti.video.speed
+I: 06-19 11:01:03.858 29264 29264 I cr_PolicyProvider: #notifySettingsAvailable() 0
+I: 06-19 11:01:03.858 29264 29264 I cr_CombinedPProvider: #onSettingsAvailable() 0
+I: 06-19 11:01:03.858 29264 29264 I cr_CombinedPProvider: #flushPolicies()
+D: 06-19 11:01:03.890 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:03.890 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:03.925 29264 29365 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:03.926 29264 29365 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:03.932 29264 29365 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:03.932 29264 29365 D TransactionThrottler: Reset transaction throttler
+W: 06-19 11:01:03.946 29264 29365 W chromium: [WARNING:net/dns/dns_config_service_android.cc:69] Failed to read DnsConfig.
+I: 06-19 11:01:03.948 29264 29264 I InputMethodManager: handleMessage: setImeVisibility visible=false
+D: 06-19 11:01:03.948 29264 29264 D InsetsController: hide(ime(), fromIme=false)
+I: 06-19 11:01:03.948 29264 29264 I ImeTracker: top.niunaijun.blackbox:3891d2d: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+W: 06-19 11:01:03.952 29264 29264 W cr_PlatformSer-Internal: Unable to find GMS package on device
+D: 06-19 11:01:03.965 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:03.965 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+W: 06-19 11:01:03.966 29264 29264 W chromium: [WARNING:android_webview/browser/network_service/net_helpers.cc:137] HTTP Cache size is: 20971520
+D: 06-19 11:01:03.968 29264 29264 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:03.969 29264 29264 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:03.979 29264 29264 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:03.979 29264 29264 D TransactionThrottler: Reset transaction throttler
+E: 06-19 11:01:03.986 29264 29274 E LoadedApk: performReceive() called targeting raw IIntentReceiver for Intent { act=android.intent.action.PROXY_CHANGE flg=0x24000010 xflg=0x4 (has extras) }
+D: 06-19 11:01:04.004 29264 29318 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:04.004 29264 29318 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+I: 06-19 11:01:04.010 29264 29264 I cr_AppResProvider: #getApplicationRestrictionsFromUserManager() Only system may: get application restrictions for other user/app com.psoffritti.video.speed
+I: 06-19 11:01:04.010 29264 29264 I cr_PolicyProvider: #notifySettingsAvailable() 0
+I: 06-19 11:01:04.010 29264 29264 I cr_CombinedPProvider: #onSettingsAvailable() 0
+I: 06-19 11:01:04.010 29264 29264 I cr_CombinedPProvider: #flushPolicies()
+I: 06-19 11:01:04.013 29264 29383 I CameraManagerGlobal: Connecting to camera service
+D: 06-19 11:01:04.018 29264 29383 D VendorTagDescriptor: addVendorDescriptor: vendor tag id 8932615658386372252 added
+I: 06-19 11:01:04.022 29264 29274 I CameraManagerGlobal: Camera 0 facing CAMERA_FACING_BACK state now CAMERA_STATE_CLOSED for client com.whatsapp API Level 2 User Id 0Device Id 0
+I: 06-19 11:01:04.022 29264 29383 I CameraManager: registerAvailabilityCallback: Is device callback = false
+I: 06-19 11:01:04.022 29264 29383 I CameraManagerGlobal: postSingleUpdate device: camera id 0 status STATUS_PRESENT
+I: 06-19 11:01:04.023 29264 29383 I CameraManagerGlobal: postSingleUpdate device: camera id 1 status STATUS_PRESENT
+I: 06-19 11:01:04.024 29264 29274 I CameraManagerGlobal: Camera 1 facing CAMERA_FACING_FRONT state now CAMERA_STATE_CLOSED for client android.system API Level 2 User Id 0Device Id 0
+I: 06-19 11:01:04.024 29264 29272 I CameraManagerGlobal: Camera 2 facing CAMERA_FACING_FRONT state now CAMERA_STATE_CLOSED for client client.pid<1100> API Level 2 User Id 0Device Id 0
+E: 06-19 11:01:04.078 29264 29390 E emoji2.text.DefaultEmojiConfig: com.google.android.gms
+E: 06-19 11:01:04.078 29264 29390 E emoji2.text.DefaultEmojiConfig: android.content.pm.PackageManager$NameNotFoundException: com.google.android.gms
+E: 06-19 11:01:04.078 29264 29390 E emoji2.text.DefaultEmojiConfig: 	at android.app.ApplicationPackageManager.getPackageInfoAsUser(ApplicationPackageManager.java:327)
+E: 06-19 11:01:04.078 29264 29390 E emoji2.text.DefaultEmojiConfig: 	at android.app.ApplicationPackageManager.getPackageInfo(ApplicationPackageManager.java:287)
+E: 06-19 11:01:04.078 29264 29390 E emoji2.text.DefaultEmojiConfig: 	at android.app.ApplicationPackageManager.getPackageInfo(ApplicationPackageManager.java:281)
+E: 06-19 11:01:04.078 29264 29390 E emoji2.text.DefaultEmojiConfig: 	at rs0.n(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:3)
+E: 06-19 11:01:04.078 29264 29390 E emoji2.text.DefaultEmojiConfig: 	at oz4.R(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:82)
+E: 06-19 11:01:04.078 29264 29390 E emoji2.text.DefaultEmojiConfig: 	at qf.run(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:108)
+E: 06-19 11:01:04.078 29264 29390 E emoji2.text.DefaultEmojiConfig: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)
+E: 06-19 11:01:04.078 29264 29390 E emoji2.text.DefaultEmojiConfig: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+E: 06-19 11:01:04.078 29264 29390 E emoji2.text.DefaultEmojiConfig: 	at java.lang.Thread.run(Thread.java:1572)
+D: 06-19 11:01:04.254 29264 29264 D BBA2    : setIsFg isFg = false; delayValue 3999ms
+W: 06-19 11:01:04.428 29264 29343 W BillingClient: In-app billing API version 3 is not supported on this device.
+W: 06-19 11:01:05.559 29264 29291 W JobServiceStub: Schedule: args[0] is null, returning RESULT_FAILURE
+W: 06-19 11:01:05.566 29264 29291 W JobServiceStub: Schedule: args[0] is null, returning RESULT_FAILURE
+D: 06-19 11:01:09.487 29264 29404 D ProfileInstaller: Skipping profile installation for com.psoffritti.video.speed
+I: 06-19 11:01:15.368 29264 29264 I VRI[MainActivity]@7e8f97f: ViewPostIme pointer 0
+I: 06-19 11:01:15.373 29264 29264 I VRI[MainActivity]@7e8f97f: call setFrameRateCategory for touch hint category=high hint, reason=touch, vri=VRI[MainActivity]@7e8f97f
+I: 06-19 11:01:15.387 29264 29264 I View    : setRequestedFrameRate frameRate=NaN, this=mb{369cffe VFED..... ........ 0,0-1340,698 aid=1073741824}, caller=android.view.ViewGroup.setRequestedFrameRate:9952 sj.a:1 mb.dispatchDraw:98 android.view.View.draw:26345 android.view.View.updateDisplayListIfDirty:25175 
+I: 06-19 11:01:15.387 29264 29264 I View    : setRequestedFrameRate frameRate=NaN, this=android.view.View{852699c V.ED..... ........ 0,0-0,0}, caller=sj.a:1 mb.dispatchDraw:107 android.view.View.draw:26345 android.view.View.updateDisplayListIfDirty:25175 android.view.ViewGroup.recreateChildDisplayList:4794 
+D: 06-19 11:01:15.387 29264 29264 D Choreographer: BBA2 receive callback when in bg : 0
+I: 06-19 11:01:15.666 29264 29264 I VRI[MainActivity]@7e8f97f: ViewPostIme pointer 1
+D: 06-19 11:01:15.669 29264 29264 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:15.670 29264 29264 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:15.671 29264 29264 D CommonStub: Hook in : Intent { act=android.intent.action.OPEN_DOCUMENT typ=*/* xflg=0x4 (has extras) }
+D: 06-19 11:01:15.672 29264 29264 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:15.672 29264 29264 D TransactionThrottler: Reset transaction throttler
+I: 06-19 11:01:15.692 29264 29264 I View    : setRequestedFrameRate frameRate=NaN, this=mb{369cffe VFED..... ........ 0,0-1340,698 aid=1073741824}, caller=android.view.ViewGroup.setRequestedFrameRate:9952 sj.a:1 mb.dispatchDraw:98 android.view.View.draw:26345 android.view.View.updateDisplayListIfDirty:25175 
+I: 06-19 11:01:15.692 29264 29264 I View    : setRequestedFrameRate frameRate=NaN, this=android.view.View{852699c V.ED..... ........ 0,0-0,0}, caller=sj.a:1 mb.dispatchDraw:107 android.view.View.draw:26345 android.view.View.updateDisplayListIfDirty:25175 android.view.ViewGroup.recreateChildDisplayList:4794 
+D: 06-19 11:01:15.694 29264 29264 D FirebaseSessions: App backgrounded on com.psoffritti.video.speed
+E: 06-19 11:01:15.719 29264 29287 E FA      : Unable to use remote or local measurement implementation. Please register the AppMeasurementService service in the app manifest
+I: 06-19 11:01:15.731 29264 29264 I ImeFocusController: onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I: 06-19 11:01:15.731 29264 29264 I ImeFocusController: onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I: 06-19 11:01:16.274 29264 29264 I VRI[MainActivity]@7e8f97f: handleAppVisibility mAppVisible = true visible = false
+D: 06-19 11:01:16.275 29264 29264 D VRI[MainActivity]@7e8f97f: visibilityChanged oldVisibility=true newVisibility=false
+D: 06-19 11:01:16.289 29264 29303 D HWUI    : CacheManager::trimMemory(20)
+D: 06-19 11:01:16.294 29264 29264 D BLASTBufferQueue: [VRI[MainActivity]@7e8f97f#0](f:0,a:1) destructor()
+D: 06-19 11:01:16.295 29264 29264 D BufferQueueConsumer: [VRI[MainActivity]@7e8f97f#0(BLAST Consumer)0](id:725000000000,api:0,p:-1,c:29264) disconnect
+I: 06-19 11:01:16.295 29264 29264 I VRI[MainActivity]@7e8f97f: Relayout returned: old=(0,0,1340,800) new=(0,0,1340,800) relayoutAsync=false req=(1340,800)8 dur=3 res=0x2 s={false 0x0} ch=true seqId=0
+D: 06-19 11:01:16.296 29264 29264 D VRI[MainActivity]@7e8f97f: Not drawing due to not visible. Reason=!mAppVisible && !mForceDecorViewVisibility
+E: 06-19 11:01:16.297 29264 29264 E HCallbackStub: mActivityCallbacks is null for clientTransaction: ClientTransaction{
+E: 06-19 11:01:16.297 29264 29264 E HCallbackStub:   transactionItems=[
+E: 06-19 11:01:16.297 29264 29264 E HCallbackStub:     StopActivityItem{mActivityToken=android.os.BinderProxy@d3faa81}
+E: 06-19 11:01:16.297 29264 29264 E HCallbackStub:   ]
+E: 06-19 11:01:16.297 29264 29264 E HCallbackStub: }
+W: 06-19 11:01:16.298 29264 29264 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=fw2@71e9977
+I: 06-19 11:01:16.299 29264 29264 I VRI[MainActivity]@7e8f97f: stopped(true) old = false
+D: 06-19 11:01:16.299 29264 29264 D VRI[MainActivity]@7e8f97f: WindowStopped on com.psoffritti.video.speed/com.psoffritti.video.speed.ui.MainActivity set to true
+D: 06-19 11:01:16.299 29264 29303 D HWUI    : CacheManager::trimMemory(20)
+D: 06-19 11:01:16.337 29264 29303 D HWUI    : CacheManager::trimMemory(20)
+D: 06-19 11:01:16.339 29264 29264 D BBA2    : setIsFg isFg = false; delayValue 3999ms
+D: 06-19 11:01:16.600 29264 29264 D InputTransport: Input channel destroyed: 'ClientS', fd=180
+I: 06-19 11:01:17.727 29264 29287 I FA      : Application backgrounded at: timestamp_millis: 1781847075720
+E: 06-19 11:01:17.751 29264 29287 E FA      : Unable to use remote or local measurement implementation. Please register the AppMeasurementService service in the app manifest
+I: 06-19 11:01:18.216 29264 29264 I VRI[MainActivity]@7e8f97f: handleAppVisibility mAppVisible = false visible = true
+I: 06-19 11:01:18.225 29264 29264 I VRI[MainActivity]@7e8f97f: stopped(false) old = true
+D: 06-19 11:01:18.225 29264 29264 D VRI[MainActivity]@7e8f97f: WindowStopped on com.psoffritti.video.speed/com.psoffritti.video.speed.ui.MainActivity set to false
+D: 06-19 11:01:18.225 29264 29264 D ViewRootImpl: Skipping stats log for color mode
+D: 06-19 11:01:18.233 29264 29264 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.233 29264 29264 D CommonStub: Hook in : Intent { act=MediaPickerActivity flg=0x1 xflg=0x4 cmp=com.psoffritti.video.speed/.ui.speed.VideoSpeedActivity clip={text/uri-list hasLabel(0) {U(content)}} }
+D: 06-19 11:01:18.238 29264 29264 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.275 29264 29264 D FirebaseSessions: App foregrounded on com.psoffritti.video.speed
+D: 06-19 11:01:18.279 29264 29264 D TransactionThrottler: Reset transaction throttler
+E: 06-19 11:01:18.282 29264 29287 E FA      : Unable to use remote or local measurement implementation. Please register the AppMeasurementService service in the app manifest
+D: 06-19 11:01:18.302 29264 29264 D BufferQueueConsumer: [](id:725000000001,api:0,p:-1,c:29264) connect: controlledByApp=false
+D: 06-19 11:01:18.302 29264 29264 D BLASTBufferQueue: [VRI[MainActivity]@7e8f97f#1](f:0,a:0) constructor()
+I: 06-19 11:01:18.302 29264 29264 I BLASTBufferQueue_Java: new BLASTBufferQueue, mName= VRI[MainActivity]@7e8f97f mNativeObject= 0x778e243730 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3585 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 android.view.Choreographer.doCallbacks:1367 android.view.Choreographer.doFrame:1292 android.view.Choreographer$FrameDisplayEventReceiver.run:1870 
+I: 06-19 11:01:18.302 29264 29264 I BLASTBufferQueue_Java: update, w= 1340 h= 800 mName = VRI[MainActivity]@7e8f97f mNativeObject= 0x778e243730 sc.mNativeObject= 0x772e2184d0 format= -1 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3590 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 
+D: 06-19 11:01:18.302 29264 29264 D BLASTBufferQueue: [VRI[MainActivity]@7e8f97f#1](f:0,a:0) update width=1340 height=800 format=-1 mTransformHint=4
+I: 06-19 11:01:18.303 29264 29264 I VRI[MainActivity]@7e8f97f: Relayout returned: old=(0,0,1340,800) new=(0,0,1340,800) relayoutAsync=false req=(1340,800)0 dur=11 res=0x3 s={true 0x775e233e50} ch=true seqId=0
+D: 06-19 11:01:18.303 29264 29264 D VRI[MainActivity]@7e8f97f: mThreadedRenderer.initialize() mSurface={isValid=true 0x775e233e50} hwInitialized=true
+D: 06-19 11:01:18.304 29264 29264 D VRI[MainActivity]@7e8f97f: reportNextDraw android.view.ViewRootImpl.performTraversals:5443 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 
+D: 06-19 11:01:18.304 29264 29264 D VRI[MainActivity]@7e8f97f: Setup new sync=wmsSync-VRI[MainActivity]@7e8f97f#2
+I: 06-19 11:01:18.304 29264 29264 I VRI[MainActivity]@7e8f97f: Creating new active sync group VRI[MainActivity]@7e8f97f#3
+D: 06-19 11:01:18.304 29264 29264 D VRI[MainActivity]@7e8f97f: Start draw after previous draw not visible
+D: 06-19 11:01:18.304 29264 29264 D VRI[MainActivity]@7e8f97f: registerCallbacksForSync syncBuffer=false
+I: 06-19 11:01:18.306 29264 29264 I View    : setRequestedFrameRate frameRate=NaN, this=mb{369cffe VFED..... ........ 0,0-1340,698 aid=1073741824}, caller=android.view.ViewGroup.setRequestedFrameRate:9952 sj.a:1 mb.dispatchDraw:98 android.view.View.draw:26345 android.view.View.updateDisplayListIfDirty:25175 
+I: 06-19 11:01:18.307 29264 29264 I View    : setRequestedFrameRate frameRate=NaN, this=android.view.View{852699c V.ED..... ........ 0,0-0,0}, caller=sj.a:1 mb.dispatchDraw:107 android.view.View.draw:26345 android.view.View.updateDisplayListIfDirty:25175 android.view.View.draw:26072 
+D: 06-19 11:01:18.309 29264 29332 D VRI[MainActivity]@7e8f97f: Received frameDrawingCallback syncResult=0 frameNum=1.
+I: 06-19 11:01:18.309 29264 29332 I VRI[MainActivity]@7e8f97f: mWNT: t=0x779e25d750 mBlastBufferQueue=0x778e243730 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl$12.onFrameDraw:15441 android.view.ThreadedRenderer$1.onFrameDraw:718 <bottom of call stack> 
+I: 06-19 11:01:18.309 29264 29332 I VRI[MainActivity]@7e8f97f: Setting up sync and frameCommitCallback
+D: 06-19 11:01:18.316 29264 29303 D BLASTBufferQueue: [VRI[MainActivity]@7e8f97f#1](f:0,a:1) acquireNextBufferLocked size=1340x800 mFrameNumber=1 applyTransaction=true mTimestamp=253316998487097(auto) mPendingTransactions.size=0 graphicBufferId=125687922950153 transform=7
+I: 06-19 11:01:18.316 29264 29303 I VRI[MainActivity]@7e8f97f: Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true
+D: 06-19 11:01:18.317 29264 29264 D VRI[MainActivity]@7e8f97f: reportDrawFinished seqId=0
+D: 06-19 11:01:18.318 29264 29264 D FirebaseSessions: App backgrounded on com.psoffritti.video.speed
+E: 06-19 11:01:18.328 29264 29287 E FA      : Unable to use remote or local measurement implementation. Please register the AppMeasurementService service in the app manifest
+D: 06-19 11:01:18.334 29264 29264 D ActivityThread: com.psoffritti.video.speed will use render engine as GL
+D: 06-19 11:01:18.345 29264 29264 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+D: 06-19 11:01:18.348 29264 29264 D AppInstrumentation: callActivityOnCreate: com.psoffritti.video.speed.ui.speed.VideoSpeedActivity
+I: 06-19 11:01:18.354 29264 29264 I DecorView: setWindowBackground: isPopOver=false color=ff141218 d=android.graphics.drawable.ColorDrawable@2aff80e
+D: 06-19 11:01:18.365 29264 29298 D TransactionThrottler: Reset transaction throttler
+E: 06-19 11:01:18.366 29264 29298 E ActivityThread: Failed to find provider info for com.android.providers.media.documents
+D: 06-19 11:01:18.370 29264 29298 D TransactionThrottler: Reset transaction throttler
+E: 06-19 11:01:18.370 29264 29298 E ActivityThread: Failed to find provider info for com.android.providers.media.documents
+D: 06-19 11:01:18.371 29264 29321 D PackageManagerStub: GetPackageInfo: Providing fake Google Play Services info
+06-19 11:01:18.372 29264 29322 V MediaMetadataRetriever: constructor
+W: 06-19 11:01:18.373 29264 29321 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+D: 06-19 11:01:18.374 29264 29322 D TransactionThrottler: Reset transaction throttler
+E: 06-19 11:01:18.374 29264 29322 E ActivityThread: Failed to find provider info for com.android.providers.media.documents
+E: 06-19 11:01:18.375 29264 29322 E MediaMetadataRetriever: setDataSource - FileNotFoundException
+E: 06-19 11:01:18.375 29264 29321 E DynamiteModule: Invalid GmsCore APK, remote loading disabled.
+D: 06-19 11:01:18.375 29264 29322 D TransactionThrottler: Reset transaction throttler
+E: 06-19 11:01:18.376 29264 29322 E ActivityThread: Failed to find provider info for com.android.providers.media.documents
+D: 06-19 11:01:18.378 29264 29264 D FirebaseSessions: App foregrounded on com.psoffritti.video.speed
+D: 06-19 11:01:18.384 29264 29264 D TransactionThrottler: Reset transaction throttler
+I: 06-19 11:01:18.398 29264 29264 I ViewRootImpl: dVRR is disabled
+D: 06-19 11:01:18.399 29264 29303 D NativeCustomFrequencyManager: [NativeCFMS] BpCustomFrequencyManager::BpCustomFrequencyManager()
+D: 06-19 11:01:18.402 29264 29264 D InputTransport: Input channel constructed: '1c74156', fd=162
+I: 06-19 11:01:18.402 29264 29264 I InsetsController: onStateChanged: host=com.psoffritti.video.speed/com.psoffritti.video.speed.ui.speed.VideoSpeedActivity, from=android.view.ViewRootImpl.onInsetsStateChanged:3026, state=InsetsState: {mDisplayFrame=Rect(0, 0 - 1340, 800), mDisplayCutout=DisplayCutout{insets=Rect(0, 0 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=0 displayHeight=0 physicalDisplayWidth=0 physicalDisplayHeight=0 density={0.0} cutoutSpec={} rotation={0} scale={0.0} physicalPixelDisplaySizeRatio={0.0}}} sideOverrides=null}, mRoundedCorners=RoundedCorners{[RoundedCorner{position=TopLeft, radius=9, center=Point(9, 9)}, RoundedCorner{position=TopRight, radius=9, center=Point(1331, 9)}, RoundedCorner{position=BottomRight, radius=9, center=Point(1331, 791)}, RoundedCorner{position=BottomLeft, radius=9, center=Point(9, 791)}]}  mRoundedCornerFrame=Rect(0, 0 - 1340, 800), mPrivacyIndicatorBounds=PrivacyIndicatorBounds {static bounds=Rect(1282, 0 - 1340, 39) rotation=1}, mDisplayShape=DisplayShape{ spec=-311912193 displayWidth=800 displayHeight=1340 physicalPixelDisplaySizeRatio=1.0 rotation=1 offsetX=0 offsetY=0 scale=1.0}, mSources= { InsetsSource: {887e0000 mType=statusBars mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {887e0005 mType=mandatorySystemGestures mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {887e0006 mType=tappableElement mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {3 mType=ime mFrame=[0,0][0,0] mVisible=false mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {292c0001 mType=navigationBars mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0004 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {292c0005 mType=mandatorySystemGestures mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0006 mType=tappableElement mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0024 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null} }
+I: 06-19 11:01:18.402 29264 29264 I VRI[VideoSpeedActivity]@9b82ef7: synced displayState. AttachInfo displayState=2
+I: 06-19 11:01:18.404 29264 29264 I VRI[VideoSpeedActivity]@9b82ef7: setView = com.android.internal.policy.DecorView@f7ebbc9 IsHRR=false mFlingFrameRateChange=0 TM=true
+D: 06-19 11:01:18.406 29264 29321 D ConnectivityManager: StackLog: [android.net.ConnectivityManager.sendRequestForNetwork(ConnectivityManager.java:4744)] [android.net.ConnectivityManager.registerDefaultNetworkCallbackForUid(ConnectivityManager.java:5469)] [android.net.ConnectivityManager.registerDefaultNetworkCallback(ConnectivityManager.java:5436)] [android.net.ConnectivityManager.registerDefaultNetworkCallback(ConnectivityManager.java:5410)] [j46.b(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:131)] [l96.a(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:321)] [com.google.android.gms.ads.internal.ClientApi.B3(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:8)] [af5.c(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:11)] [mh5.d(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:94)] [ix6.b(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:15)] [q.invokeSuspend(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:2159)] [rw.resumeWith(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:8)] [fy0.run(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:114)] [vk1.run(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:1298)] [ya4.run(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:3)] [wl0.run(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:88)]
+D: 06-19 11:01:18.406 29264 29321 D IConnectivityManagerProxy: Intercepting requestNetwork call for internet access
+E: 06-19 11:01:18.406 29264 29287 E FA      : Unable to use remote or local measurement implementation. Please register the AppMeasurementService service in the app manifest
+D: 06-19 11:01:18.407 29264 29321 D IConnectivityManagerProxy: requestNetwork succeeded via original method
+D: 06-19 11:01:18.408 29264 29321 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.410 29264 29321 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.412 29264 29321 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.412 29264 29321 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.414 29264 29321 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+I: 06-19 11:01:18.416 29264 29321 I Ads     : Updating ad debug logging enablement.
+D: 06-19 11:01:18.417 29264 29556 D PackageManagerStub: GetPackageInfo: Providing fake Google Play Services info
+D: 06-19 11:01:18.417 29264 29321 D TransactionThrottler: Reset transaction throttler
+W: 06-19 11:01:18.418 29264 29556 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+D: 06-19 11:01:18.419 29264 29321 D TransactionThrottler: Reset transaction throttler
+E: 06-19 11:01:18.421 29264 29556 E Ads     : Fail to get isAdIdFakeForDebugLogging
+E: 06-19 11:01:18.421 29264 29556 E Ads     : java.io.IOException: Google Play services not available
+E: 06-19 11:01:18.421 29264 29556 E Ads     : 	at l7.d(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:50)
+E: 06-19 11:01:18.421 29264 29556 E Ads     : 	at l7.b(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:9)
+E: 06-19 11:01:18.421 29264 29556 E Ads     : 	at q16.C1(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:194)
+E: 06-19 11:01:18.421 29264 29556 E Ads     : 	at jb.run(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:187)
+E: 06-19 11:01:18.421 29264 29556 E Ads     : 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:520)
+E: 06-19 11:01:18.421 29264 29556 E Ads     : 	at fo7.h(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:10)
+E: 06-19 11:01:18.421 29264 29556 E Ads     : 	at gz1.run(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:26)
+E: 06-19 11:01:18.421 29264 29556 E Ads     : 	at go7.run(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:5)
+E: 06-19 11:01:18.421 29264 29556 E Ads     : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)
+E: 06-19 11:01:18.421 29264 29556 E Ads     : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+E: 06-19 11:01:18.421 29264 29556 E Ads     : 	at java.lang.Thread.run(Thread.java:1572)
+W: 06-19 11:01:18.421 29264 29556 W Ads     : Update ad debug logging enablement as false
+W: 06-19 11:01:18.425 29264 29321 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+E: 06-19 11:01:18.427 29264 29321 E DynamiteModule: Invalid GmsCore APK, remote loading disabled.
+W: 06-19 11:01:18.435 29264 29562 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+W: 06-19 11:01:18.436 29264 29563 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+W: 06-19 11:01:18.438 29264 29563 W GoogleApiManager: The service for qe6 is not available: vg0{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+D: 06-19 11:01:18.448 29264 29264 D BufferQueueConsumer: [](id:725000000002,api:0,p:-1,c:29264) connect: controlledByApp=false
+D: 06-19 11:01:18.449 29264 29264 D BLASTBufferQueue: [VRI[VideoSpeedActivity]@9b82ef7#2](f:0,a:0) constructor()
+I: 06-19 11:01:18.449 29264 29264 I BLASTBufferQueue_Java: new BLASTBufferQueue, mName= VRI[VideoSpeedActivity]@9b82ef7 mNativeObject= 0x778e24d9c0 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3585 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 android.view.Choreographer.doCallbacks:1367 android.view.Choreographer.doFrame:1292 android.view.Choreographer$FrameDisplayEventReceiver.run:1870 
+I: 06-19 11:01:18.449 29264 29264 I BLASTBufferQueue_Java: update, w= 1340 h= 800 mName = VRI[VideoSpeedActivity]@9b82ef7 mNativeObject= 0x778e24d9c0 sc.mNativeObject= 0x772e21fa90 format= -1 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3590 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 
+D: 06-19 11:01:18.449 29264 29264 D BLASTBufferQueue: [VRI[VideoSpeedActivity]@9b82ef7#2](f:0,a:0) update width=1340 height=800 format=-1 mTransformHint=4
+I: 06-19 11:01:18.449 29264 29264 I VRI[VideoSpeedActivity]@9b82ef7: Relayout returned: old=(0,0,1340,800) new=(0,0,1340,800) relayoutAsync=false req=(1340,800)0 dur=7 res=0x3 s={true 0x775e251ab0} ch=true seqId=0
+D: 06-19 11:01:18.450 29264 29264 D VRI[VideoSpeedActivity]@9b82ef7: mThreadedRenderer.initialize() mSurface={isValid=true 0x775e251ab0} hwInitialized=true
+D: 06-19 11:01:18.454 29264 29264 D VRI[VideoSpeedActivity]@9b82ef7: reportNextDraw android.view.ViewRootImpl.performTraversals:5443 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 
+D: 06-19 11:01:18.454 29264 29264 D VRI[VideoSpeedActivity]@9b82ef7: Setup new sync=wmsSync-VRI[VideoSpeedActivity]@9b82ef7#4
+I: 06-19 11:01:18.454 29264 29264 I VRI[VideoSpeedActivity]@9b82ef7: Creating new active sync group VRI[VideoSpeedActivity]@9b82ef7#5
+D: 06-19 11:01:18.454 29264 29264 D VRI[VideoSpeedActivity]@9b82ef7: registerCallbacksForSync syncBuffer=false
+I: 06-19 11:01:18.457 29264 29264 I View    : setRequestedFrameRate frameRate=0.0, this=mb{a141b7e VFED..... ........ 0,0-1340,698 aid=1073741824}, caller=android.view.ViewGroup.setRequestedFrameRate:9952 sj.a:1 mb.dispatchDraw:98 android.view.View.draw:26345 android.view.View.updateDisplayListIfDirty:25175 
+I: 06-19 11:01:18.458 29264 29264 I View    : setRequestedFrameRate frameRate=-4.0, this=android.view.View{4b317b1 V.ED..... ......I. 0,0-0,0}, caller=sj.a:1 mb.dispatchDraw:107 android.view.View.draw:26345 android.view.View.updateDisplayListIfDirty:25175 android.view.View.draw:26072 
+D: 06-19 11:01:18.459 29264 29333 D VRI[VideoSpeedActivity]@9b82ef7: Received frameDrawingCallback syncResult=0 frameNum=1.
+I: 06-19 11:01:18.459 29264 29333 I VRI[VideoSpeedActivity]@9b82ef7: mWNT: t=0x779e21d5d0 mBlastBufferQueue=0x778e24d9c0 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl$12.onFrameDraw:15441 android.view.ThreadedRenderer$1.onFrameDraw:718 <bottom of call stack> 
+I: 06-19 11:01:18.459 29264 29333 I VRI[VideoSpeedActivity]@9b82ef7: Setting up sync and frameCommitCallback
+D: 06-19 11:01:18.470 29264 29303 D BLASTBufferQueue: [VRI[VideoSpeedActivity]@9b82ef7#2](f:0,a:1) acquireNextBufferLocked size=1340x800 mFrameNumber=1 applyTransaction=true mTimestamp=253317153003405(auto) mPendingTransactions.size=0 graphicBufferId=125687922950157 transform=7
+I: 06-19 11:01:18.470 29264 29303 I VRI[VideoSpeedActivity]@9b82ef7: Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true
+D: 06-19 11:01:18.471 29264 29303 D HWUI    : CFMS:: SetUp Pid : 29264    Tid : 29303
+D: 06-19 11:01:18.471 29264 29264 D VRI[VideoSpeedActivity]@9b82ef7: reportDrawFinished seqId=0
+D: 06-19 11:01:18.473 29264 29303 D HWUI    : HWUI - treat SMPTE_170M as sRGB
+I: 06-19 11:01:18.499 29264 29264 I View    : setRequestedFrameRate frameRate=NaN, this=mb{a141b7e VFED..... ........ 0,0-1340,698 aid=1073741824}, caller=android.view.ViewGroup.setRequestedFrameRate:9952 sj.a:1 mb.dispatchDraw:98 android.view.View.draw:26345 android.view.View.updateDisplayListIfDirty:25175 
+I: 06-19 11:01:18.499 29264 29264 I View    : setRequestedFrameRate frameRate=-4.0, this=android.view.View{4b317b1 V.ED..... ........ 0,0-0,0}, caller=sj.a:1 mb.dispatchDraw:107 android.view.View.draw:26345 android.view.View.updateDisplayListIfDirty:25175 android.view.View.draw:26072 
+D: 06-19 11:01:18.507 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:18.507 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:18.509 29264 29264 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:18.542 29264 29264 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:18.547 29264 29264 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:18.549 29264 29264 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:18.551 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:18.551 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:18.551 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:18.551 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:18.558 29264 29365 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:18.560 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:18.560 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:18.560 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:18.560 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:18.560 29264 29365 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:18.562 29264 29365 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+I: 06-19 11:01:18.569 29264 29264 I InsetsSourceConsumer: applyRequestedVisibilityToControl: visible=true, type=navigationBars, host=com.psoffritti.video.speed/com.psoffritti.video.speed.ui.speed.VideoSpeedActivity
+I: 06-19 11:01:18.569 29264 29264 I InsetsSourceConsumer: applyRequestedVisibilityToControl: visible=true, type=statusBars, host=com.psoffritti.video.speed/com.psoffritti.video.speed.ui.speed.VideoSpeedActivity
+D: 06-19 11:01:18.583 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:18.583 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:18.583 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:18.583 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:18.585 29264 29571 D libMEOW : meow new tls: 0x762e4d22e0
+D: 06-19 11:01:18.585 29264 29571 D libMEOW : applied 0 plugin for [com.psoffritti.video.speed].
+W: 06-19 11:01:18.586 29264 29374 W cr_media: BLUETOOTH_CONNECT permission is missing.
+W: 06-19 11:01:18.588 29264 29374 W cr_media: getBluetoothAdapter() requires BLUETOOTH permission
+W: 06-19 11:01:18.588 29264 29374 W cr_media: registerBluetoothIntentsIfNeeded: Requires BLUETOOTH permission
+D: 06-19 11:01:18.589 29264 29374 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.590 29264 29374 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.591 29264 29374 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.593 29264 29374 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.599 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:18.599 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:18.599 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:18.599 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:18.600 29264 29374 D AudioSystem: onNewService: media.audio_policy service obtained 0x773e268e90
+D: 06-19 11:01:18.605 29264 29374 D AudioSystem: getService: checking for service media.audio_policy: 0x773e268e90
+D: 06-19 11:01:18.608 29264 29571 D VirtualSpoof: [spoof] ro.hardware = qcom
+D: 06-19 11:01:18.608 29264 29571 D vulkan  : searching for layers in '/data/app/~~1o28tRRRNyVqtC9xfE3ndQ==/top.niunaijun.blackbox-3_-ZRFsaRJ8m4dzNWzkRJA==/lib/arm64'
+D: 06-19 11:01:18.609 29264 29571 D vulkan  : searching for layers in '/data/app/~~1o28tRRRNyVqtC9xfE3ndQ==/top.niunaijun.blackbox-3_-ZRFsaRJ8m4dzNWzkRJA==/base.apk!/lib/arm64-v8a'
+D: 06-19 11:01:18.612 29264 29347 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.619 29264 29264 D VRI[VideoSpeedActivity]@9b82ef7: mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0x775e251ab0}
+D: 06-19 11:01:18.619 29264 29264 D InputMethodManagerUtils: startInputInner - Id : 0
+I: 06-19 11:01:18.620 29264 29264 I InputMethodManager: startInputInner - IInputMethodManagerGlobalInvoker.startInputOrWindowGainedFocus
+I: 06-19 11:01:18.625 29264 29264 I InputMethodManager: handleMessage: setImeVisibility visible=false
+D: 06-19 11:01:18.625 29264 29264 D InsetsController: hide(ime(), fromIme=false)
+I: 06-19 11:01:18.625 29264 29264 I ImeTracker: top.niunaijun.blackbox:6f7832a8: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+D: 06-19 11:01:18.629 29264 29534 D InputTransport: Input channel constructed: 'ClientS', fd=244
+D: 06-19 11:01:18.641 29264 29264 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.642 29264 29264 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.653 29264 29571 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:18.654 29264 29571 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:18.660 29264 29365 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.663 29264 29365 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.666 29264 29365 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.668 29264 29365 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:18.670 29264 29365 D TransactionThrottler: Reset transaction throttler
+I: 06-19 11:01:18.690 29264 29264 I VRI[MainActivity]@7e8f97f: call setFrameRateCategory for touch hint category=no preference, reason=boost timeout, vri=VRI[MainActivity]@7e8f97f
+06-19 11:01:18.787 29264 29270 V MediaMetadataRetriever: destructor
+06-19 11:01:18.787 29264 29270 V MediaMetadataRetriever: disconnect
+W: 06-19 11:01:18.803 29264 29381 W AudioCapabilities: Unsupported mediaType audio/x-ima
+W: 06-19 11:01:18.804 29264 29381 W AudioCapabilities: Unsupported mediaType audio/mpeg-L1
+W: 06-19 11:01:18.804 29264 29381 W AudioCapabilities: Unsupported mediaType audio/mpeg-L2
+W: 06-19 11:01:18.804 29264 29381 W VideoCapabilities: Unsupported mime video/wvc1
+W: 06-19 11:01:18.805 29264 29381 W VideoCapabilities: Unsupported mime video/x-ms-wmv
+W: 06-19 11:01:18.810 29264 29381 W AudioCapabilities: Unsupported mediaType audio/iamf
+W: 06-19 11:01:18.817 29264 29381 W VideoCapabilities: Unsupported mime image/vnd.android.heic
+W: 06-19 11:01:18.818 29264 29381 W VideoCapabilities: Unsupported mime image/vnd.android.heic
+W: 06-19 11:01:18.822 29264 29381 W VideoCapabilities: Unrecognized profile/level 32768/256 for video/mp4v-es
+W: 06-19 11:01:18.824 29264 29381 W VideoCapabilities: Unrecognized profile/level 32768/256 for video/mp4v-es
+W: 06-19 11:01:18.846 29264 29381 W AudioCapabilities: Unsupported mime audio/x-ima
+W: 06-19 11:01:18.847 29264 29381 W AudioCapabilities: Unsupported mime audio/mpeg-L1
+W: 06-19 11:01:18.847 29264 29381 W AudioCapabilities: Unsupported mime audio/mpeg-L2
+W: 06-19 11:01:18.847 29264 29381 W VideoCapabilities: Unsupported mime video/wvc1
+W: 06-19 11:01:18.847 29264 29381 W VideoCapabilities: Unsupported mime video/wvc1
+W: 06-19 11:01:18.847 29264 29381 W VideoCapabilities: Unsupported mime video/x-ms-wmv
+W: 06-19 11:01:18.849 29264 29381 W AudioCapabilities: Unsupported mime audio/iamf
+W: 06-19 11:01:18.851 29264 29381 W VideoCapabilities: Unsupported mime image/vnd.android.heic
+W: 06-19 11:01:18.852 29264 29381 W VideoCapabilities: Unsupported mime image/vnd.android.heic
+W: 06-19 11:01:18.852 29264 29381 W VideoCapabilities: Unsupported mime image/vnd.android.heic
+W: 06-19 11:01:18.852 29264 29381 W VideoCapabilities: Unsupported mime image/vnd.android.heic
+W: 06-19 11:01:18.854 29264 29381 W VideoCapabilities: Unrecognized profile/level 32768/256 for video/mp4v-es
+W: 06-19 11:01:18.854 29264 29381 W VideoCapabilities: Unrecognized profile/level 32768/256 for video/mp4v-es
+W: 06-19 11:01:18.855 29264 29381 W VideoCapabilities: Unrecognized profile/level 32768/256 for video/mp4v-es
+D: 06-19 11:01:18.859 29264 29381 D VirtualSpoof: [spoof] ro.hardware = qcom
+E: 06-19 11:01:18.925 29264 29264 E HCallbackStub: mActivityCallbacks is null for clientTransaction: ClientTransaction{
+E: 06-19 11:01:18.925 29264 29264 E HCallbackStub:   transactionItems=[
+E: 06-19 11:01:18.925 29264 29264 E HCallbackStub:     StopActivityItem{mActivityToken=android.os.BinderProxy@d3faa81}
+E: 06-19 11:01:18.925 29264 29264 E HCallbackStub:   ]
+E: 06-19 11:01:18.925 29264 29264 E HCallbackStub: }
+W: 06-19 11:01:18.925 29264 29264 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=fw2@71e9977
+I: 06-19 11:01:18.926 29264 29264 I VRI[MainActivity]@7e8f97f: stopped(true) old = false
+D: 06-19 11:01:18.926 29264 29264 D VRI[MainActivity]@7e8f97f: WindowStopped on com.psoffritti.video.speed/com.psoffritti.video.speed.ui.MainActivity set to true
+D: 06-19 11:01:18.936 29264 29303 D BLASTBufferQueue: [VRI[MainActivity]@7e8f97f#1](f:0,a:1) destructor()
+D: 06-19 11:01:18.937 29264 29303 D BufferQueueConsumer: [VRI[MainActivity]@7e8f97f#1(BLAST Consumer)1](id:725000000001,api:0,p:-1,c:29264) disconnect
+I: 06-19 11:01:18.944 29264 29264 I VRI[MainActivity]@7e8f97f: Relayout returned: old=(0,0,1340,800) new=(0,0,1340,800) relayoutAsync=false req=(1340,800)4 dur=5 res=0x2 s={false 0x0} ch=false seqId=0
+D: 06-19 11:01:18.944 29264 29264 D VRI[MainActivity]@7e8f97f: Not drawing due to not visible. Reason=View.INVISIBLE
+I: 06-19 11:01:18.948 29264 29264 I VRI[MainActivity]@7e8f97f: handleAppVisibility mAppVisible = true visible = false
+I: 06-19 11:01:22.188 29264 29264 I VRI[VideoSpeedActivity]@9b82ef7: ViewPostIme pointer 0
+I: 06-19 11:01:22.191 29264 29264 I VRI[VideoSpeedActivity]@9b82ef7: call setFrameRateCategory for touch hint category=high hint, reason=touch, vri=VRI[VideoSpeedActivity]@9b82ef7
+D: 06-19 11:01:22.204 29264 29264 D Choreographer: BBA2 receive callback when in bg : 0
+I: 06-19 11:01:22.620 29264 29264 I VRI[VideoSpeedActivity]@9b82ef7: ViewPostIme pointer 1
+E: 06-19 11:01:23.611 29264 29317 E TRuntime.CctTransportBackend: Couldn't open connection, returning with 500
+W: 06-19 11:01:23.626 29264 29317 W JobServiceStub: Schedule: args[0] is null, returning RESULT_FAILURE
+I: 06-19 11:01:23.694 29264 29264 I VRI[VideoSpeedActivity]@9b82ef7: ViewPostIme pointer 0
+I: 06-19 11:01:23.842 29264 29264 I VRI[VideoSpeedActivity]@9b82ef7: ViewPostIme pointer 1
+W: 06-19 11:01:24.048 29264 29318 W UserMessagingPlatform: Metrics reporting URL is not set yet.
+W: 06-19 11:01:24.049 29264 29264 W UserMessagingPlatform: Error making request.
+I: 06-19 11:01:26.845 29264 29264 I VRI[VideoSpeedActivity]@9b82ef7: call setFrameRateCategory for touch hint category=no preference, reason=boost timeout, vri=VRI[VideoSpeedActivity]@9b82ef7
+I: 06-19 11:01:26.867 29264 29264 I VRI[VideoSpeedActivity]@9b82ef7: ViewPostIme pointer 0
+I: 06-19 11:01:26.868 29264 29264 I VRI[VideoSpeedActivity]@9b82ef7: call setFrameRateCategory for touch hint category=high hint, reason=touch, vri=VRI[VideoSpeedActivity]@9b82ef7
+I: 06-19 11:01:26.980 29264 29264 I VRI[VideoSpeedActivity]@9b82ef7: ViewPostIme pointer 1
+W: 06-19 11:01:28.433 29264 29615 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+E: 06-19 11:01:28.435 29264 29615 E DynamiteModule: Invalid GmsCore APK, remote loading disabled.
+I: 06-19 11:01:28.439 29264 29615 I Ads     : Use RequestConfiguration.Builder().setTestDeviceIds(Arrays.asList("1654883292BEA2952023B0AF6A4DAB83")) to get test ads on this device.
+D: 06-19 11:01:28.447 29264 29617 D GASS    : Clearcut logging disabled
+D: 06-19 11:01:28.453 29264 29618 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:28.454 29264 29618 D TransactionThrottler: Reset transaction throttler
+W: 06-19 11:01:28.455 29264 29618 W GooglePlayServicesUtil: Google Play services is missing.
+W: 06-19 11:01:28.455 29264 29618 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+D: 06-19 11:01:28.459 29264 29618 D NativeCore: openDexFileNative: /data/user/0/top.niunaijun.blackbox/blackbox/data/user/0/com.psoffritti.video.speed/cache/1762298034389.jar
+D: 06-19 11:01:28.459 29264 29618 D NativeCore: DexFileHook::setFileReadonly: 设置文件 /data/user/0/top.niunaijun.blackbox/blackbox/data/user/0/com.psoffritti.video.speed/cache/1762298034389.jar 为只读成功
+D: 06-19 11:01:28.463 29264 29618 D rk5     : File /data/user/0/top.niunaijun.blackbox/blackbox/data/user/0/com.psoffritti.video.speed/cache/1762298034389.dex not found. No need for deletion
+D: 06-19 11:01:28.468 29264 29618 D ConnectivityManager: StackLog: [android.net.ConnectivityManager.sendRequestForNetwork(ConnectivityManager.java:4744)] [android.net.ConnectivityManager.registerDefaultNetworkCallbackForUid(ConnectivityManager.java:5469)] [android.net.ConnectivityManager.registerDefaultNetworkCallback(ConnectivityManager.java:5436)] [android.net.ConnectivityManager.registerDefaultNetworkCallback(ConnectivityManager.java:5410)] [dk5.A(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:22)] [fe8.n(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:74)] [fe8.run(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:69)] [java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)] [java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)] [java.lang.Thread.run(Thread.java:1572)]
+D: 06-19 11:01:28.468 29264 29618 D IConnectivityManagerProxy: Intercepting requestNetwork call for internet access
+D: 06-19 11:01:28.469 29264 29618 D IConnectivityManagerProxy: requestNetwork succeeded via original method
+D: 06-19 11:01:28.472 29264 29618 D ClassInvocationStub: AppOps invoke: Bypassing system for startWatchingActive, allowing operation
+W: 06-19 11:01:28.473 29264 29635 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+D: 06-19 11:01:28.474 29264 29649 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:28.474 29264 29617 D ConnectivityManager: StackLog: [android.net.ConnectivityManager.sendRequestForNetwork(ConnectivityManager.java:4744)] [android.net.ConnectivityManager.registerDefaultNetworkCallbackForUid(ConnectivityManager.java:5469)] [android.net.ConnectivityManager.registerDefaultNetworkCallback(ConnectivityManager.java:5436)] [android.net.ConnectivityManager.registerDefaultNetworkCallback(ConnectivityManager.java:5410)] [dk5.A(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:22)] [dj5.m(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:18)] [fe8.p(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:112)] [oz5.run(r8-map-id-22ddcf22c993937fddbd2d59d7f4373f5bde39fb88af5da5723f0db9b2d00d1e:167)] [java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)] [java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)] [java.lang.Thread.run(Thread.java:1572)]
+D: 06-19 11:01:28.475 29264 29652 D GASS    : Clearcut logging disabled
+D: 06-19 11:01:28.475 29264 29617 D IConnectivityManagerProxy: Intercepting requestNetwork call for internet access
+D: 06-19 11:01:28.476 29264 29649 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:28.477 29264 29617 D IConnectivityManagerProxy: requestNetwork succeeded via original method
+D: 06-19 11:01:28.478 29264 29617 D ClassInvocationStub: AppOps invoke: Bypassing system for startWatchingActive, allowing operation
+D: 06-19 11:01:28.480 29264 29637 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+D: 06-19 11:01:28.482 29264 29646 D IConnectivityManagerProxy: Intercepting isActiveNetworkMetered for internet access
+D: 06-19 11:01:28.483 29264 29633 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:28.483 29264 29617 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:28.484 29264 29653 D PackageManagerStub: GetPackageInfo: Providing fake Google Play Services info
+D: 06-19 11:01:28.484 29264 29617 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:28.484 29264 29633 D TransactionThrottler: Reset transaction throttler
+W: 06-19 11:01:28.485 29264 29652 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+W: 06-19 11:01:28.488 29264 29650 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+D: 06-19 11:01:28.488 29264 29649 D AudioPermissionProxy: AudioPermission: getMode called, allowing
+E: 06-19 11:01:28.489 29264 29654 E DynamiteModule: Invalid GmsCore APK, remote loading disabled.
+W: 06-19 11:01:28.490 29264 29650 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+W: 06-19 11:01:28.491 29264 29615 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+E: 06-19 11:01:28.492 29264 29615 E DynamiteModule: Invalid GmsCore APK, remote loading disabled.
+W: 06-19 11:01:28.493 29264 29663 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+D: 06-19 11:01:28.493 29264 29649 D AudioPermissionProxy: AudioPermission: isSpeakerphoneOn called, allowing
+D: 06-19 11:01:28.494 29264 29653 D TransactionThrottler: Reset transaction throttler
+I: 06-19 11:01:28.494 29264 29615 I Ads     : Use RequestConfiguration.Builder().setTestDeviceIds(Arrays.asList("1654883292BEA2952023B0AF6A4DAB83")) to get test ads on this device.
+D: 06-19 11:01:28.496 29264 29649 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+D: 06-19 11:01:28.497 29264 29649 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+D: 06-19 11:01:28.499 29264 29653 D AudioPermissionProxy: AudioPermission: getMode called, allowing
+E: 06-19 11:01:28.499 29264 29660 E DynamiteModule: Invalid GmsCore APK, remote loading disabled.
+D: 06-19 11:01:28.500 29264 29653 D AudioPermissionProxy: AudioPermission: isSpeakerphoneOn called, allowing
+D: 06-19 11:01:28.500 29264 29660 D IConnectivityManagerProxy: Intercepting isActiveNetworkMetered for internet access
+D: 06-19 11:01:28.500 29264 29653 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+D: 06-19 11:01:28.501 29264 29653 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+W: 06-19 11:01:28.505 29264 29615 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+E: 06-19 11:01:28.506 29264 29615 E DynamiteModule: Invalid GmsCore APK, remote loading disabled.
+W: 06-19 11:01:28.506 29264 29614 W Ads     : Not retrying to fetch app settings
+W: 06-19 11:01:28.507 29264 29666 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+W: 06-19 11:01:28.507 29264 29665 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+I: 06-19 11:01:28.509 29264 29615 I Ads     : Use RequestConfiguration.Builder().setTestDeviceIds(Arrays.asList("1654883292BEA2952023B0AF6A4DAB83")) to get test ads on this device.
+E: 06-19 11:01:28.511 29264 29614 E DynamiteModule: Invalid GmsCore APK, remote loading disabled.
+D: 06-19 11:01:28.513 29264 29658 D IConnectivityManagerProxy: Intercepting isActiveNetworkMetered for internet access
+W: 06-19 11:01:28.513 29264 29614 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+W: 06-19 11:01:28.513 29264 29644 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+E: 06-19 11:01:28.515 29264 29618 E DynamiteModule: Invalid GmsCore APK, remote loading disabled.
+D: 06-19 11:01:28.515 29264 29620 D AudioPermissionProxy: AudioPermission: getMode called, allowing
+D: 06-19 11:01:28.516 29264 29620 D AudioPermissionProxy: AudioPermission: isSpeakerphoneOn called, allowing
+D: 06-19 11:01:28.517 29264 29620 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+D: 06-19 11:01:28.518 29264 29620 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+W: 06-19 11:01:28.522 29264 29657 W Ads     : Not retrying to fetch app settings
+W: 06-19 11:01:28.523 29264 29667 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+W: 06-19 11:01:28.526 29264 29618 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+D: 06-19 11:01:28.703 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:28.703 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:28.703 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:28.703 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+I: 06-19 11:01:29.981 29264 29264 I VRI[VideoSpeedActivity]@9b82ef7: call setFrameRateCategory for touch hint category=no preference, reason=boost timeout, vri=VRI[VideoSpeedActivity]@9b82ef7
+D: 06-19 11:01:30.521 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:30.521 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:30.521 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:30.521 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:30.524 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:30.525 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:30.525 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:30.525 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:30.529 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:30.529 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:30.529 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:30.529 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:30.531 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:30.531 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:30.531 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:30.531 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:30.532 29264 29347 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:30.541 29264 29347 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:30.611 29264 29347 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:32.996 29264 29264 D CrashMonitor: Performing periodic health check...
+W: 06-19 11:01:32.996 29264 29264 W CrashMonitor: High thread count detected: 116
+D: 06-19 11:01:32.997 29264 29264 D CrashMonitor: Health check completed - Memory: 4.5%, Threads: 116
+W: 06-19 11:01:33.022 29264 29268 W jun.blackbox:p0: Cleared Reference was only reachable from finalizer (only reported once)
+I: 06-19 11:01:40.571 29264 29264 I Ads     : Ad failed to load : 0
+I: 06-19 11:01:40.572 29264 29264 I Ads     : Ad failed to load : 0
+I: 06-19 11:01:40.573 29264 29264 I Ads     : Ad failed to load : 0
+D: 06-19 11:01:40.579 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:40.579 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:40.579 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:40.579 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+W: 06-19 11:01:41.574 29264 29615 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+E: 06-19 11:01:41.576 29264 29615 E DynamiteModule: Invalid GmsCore APK, remote loading disabled.
+I: 06-19 11:01:41.582 29264 29615 I Ads     : Use RequestConfiguration.Builder().setTestDeviceIds(Arrays.asList("1654883292BEA2952023B0AF6A4DAB83")) to get test ads on this device.
+D: 06-19 11:01:41.594 29264 29726 D AudioPermissionProxy: AudioPermission: getMode called, allowing
+D: 06-19 11:01:41.596 29264 29712 D IConnectivityManagerProxy: Intercepting isActiveNetworkMetered for internet access
+E: 06-19 11:01:41.597 29264 29722 E DynamiteModule: Invalid GmsCore APK, remote loading disabled.
+D: 06-19 11:01:41.597 29264 29726 D AudioPermissionProxy: AudioPermission: isSpeakerphoneOn called, allowing
+W: 06-19 11:01:41.598 29264 29615 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+D: 06-19 11:01:41.598 29264 29726 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+E: 06-19 11:01:41.599 29264 29615 E DynamiteModule: Invalid GmsCore APK, remote loading disabled.
+D: 06-19 11:01:41.599 29264 29726 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+I: 06-19 11:01:41.601 29264 29615 I Ads     : Use RequestConfiguration.Builder().setTestDeviceIds(Arrays.asList("1654883292BEA2952023B0AF6A4DAB83")) to get test ads on this device.
+D: 06-19 11:01:41.604 29264 29720 D AudioPermissionProxy: AudioPermission: getMode called, allowing
+W: 06-19 11:01:41.604 29264 29772 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+D: 06-19 11:01:41.606 29264 29720 D AudioPermissionProxy: AudioPermission: isSpeakerphoneOn called, allowing
+D: 06-19 11:01:41.606 29264 29729 D IConnectivityManagerProxy: Intercepting isActiveNetworkMetered for internet access
+D: 06-19 11:01:41.606 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:41.606 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:41.606 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:41.606 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+E: 06-19 11:01:41.607 29264 29729 E DynamiteModule: Invalid GmsCore APK, remote loading disabled.
+D: 06-19 11:01:41.607 29264 29720 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+D: 06-19 11:01:41.608 29264 29720 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+W: 06-19 11:01:41.609 29264 29729 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+D: 06-19 11:01:41.609 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:41.609 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:41.609 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:41.609 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:41.612 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:41.612 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:41.612 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:41.612 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:41.614 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:41.614 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:41.614 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:41.614 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:41.615 29264 29347 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:41.618 29264 29347 D TransactionThrottler: Reset transaction throttler
+W: 06-19 11:01:41.619 29264 29716 W Ads     : Not retrying to fetch app settings
+W: 06-19 11:01:41.620 29264 29773 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+W: 06-19 11:01:41.623 29264 29728 W GooglePlayServicesUtil: com.psoffritti.video.speed requires Google Play services, but they are missing.
+D: 06-19 11:01:41.688 29264 29347 D TransactionThrottler: Reset transaction throttler
+D: 06-19 11:01:41.772 29264 29264 D SmartClipDataCropperImpl: doExtractSmartClipData : Extraction start! reqId = 380  Cropped area = Rect(670, 400 - 671, 401)  Package = com.psoffritti.video.speed
+D: 06-19 11:01:41.773 29264 29264 D SmartClipDataCropperImpl: addAppMetaTag : package name is com.psoffritti.video.speed
+D: 06-19 11:01:41.773 29264 29264 D SmartClipDataCropperImpl: sendExtractionResultToSmartClipService : -- Extracted SmartClip data information --
+D: 06-19 11:01:41.773 29264 29264 D SmartClipDataCropperImpl: sendExtractionResultToSmartClipService : Request Id : 380
+D: 06-19 11:01:41.773 29264 29264 D SmartClipDataCropperImpl: sendExtractionResultToSmartClipService : Extraction mode : 1
+D: 06-19 11:01:41.773 29264 29264 D SemSmartClipDataRepository: ----- Start of SmartClip repository informations -----
+D: 06-19 11:01:41.773 29264 29264 D SemSmartClipDataRepository: ** Content type : image
+D: 06-19 11:01:41.774 29264 29264 D SemSmartClipDataRepository: ** Meta area rect : Rect(0, 0 - 0, 0)
+D: 06-19 11:01:41.774 29264 29264 D SemSmartClipDataRepository: ** Captured image file path : null
+D: 06-19 11:01:41.774 29264 29264 D SemSmartClipDataRepository: ----- End of SmartClip repository informations -----
+D: 06-19 11:01:41.781 29264 29264 D SmartClipDataCropperImpl: sendExtractionResultToSmartClipService : Elapsed = 9
+I: 06-19 11:01:42.419 29264 29264 I ImeFocusController: onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I: 06-19 11:01:42.420 29264 29264 I ImeFocusController: onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+D: 06-19 11:01:42.537 29264 29264 D SmartClipRemoteRequestDispatcher: dispatchScrollableAreaInfo : windowRect = Rect(0, 0 - 1340, 800)
+D: 06-19 11:01:42.546 29264 29264 D SmartClipRemoteRequestDispatcher: dispatchScrollableAreaInfo : Scrollable view count = 2
+D: 06-19 11:01:42.546 29264 29264 D SmartClipRemoteRequestDispatcher: dispatchScrollableAreaInfo : Unscrollable view count = 0
+D: 06-19 11:01:42.549 29264 29264 D SmartClipRemoteRequestDispatcher: dispatchScrollableAreaInfo : Pkg=com.psoffritti.video.speed Activity=null
+D: 06-19 11:01:43.623 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:43.623 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:43.623 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:43.623 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:43.628 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:43.628 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:43.628 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:43.628 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:43.634 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:43.634 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:43.634 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:43.634 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+I: 06-19 11:01:45.061 29264 29264 I InsetsSourceConsumer: applyRequestedVisibilityToControl: visible=true, type=navigationBars, host=com.psoffritti.video.speed/com.psoffritti.video.speed.ui.speed.VideoSpeedActivity
+I: 06-19 11:01:45.062 29264 29264 I InsetsSourceConsumer: applyRequestedVisibilityToControl: visible=true, type=statusBars, host=com.psoffritti.video.speed/com.psoffritti.video.speed.ui.speed.VideoSpeedActivity
+D: 06-19 11:01:45.064 29264 29264 D VRI[VideoSpeedActivity]@9b82ef7: mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0x775e251ab0}
+D: 06-19 11:01:45.065 29264 29264 D InputMethodManagerUtils: startInputInner - Id : 0
+I: 06-19 11:01:45.065 29264 29264 I InputMethodManager: startInputInner - IInputMethodManagerGlobalInvoker.startInputOrWindowGainedFocus
+I: 06-19 11:01:45.068 29264 29264 I InputMethodManager: handleMessage: setImeVisibility visible=false
+D: 06-19 11:01:45.068 29264 29264 D InsetsController: hide(ime(), fromIme=false)
+I: 06-19 11:01:45.068 29264 29264 I ImeTracker: top.niunaijun.blackbox:c54d34e1: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+D: 06-19 11:01:45.069 29264 29848 D InputTransport: Input channel constructed: 'ClientS', fd=279
+I: 06-19 11:01:45.953 29264 29264 I ImeFocusController: onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I: 06-19 11:01:45.953 29264 29264 I ImeFocusController: onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I: 06-19 11:01:47.326 29264 29264 I InsetsSourceConsumer: applyRequestedVisibilityToControl: visible=true, type=navigationBars, host=com.psoffritti.video.speed/com.psoffritti.video.speed.ui.speed.VideoSpeedActivity
+I: 06-19 11:01:47.327 29264 29264 I InsetsSourceConsumer: applyRequestedVisibilityToControl: visible=true, type=statusBars, host=com.psoffritti.video.speed/com.psoffritti.video.speed.ui.speed.VideoSpeedActivity
+D: 06-19 11:01:47.329 29264 29264 D VRI[VideoSpeedActivity]@9b82ef7: mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0x775e251ab0}
+D: 06-19 11:01:47.329 29264 29264 D InputMethodManagerUtils: startInputInner - Id : 0
+I: 06-19 11:01:47.330 29264 29264 I InputMethodManager: startInputInner - IInputMethodManagerGlobalInvoker.startInputOrWindowGainedFocus
+I: 06-19 11:01:47.332 29264 29264 I InputMethodManager: handleMessage: setImeVisibility visible=false
+D: 06-19 11:01:47.332 29264 29264 D InsetsController: hide(ime(), fromIme=false)
+I: 06-19 11:01:47.332 29264 29264 I ImeTracker: top.niunaijun.blackbox:47dc761f: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+D: 06-19 11:01:47.332 29264 29848 D InputTransport: Input channel constructed: 'ClientS', fd=280
+I: 06-19 11:01:51.108 29264 29264 I ImeFocusController: onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+I: 06-19 11:01:51.108 29264 29264 I ImeFocusController: onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+D: 06-19 11:01:51.654 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12
+D: 06-19 11:01:51.654 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:51.654 29264 29264 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+D: 06-19 11:01:51.654 29264 29264 D VirtualSpoof: [spoof] ro.build.version.release = 12

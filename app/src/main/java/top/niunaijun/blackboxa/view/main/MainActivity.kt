@@ -123,9 +123,9 @@ class MainActivity : LoadingActivity() {
 
     private fun applyHammerscaleTitle() {
         try {
-            viewBinding.toolbarLayout.toolbar.title = "HAMMERSCALE"
+            viewBinding.toolbarLayout.toolbar.title = "off-by-one"
         } catch (e: Exception) {
-            Log.e(TAG, "Error applying HAMMERSCALE title: ${e.message}")
+            Log.e(TAG, "Error applying title: ${e.message}")
         }
     }
 

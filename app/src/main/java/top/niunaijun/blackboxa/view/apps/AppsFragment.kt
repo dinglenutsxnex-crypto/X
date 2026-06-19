@@ -50,8 +50,8 @@ class AppsFragment : Fragment() {
 
     companion object {
         private const val TAG = "AppsFragment"
-        const val DEBUGGER_PACKAGE    = "com.hammerscale.debugger"
-        const val NET_ANALYZER_PACKAGE = "com.hammerscale.netanalyzer"
+        const val DEBUGGER_PACKAGE    = "com.offbyone.debugger"
+        const val NET_ANALYZER_PACKAGE = "com.offbyone.netanalyzer"
 
         fun newInstance(userID:Int): AppsFragment {
             val fragment = AppsFragment()
