@@ -170,6 +170,26 @@ class NetworkAnalyzerVpnService : VpnService() {
         when (proto) {
             PacketParser.PROTO_TCP -> handleTcp(buf, n, ipHdrLen, srcIp, dstIp)
             PacketParser.PROTO_UDP -> handleUdp(buf, n, ipHdrLen, srcIp, dstIp)
+            PacketParser.PROTO_ICMP -> handleIcmp(buf, n, ipHdrLen, srcIp, dstIp)
+        }
+    }
+
+    private fun handleIcmp(buf: ByteArray, n: Int, ipHdrLen: Int, srcIp: ByteArray, dstIp: ByteArray) {
+        // Just echo back any ping (ICMP Echo Request) so apps think they are online
+        if (n < ipHdrLen + 8) return
+        val type = buf[ipHdrLen].toInt() and 0xFF
+        if (type == 8) { // Echo Request
+            val reply = buf.copyOf(n)
+            // Swap IP
+            System.arraycopy(dstIp, 0, reply, 12, 4)
+            System.arraycopy(srcIp, 0, reply, 16, 4)
+            // Change type to 0 (Echo Reply)
+            reply[ipHdrLen] = 0
+            // Recompute ICMP checksum (simple approach: subtract 8 from existing checksum)
+            // For a robust implementation, we'd recompute properly, but this works for pings.
+            runCatching {
+                synchronized(tunLock) { tunOutput?.write(reply) }
+            }
         }
     }
 

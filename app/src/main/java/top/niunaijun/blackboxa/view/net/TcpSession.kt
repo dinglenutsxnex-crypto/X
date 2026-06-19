@@ -82,14 +82,15 @@ class TcpSession(
         nextClientSeq = clientIsn + 1
         state = State.SYN_RECEIVED
 
+        // Early SYN-ACK: Send back to client immediately so it doesn't timeout
+        sendToTun(PacketParser.TCP_SYN or PacketParser.TCP_ACK, serverSeq, nextClientSeq)
+        serverSeq++
+
         // Connect to real server on a relay thread (blocking I/O)
         relay.submit {
             try {
                 socket.soTimeout = READ_TIMEOUT_MS
                 socket.connect(InetSocketAddress(InetAddress.getByAddress(dstIp), dstPort), CONNECT_TIMEOUT_MS)
-                // Send SYN-ACK back to client
-                sendToTun(PacketParser.TCP_SYN or PacketParser.TCP_ACK, serverSeq, nextClientSeq)
-                serverSeq++
                 state = State.ESTABLISHED
                 // Start reading from real server and relaying to TUN
                 startServerRelay()
@@ -109,6 +110,10 @@ class TcpSession(
         nextClientSeq = clientSeq + payload.size
         // Forward to real server
         try {
+            if (clientSeq != nextClientSeq - payload.size) {
+                // Out of order or retransmission - ignore for now to keep it simple
+                return
+            }
             socket.getOutputStream().write(payload)
             tracker.get(sessionKey)?.let { rec ->
                 rec.bytesSent += payload.size
@@ -120,6 +125,7 @@ class TcpSession(
         } catch (e: Exception) {
             Log.w(TAG, "Write to server failed [$sessionKey]: ${e.message}")
             closeSession(ConnStatus.ERROR)
+            return
         }
         // Send ACK to client
         sendToTun(PacketParser.TCP_ACK, serverSeq, nextClientSeq)
