@@ -429,6 +429,12 @@ class DebuggerFloatingService : Service() {
     }
 
     private fun appendRawLine(raw: String) {
+        // __TRACE__ tagged lines are the cross-process event bridge from the container.
+        // Route them to TraceEngine and keep them OUT of the LOGS tab.
+        if (raw.contains("__TRACE__")) {
+            parseTraceEvent(raw)
+            return
+        }
         mainHandler.post {
             if (logEntries.size >= MAX_LOG_ENTRIES) logEntries.removeFirst()
             logEntries.addLast(LogEntry.Raw(raw))
@@ -438,6 +444,44 @@ class DebuggerFloatingService : Service() {
                 scheduleLogUpdate()
             }
         }
+    }
+
+    /**
+     * Parse a logcat line containing the __TRACE__ tag and push the event into TraceEngine.
+     *
+     * Expected payload format (after "__TRACE__: "):
+     *   TYPE|className|methodName|thread|args|depth|elapsedMs
+     *
+     * Example: "CLASS_LOAD|com.example.MyClass||dex-enum||0|0"
+     */
+    private fun parseTraceEvent(raw: String) {
+        val payload = raw.substringAfter("__TRACE__: ", "")
+                        .ifEmpty { raw.substringAfter("__TRACE__:", "").trim() }
+        if (payload.isEmpty()) return
+
+        val parts = payload.split("|")
+        val typeName    = parts.getOrNull(0)?.trim() ?: return
+        val className   = parts.getOrNull(1) ?: ""
+        val methodName  = parts.getOrNull(2) ?: ""
+        val thread      = parts.getOrNull(3).takeIf { !it.isNullOrBlank() } ?: "container"
+        val args        = parts.getOrNull(4) ?: ""
+        val depth       = parts.getOrNull(5)?.toIntOrNull() ?: 0
+        val elapsedMs   = parts.getOrNull(6)?.toLongOrNull() ?: 0L
+
+        val type = runCatching { TraceType.valueOf(typeName) }.getOrNull() ?: return
+
+        TraceEngine.addEvent(
+            TraceEvent(
+                type      = type,
+                className = className,
+                methodName = methodName,
+                thread    = thread,
+                args      = args,
+                retVal    = "",
+                depth     = depth,
+                elapsedMs = elapsedMs,
+            )
+        )
     }
 
     private fun formatToSpan(raw: String): CharSequence {

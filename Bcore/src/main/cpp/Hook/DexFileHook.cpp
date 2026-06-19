@@ -9,12 +9,12 @@ HOOK_JNI(jobject, openDexFileNative, JNIEnv *env, jobject obj,jstring sourceName
     const char *sourceNameC = env->GetStringUTFChars(sourceName, JNI_FALSE);
     ALOGD("openDexFileNative: %s", sourceNameC);
     if(strstr(sourceNameC,"/blackbox/") != nullptr){
-
-
-
-
         DexFileHook::setFileReadonly(sourceNameC);
     }
+    // Emit a DEX_LOAD trace event via the __TRACE__ logcat bridge
+    __android_log_print(ANDROID_LOG_VERBOSE, "__TRACE__",
+        "DEX_LOAD|DexFile|%s|native||0|0",
+        sourceNameC ? sourceNameC : "");
     jobject orig = orig_openDexFileNative(env, obj,sourceName,outputName,flags,loader,elements);
     env->ReleaseStringUTFChars(sourceName, sourceNameC);
     return orig;
