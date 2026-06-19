@@ -382,9 +382,12 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             Object installSourceInfo = method.invoke(who, args);
             if (installSourceInfo != null) {
                 try {
-                    Reflector.on(installSourceInfo).field("mInitiatingPackageName").set(installSourceInfo, "com.android.vending");
-                    Reflector.on(installSourceInfo).field("mInstallingPackageName").set(installSourceInfo, "com.android.vending");
-                    Reflector.on(installSourceInfo).field("mOriginatingPackageName").set(installSourceInfo, null);
+                    Reflector.on(installSourceInfo.getClass())
+                            .field("mInitiatingPackageName").set(installSourceInfo, "com.android.vending");
+                    Reflector.on(installSourceInfo.getClass())
+                            .field("mInstallingPackageName").set(installSourceInfo, "com.android.vending");
+                    Reflector.on(installSourceInfo.getClass())
+                            .field("mOriginatingPackageName").set(installSourceInfo, null);
                 } catch (Exception e) {
                     Slog.e(TAG, "GetInstallSourceInfo: Failed to spoof: " + e.getMessage());
                 }
