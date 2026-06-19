@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="6dp"
+    android:paddingEnd="6dp"
+    android:paddingTop="1dp"
+    android:paddingBottom="1dp">
+
+    <!-- Primary row: icon + class.method + elapsed -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Depth indent spacer, width set programmatically -->
+        <View
+            android:id="@+id/trace_indent"
+            android:layout_width="0dp"
+            android:layout_height="1dp" />
+
+        <!-- Event type icon (→ ← NEW LOAD JNI IL ! BINDER) -->
+        <TextView
+            android:id="@+id/tv_trace_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="9sp"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:layout_marginEnd="4dp" />
+
+        <!-- class.method(args) -->
+        <TextView
+            android:id="@+id/tv_trace_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="9sp"
+            android:fontFamily="monospace"
+            android:textColor="#DDDDDD"
+            android:ellipsize="end"
+            android:singleLine="true" />
+
+        <!-- elapsed ms (only on exit events) -->
+        <TextView
+            android:id="@+id/tv_trace_elapsed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8sp"
+            android:fontFamily="monospace"
+            android:textColor="#666666"
+            android:layout_marginStart="4dp" />
+
+        <!-- thread name -->
+        <TextView
+            android:id="@+id/tv_trace_thread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="7sp"
+            android:fontFamily="monospace"
+            android:textColor="#444444"
+            android:layout_marginStart="4dp"
+            android:maxWidth="72dp"
+            android:ellipsize="end"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <!-- Args row (only shown when args not empty) -->
+    <TextView
+        android:id="@+id/tv_trace_args"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="8sp"
+        android:fontFamily="monospace"
+        android:textColor="#777777"
+        android:paddingStart="24dp"
+        android:visibility="gone" />
+
+</LinearLayout>

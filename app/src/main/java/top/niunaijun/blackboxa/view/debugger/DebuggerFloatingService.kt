@@ -1,6 +1,7 @@
 package top.niunaijun.blackboxa.view.debugger
 
 import android.app.ActivityManager
+import android.app.Service
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
@@ -10,7 +11,6 @@ import android.os.Environment
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
-import android.app.Service
 import android.provider.MediaStore
 import android.text.Spannable
 import android.text.SpannableStringBuilder
@@ -22,6 +22,8 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
+import android.widget.EditText
+import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.PopupMenu
 import android.widget.TextView
@@ -53,14 +55,13 @@ class DebuggerFloatingService : Service() {
         )
     }
 
+    // ── Log state ────────────────────────────────────────────────────────────
     private sealed class LogEntry {
         class Sys(val text: String) : LogEntry()
         class Raw(val raw: String) : LogEntry()
     }
     private val logEntries = ArrayDeque<LogEntry>()
-    private val MAX_ENTRIES = 5000 // Increased since we use RecyclerView now
-
-    // For RecyclerView display
+    private val MAX_LOG_ENTRIES = 5000
     private val displayedLogs = mutableListOf<CharSequence>()
     private var logAdapter: LogAdapter? = null
 
@@ -72,29 +73,39 @@ class DebuggerFloatingService : Service() {
     private val COL_DBG  = 0xFFB0BEC5.toInt()
     private val COL_CALL = 0xFF42A5F5.toInt()
 
+    // ── Trace state ──────────────────────────────────────────────────────────
+    private var traceAdapter: TraceAdapter? = null
+
+    // ── Window state ─────────────────────────────────────────────────────────
     private lateinit var windowManager: WindowManager
     private var floatView: View? = null
     private var isPanelExpanded = false
+    private var activeTab = "LOGS"
+    private var bubbleX = 16
+    private var bubbleY = 200
 
+    // ── Process state ────────────────────────────────────────────────────────
     private var selectedPid: Int = -1
     private var selectedPkg: String = ""
     private var filterMode = "ALL"
-
-    private val mainHandler = Handler(Looper.getMainLooper())
-    private var logUpdatePending = false
-    private val LOG_UPDATE_INTERVAL_MS = 200L
-
-    private val scanExecutor: ExecutorService = Executors.newSingleThreadExecutor()
-    private val logExecutor: ExecutorService = Executors.newSingleThreadExecutor()
-
-    private var logcatFuture: Future<*>? = null
-    private var logcatProcess: Process? = null
-
-    private val timeFormat = SimpleDateFormat("HH:mm:ss.SSS", Locale.getDefault())
     private var processAdapter: ProcessListAdapter? = null
 
-    private val windowFlags =
+    // ── Threading ────────────────────────────────────────────────────────────
+    private val mainHandler = Handler(Looper.getMainLooper())
+    private var logUpdatePending = false
+    private val LOG_UPDATE_MS = 200L
+    private val scanExecutor: ExecutorService = Executors.newSingleThreadExecutor()
+    private val logExecutor: ExecutorService = Executors.newSingleThreadExecutor()
+    private var logcatFuture: Future<*>? = null
+    private var logcatProcess: Process? = null
+    private val timeFormat = SimpleDateFormat("HH:mm:ss.SSS", Locale.getDefault())
+
+    // ── Window LayoutParams (mutated on expand/collapse) ─────────────────────
+    private val windowFlagsCollapsed =
         WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+        WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
+
+    private val windowFlagsExpanded =
         WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
 
     private val params: WindowManager.LayoutParams by lazy {
@@ -105,14 +116,18 @@ class DebuggerFloatingService : Service() {
                 WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
             else
                 @Suppress("DEPRECATION") WindowManager.LayoutParams.TYPE_PHONE,
-            windowFlags,
+            windowFlagsCollapsed,
             PixelFormat.TRANSLUCENT
         ).apply {
             gravity = Gravity.TOP or Gravity.START
-            x = 16
-            y = 200
+            x = bubbleX
+            y = bubbleY
         }
     }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // Service lifecycle
+    // ═══════════════════════════════════════════════════════════════════════════
 
     override fun onBind(intent: Intent?): IBinder? = null
 
@@ -132,14 +147,19 @@ class DebuggerFloatingService : Service() {
         isRunning = false
         super.onDestroy()
         killLogcat()
+        TraceEngine.stop()
         scanExecutor.shutdownNow()
         logExecutor.shutdownNow()
         try { floatView?.let { windowManager.removeView(it) } } catch (_: Exception) { }
     }
 
+    // ═══════════════════════════════════════════════════════════════════════════
+    // View setup
+    // ═══════════════════════════════════════════════════════════════════════════
+
     private fun setupFloatView() {
-        val themedCtx = ContextThemeWrapper(this, R.style.Theme_BlackBox)
-        floatView = LayoutInflater.from(themedCtx).inflate(R.layout.view_debugger_float, null)
+        val ctx = ContextThemeWrapper(this, R.style.Theme_BlackBox)
+        floatView = LayoutInflater.from(ctx).inflate(R.layout.view_debugger_float, null)
         setupBubble()
         setupPanel()
         windowManager.addView(floatView, params)
@@ -164,6 +184,7 @@ class DebuggerFloatingService : Service() {
                     if (kotlin.math.abs(dx) > 8 || kotlin.math.abs(dy) > 8) {
                         dragging = true
                         params.x = startX + dx; params.y = startY + dy
+                        bubbleX = params.x; bubbleY = params.y
                         try { windowManager.updateViewLayout(floatView, params) } catch (_: Exception) { }
                     }
                     true
@@ -179,62 +200,91 @@ class DebuggerFloatingService : Service() {
         floatView?.findViewById<TextView>(R.id.btn_refresh_processes)?.setOnClickListener { loadProcesses() }
         floatView?.findViewById<TextView>(R.id.btn_stop_logging)?.setOnClickListener { stopLogging() }
 
+        // Tabs
+        floatView?.findViewById<TextView>(R.id.tab_logs)?.setOnClickListener { switchTab("LOGS") }
+        floatView?.findViewById<TextView>(R.id.tab_trace)?.setOnClickListener { switchTab("TRACE") }
+
+        // Overflow menu
         floatView?.findViewById<TextView>(R.id.btn_overflow)?.setOnClickListener { anchor ->
-            val themedCtx = ContextThemeWrapper(this, R.style.Theme_BlackBox)
-            val popup = PopupMenu(themedCtx, anchor)
+            val popup = PopupMenu(ContextThemeWrapper(this, R.style.Theme_BlackBox), anchor)
             popup.menuInflater.inflate(R.menu.debugger_overflow, popup.menu)
             popup.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
-                    R.id.action_dump_stack    -> { dumpStackNow(); true }
-                    R.id.action_download_logs -> { downloadLogs(); true }
+                    R.id.action_dump_stack      -> { dumpStackNow(); true }
+                    R.id.action_download_logs   -> { downloadLogs(); true }
+                    R.id.action_download_trace  -> { downloadTrace(); true }
                     else -> false
                 }
             }
             popup.show()
         }
 
+        // Log filter buttons
         floatView?.findViewById<TextView>(R.id.btn_filter_all)?.setOnClickListener {
-            filterMode = "ALL"
-            updateFilterLabel("▶  ALL LOGS")
-            highlightFilter("ALL")
-            rebuildDisplayedLogs()
+            filterMode = "ALL"; updateFilterLabel("▶  ALL LOGS"); highlightLogFilter("ALL"); rebuildDisplayedLogs()
         }
         floatView?.findViewById<TextView>(R.id.btn_filter_error)?.setOnClickListener {
-            filterMode = "ERROR"
-            updateFilterLabel("▶  ERRORS ONLY")
-            highlightFilter("ERROR")
-            rebuildDisplayedLogs()
+            filterMode = "ERROR"; updateFilterLabel("▶  ERRORS ONLY"); highlightLogFilter("ERROR"); rebuildDisplayedLogs()
         }
-        floatView?.findViewById<TextView>(R.id.btn_filter_trace)?.setOnClickListener {
-            filterMode = "CALLS"
-            updateFilterLabel("▶  FUNCTION CALLS")
-            highlightFilter("CALLS")
-            rebuildDisplayedLogs()
+        floatView?.findViewById<TextView>(R.id.btn_filter_calls)?.setOnClickListener {
+            filterMode = "CALLS"; updateFilterLabel("▶  FUNCTION CALLS"); highlightLogFilter("CALLS"); rebuildDisplayedLogs()
         }
         floatView?.findViewById<TextView>(R.id.btn_clear_logs)?.setOnClickListener {
-            logEntries.clear()
-            displayedLogs.clear()
-            logAdapter?.updateLogs(emptyList())
+            logEntries.clear(); displayedLogs.clear(); logAdapter?.updateLogs(emptyList())
         }
 
+        // Trace controls
+        floatView?.findViewById<TextView>(R.id.btn_clear_trace)?.setOnClickListener {
+            TraceEngine.clear()
+            traceAdapter?.submitList(emptyList())
+            updateTraceStatus(0)
+        }
+
+        // Trace filter — apply on text change
+        floatView?.findViewById<EditText>(R.id.et_trace_filter)?.addTextChangedListener(
+            object : android.text.TextWatcher {
+                override fun beforeTextChanged(s: CharSequence?, st: Int, c: Int, a: Int) {}
+                override fun onTextChanged(s: CharSequence?, st: Int, b: Int, c: Int) {}
+                override fun afterTextChanged(s: android.text.Editable?) {
+                    traceAdapter?.filterPattern = s?.toString() ?: ""
+                    traceAdapter?.submitFiltered(TraceEngine.snapshot())
+                }
+            }
+        )
+
+        // Processes RecyclerView
         val rv = floatView?.findViewById<RecyclerView>(R.id.rv_processes) ?: return
         processAdapter = ProcessListAdapter { info -> selectProcess(info) }
         rv.layoutManager = LinearLayoutManager(this)
         rv.adapter = processAdapter
 
-        // Setup Logs RecyclerView
+        // Logs RecyclerView
         val rvLogs = floatView?.findViewById<RecyclerView>(R.id.rv_logs) ?: return
         logAdapter = LogAdapter()
         rvLogs.layoutManager = LinearLayoutManager(this)
         rvLogs.adapter = logAdapter
+
+        // Trace RecyclerView
+        val rvTrace = floatView?.findViewById<RecyclerView>(R.id.rv_trace) ?: return
+        traceAdapter = TraceAdapter()
+        rvTrace.layoutManager = LinearLayoutManager(this)
+        rvTrace.adapter = traceAdapter
     }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // Panel expand / collapse (full-screen toggle)
+    // ═══════════════════════════════════════════════════════════════════════════
 
     private fun togglePanel() { if (isPanelExpanded) collapsePanel() else expandPanel() }
 
     private fun expandPanel() {
         isPanelExpanded = true
         floatView?.findViewById<View>(R.id.debugger_bubble)?.visibility = View.GONE
-        floatView?.findViewById<LinearLayout>(R.id.debugger_panel)?.visibility = View.VISIBLE
+        floatView?.findViewById<View>(R.id.debugger_panel)?.visibility = View.VISIBLE
+        params.width  = WindowManager.LayoutParams.MATCH_PARENT
+        params.height = WindowManager.LayoutParams.MATCH_PARENT
+        params.flags  = windowFlagsExpanded
+        params.x = 0; params.y = 0
         try { windowManager.updateViewLayout(floatView, params) } catch (_: Exception) { }
         loadProcesses()
     }
@@ -242,28 +292,36 @@ class DebuggerFloatingService : Service() {
     private fun collapsePanel() {
         isPanelExpanded = false
         floatView?.findViewById<View>(R.id.debugger_bubble)?.visibility = View.VISIBLE
-        floatView?.findViewById<LinearLayout>(R.id.debugger_panel)?.visibility = View.GONE
+        floatView?.findViewById<View>(R.id.debugger_panel)?.visibility = View.GONE
+        params.width  = WindowManager.LayoutParams.WRAP_CONTENT
+        params.height = WindowManager.LayoutParams.WRAP_CONTENT
+        params.flags  = windowFlagsCollapsed
+        params.x = bubbleX; params.y = bubbleY
         try { windowManager.updateViewLayout(floatView, params) } catch (_: Exception) { }
     }
 
-    private fun highlightFilter(active: String) {
-        mainHandler.post {
-            val activeDrawable = resources.getDrawable(R.drawable.bg_filter_active, null)
-            mapOf(
-                "ALL"   to R.id.btn_filter_all,
-                "ERROR" to R.id.btn_filter_error,
-                "CALLS" to R.id.btn_filter_trace
-            ).forEach { (key, id) ->
-                floatView?.findViewById<TextView>(id)?.apply {
-                    background = if (key == active) activeDrawable else null
-                }
-            }
+    // ═══════════════════════════════════════════════════════════════════════════
+    // Tab switching
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    private fun switchTab(tab: String) {
+        activeTab = tab
+        val isLogs = tab == "LOGS"
+        floatView?.findViewById<View>(R.id.section_logs)?.visibility  = if (isLogs) View.VISIBLE else View.GONE
+        floatView?.findViewById<View>(R.id.section_trace)?.visibility = if (isLogs) View.GONE else View.VISIBLE
+        floatView?.findViewById<TextView>(R.id.tab_logs)?.apply {
+            setTextColor(if (isLogs) 0xFFFFFFFF.toInt() else 0xFF888888.toInt())
+            setBackgroundResource(if (isLogs) R.drawable.bg_filter_active else 0)
+        }
+        floatView?.findViewById<TextView>(R.id.tab_trace)?.apply {
+            setTextColor(if (!isLogs) 0xFFFFFFFF.toInt() else 0xFF888888.toInt())
+            setBackgroundResource(if (!isLogs) R.drawable.bg_filter_active else 0)
         }
     }
 
-    private fun updateFilterLabel(text: String) {
-        floatView?.findViewById<TextView>(R.id.tv_filter_label)?.text = text
-    }
+    // ═══════════════════════════════════════════════════════════════════════════
+    // Process management
+    // ═══════════════════════════════════════════════════════════════════════════
 
     private fun loadProcesses() {
         scanExecutor.submit {
@@ -275,64 +333,75 @@ class DebuggerFloatingService : Service() {
     private fun getRunningProcesses(): List<ProcessInfo> {
         val am = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
         val running = am.runningAppProcesses ?: return emptyList()
-        val result = mutableListOf<ProcessInfo>()
-        for (proc in running) {
-            if (proc.pkgList.isEmpty()) continue
+        return running.mapNotNull { proc ->
+            if (proc.pkgList.isEmpty()) return@mapNotNull null
             val pkg = proc.pkgList[0]
-            val name = pkg.substringAfterLast('.')
-            result.add(ProcessInfo(name, pkg, proc.pid, pkg, pkg))
-        }
-        return result.sortedByDescending { it.pid }
+            ProcessInfo(pkg.substringAfterLast('.'), pkg, proc.pid, pkg, pkg)
+        }.sortedByDescending { it.pid }
     }
 
     private fun selectProcess(info: ProcessInfo) {
         selectedPid = info.pid
         selectedPkg = info.packageName
-        
         processAdapter?.setSelectedPid(info.pid)
-        
+
         floatView?.findViewById<View>(R.id.section_process_select)?.visibility = View.GONE
-        floatView?.findViewById<View>(R.id.section_logging)?.visibility = View.VISIBLE
-        floatView?.findViewById<TextView>(R.id.tv_selected_process)?.text = "Attached: ${info.name}"
-        
-        logEntries.clear()
-        displayedLogs.clear()
-        logAdapter?.updateLogs(emptyList())
+        floatView?.findViewById<View>(R.id.section_attached)?.visibility = View.VISIBLE
+        floatView?.findViewById<TextView>(R.id.tv_selected_process)?.text =
+            "${info.name}  PID ${info.pid}"
+
+        logEntries.clear(); displayedLogs.clear(); logAdapter?.updateLogs(emptyList())
         appendSysMsg("[Debugger] Attached to ${info.name} (PID ${info.pid})")
-        
+
+        // Start logcat
         startLogcat(info.pid)
+
+        // Start trace engine + observe events
+        TraceEngine.start(info.pid)
+        TraceEngine.observer = { events ->
+            mainHandler.post {
+                val filtered = events
+                traceAdapter?.submitFiltered(filtered)
+                updateTraceStatus(filtered.size)
+                val rv = floatView?.findViewById<RecyclerView>(R.id.rv_trace) ?: return@post
+                val lm = rv.layoutManager as? LinearLayoutManager ?: return@post
+                if (lm.findLastCompletelyVisibleItemPosition() >= (traceAdapter?.itemCount ?: 0) - 2)
+                    rv.scrollToPosition((traceAdapter?.itemCount ?: 1) - 1)
+            }
+        }
     }
 
     private fun stopLogging() {
         killLogcat()
-        selectedPid = -1
-        selectedPkg = ""
+        TraceEngine.stop()
+        selectedPid = -1; selectedPkg = ""
         processAdapter?.setSelectedPid(-1)
-        
         floatView?.findViewById<View>(R.id.section_process_select)?.visibility = View.VISIBLE
-        floatView?.findViewById<View>(R.id.section_logging)?.visibility = View.GONE
-        
-        appendSysMsg("[Debugger] Logging stopped.")
+        floatView?.findViewById<View>(R.id.section_attached)?.visibility = View.GONE
+        appendSysMsg("[Debugger] Detached.")
     }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // Logcat
+    // ═══════════════════════════════════════════════════════════════════════════
 
     private fun startLogcat(pid: Int) {
         killLogcat()
         logcatFuture = logExecutor.submit {
             try {
-                val cmd = arrayOf("logcat", "-b", "main", "-b", "system", "-b", "crash", "--pid=$pid", "-v", "threadtime")
+                val cmd = arrayOf("logcat", "-b", "main", "-b", "system", "-b", "crash",
+                    "--pid=$pid", "-v", "threadtime")
                 logcatProcess = Runtime.getRuntime().exec(cmd)
                 val reader = BufferedReader(InputStreamReader(logcatProcess!!.inputStream))
                 appendSysMsg("[Debugger] Logcat stream started (PID $pid)")
-
                 var line: String?
                 while (reader.readLine().also { line = it } != null) {
                     if (Thread.currentThread().isInterrupted) break
                     appendRawLine(line ?: continue)
                 }
             } catch (e: Exception) {
-                if (!Thread.currentThread().isInterrupted) {
+                if (!Thread.currentThread().isInterrupted)
                     appendSysMsg("[Debugger] Stream error: ${e.message}")
-                }
             }
         }
     }
@@ -342,37 +411,30 @@ class DebuggerFloatingService : Service() {
         try { logcatProcess?.destroy(); logcatProcess = null } catch (_: Exception) { }
     }
 
-    private fun dumpStackNow() {
-        val pid = selectedPid
-        if (pid == -1) { showToast("Attach to a process first"); return }
-        appendSysMsg("[Debugger] ── Stack dump requested ──")
-        android.os.Process.sendSignal(pid, 3)
-    }
+    // ═══════════════════════════════════════════════════════════════════════════
+    // Log formatting / filtering
+    // ═══════════════════════════════════════════════════════════════════════════
 
     private fun appendSysMsg(text: String) {
         mainHandler.post {
-            if (logEntries.size >= MAX_ENTRIES) logEntries.removeFirst()
+            if (logEntries.size >= MAX_LOG_ENTRIES) logEntries.removeFirst()
             logEntries.addLast(LogEntry.Sys(text))
-            
             val span = SpannableStringBuilder()
-            val ts = timeFormat.format(Date())
-            appendColored(span, "[$ts] ", COL_TIME)
-            appendColored(span, "$text", COL_SYS)
-            
+            appendColored(span, "[${timeFormat.format(Date())}] ", COL_TIME)
+            appendColored(span, text, COL_SYS)
             displayedLogs.add(span)
-            if (displayedLogs.size > MAX_ENTRIES) displayedLogs.removeAt(0)
+            if (displayedLogs.size > MAX_LOG_ENTRIES) displayedLogs.removeAt(0)
             scheduleLogUpdate()
         }
     }
 
     private fun appendRawLine(raw: String) {
         mainHandler.post {
-            if (logEntries.size >= MAX_ENTRIES) logEntries.removeFirst()
+            if (logEntries.size >= MAX_LOG_ENTRIES) logEntries.removeFirst()
             logEntries.addLast(LogEntry.Raw(raw))
             if (shouldShow(raw)) {
-                val span = formatToSpan(raw)
-                displayedLogs.add(span)
-                if (displayedLogs.size > MAX_ENTRIES) displayedLogs.removeAt(0)
+                displayedLogs.add(formatToSpan(raw))
+                if (displayedLogs.size > MAX_LOG_ENTRIES) displayedLogs.removeAt(0)
                 scheduleLogUpdate()
             }
         }
@@ -380,14 +442,13 @@ class DebuggerFloatingService : Service() {
 
     private fun formatToSpan(raw: String): CharSequence {
         val span = SpannableStringBuilder()
-        val formatted = format(raw)
-        val color = colorForLine(raw)
+        val formatted = formatLine(raw)
         val tsEnd = formatted.indexOf(']').takeIf { it > 0 }?.plus(2) ?: 0
         if (tsEnd > 0) {
             appendColored(span, formatted.substring(0, tsEnd), COL_TIME)
-            appendColored(span, formatted.substring(tsEnd), color)
+            appendColored(span, formatted.substring(tsEnd), colorForLine(raw))
         } else {
-            appendColored(span, formatted, color)
+            appendColored(span, formatted, colorForLine(raw))
         }
         return span
     }
@@ -407,21 +468,32 @@ class DebuggerFloatingService : Service() {
         else -> COL_INFO
     }
 
+    private fun shouldShow(line: String) = when (filterMode) {
+        "ERROR" -> line.contains(" E ") || line.contains(" E/") || line.contains("Exception") || line.contains("FATAL")
+        "CALLS" -> line.trimStart().startsWith("at ") || line.contains("/art:") ||
+            line.contains("I/art") || (line.contains("prio=") && line.contains("tid=")) ||
+            LIFECYCLE_KEYWORDS.any { line.contains(it) }
+        else    -> true
+    }
+
+    private fun formatLine(raw: String): String {
+        if (raw.length < 31) return raw
+        return "[${raw.substring(0, 18).trim()}] ${raw.substring(31)}"
+    }
+
     private fun rebuildDisplayedLogs() {
         displayedLogs.clear()
         for (entry in logEntries) {
             when (entry) {
                 is LogEntry.Sys -> {
                     val span = SpannableStringBuilder()
-                    appendColored(span, "${entry.text}", COL_SYS)
+                    appendColored(span, entry.text, COL_SYS)
                     displayedLogs.add(span)
                 }
-                is LogEntry.Raw -> if (shouldShow(entry.raw)) {
-                    displayedLogs.add(formatToSpan(entry.raw))
-                }
+                is LogEntry.Raw -> if (shouldShow(entry.raw)) displayedLogs.add(formatToSpan(entry.raw))
             }
         }
-        while (displayedLogs.size > MAX_ENTRIES) displayedLogs.removeAt(0)
+        while (displayedLogs.size > MAX_LOG_ENTRIES) displayedLogs.removeAt(0)
         logAdapter?.updateLogs(displayedLogs.toList())
     }
 
@@ -430,40 +502,54 @@ class DebuggerFloatingService : Service() {
             logUpdatePending = true
             mainHandler.postDelayed({
                 logUpdatePending = false
-                updateLogView()
-            }, LOG_UPDATE_INTERVAL_MS)
+                val rv = floatView?.findViewById<RecyclerView>(R.id.rv_logs) ?: return@postDelayed
+                val adapter = logAdapter ?: return@postDelayed
+                val lm = rv.layoutManager as? LinearLayoutManager ?: return@postDelayed
+                val atBottom = lm.findLastCompletelyVisibleItemPosition() >= adapter.itemCount - 2
+                adapter.updateLogs(displayedLogs.toList())
+                if (atBottom) rv.scrollToPosition(adapter.itemCount - 1)
+            }, LOG_UPDATE_MS)
         }
     }
 
-    private fun updateLogView() {
-        val rv = floatView?.findViewById<RecyclerView>(R.id.rv_logs) ?: return
-        val adapter = logAdapter ?: return
-        val layoutManager = rv.layoutManager as? LinearLayoutManager ?: return
-        
-        val atBottom = layoutManager.findLastCompletelyVisibleItemPosition() >= adapter.itemCount - 2
-        adapter.updateLogs(displayedLogs.toList())
-        if (atBottom) rv.scrollToPosition(adapter.itemCount - 1)
+    // ═══════════════════════════════════════════════════════════════════════════
+    // Filter UI helpers
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    private fun highlightLogFilter(active: String) {
+        mainHandler.post {
+            mapOf("ALL" to R.id.btn_filter_all, "ERROR" to R.id.btn_filter_error,
+                "CALLS" to R.id.btn_filter_calls).forEach { (key, id) ->
+                floatView?.findViewById<TextView>(id)?.setBackgroundResource(
+                    if (key == active) R.drawable.bg_filter_active else 0
+                )
+            }
+        }
     }
 
-    private fun shouldShow(line: String) = when (filterMode) {
-        "ERROR" -> line.contains(" E ") || line.contains(" E/") || line.contains("Exception") || line.contains("FATAL")
-        "CALLS" -> line.trimStart().startsWith("at ") || line.contains("/art:") || line.contains("I/art") || (line.contains("prio=") && line.contains("tid=")) || LIFECYCLE_KEYWORDS.any { line.contains(it) }
-        else    -> true
+    private fun updateFilterLabel(text: String) {
+        floatView?.findViewById<TextView>(R.id.tv_filter_label)?.text = text
     }
 
-    private fun format(raw: String): String {
-        if (raw.length < 31) return raw
-        val time = raw.substring(0, 18).trim()
-        val tagMsg = raw.substring(31)
-        return "[$time] $tagMsg"
+    private fun updateTraceStatus(count: Int) {
+        val status = if (selectedPid == -1) "▶  $count events — attach to a process first"
+                     else "▶  $count events"
+        floatView?.findViewById<TextView>(R.id.tv_trace_status)?.text = status
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // Actions
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    private fun dumpStackNow() {
+        val pid = selectedPid
+        if (pid == -1) { showToast("Attach to a process first"); return }
+        appendSysMsg("[Debugger] ── Stack dump requested ──")
+        android.os.Process.sendSignal(pid, 3)
     }
 
     private fun downloadLogs() {
         if (logEntries.isEmpty()) { showToast("No logs to save"); return }
-        val pid = selectedPid.takeIf { it != -1 } ?: 0
-        val pkg = selectedPkg.takeIf { it.isNotEmpty() } ?: "system"
-        val fileName = "debugger_logs_${SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date())}.txt"
-        
         val content = StringBuilder()
         for (entry in logEntries) {
             when (entry) {
@@ -471,24 +557,43 @@ class DebuggerFloatingService : Service() {
                 is LogEntry.Raw -> content.append("${entry.raw}\n")
             }
         }
+        saveFile("debugger_logs_${timestamp()}.txt", content.toString(), "Logs saved")
+    }
 
+    private fun downloadTrace() {
+        val events = TraceEngine.snapshot()
+        if (events.isEmpty()) { showToast("No trace events to save"); return }
+        val json = StringBuilder("[")
+        events.forEachIndexed { i, ev ->
+            if (i > 0) json.append(",")
+            json.append("""{"t":${ev.timestampMs},"type":"${ev.type.name}","class":"${ev.className}","method":"${ev.methodName}","thread":"${ev.thread}","args":${ev.args.toJsonString()},"ret":${ev.retVal.toJsonString()},"depth":${ev.depth},"ms":${ev.elapsedMs}}""")
+        }
+        json.append("]")
+        saveFile("trace_${timestamp()}.json", json.toString(), "Trace saved")
+    }
+
+    private fun String.toJsonString(): String {
+        val escaped = replace("\\", "\\\\").replace("\"", "\\\"")
+        return "\"$escaped\""
+    }
+
+    private fun saveFile(name: String, content: String, successMsg: String) {
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 val values = ContentValues().apply {
-                    put(MediaStore.Downloads.DISPLAY_NAME, fileName)
-                    put(MediaStore.Downloads.MIME_TYPE, "text/plain")
+                    put(MediaStore.Downloads.DISPLAY_NAME, name)
+                    put(MediaStore.Downloads.MIME_TYPE, if (name.endsWith(".json")) "application/json" else "text/plain")
                     put(MediaStore.Downloads.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS)
                 }
                 val uri = contentResolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, values)
                 uri?.let {
-                    contentResolver.openOutputStream(it)?.use { os -> os.write(content.toString().toByteArray()) }
-                    showToast("Logs saved to Downloads")
+                    contentResolver.openOutputStream(it)?.use { os -> os.write(content.toByteArray()) }
+                    showToast("$successMsg → Downloads/$name")
                 }
             } else {
-                val dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-                val file = File(dir, fileName)
-                file.writeText(content.toString())
-                showToast("Logs saved to ${file.absolutePath}")
+                val file = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), name)
+                file.writeText(content)
+                showToast("$successMsg → ${file.absolutePath}")
             }
         } catch (e: Exception) {
             Log.e(TAG, "Save failed: ${e.message}")
@@ -496,5 +601,6 @@ class DebuggerFloatingService : Service() {
         }
     }
 
+    private fun timestamp() = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date())
     private fun showToast(msg: String) = mainHandler.post { Toast.makeText(this, msg, Toast.LENGTH_SHORT).show() }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <!-- ── Bubble ── -->
+    <!-- ── Bubble (entry point, draggable) ── -->
     <FrameLayout
         android:id="@+id/debugger_bubble"
         android:layout_width="56dp"
@@ -19,275 +19,414 @@
             android:contentDescription="Debugger" />
     </FrameLayout>
 
-    <!-- ── Panel ── -->
+    <!-- ── Full-screen panel (50% dim + panel card) ── -->
     <LinearLayout
         android:id="@+id/debugger_panel"
-        android:layout_width="416dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/bg_debugger_panel"
+        android:background="#80000000"
         android:elevation="10dp"
         android:visibility="gone">
 
-        <!-- Header -->
+        <!-- Panel card with margins to show dim bg around it -->
         <LinearLayout
+            android:id="@+id/panel_card"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="14dp"
-            android:paddingEnd="4dp"
-            android:background="@drawable/bg_debugger_header">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="OFF-BY-ONE DEBUGGER"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:textSize="12sp"
-                android:fontFamily="monospace"
-                android:letterSpacing="0.08" />
-
-            <!-- Triple-dot overflow menu -->
-            <TextView
-                android:id="@+id/btn_overflow"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:gravity="center"
-                android:text="⋮"
-                android:textColor="#CCCCCC"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:padding="10dp"
-                android:background="@drawable/bg_btn_ripple"
-                android:clickable="true" />
-
-            <!-- Close -->
-            <TextView
-                android:id="@+id/btn_collapse"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:gravity="center"
-                android:text="✕"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:padding="10dp"
-                android:background="@drawable/bg_btn_ripple"
-                android:clickable="true" />
-        </LinearLayout>
-
-        <!-- ═══════════════ PROCESS SELECT section ═══════════════ -->
-        <LinearLayout
-            android:id="@+id/section_process_select"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="32dp"
             android:orientation="vertical"
-            android:paddingBottom="6dp">
+            android:background="@drawable/bg_debugger_panel"
+            android:elevation="12dp">
 
-            <!-- Section label + refresh -->
+            <!-- ══ HEADER ══ -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:paddingStart="14dp"
                 android:paddingEnd="4dp"
-                android:paddingTop="8dp">
+                android:background="@drawable/bg_debugger_header">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="RUNNING PROCESSES"
-                    android:textColor="#BBBBBB"
-                    android:textSize="9sp"
+                    android:text="DEBUGGER"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
                     android:fontFamily="monospace"
-                    android:letterSpacing="0.15" />
+                    android:letterSpacing="0.08" />
 
                 <TextView
-                    android:id="@+id/btn_refresh_processes"
+                    android:id="@+id/tab_logs"
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
+                    android:layout_height="30dp"
                     android:gravity="center"
-                    android:text="REFRESH"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:text="LOGS"
                     android:textColor="#FFFFFF"
                     android:textSize="9sp"
                     android:fontFamily="monospace"
-                    android:background="@drawable/bg_btn_ripple"
-                    android:clickable="true" />
-            </LinearLayout>
-
-            <!-- Divider -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="14dp"
-                android:layout_marginEnd="14dp"
-                android:background="#333333" />
-
-            <!-- Process list -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_processes"
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:scrollbars="none"
-                android:paddingTop="2dp"
-                android:paddingBottom="2dp"
-                android:clipToPadding="false" />
-
-            <!-- Empty hint -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="14dp"
-                android:paddingEnd="14dp"
-                android:paddingBottom="4dp"
-                android:text="Launch an app inside the container first"
-                android:textColor="#666666"
-                android:textSize="9sp"
-                android:fontFamily="monospace" />
-        </LinearLayout>
-
-        <!-- ═══════════════ LOGGING section ═══════════════ -->
-        <LinearLayout
-            android:id="@+id/section_logging"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <!-- Attached process bar -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:background="#1AFFFFFF"
-                android:paddingStart="14dp"
-                android:paddingEnd="4dp">
-
-                <TextView
-                    android:id="@+id/tv_selected_process"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Attached"
-                    android:textColor="#FFFFFF"
-                    android:textSize="10sp"
-                    android:fontFamily="monospace"
-                    android:ellipsize="middle"
-                    android:singleLine="true" />
-
-                <TextView
-                    android:id="@+id/btn_stop_logging"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
-                    android:gravity="center"
-                    android:text="DETACH"
-                    android:textColor="#FF5555"
-                    android:textSize="9sp"
-                    android:fontFamily="monospace"
-                    android:background="@drawable/bg_btn_ripple"
-                    android:clickable="true" />
-            </LinearLayout>
-
-            <!-- Filter bar — larger hit targets (36dp tall) -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp">
-
-                <TextView
-                    android:id="@+id/btn_filter_all"
-                    android:layout_width="0dp"
-                    android:layout_height="32dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="ALL"
-                    android:textSize="9sp"
-                    android:fontFamily="monospace"
-                    android:textColor="#FFFFFF"
                     android:background="@drawable/bg_filter_active"
-                    android:layout_marginEnd="3dp"
                     android:clickable="true" />
 
                 <TextView
-                    android:id="@+id/btn_filter_error"
-                    android:layout_width="0dp"
-                    android:layout_height="32dp"
-                    android:layout_weight="1"
+                    android:id="@+id/tab_trace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
                     android:gravity="center"
-                    android:text="ERR"
-                    android:textSize="9sp"
-                    android:fontFamily="monospace"
-                    android:textColor="#FF5555"
-                    android:background="@drawable/bg_btn_ripple"
-                    android:layout_marginEnd="3dp"
-                    android:clickable="true" />
-
-                <TextView
-                    android:id="@+id/btn_filter_trace"
-                    android:layout_width="0dp"
-                    android:layout_height="32dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:layout_marginStart="4dp"
                     android:text="TRACE"
+                    android:textColor="#888888"
                     android:textSize="9sp"
                     android:fontFamily="monospace"
-                    android:textColor="#FFFF55"
                     android:background="@drawable/bg_btn_ripple"
-                    android:layout_marginEnd="3dp"
+                    android:clickable="true" />
+
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:id="@+id/btn_overflow"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:gravity="center"
+                    android:text="⋮"
+                    android:textColor="#CCCCCC"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:background="@drawable/bg_btn_ripple"
                     android:clickable="true" />
 
                 <TextView
-                    android:id="@+id/btn_clear_logs"
-                    android:layout_width="0dp"
-                    android:layout_height="32dp"
-                    android:layout_weight="1"
+                    android:id="@+id/btn_collapse"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
                     android:gravity="center"
-                    android:text="CLR"
-                    android:textSize="9sp"
-                    android:fontFamily="monospace"
-                    android:textColor="#888888"
+                    android:text="✕"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:padding="10dp"
                     android:background="@drawable/bg_btn_ripple"
                     android:clickable="true" />
             </LinearLayout>
 
-            <!-- Active filter label -->
-            <TextView
-                android:id="@+id/tv_filter_label"
+            <!-- ══ CONTENT FRAME (fills remaining height) ══ -->
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="14dp"
-                android:paddingBottom="2dp"
-                android:text="ALL LOGS"
-                android:textColor="#888888"
-                android:textSize="8sp"
-                android:fontFamily="monospace" />
+                android:layout_height="0dp"
+                android:layout_weight="1">
 
-            <!-- Log output -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_logs"
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/bg_log_area"
-                android:scrollbars="vertical" />
+                <!-- ── Process select (no process attached) ── -->
+                <LinearLayout
+                    android:id="@+id/section_process_select"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="4dp"
+                        android:paddingTop="8dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="RUNNING PROCESSES"
+                            android:textColor="#BBBBBB"
+                            android:textSize="9sp"
+                            android:fontFamily="monospace"
+                            android:letterSpacing="0.15" />
+
+                        <TextView
+                            android:id="@+id/btn_refresh_processes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:gravity="center"
+                            android:text="REFRESH"
+                            android:textColor="#FFFFFF"
+                            android:textSize="9sp"
+                            android:fontFamily="monospace"
+                            android:background="@drawable/bg_btn_ripple"
+                            android:clickable="true" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginEnd="14dp"
+                        android:background="#333333" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_processes"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:scrollbars="none"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:clipToPadding="false" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:paddingBottom="4dp"
+                        android:text="Launch an app inside the container first"
+                        android:textColor="#666666"
+                        android:textSize="9sp"
+                        android:fontFamily="monospace" />
+                </LinearLayout>
+
+                <!-- ── Attached (process selected) ── -->
+                <LinearLayout
+                    android:id="@+id/section_attached"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <!-- Attached process bar — shared by LOGS and TRACE tabs -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="#1AFFFFFF"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="4dp">
+
+                        <TextView
+                            android:id="@+id/tv_selected_process"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Attached"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp"
+                            android:fontFamily="monospace"
+                            android:ellipsize="middle"
+                            android:singleLine="true" />
+
+                        <TextView
+                            android:id="@+id/btn_stop_logging"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:gravity="center"
+                            android:text="DETACH"
+                            android:textColor="#FF5555"
+                            android:textSize="9sp"
+                            android:fontFamily="monospace"
+                            android:background="@drawable/bg_btn_ripple"
+                            android:clickable="true" />
+                    </LinearLayout>
+
+                    <!-- Tab content area (fills remaining) -->
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <!-- ── LOGS content ── -->
+                        <LinearLayout
+                            android:id="@+id/section_logs"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:paddingTop="4dp"
+                                android:paddingBottom="4dp">
+
+                                <TextView
+                                    android:id="@+id/btn_filter_all"
+                                    android:layout_width="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="ALL"
+                                    android:textSize="9sp"
+                                    android:fontFamily="monospace"
+                                    android:textColor="#FFFFFF"
+                                    android:background="@drawable/bg_filter_active"
+                                    android:layout_marginEnd="3dp"
+                                    android:clickable="true" />
+
+                                <TextView
+                                    android:id="@+id/btn_filter_error"
+                                    android:layout_width="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="ERR"
+                                    android:textSize="9sp"
+                                    android:fontFamily="monospace"
+                                    android:textColor="#FF5555"
+                                    android:background="@drawable/bg_btn_ripple"
+                                    android:layout_marginEnd="3dp"
+                                    android:clickable="true" />
+
+                                <TextView
+                                    android:id="@+id/btn_filter_calls"
+                                    android:layout_width="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="CALLS"
+                                    android:textSize="9sp"
+                                    android:fontFamily="monospace"
+                                    android:textColor="#FFFF55"
+                                    android:background="@drawable/bg_btn_ripple"
+                                    android:layout_marginEnd="3dp"
+                                    android:clickable="true" />
+
+                                <TextView
+                                    android:id="@+id/btn_clear_logs"
+                                    android:layout_width="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="CLR"
+                                    android:textSize="9sp"
+                                    android:fontFamily="monospace"
+                                    android:textColor="#888888"
+                                    android:background="@drawable/bg_btn_ripple"
+                                    android:clickable="true" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_filter_label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="14dp"
+                                android:paddingBottom="2dp"
+                                android:text="▶  ALL LOGS"
+                                android:textColor="#888888"
+                                android:textSize="8sp"
+                                android:fontFamily="monospace" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_logs"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/bg_log_area"
+                                android:scrollbars="vertical" />
+                        </LinearLayout>
+
+                        <!-- ── TRACE content ── -->
+                        <LinearLayout
+                            android:id="@+id/section_trace"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:paddingTop="4dp"
+                                android:paddingBottom="4dp">
+
+                                <EditText
+                                    android:id="@+id/et_trace_filter"
+                                    android:layout_width="0dp"
+                                    android:layout_height="32dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_log_area"
+                                    android:textColor="#FFFFFF"
+                                    android:textColorHint="#555555"
+                                    android:hint="class filter (e.g. com.example.*)"
+                                    android:textSize="9sp"
+                                    android:fontFamily="monospace"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:singleLine="true"
+                                    android:inputType="text"
+                                    android:imeOptions="actionDone"
+                                    android:layout_marginEnd="4dp" />
+
+                                <TextView
+                                    android:id="@+id/btn_clear_trace"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="32dp"
+                                    android:gravity="center"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp"
+                                    android:text="CLR"
+                                    android:textSize="9sp"
+                                    android:fontFamily="monospace"
+                                    android:textColor="#888888"
+                                    android:background="@drawable/bg_btn_ripple"
+                                    android:clickable="true" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_trace_status"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="14dp"
+                                android:paddingBottom="2dp"
+                                android:text="▶  0 events — attach to a process first"
+                                android:textColor="#888888"
+                                android:textSize="8sp"
+                                android:fontFamily="monospace" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_trace"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/bg_log_area"
+                                android:scrollbars="vertical" />
+                        </LinearLayout>
+
+                    </FrameLayout>
+                </LinearLayout>
+
+            </FrameLayout>
         </LinearLayout>
-
     </LinearLayout>
+
 </FrameLayout>
