@@ -112,7 +112,7 @@ class NetworkAnalyzerVpnService : VpnService() {
 
             Log.i(TAG, "VPN up. TUN=$TUN_IP/$TUN_MASK")
         } catch (e: Exception) {
-            Log.e(TAG, "startVpn error: ${it.message}", e)
+            Log.e(TAG, "startVpn error: ${e.message}", e)
             stopSelf()
         }
     }

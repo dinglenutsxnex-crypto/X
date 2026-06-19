@@ -308,12 +308,12 @@ class NetworkAnalyzerFloatingService : Service() {
         
         if (active) {
             btn.text = "STOP"
-            btn.setBackgroundResource(R.drawable.bg_btn_stop)
+            btn.setBackgroundColor(0xFFFF5555.toInt()) // Red background
             status.text = statusText ?: "VPN ACTIVE"
             status.setTextColor(0xFF4CAF50.toInt())
         } else {
             btn.text = "START"
-            btn.setBackgroundResource(R.drawable.bg_btn_start)
+            btn.setBackgroundColor(0xFFFFFFFF.toInt()) // White background
             status.text = statusText ?: "VPN IDLE"
             status.setTextColor(0xFF888888.toInt())
         }
