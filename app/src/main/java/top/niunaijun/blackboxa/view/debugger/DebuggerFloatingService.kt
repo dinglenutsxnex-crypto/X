@@ -280,7 +280,7 @@ class DebuggerFloatingService : Service() {
             if (proc.pkgList.isEmpty()) continue
             val pkg = proc.pkgList[0]
             val name = pkg.substringAfterLast('.')
-            result.add(ProcessInfo(proc.pid, name, pkg, pkg))
+            result.add(ProcessInfo(name, pkg, proc.pid, pkg, pkg))
         }
         return result.sortedByDescending { it.pid }
     }
