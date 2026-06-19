@@ -1,16 +1,3 @@
-/*
- * tracer.cpp — Native method tracer using Dobby + xdl
- *
- * Runs inside the CONTAINER (guest) process injected by BlackBox.
- * Events are written to logcat with tag "__TRACE__" so the host-process
- * DebuggerFloatingService can parse them from its existing logcat reader.
- * No JNI callback into the host app is needed.
- *
- * Hooks installed:
- *   il2cpp_runtime_invoke  — every managed Unity/il2cpp method call
- *   art::interpreter::Execute — every interpreted ART Java method call
- */
-
 #include <jni.h>
 #include <string>
 #include <cstring>
@@ -29,48 +16,71 @@
     __android_log_print(ANDROID_LOG_VERBOSE, TRACE_TAG, \
         "%s|%s|%s|native|%s|%d|%ld", (type), (cls), (method), (args), (depth), (long)(ms))
 
-// ─── State ───────────────────────────────────────────────────────────────────
-
 static volatile bool gInitialised = false;
 
-// ─── il2cpp structs (layout stable across Unity versions, arm64) ─────────────
-
 struct Il2CppClass {
-    const void  *image;        // +0x00
-    void        *gc_desc;      // +0x08
-    const char  *name;         // +0x10
-    const char  *namespaze;    // +0x18
+    const void  *image;
+    void        *gc_desc;
+    const char  *name;
+    const char  *namespaze;
 };
 
 struct MethodInfo {
-    void              *method_pointer; // +0x00
-    void              *invoker_method; // +0x08
-    const char        *name;           // +0x10
-    const Il2CppClass *klass;          // +0x18
+    void              *method_pointer;
+    void              *invoker_method;
+    const char        *name;
+    const Il2CppClass *klass;
 };
-
-// ─── ART ShadowFrame stub (stable Android 8–14, arm64) ───────────────────────
 
 struct ShadowFrameStub {
     uint32_t number_of_vregs;
     uint32_t number_of_references;
     uint32_t dex_pc;
     uint32_t padding;
-    void    *method;   // ArtMethod* at +0x10
+    void    *method;
 };
 
-// ─── il2cpp hook ─────────────────────────────────────────────────────────────
+// Readable user-space pointer guard.
+// Rejects null, unaligned, and addresses that fall in obvious non-heap ranges
+// (kernel space on arm64 starts at 0xffff000000000000).
+static inline bool isReadablePtr(const void *p) {
+    uintptr_t v = reinterpret_cast<uintptr_t>(p);
+    if (v == 0)                       return false;
+    if (v & 0x3)                      return false; // must be 4-byte aligned
+    if (v >= 0x0000800000000000ULL)   return false; // kernel/invalid range
+    return true;
+}
+
+// Safe string accessor: returns ptr only if it looks like a real char pointer
+// (non-null, not suspiciously low, first byte is printable ASCII or null).
+static inline const char *safeStr(const char *s) {
+    if (!isReadablePtr(s)) return nullptr;
+    unsigned char c = static_cast<unsigned char>(*s);
+    if (c != 0 && (c < 0x20 || c > 0x7e)) return nullptr;
+    return s;
+}
 
 typedef void *(*Il2CppInvoke_t)(const MethodInfo *, void *, void **, void **);
 static Il2CppInvoke_t orig_il2cpp_invoke = nullptr;
 
 static void *hook_il2cpp_invoke(const MethodInfo *method, void *obj,
                                  void **params, void **exc) {
-    if (!gInitialised) return orig_il2cpp_invoke(method, obj, params, exc);
+    if (!gInitialised || !isReadablePtr(method)) {
+        return orig_il2cpp_invoke(method, obj, params, exc);
+    }
 
-    const char *mName  = (method && method->name)         ? method->name            : "?";
-    const char *cName  = (method && method->klass)        ? method->klass->name     : "?";
-    const char *nsName = (method && method->klass)        ? method->klass->namespaze: "";
+    const char *mName  = safeStr(method->name);
+    const char *cName  = nullptr;
+    const char *nsName = nullptr;
+
+    if (isReadablePtr(method->klass)) {
+        cName  = safeStr(method->klass->name);
+        nsName = safeStr(method->klass->namespaze);
+    }
+
+    if (!mName || !cName) {
+        return orig_il2cpp_invoke(method, obj, params, exc);
+    }
 
     char fullClass[256];
     if (nsName && nsName[0])
@@ -87,7 +97,6 @@ static void *hook_il2cpp_invoke(const MethodInfo *method, void *obj,
     long elapsedMs = (ts1.tv_sec  - ts0.tv_sec)  * 1000L
                    + (ts1.tv_nsec - ts0.tv_nsec) / 1000000L;
 
-    // Emit a single IL2CPP_CALL with elapsed time on the exit side
     TRACE("IL2CPP_CALL", fullClass, mName, "", 0, elapsedMs);
 
     return result;
@@ -114,11 +123,6 @@ static bool hookIl2Cpp() {
     return false;
 }
 
-// ─── ART interpreter hook ────────────────────────────────────────────────────
-//
-// We throttle to every 64th call to avoid flooding logcat — the ART interpreter
-// is invoked for EVERY Java bytecode dispatch.
-
 typedef void (*ArtExecute_t)(void *, const void *, void *, void *, bool);
 static ArtExecute_t orig_art_execute = nullptr;
 
@@ -126,12 +130,11 @@ static thread_local uint64_t tArtCallCount = 0;
 
 static void hook_art_execute(void *self, const void *code,
                               void *shadow_frame, void *result, bool stay) {
-    if (gInitialised && shadow_frame) {
+    if (gInitialised && isReadablePtr(shadow_frame)) {
         tArtCallCount++;
-        // 1-in-64 sampling to reduce noise
         if ((tArtCallCount & 0x3F) == 0) {
             auto *sf = reinterpret_cast<ShadowFrameStub *>(shadow_frame);
-            if (sf->method) {
+            if (isReadablePtr(sf->method)) {
                 char addrBuf[32];
                 snprintf(addrBuf, sizeof(addrBuf), "0x%lx", (unsigned long) sf->method);
                 TRACE("METHOD_ENTER", "ART", addrBuf, "", 0, 0);
@@ -142,7 +145,6 @@ static void hook_art_execute(void *self, const void *code,
 }
 
 static bool hookArtInterpreter() {
-    // Mangled symbol candidates across Android 8–14
     static const char *candidates[] = {
         "_ZN3art11interpreter7ExecuteEPNS_6ThreadERKNS_20CodeItemDataAccessorERNS_11ShadowFrameENS_6JValueEbb",
         "_ZN3art11interpreter7ExecuteEPNS_6ThreadERKNS_20CodeItemDataAccessorERNS_11ShadowFrameENS_6JValueEb",
@@ -164,11 +166,9 @@ static bool hookArtInterpreter() {
     return false;
 }
 
-// ─── JNI exports ─────────────────────────────────────────────────────────────
-
 extern "C" JNIEXPORT jboolean JNICALL
 Java_top_niunaijun_blackbox_fake_hook_MethodTracer_nativeInit(
-        JNIEnv * /*env*/, jclass /*clazz*/, jint apiLevel) {
+        JNIEnv * , jclass , jint apiLevel) {
     if (gInitialised) return JNI_TRUE;
     bool il2cpp = hookIl2Cpp();
     bool art    = hookArtInterpreter();
@@ -178,13 +178,12 @@ Java_top_niunaijun_blackbox_fake_hook_MethodTracer_nativeInit(
         gInitialised = true;
         return JNI_TRUE;
     }
-    // Not hooked yet — caller should retry after libil2cpp.so loads
     return JNI_FALSE;
 }
 
 extern "C" JNIEXPORT void JNICALL
 Java_top_niunaijun_blackbox_fake_hook_MethodTracer_nativeStop(
-        JNIEnv * /*env*/, jclass /*clazz*/) {
+        JNIEnv * , jclass ) {
     gInitialised = false;
     LOGI("Native tracer stopped");
 }
