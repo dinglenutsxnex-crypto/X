@@ -1,0 +1,367 @@
+--------- beginning of main
+06-19 14:14:30.803 30049 30049 D Settings: loaded Package: com.librecode.app
+06-19 14:14:30.809 30049 30049 D Settings: loaded Package: com.psoffritti.video.speed
+06-19 14:14:30.820 30049 30049 D Settings: loaded Package: com.nekki.shadowfight3
+06-19 14:14:30.822 30049 30049 D BroadcastManager: register: com.psoffritti.video.speed, size: 11
+06-19 14:14:30.827 30049 30049 D BroadcastManager: register: com.librecode.app, size: 1
+06-19 14:14:30.828 30049 30049 D BroadcastManager: register: com.nekki.shadowfight3, size: 17
+06-19 14:14:30.839 30049 30049 D SystemCallProvider: BlackBox system initialized successfully
+06-19 14:14:30.839 30049 30069 D JarManager: Starting JAR environment initialization
+06-19 14:14:30.840 30049 30069 D JarManager: Processing JAR file: empty.jar (Empty JAR for fallback DEX loading)
+06-19 14:14:30.840 30049 30062 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=64]
+06-19 14:14:30.840 30049 30049 D SimpleCrashFix: Simple crash fix already installed
+06-19 14:14:30.840 30049 30049 D BlackBoxCore: System hooks installed successfully
+06-19 14:14:30.840 30049 30049 D BlackBoxCore: Ensuring proper initialization order...
+06-19 14:14:30.840 30049 30049 D NativeCore: NativeCore init.
+06-19 14:14:30.840 30049 30062 D SystemCallProvider: Requesting service: test
+06-19 14:14:30.840 30049 30062 W SystemCallProvider: Service test not found
+06-19 14:14:30.840 30049 30049 D BlackBoxCore: NativeCore initialized successfully
+06-19 14:14:30.841 30025 30025 D BlackBoxCore: Black process is running - SystemCallProvider accessible
+06-19 14:14:30.841 30025 30025 D BlackBoxCore: Ensuring proper initialization order...
+06-19 14:14:30.841 30025 30025 D NativeCore: NativeCore init.
+06-19 14:14:30.841 30025 30025 D BlackBoxCore: NativeCore initialized successfully
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: call: VM, Bundle[{_B_|_server_name_=activity_manager}]
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: Requesting service: activity_manager
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: Service activity_manager provided successfully
+06-19 14:14:30.841 30049 30049 D BlackBoxCore: getService: activity_manager, top.niunaijun.blackbox.core.system.am.BActivityManagerService@677b29b
+06-19 14:14:30.841 30049 30058 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=64]
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: call: VM, Bundle[{_B_|_server_name_=package_manager}]
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: Requesting service: package_manager
+06-19 14:14:30.841 30049 30058 D SystemCallProvider: Requesting service: test
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: Service package_manager provided successfully
+06-19 14:14:30.841 30049 30058 W SystemCallProvider: Service test not found
+06-19 14:14:30.841 30049 30049 D BlackBoxCore: getService: package_manager, top.niunaijun.blackbox.core.system.pm.BPackageManagerService@8447638
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: call: VM, Bundle[{_B_|_server_name_=storage_manager}]
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: Requesting service: storage_manager
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: Service storage_manager provided successfully
+06-19 14:14:30.841 30025 30025 D BlackBoxCore: Black process is running - SystemCallProvider accessible
+06-19 14:14:30.841 30049 30049 D BlackBoxCore: getService: storage_manager, top.niunaijun.blackbox.core.system.os.BStorageManagerService@87b9611
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: call: VM, Bundle[{_B_|_server_name_=user_manager}]
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: Requesting service: user_manager
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: Service user_manager provided successfully
+06-19 14:14:30.841 30049 30049 D BlackBoxCore: getService: user_manager, top.niunaijun.blackbox.core.system.user.BUserManagerService@67e4376
+06-19 14:14:30.841 30049 30069 D JarManager: JAR file already exists and is valid: empty.jar
+06-19 14:14:30.841 30049 30069 D JarManager: Processing JAR file: junit.jar (JUnit testing framework support)
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: call: VM, Bundle[{_B_|_server_name_=job_manager}]
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: Requesting service: job_manager
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: Service job_manager provided successfully
+06-19 14:14:30.841 30049 30049 D BlackBoxCore: getService: job_manager, top.niunaijun.blackbox.core.system.am.BJobManagerService@f94dd77
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: call: VM, Bundle[{_B_|_server_name_=account_manager}]
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: Requesting service: account_manager
+06-19 14:14:30.841 30049 30049 D SystemCallProvider: Service account_manager provided successfully
+06-19 14:14:30.841 30049 30049 D BlackBoxCore: getService: account_manager, top.niunaijun.blackbox.core.system.accounts.BAccountManagerService@ee6bde4
+06-19 14:14:30.842 30049 30049 D SystemCallProvider: call: VM, Bundle[{_B_|_server_name_=location_manager}]
+06-19 14:14:30.842 30049 30049 D SystemCallProvider: Requesting service: location_manager
+06-19 14:14:30.842 30049 30049 D SystemCallProvider: Service location_manager provided successfully
+06-19 14:14:30.842 30049 30049 D BlackBoxCore: getService: location_manager, top.niunaijun.blackbox.core.system.location.BLocationManagerService@872824d
+06-19 14:14:30.842 30049 30057 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=64]
+06-19 14:14:30.842 30049 30049 D SystemCallProvider: call: VM, Bundle[{_B_|_server_name_=notification_manager}]
+06-19 14:14:30.842 30049 30049 D SystemCallProvider: Requesting service: notification_manager
+06-19 14:14:30.842 30049 30049 D SystemCallProvider: Service notification_manager provided successfully
+06-19 14:14:30.842 30049 30057 D SystemCallProvider: Requesting service: test
+06-19 14:14:30.842 30049 30057 W SystemCallProvider: Service test not found
+06-19 14:14:30.842 30049 30049 D BlackBoxCore: getService: notification_manager, top.niunaijun.blackbox.core.system.notification.BNotificationManagerService@1032102
+06-19 14:14:30.842 30049 30049 D BlackBoxCore: Services initialized successfully
+06-19 14:14:30.842 30049 30049 D BlackBoxCore: ServiceManager initialized successfully
+06-19 14:14:30.842 30025 30025 D BlackBoxCore: Black process is running - SystemCallProvider accessible
+06-19 14:14:30.842 30049 30072 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=88]
+06-19 14:14:30.842 30049 30072 D SystemCallProvider: Requesting service: activity_manager
+06-19 14:14:30.842 30049 30072 D SystemCallProvider: Service activity_manager provided successfully
+06-19 14:14:30.842 30025 30025 D BlackBoxCore: getService: activity_manager, android.os.BinderProxy@90d4d24
+06-19 14:14:30.843 30049 30072 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=64]
+06-19 14:14:30.843 30049 30072 D SystemCallProvider: Requesting service: test
+06-19 14:14:30.843 30049 30072 W SystemCallProvider: Service test not found
+06-19 14:14:30.843 30049 30070 W System.err: java.io.IOException: Cannot run program "su": error=2, No such file or directory
+06-19 14:14:30.843 30025 30025 D BlackBoxCore: Black process is running - SystemCallProvider accessible
+06-19 14:14:30.843 30049 30070 W System.err: 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1050)
+06-19 14:14:30.843 30049 30070 W System.err: 	at java.lang.Runtime.exec(Runtime.java:713)
+06-19 14:14:30.843 30049 30070 W System.err: 	at java.lang.Runtime.exec(Runtime.java:537)
+06-19 14:14:30.843 30049 30070 W System.err: 	at java.lang.Runtime.exec(Runtime.java:434)
+06-19 14:14:30.843 30049 30070 W System.err: 	at top.niunaijun.blackbox.utils.ShellUtils.execCommand(SourceFile:8)
+06-19 14:14:30.843 30049 30070 W System.err: 	at top.niunaijun.blackbox.utils.ShellUtils.execCommand(SourceFile:4)
+06-19 14:14:30.843 30049 30070 W System.err: 	at top.niunaijun.blackbox.utils.ShellUtils.checkRootPermission(SourceFile:5)
+06-19 14:14:30.843 30049 30049 D BActivityThread: Found ActivityThread instrumentation, ensuring it's our AppInstrumentation
+06-19 14:14:30.843 30049 30070 W System.err: 	at G2.a.run(SourceFile:14)
+06-19 14:14:30.843 30049 30062 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=84]
+06-19 14:14:30.843 30049 30070 W System.err: 	at java.lang.Thread.run(Thread.java:1572)
+06-19 14:14:30.843 30049 30062 D SystemCallProvider: Requesting service: package_manager
+06-19 14:14:30.843 30049 30062 D SystemCallProvider: Service package_manager provided successfully
+06-19 14:14:30.843 30049 30070 W System.err: Caused by: java.io.IOException: error=2, No such file or directory
+06-19 14:14:30.843 30049 30070 W System.err: 	at java.lang.UNIXProcess.forkAndExec(Native Method)
+06-19 14:14:30.843 30049 30070 W System.err: 	at java.lang.UNIXProcess.<init>(UNIXProcess.java:133)
+06-19 14:14:30.843 30049 30070 W System.err: 	at java.lang.ProcessImpl.start(ProcessImpl.java:141)
+06-19 14:14:30.843 30049 30070 W System.err: 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+06-19 14:14:30.843 30049 30070 W System.err: 	... 8 more
+06-19 14:14:30.843 30025 30025 D BlackBoxCore: getService: package_manager, android.os.BinderProxy@603008d
+06-19 14:14:30.843 30049 30049 W BActivityThread: ActivityThread instrumentation is not our AppInstrumentation, attempting to replace
+06-19 14:14:30.843 30049 30070 D d       : Root access available: false
+06-19 14:14:30.843 30049 30072 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=64]
+06-19 14:14:30.843 30049 30072 D SystemCallProvider: Requesting service: test
+06-19 14:14:30.843 30049 30072 W SystemCallProvider: Service test not found
+06-19 14:14:30.843 30025 30025 D BlackBoxCore: Black process is running - SystemCallProvider accessible
+06-19 14:14:30.843 30049 30069 D JarManager: JAR file already exists and is valid: junit.jar
+06-19 14:14:30.844 30049 30069 I JarManager: JAR environment verification passed
+06-19 14:14:30.844 30049 30062 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=84]
+06-19 14:14:30.844 30049 30069 I JarManager: JAR environment initialized successfully
+06-19 14:14:30.844 30049 30062 D SystemCallProvider: Requesting service: storage_manager
+06-19 14:14:30.844 30049 30062 D SystemCallProvider: Service storage_manager provided successfully
+06-19 14:14:30.844 30025 30025 D BlackBoxCore: getService: storage_manager, android.os.BinderProxy@3806242
+06-19 14:14:30.844 30049 30062 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=64]
+06-19 14:14:30.844 30049 30062 D SystemCallProvider: Requesting service: test
+06-19 14:14:30.844 30049 30062 W SystemCallProvider: Service test not found
+06-19 14:14:30.844 30025 30025 D BlackBoxCore: Black process is running - SystemCallProvider accessible
+06-19 14:14:30.844 30049 30062 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=80]
+06-19 14:14:30.844 30049 30062 D SystemCallProvider: Requesting service: user_manager
+06-19 14:14:30.844 30049 30062 D SystemCallProvider: Service user_manager provided successfully
+06-19 14:14:30.844 30049 30049 D BActivityThread: Successfully replaced ActivityThread instrumentation with AppInstrumentation
+06-19 14:14:30.844 30049 30049 D BlackBoxCore: BActivityThread hooks initialized successfully
+06-19 14:14:30.844 30049 30049 D BlackBoxCore: Proper initialization order ensured
+06-19 14:14:30.844 30049 30049 D BlackBoxCore: BlackBox initialization completed in 4ms
+06-19 14:14:30.844 30049 30049 D d       : Services became available, triggering app list refresh
+06-19 14:14:30.844 30025 30025 D BlackBoxCore: getService: user_manager, android.os.BinderProxy@ca62253
+06-19 14:14:30.844 30049 30062 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=64]
+06-19 14:14:30.844 30049 30062 D SystemCallProvider: Requesting service: test
+06-19 14:14:30.844 30049 30062 W SystemCallProvider: Service test not found
+06-19 14:14:30.845 30025 30025 D BlackBoxCore: Black process is running - SystemCallProvider accessible
+06-19 14:14:30.845 30049 30072 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=76]
+06-19 14:14:30.845 30049 30072 D SystemCallProvider: Requesting service: job_manager
+06-19 14:14:30.845 30049 30072 D SystemCallProvider: Service job_manager provided successfully
+06-19 14:14:30.845 30025 30025 D BlackBoxCore: getService: job_manager, android.os.BinderProxy@641790
+06-19 14:14:30.845 30049 30062 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=64]
+06-19 14:14:30.845 30049 30062 D SystemCallProvider: Requesting service: test
+06-19 14:14:30.845 30049 30062 W SystemCallProvider: Service test not found
+06-19 14:14:30.845 30025 30025 D BlackBoxCore: Black process is running - SystemCallProvider accessible
+06-19 14:14:30.845 30049 30062 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=84]
+06-19 14:14:30.845 30049 30062 D SystemCallProvider: Requesting service: account_manager
+06-19 14:14:30.845 30049 30062 D SystemCallProvider: Service account_manager provided successfully
+06-19 14:14:30.845 30025 30025 D BlackBoxCore: getService: account_manager, android.os.BinderProxy@32c1889
+06-19 14:14:30.845 30049 30062 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=64]
+06-19 14:14:30.845 30049 30062 D SystemCallProvider: Requesting service: test
+06-19 14:14:30.845 30049 30062 W SystemCallProvider: Service test not found
+06-19 14:14:30.846 30025 30025 D BlackBoxCore: Black process is running - SystemCallProvider accessible
+06-19 14:14:30.846 30049 30062 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=88]
+06-19 14:14:30.846 30049 30062 D SystemCallProvider: Requesting service: location_manager
+06-19 14:14:30.846 30049 30062 D SystemCallProvider: Service location_manager provided successfully
+06-19 14:14:30.846 30025 30025 D BlackBoxCore: getService: location_manager, android.os.BinderProxy@c36608e
+06-19 14:14:30.846 30049 30062 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=64]
+06-19 14:14:30.846 30049 30062 D SystemCallProvider: Requesting service: test
+06-19 14:14:30.846 30049 30062 W SystemCallProvider: Service test not found
+06-19 14:14:30.846 30025 30025 D BlackBoxCore: Black process is running - SystemCallProvider accessible
+06-19 14:14:30.846 30049 30062 D SystemCallProvider: call: VM, Bundle[mParcelledData.dataSize=96]
+06-19 14:14:30.846 30049 30062 D SystemCallProvider: Requesting service: notification_manager
+06-19 14:14:30.846 30049 30062 D SystemCallProvider: Service notification_manager provided successfully
+06-19 14:14:30.846 30025 30025 D BlackBoxCore: getService: notification_manager, android.os.BinderProxy@6690af
+06-19 14:14:30.847 30025 30025 D BlackBoxCore: Services initialized successfully
+06-19 14:14:30.847 30025 30025 D BlackBoxCore: ServiceManager initialized successfully
+06-19 14:14:30.848 30025 30025 D BActivityThread: Found ActivityThread instrumentation, ensuring it's our AppInstrumentation
+06-19 14:14:30.848 30025 30025 W BActivityThread: ActivityThread instrumentation is not our AppInstrumentation, attempting to replace
+06-19 14:14:30.849 30025 30025 D BActivityThread: Successfully replaced ActivityThread instrumentation with AppInstrumentation
+06-19 14:14:30.849 30025 30025 D BlackBoxCore: BActivityThread hooks initialized successfully
+06-19 14:14:30.849 30025 30025 D BlackBoxCore: Proper initialization order ensured
+06-19 14:14:30.849 30025 30025 D TransactionThrottler: Reset transaction throttler
+06-19 14:14:30.849 30025 30025 D BlackManager: Transaction throttler reset
+06-19 14:14:30.849 30025 30025 D BlackBoxCore: BlackBox initialization completed in 157ms
+06-19 14:14:30.849 30025 30025 D d       : Services became available, triggering app list refresh
+06-19 14:14:30.853 30025 30025 D HWUI    : HWUI - treat SMPTE_170M as sRGB
+06-19 14:14:30.855 30025 30073 D HWUI    : CacheManager constructor. deviceInfo=(1080, 1920)
+06-19 14:14:30.855 30025 30073 D libMEOW : meow new tls: 0x762e2a20b0
+06-19 14:14:30.856 30025 30073 D libMEOW : meow reload base cfg path: na
+06-19 14:14:30.856 30025 30073 D libMEOW : meow reload overlay cfg path: na
+06-19 14:14:30.856 30025 30073 D libMEOW : applied 0 plugin for [top.niunaijun.blackbox].
+06-19 14:14:30.856 30025 30073 I mali    : Successfully parsed 2 environment variable(s) from /vendor/etc/mali_platform.config.
+06-19 14:14:30.861 30025 30025 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+06-19 14:14:30.862 30025 30073 I mali    : Successfully parsed 2 environment variable(s) from /vendor/etc/mali_platform.config.
+06-19 14:14:30.875 30025 30025 D AppInstrumentation: callActivityOnCreate: top.niunaijun.blackboxa.view.main.WelcomeActivity
+06-19 14:14:30.971 30025 30025 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+06-19 14:14:30.975 30025 30025 I DecorView: setWindowBackground: isPopOver=false color=fff1f1f3 d=android.graphics.drawable.LayerDrawable@7536e03
+06-19 14:14:30.981 30025 30025 D ProxyVpnService: ProxyVpnService created
+06-19 14:14:30.982 30025 30025 D ProxyVpnService: ProxyVpnService started
+06-19 14:14:30.985 30025 30025 D ProxyVpnService: Foreground service started successfully
+06-19 14:14:30.986 30025 30089 D ProxyVpnService: Starting VPN establishment...
+06-19 14:14:30.991 30025 30089 D ProxyVpnService: VPN builder configured, establishing interface...
+06-19 14:14:30.999 30025 30025 D AppInstrumentation: callActivityOnCreate: top.niunaijun.blackboxa.view.main.MainActivity
+06-19 14:14:31.028 30025 30025 D CompatChangeReporter: Compat change id reported: 37756858; UID 12449; state: ENABLED
+06-19 14:14:31.055 30025 30089 D ProxyVpnService: VPN interface established successfully
+06-19 14:14:31.056 30025 30089 D ProxyVpnService: Network handling thread started
+06-19 14:14:31.067 30025 30025 I DecorView: setWindowBackground: isPopOver=false color=ff000000 d=android.graphics.drawable.ColorDrawable@f6b73b
+06-19 14:14:31.072 30025 30025 D BlackManager: Creating service for: top.niunaijun.blackbox.core.system.user.IBUserManagerService$Stub
+06-19 14:14:31.072 30025 30025 D BlackManager: Successfully created service: user_manager
+06-19 14:14:31.079 30025 30025 D MainActivity: VPN permission already granted
+06-19 14:14:31.088 30025 30025 I ViewRootImpl: dVRR is disabled
+06-19 14:14:31.089 30025 30025 D HardwareRenderer: onDisplayChanged. displayId=0 current wxh=1340x800 mLargest wxh=0x0
+06-19 14:14:31.089 30025 30025 W HWUI    : Unknown dataspace 0
+06-19 14:14:31.089 30025 30025 D HardwareRenderer: Set largestWidth and largestHeight as logical resolution. (1340x800)
+06-19 14:14:31.089 30025 30073 D HWUI    : setMaxSurfaceArea requested wxh=(1340,800) requestedSurfaceArea(1072000) is smaller than defaultSurfaceArea(2073600). Use default.
+06-19 14:14:31.090 30025 30073 D NativeCustomFrequencyManager: [NativeCFMS] BpCustomFrequencyManager::BpCustomFrequencyManager()
+06-19 14:14:31.094 30025 30025 D InputTransport: Input channel constructed: '83fc26a', fd=135
+06-19 14:14:31.095 30025 30025 I InsetsController: onStateChanged: host=top.niunaijun.blackbox/top.niunaijun.blackboxa.view.main.MainActivity, from=android.view.ViewRootImpl.onInsetsStateChanged:3026, state=InsetsState: {mDisplayFrame=Rect(0, 0 - 1340, 800), mDisplayCutout=DisplayCutout{insets=Rect(0, 0 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=0 displayHeight=0 physicalDisplayWidth=0 physicalDisplayHeight=0 density={0.0} cutoutSpec={} rotation={0} scale={0.0} physicalPixelDisplaySizeRatio={0.0}}} sideOverrides=null}, mRoundedCorners=RoundedCorners{[RoundedCorner{position=TopLeft, radius=9, center=Point(9, 9)}, RoundedCorner{position=TopRight, radius=9, center=Point(1331, 9)}, RoundedCorner{position=BottomRight, radius=9, center=Point(1331, 791)}, RoundedCorner{position=BottomLeft, radius=9, center=Point(9, 791)}]}  mRoundedCornerFrame=Rect(0, 0 - 1340, 800), mPrivacyIndicatorBounds=PrivacyIndicatorBounds {static bounds=Rect(1282, 0 - 1340, 39) rotation=1}, mDisplayShape=DisplayShape{ spec=-311912193 displayWidth=800 displayHeight=1340 physicalPixelDisplaySizeRatio=1.0 rotation=1 offsetX=0 offsetY=0 scale=1.0}, mSources= { InsetsSource: {887e0000 mType=statusBars mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {887e0005 mType=mandatorySystemGestures mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {887e0006 mType=tappableElement mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {3 mType=ime mFrame=[0,0][0,0] mVisible=false mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {292c0001 mType=navigationBars mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0004 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {292c0005 mType=mandatorySystemGestures mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0006 mType=tappableElement mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0024 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null} }
+06-19 14:14:31.096 30025 30025 I VRI[MainActivity]@b60cdd2: synced displayState. AttachInfo displayState=2
+06-19 14:14:31.098 30025 30025 I VRI[MainActivity]@b60cdd2: setView = com.android.internal.policy.DecorView@cc67e15 IsHRR=false mFlingFrameRateChange=0 TM=true
+06-19 14:14:31.098 30025 30025 I IDS_TAG : Starting IDS observe window
+06-19 14:14:31.098 30025 30025 I IDS_TAG : Getting Shared Preference for top.niunaijun.blackboxa.app.App@50226fd uid = 12449
+06-19 14:14:31.100 30025 30025 I IDS_TAG : App top.niunaijun.blackboxa.app.App@50226fd being boosted by IDS
+06-19 14:14:31.101 30025 30025 I IDS_TAG : Closing IDS observe window
+06-19 14:14:31.101 30025 30025 I IDS_TAG : Getting Shared Preference for top.niunaijun.blackboxa.app.App@50226fd uid = 12449
+06-19 14:14:31.113 30025 30025 D AppsFragment: Services became available, refreshing app list
+06-19 14:14:31.113 30025 30088 D AppsRepository: getVmInstallList: userId=0, total users=1
+06-19 14:14:31.113 30025 30088 D AppsRepository: User: id=0, name=null
+06-19 14:14:31.113 30025 30088 D BlackManager: Creating service for: top.niunaijun.blackbox.core.system.pm.IBPackageManagerService$Stub
+06-19 14:14:31.114 30025 30088 D BlackManager: Successfully created service: package_manager
+06-19 14:14:31.115 30025 30095 D AppsRepository: getVmInstallList: userId=0, total users=1
+06-19 14:14:31.115 30025 30095 D AppsRepository: User: id=0, name=null
+06-19 14:14:31.115 30025 30097 D AppsRepository: getVmInstallList: userId=0, total users=1
+06-19 14:14:31.115 30025 30097 D AppsRepository: User: id=0, name=null
+06-19 14:14:31.125 30025 30025 E naijun.blackbox: [perfctl] 30025 30025 FPSGO ver:0
+06-19 14:14:31.125 30025 30025 E naijun.blackbox: [perfctl] 0 0 0 0
+06-19 14:14:31.126 30025 30025 D BufferQueueConsumer: [](id:754900000000,api:0,p:-1,c:30025) connect: controlledByApp=false
+06-19 14:14:31.127 30025 30025 D BLASTBufferQueue: [VRI[MainActivity]@b60cdd2#0](f:0,a:0) constructor()
+06-19 14:14:31.127 30025 30088 D AppsRepository: getVmInstallList: userId=0, applicationList.size=3
+06-19 14:14:31.127 30025 30088 D AppsRepository: First app: com.psoffritti.video.speed
+06-19 14:14:31.127 30025 30025 I BLASTBufferQueue_Java: new BLASTBufferQueue, mName= VRI[MainActivity]@b60cdd2 mNativeObject= 0x778e220740 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3585 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 android.view.Choreographer.doCallbacks:1367 android.view.Choreographer.doFrame:1292 android.view.Choreographer$FrameDisplayEventReceiver.run:1870 
+06-19 14:14:31.127 30025 30025 I BLASTBufferQueue_Java: update, w= 1340 h= 800 mName = VRI[MainActivity]@b60cdd2 mNativeObject= 0x778e220740 sc.mNativeObject= 0x772e212290 format= -1 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3590 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 
+06-19 14:14:31.127 30025 30025 D BLASTBufferQueue: [VRI[MainActivity]@b60cdd2#0](f:0,a:0) update width=1340 height=800 format=-1 mTransformHint=4
+06-19 14:14:31.128 30025 30025 I VRI[MainActivity]@b60cdd2: Relayout returned: old=(0,0,1340,800) new=(0,0,1340,800) relayoutAsync=false req=(1340,800)0 dur=7 res=0x3 s={true 0x775e22f780} ch=true seqId=0
+06-19 14:14:31.129 30025 30025 D VRI[MainActivity]@b60cdd2: mThreadedRenderer.initialize() mSurface={isValid=true 0x775e22f780} hwInitialized=true
+06-19 14:14:31.131 30025 30025 W View    : requestLayout() improperly called by m.Z{f8ddb7 VFED..C.. ......ID 21,45-76,72} during layout: running second layout pass
+06-19 14:14:31.133 30025 30025 D VRI[MainActivity]@b60cdd2: reportNextDraw android.view.ViewRootImpl.performTraversals:5443 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 
+06-19 14:14:31.133 30025 30025 D VRI[MainActivity]@b60cdd2: Setup new sync=wmsSync-VRI[MainActivity]@b60cdd2#0
+06-19 14:14:31.133 30025 30025 I VRI[MainActivity]@b60cdd2: Creating new active sync group VRI[MainActivity]@b60cdd2#1
+06-19 14:14:31.134 30025 30025 D VRI[MainActivity]@b60cdd2: registerCallbacksForSync syncBuffer=false
+06-19 14:14:31.136 30025 30097 D AppsRepository: getVmInstallList: userId=0, applicationList.size=3
+06-19 14:14:31.136 30025 30097 D AppsRepository: First app: com.psoffritti.video.speed
+06-19 14:14:31.138 30025 30094 D VRI[MainActivity]@b60cdd2: Received frameDrawingCallback syncResult=0 frameNum=1.
+06-19 14:14:31.139 30025 30094 I VRI[MainActivity]@b60cdd2: mWNT: t=0x779e256750 mBlastBufferQueue=0x778e220740 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl$12.onFrameDraw:15441 android.view.ThreadedRenderer$1.onFrameDraw:718 <bottom of call stack> 
+06-19 14:14:31.139 30025 30094 I VRI[MainActivity]@b60cdd2: Setting up sync and frameCommitCallback
+06-19 14:14:31.139 30025 30095 D AppsRepository: getVmInstallList: userId=0, applicationList.size=3
+06-19 14:14:31.139 30025 30095 D AppsRepository: First app: com.psoffritti.video.speed
+06-19 14:14:31.140 30025 30073 D naijun.blackbox: Can't load libmbrainSDK
+06-19 14:14:31.140 30025 30073 D naijun.blackbox: initMbrain failed
+06-19 14:14:31.171 30025 30073 I GrallocExtra: gralloc_extra_query:is_SW3D 0
+06-19 14:14:31.172 30025 30073 I GrallocExtra: gralloc_extra_query:is_SW3D 0
+06-19 14:14:31.172 30025 30073 D BLASTBufferQueue: [VRI[MainActivity]@b60cdd2#0](f:0,a:1) acquireNextBufferLocked size=1340x800 mFrameNumber=1 applyTransaction=true mTimestamp=259598325807471(auto) mPendingTransactions.size=0 graphicBufferId=128956393062403 transform=7
+06-19 14:14:31.172 30025 30073 D naijun.blackbox: Can't load libmbrainSDK
+06-19 14:14:31.172 30025 30073 D naijun.blackbox: initMbrain failed
+06-19 14:14:31.173 30025 30073 I VRI[MainActivity]@b60cdd2: Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true
+06-19 14:14:31.175 30025 30073 D HWUI    : CFMS:: SetUp Pid : 30025    Tid : 30073
+06-19 14:14:31.175 30025 30025 D VRI[MainActivity]@b60cdd2: reportDrawFinished seqId=0
+06-19 14:14:31.176 30025 30073 D HWUI    : HWUI - treat SMPTE_170M as sRGB
+06-19 14:14:31.184 30025 30025 I InsetsSourceConsumer: applyRequestedVisibilityToControl: visible=true, type=navigationBars, host=top.niunaijun.blackbox/top.niunaijun.blackboxa.view.main.MainActivity
+06-19 14:14:31.185 30025 30025 I InsetsSourceConsumer: applyRequestedVisibilityToControl: visible=true, type=statusBars, host=top.niunaijun.blackbox/top.niunaijun.blackboxa.view.main.MainActivity
+06-19 14:14:31.220 30025 30025 D VRI[MainActivity]@b60cdd2: mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0x775e22f780}
+06-19 14:14:31.220 30025 30025 D InputMethodManagerUtils: startInputInner - Id : 0
+06-19 14:14:31.220 30025 30025 I InputMethodManager: startInputInner - IInputMethodManagerGlobalInvoker.startInputOrWindowGainedFocus
+06-19 14:14:31.224 30025 30025 I InputMethodManager: handleMessage: setImeVisibility visible=false
+06-19 14:14:31.224 30025 30025 D InsetsController: hide(ime(), fromIme=false)
+06-19 14:14:31.224 30025 30025 I ImeTracker: top.niunaijun.blackbox:be8271cd: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+06-19 14:14:31.232 30025 30034 D InputTransport: Input channel constructed: 'ClientS', fd=200
+06-19 14:14:31.285 30025 30095 D AppsRepository: getVmInstallList: processed 3 apps - Memory: 19MB used / 256MB max (7%)
+06-19 14:14:31.285 30025 30095 D AppsRepository: getVmInstallList: Showing 3 virtual apps for userId=0
+06-19 14:14:31.285 30025 30095 D AppsViewModel: No apps loaded, retrying... (1/3)
+06-19 14:14:31.285 30025 30088 D AppsRepository: getVmInstallList: processed 3 apps - Memory: 20MB used / 256MB max (7%)
+06-19 14:14:31.285 30025 30088 D AppsRepository: getVmInstallList: Showing 3 virtual apps for userId=0
+06-19 14:14:31.286 30025 30097 D AppsRepository: getVmInstallList: processed 3 apps - Memory: 20MB used / 256MB max (7%)
+06-19 14:14:31.287 30025 30097 D AppsRepository: getVmInstallList: Showing 3 virtual apps for userId=0
+06-19 14:14:31.805 30025 30087 D ApplicationPackageManager: App doesn't support live icon : [com.samsung.android.game.gamehome]. just show default Icon.
+06-19 14:14:31.957 30025 30087 D AppsRepository: Filtering out BlackBox app: top.niunaijun.blackbox
+06-19 14:14:32.028 30025 30025 I ImeFocusController: onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+06-19 14:14:32.028 30025 30025 I ImeFocusController: onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+06-19 14:14:32.148 30025 30087 D ApplicationPackageManager: we don't have 'com.sec.android.app.clockpackage' package name. load it
+06-19 14:14:32.164 30025 30087 I naijun.blackbox: Failed to open image dex files: Dex cache count and dex file count mismatch while trying to initialize from image
+06-19 14:14:32.169 30025 30087 I ApplicationPackageManager: package : com.sec.android.app.clockpackage, useAppIconResources : false
+06-19 14:14:32.187 30025 30087 I LiveIconUtil: getLiveIcon was called in ClockPackage
+06-19 14:14:32.188 30025 30087 I LiveIconUtil: getLiveIcon res = com.sec.android.app.clockpackage
+06-19 14:14:32.188 30025 30087 I LiveIconUtil: stdIconSize : 63 , targetIconSize : 63
+06-19 14:14:32.197 30025 30087 E AppIconSolution: Couldn't get theme package resources, package is null
+06-19 14:14:32.197 30025 30087 I AppIconSolution: load= live icon for com.sec.android.app.clockpackage, from overlay = false
+06-19 14:14:32.287 30025 30097 D AppsRepository: getVmInstallList: userId=0, total users=1
+06-19 14:14:32.287 30025 30097 D AppsRepository: User: id=0, name=null
+06-19 14:14:32.289 30025 30097 D AppsRepository: getVmInstallList: userId=0, applicationList.size=3
+06-19 14:14:32.289 30025 30097 D AppsRepository: First app: com.psoffritti.video.speed
+06-19 14:14:32.290 30025 30097 D AppsRepository: getVmInstallList: processed 3 apps - Memory: 63MB used / 256MB max (24%)
+06-19 14:14:32.290 30025 30097 D AppsRepository: getVmInstallList: Showing 3 virtual apps for userId=0
+06-19 14:14:32.372 30025 30025 I VRI[MainActivity]@b60cdd2: stopped(true) old = false
+06-19 14:14:32.372 30025 30025 D VRI[MainActivity]@b60cdd2: WindowStopped on top.niunaijun.blackbox/top.niunaijun.blackboxa.view.main.MainActivity set to true
+06-19 14:14:32.372 30025 30073 D HWUI    : CacheManager::trimMemory(20)
+06-19 14:14:32.389 30025 30073 D BLASTBufferQueue: [VRI[MainActivity]@b60cdd2#0](f:0,a:1) destructor()
+06-19 14:14:32.389 30025 30073 D BufferQueueConsumer: [VRI[MainActivity]@b60cdd2#0(BLAST Consumer)0](id:754900000000,api:0,p:-1,c:30025) disconnect
+06-19 14:14:32.390 30025 30073 D HWUI    : CacheManager::trimMemory(20)
+06-19 14:14:32.396 30025 30025 I VRI[MainActivity]@b60cdd2: Relayout returned: old=(0,0,1340,800) new=(0,0,1340,800) relayoutAsync=false req=(1340,800)4 dur=5 res=0x2 s={false 0x0} ch=false seqId=0
+06-19 14:14:32.396 30025 30025 D VRI[MainActivity]@b60cdd2: Not drawing due to not visible. Reason=View.INVISIBLE
+06-19 14:14:32.398 30025 30025 I VRI[MainActivity]@b60cdd2: handleAppVisibility mAppVisible = true visible = false
+06-19 14:14:32.403 30025 30025 D BBA2    : setIsFg isFg = false; delayValue 3999ms
+06-19 14:14:32.406 30025 30025 D InputTransport: Input channel destroyed: 'ClientS', fd=200
+06-19 14:14:32.609 30025 30029 W naijun.blackbox: Cleared Reference was only reachable from finalizer (only reported once)
+06-19 14:14:33.312 30025 30025 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@d14e1f7
+06-19 14:14:33.315 30025 30073 D HWUI    : CacheManager::trimMemory(20)
+06-19 14:14:33.316 30025 30025 I VRI[MainActivity]@b60cdd2: dispatchDetachedFromWindow
+06-19 14:14:33.317 30025 30025 D InputTransport: Input channel destroyed: '83fc26a', fd=135
+06-19 14:14:35.786 30049 30049 D BlackBoxCore: Executing delayed server service start
+06-19 14:14:35.800 30049 30049 D BlackBoxCore: Delayed server service start successful
+06-19 14:14:35.800 30049 30049 D DaemonService: DaemonService onCreate
+06-19 14:14:35.801 30049 30049 D DaemonService: Notification channel created successfully
+06-19 14:14:35.801 30049 30049 D DaemonService: DaemonService onStartCommand
+06-19 14:14:35.807 30049 30049 D DaemonService: Foreground service started successfully
+06-19 14:14:35.807 30049 30049 D DaemonService: DaemonService started successfully
+06-19 14:14:35.807 30049 30049 I DaemonService: DaemonInnerService -> onCreate
+06-19 14:14:35.808 30049 30049 I DaemonService: DaemonInnerService -> onStartCommand
+06-19 14:14:35.808 30049 30049 D DaemonService: Notification cancelled successfully
+06-19 14:14:35.810 30049 30049 I DaemonService: DaemonInnerService -> onDestroy
+06-19 14:14:36.412 30025 30268 D ProfileInstaller: Skipping profile installation for top.niunaijun.blackbox
+06-19 14:14:41.057 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:14:51.057 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:15:00.674 30025 30025 D CrashMonitor: Performing periodic health check...
+06-19 14:15:00.675 30025 30025 D CrashMonitor: Health check completed - Memory: 2.2%, Threads: 29
+06-19 14:15:00.784 30049 30049 D CrashMonitor: Performing periodic health check...
+06-19 14:15:00.785 30049 30049 D CrashMonitor: Health check completed - Memory: 0.9%, Threads: 12
+06-19 14:15:01.058 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:15:11.059 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:15:21.059 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:15:30.682 30025 30025 D CrashMonitor: Performing periodic health check...
+06-19 14:15:30.682 30025 30025 D CrashMonitor: Health check completed - Memory: 2.2%, Threads: 29
+06-19 14:15:30.805 30049 30049 D CrashMonitor: Performing periodic health check...
+06-19 14:15:30.805 30049 30049 D CrashMonitor: Health check completed - Memory: 0.9%, Threads: 12
+06-19 14:15:31.060 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:15:41.060 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:15:51.061 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:16:00.712 30025 30025 D CrashMonitor: Performing periodic health check...
+06-19 14:16:00.713 30025 30025 D CrashMonitor: Health check completed - Memory: 2.2%, Threads: 29
+06-19 14:16:00.828 30049 30049 D CrashMonitor: Performing periodic health check...
+06-19 14:16:00.828 30049 30049 D CrashMonitor: Health check completed - Memory: 0.9%, Threads: 12
+06-19 14:16:01.063 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:16:11.063 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:16:21.064 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:16:30.713 30025 30025 D CrashMonitor: Performing periodic health check...
+06-19 14:16:30.714 30025 30025 D CrashMonitor: Health check completed - Memory: 2.2%, Threads: 29
+06-19 14:16:30.832 30049 30049 D CrashMonitor: Performing periodic health check...
+06-19 14:16:30.832 30049 30049 D CrashMonitor: Health check completed - Memory: 0.9%, Threads: 12
+06-19 14:16:31.064 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:16:41.065 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:16:51.065 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:17:00.741 30025 30025 D CrashMonitor: Performing periodic health check...
+06-19 14:17:00.741 30025 30025 D CrashMonitor: Health check completed - Memory: 2.2%, Threads: 29
+06-19 14:17:00.862 30049 30049 D CrashMonitor: Performing periodic health check...
+06-19 14:17:00.863 30049 30049 D CrashMonitor: Health check completed - Memory: 0.9%, Threads: 12
+06-19 14:17:01.066 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:17:11.066 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:17:21.067 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:17:30.742 30025 30025 D CrashMonitor: Performing periodic health check...
+06-19 14:17:30.742 30025 30025 D CrashMonitor: Health check completed - Memory: 2.2%, Threads: 29
+06-19 14:17:30.863 30049 30049 D CrashMonitor: Performing periodic health check...
+06-19 14:17:30.863 30049 30049 D CrashMonitor: Health check completed - Memory: 0.9%, Threads: 12
+06-19 14:17:31.067 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:17:41.068 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:17:51.069 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:18:00.764 30025 30025 D CrashMonitor: Performing periodic health check...
+06-19 14:18:00.764 30025 30025 D CrashMonitor: Health check completed - Memory: 2.2%, Threads: 29
+06-19 14:18:00.890 30049 30049 D CrashMonitor: Performing periodic health check...
+06-19 14:18:00.890 30049 30049 D CrashMonitor: Health check completed - Memory: 0.9%, Threads: 12
+06-19 14:18:01.069 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:18:11.069 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:18:21.072 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:18:30.765 30025 30025 D CrashMonitor: Performing periodic health check...
+06-19 14:18:30.765 30025 30025 D CrashMonitor: Health check completed - Memory: 2.2%, Threads: 29
+06-19 14:18:30.891 30049 30049 D CrashMonitor: Performing periodic health check...
+06-19 14:18:30.891 30049 30049 D CrashMonitor: Health check completed - Memory: 0.9%, Threads: 12
+06-19 14:18:31.073 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:18:41.073 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...
+06-19 14:18:51.074 30025 30090 D ProxyVpnService: VPN interface active, monitoring network...

@@ -108,70 +108,37 @@ public class ProxyVpnService extends VpnService {
 
     
     protected void establishVpn() {
-        
-        final long TIMEOUT_MS = 5000; 
-        final long startTime = System.currentTimeMillis();
-        
         try {
             Slog.d(TAG, "Starting VPN establishment...");
-            
-            
-            if (System.currentTimeMillis() - startTime > TIMEOUT_MS) {
-                Slog.w(TAG, "VPN establishment timeout, aborting");
-                return;
-            }
-            
+
             Builder builder = new Builder();
-            
-            
+
             builder.setSession("BlackBox VPN");
-            
-            
+
+            // Assign a local address to the tun interface.
+            // No routes are added, so NO traffic is captured by this tunnel.
+            // This keeps the VpnService alive (needed for VpnCommonProxy to redirect
+            // guest-app VPN calls through BlackBox) without black-holing any packets.
             builder.addAddress("10.0.0.2", 32);
-            
-            
-            builder.addRoute("0.0.0.0", 0);  
-            
-            
-            builder.addDnsServer("8.8.8.8");
-            builder.addDnsServer("8.8.4.4");
-            
-            
-            builder.addAllowedApplication(getPackageName());
-            
-            
-            builder.setSession("BlackBox Internet Access");
-            
+
+            // Explicitly allow all apps to bypass this VPN so their traffic
+            // continues to flow through the real network interface.
+            builder.allowBypass();
+
             Slog.d(TAG, "VPN builder configured, establishing interface...");
-            
-            
-            if (System.currentTimeMillis() - startTime > TIMEOUT_MS) {
-                Slog.w(TAG, "VPN establishment timeout before establish(), aborting");
-                return;
-            }
-            
-            
+
             mVpnInterface = builder.establish();
             if (mVpnInterface != null) {
                 mIsEstablished = true;
                 Slog.d(TAG, "VPN interface established successfully");
-                
-                
                 startNetworkHandling();
             } else {
                 Slog.e(TAG, "Failed to establish VPN interface - builder.establish() returned null");
             }
-            
+
         } catch (Exception e) {
             Slog.e(TAG, "Error establishing VPN: " + e.getMessage());
-            e.printStackTrace();
-            
             mIsEstablished = false;
-        }
-        
-        
-        if (System.currentTimeMillis() - startTime > TIMEOUT_MS) {
-            Slog.w(TAG, "VPN establishment took too long: " + (System.currentTimeMillis() - startTime) + "ms");
         }
     }
 

@@ -1,0 +1,490 @@
+[Debugger] Attached to blackbox (PID 8930)
+[Debugger] Logcat stream started (PID 8930)
+--------- beginning of main
+06-19 15:10:43.774  8930  9023 I Banzai  : Path: /storage/emulated/0/Android/data/top.niunaijun.blackbox/files/blackbox/storage/emulated/0/Android/data/com.nekki.shadowfight3/files/tou.file
+06-19 15:10:43.776  8930  9023 D Banzai  : Send request on url https://sf3lb.nekki.com/clog?guid=96b1a4edeac872bc&e=ENTER_POINT_BEGIN&ext=eyJSQU0iOiIzNjQyIiwiQVJDSCI6ImFybTY0LXY4YSIsIk9TIjoiMTYiLCJMQU5HIjoiRW5nbGlzaCIsIk5FVCI6IldJRkkiLCJPR0wiOiJPUEVOR0xFU18zXzAiLCJCTiI6IjE5MjA5IiwiUEwiOiJBbmRyb2lkIn0%3D
+06-19 15:10:43.787  8930  9023 I Unity   : [KFNOKLGFLCC] Init
+06-19 15:10:43.790  8930  9023 I Unity   : [IHBEPIEEIJG] Init
+06-19 15:10:43.791  8930  9023 I Unity   : [IHBEPIEEIJG] Current state: UserExist
+06-19 15:10:44.319  8930  9102 D BLASTBufferQueue: [38a2265 SurfaceView[com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity]@0#1](f:0,a:1) acquireNextBufferLocked size=1340x800 mFrameNumber=1 applyTransaction=true mTimestamp=262971472927595(auto) mPendingTransactions.size=0 graphicBufferId=38354057953282 transform=7
+06-19 15:10:44.343  8930  9023 I Unity   : [BOGDEHCNHOF]; Logs folder: [/storage/emulated/0/Android/data/top.niunaijun.blackbox/files/blackbox/storage/emulated/0/Android/data/com.nekki.shadowfight3/files/gamedata/Logs]; Available drive space: 6459MB; Limit space: 50MB
+06-19 15:10:44.354  8930  9023 I Unity   : [LOJMGBEJJGO] Init
+06-19 15:10:44.364  8930  9154 I UserMessagingPlatform: Use new ConsentDebugSettings.Builder().addTestDeviceHashedId("1654883292BEA2952023B0AF6A4DAB83") to set this as a debug device.
+06-19 15:10:44.364  8930  9023 I Unity   : [JOKOBCPEOPJ] Init
+06-19 15:10:44.365  8930  9023 I Unity   : [DHEDEFLIDPP] Init
+06-19 15:10:44.368  8930  9154 D UserMessagingPlatform: Stored info not exists: IABTCF_TCString
+06-19 15:10:44.368  8930  9154 D UserMessagingPlatform: Stored info not exists: IABGPP_HDR_GppString
+06-19 15:10:44.368  8930  9154 D UserMessagingPlatform: Stored info not exists: IABGPP_GppSID
+06-19 15:10:44.368  8930  9154 D UserMessagingPlatform: Stored info not exists: IABUSPrivacy_String
+06-19 15:10:44.376  8930  9154 I WebViewFactory: Loading com.google.android.webview version 149.0.7827.91 (code 782709103)
+--------- beginning of system
+06-19 15:10:44.380  8930  9154 V ResourcesManager: The following library key has been added: ResourcesKey{ mHash=577b64ab mResDir=null mSplitDirs=[] mOverlayDirs=[] mLibDirs=[/data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk,/system/framework/android.test.base.jar,/system_ext/framework/androidx.window.extensions.jar] mDisplayId=0 mOverrideConfig=v36 mCompatInfo={213dpi always-compat} mLoaders=[]}
+06-19 15:10:44.382  8930  9154 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+06-19 15:10:44.382  8930  9154 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+06-19 15:10:44.382  8930  9154 D NativeCore: openDexFileNative: /data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk
+06-19 15:10:44.389  8930  9154 D nativeloader: Configuring clns-11 for other apk /data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/lib/arm64:/data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand
+06-19 15:10:44.458  8930  9154 I cr_WVCFactoryProvider: version=149.0.7827.91 (782709103) minSdkVersion=29 multiprocess=true packageId=2 splits=config.arm64_v8a
+06-19 15:10:44.467  8930  8930 I BLASTBufferQueue_Java: update, w= 1340 h= 800 mName = VRI[NekkiNativeActivity]@251404f mNativeObject= 0x778e23a6b0 sc.mNativeObject= 0x772e2160d0 format= -3 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3574 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 
+06-19 15:10:44.467  8930  8930 I VRI[NekkiNativeActivity]@251404f: Relayout returned: old=(0,0,1340,800) new=(0,0,1340,800) relayoutAsync=true req=(1340,800)0 dur=0 res=0x0 s={true 0x775e250dd0} ch=false seqId=0
+06-19 15:10:44.467  8930  8930 I VRI[NekkiNativeActivity]@251404f: updateBoundsLayer: t=android.view.SurfaceControl$Transaction@1e4eaee sc=Surface(name=Bounds for - com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity@0)/@0x20bb8f frame=5
+06-19 15:10:44.467  8930  9154 D nativeloader: Load /data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk!/lib/arm64-v8a/libwebviewchromium.so using class loader ns clns-11 (caller=/data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk): ok
+06-19 15:10:44.468  8930  8930 I VRI[NekkiNativeActivity]@251404f: registerCallbackForPendingTransactions
+06-19 15:10:44.468  8930  9031 I VRI[NekkiNativeActivity]@251404f: mWNT: t=0x779e2d1490 mBlastBufferQueue=0x778e23a6b0 fn= 5 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl$10.onFrameDraw:6536 android.view.ViewRootImpl$4.onFrameDraw:2489 android.view.ThreadedRenderer$1.onFrameDraw:718 
+06-19 15:10:44.476  8930  9154 D nativeloader: Load /system/lib64/libwebviewchromium_plat_support.so using class loader ns clns-11 (caller=/data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk): ok
+06-19 15:10:44.486  8930  9157 I chromium: [0619/151044.481693:INFO:android_webview/browser/variations/variations_seed_loader.cc:67] Failed to open file for reading.: No such file or directory (2)
+06-19 15:10:44.514  8930  8930 I cr_LibraryLoader: Successfully loaded native library
+06-19 15:10:44.525  8930  8930 I cr_CachingUmaRecorder: Flushed 44 samples from 22 histograms, 0 samples were dropped.
+06-19 15:10:44.533  8930  8930 I cr_ChildProcLH: ScopedServiceBindingBatch.tryActivate: false
+06-19 15:10:44.536  8930  8930 I cr_CombinedPProvider: #registerProvider() provider:WV.wk@53234c4 isPolicyCacheEnabled:false policyProvidersSize:0
+06-19 15:10:44.537  8930  8930 I cr_PolicyProvider: #setManagerAndSource() 0
+06-19 15:10:44.538  8930  9160 D TransactionThrottler: Reset transaction throttler
+06-19 15:10:44.538  8930  9160 D TransactionThrottler: Reset transaction throttler
+06-19 15:10:44.538  8930  8930 I cr_DisplayManager: Is Display Topology available: false
+06-19 15:10:44.541  8930  9160 I cr_policy: registerReceiver succeeded after 4ms
+06-19 15:10:44.542  8930  9159 D TransactionThrottler: Reset transaction throttler
+06-19 15:10:44.553  8930  9159 D TransactionThrottler: Reset transaction throttler
+06-19 15:10:44.595  8930  9023 D BanzaiLogcat: Starting Logcat process with command line: logcat -f /storage/emulated/0/Android/data/top.niunaijun.blackbox/files/blackbox/storage/emulated/0/Android/data/com.nekki.shadowfight3/files/gamedata/Logs/NativeLog_19-06-26_15-10-44.log *:S UnityIAP:V BillingClient:V BillingHelper:V BanzaiLogcat:V BanzaiExceptions:V BanzaiGpgTokens:V NativeBridgeActivity:V TokenFragment:V TokenPendingResult:V BanzaiBackups:V
+06-19 15:10:44.615  8930  8930 I cr_CombinedPProvider: #linkNativeInternal() 1
+06-19 15:10:44.621  8930  8930 I cr_AppResProvider: #getApplicationRestrictionsFromUserManager() Only system may: get application restrictions for other user/app com.nekki.shadowfight3
+06-19 15:10:44.621  8930  8930 I cr_PolicyProvider: #notifySettingsAvailable() 0
+06-19 15:10:44.621  8930  8930 I cr_CombinedPProvider: #onSettingsAvailable() 0
+06-19 15:10:44.621  8930  8930 I cr_CombinedPProvider: #flushPolicies()
+06-19 15:10:44.655  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:10:44.657  8930  9023 I Unity   : GcUtils_SetFreeSpaceDivisor(3)
+06-19 15:10:44.659  8930  9023 D PackageManagerStub: GetPackageInfo: Providing fake Google Play Services info
+06-19 15:10:44.659  8930  9023 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-19 15:10:44.660  8930  9176 I jun.blackbox:p0: Using smaps_rollup for pss collection
+06-19 15:10:44.661  8930  9023 D Banzai  : Status of gaming service availability: 1
+06-19 15:10:44.661  8930  9023 I Unity   : GC Configuration:
+06-19 15:10:44.661  8930  9023 I Unity   : Adaptivity=1
+06-19 15:10:44.661  8930  9023 I Unity   : CrashMemoryLimit=1821
+06-19 15:10:44.661  8930  9023 I Unity   : MinFreeSpaceDivisor=3
+06-19 15:10:44.661  8930  9023 I Unity   : MaxFreeSpaceDivisor=8
+06-19 15:10:44.666  8930  8930 D VirtualSpoof: [spoof] ro.build.version.release = 12
+06-19 15:10:44.667  8930  8930 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+06-19 15:10:44.703  8930  9182 D TransactionThrottler: Reset transaction throttler
+06-19 15:10:44.703  8930  9182 D TransactionThrottler: Reset transaction throttler
+06-19 15:10:44.708  8930  9182 D TransactionThrottler: Reset transaction throttler
+06-19 15:10:44.708  8930  9182 D TransactionThrottler: Reset transaction throttler
+06-19 15:10:44.732  8930  9183 W chromium: [WARNING:net/dns/dns_config_service_android.cc:69] Failed to read DnsConfig.
+06-19 15:10:44.735  8930  8930 W cr_PlatformSer-Internal: Unable to find GMS package on device
+06-19 15:10:44.743  8930  8930 D VirtualSpoof: [spoof] ro.build.version.release = 12
+06-19 15:10:44.743  8930  8930 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+06-19 15:10:44.744  8930  8930 W chromium: [WARNING:android_webview/browser/network_service/net_helpers.cc:137] HTTP Cache size is: 20971520
+06-19 15:10:44.745  8930  8930 D TransactionThrottler: Reset transaction throttler
+06-19 15:10:44.745  8930  8930 D TransactionThrottler: Reset transaction throttler
+06-19 15:10:44.747  8930  8930 D TransactionThrottler: Reset transaction throttler
+06-19 15:10:44.747  8930  8930 D TransactionThrottler: Reset transaction throttler
+06-19 15:10:44.749  8930  9055 E LoadedApk: performReceive() called targeting raw IIntentReceiver for Intent { act=android.intent.action.PROXY_CHANGE flg=0x24000010 xflg=0x4 (has extras) }
+06-19 15:10:44.762  8930  9154 D VirtualSpoof: [spoof] ro.build.version.release = 12
+06-19 15:10:44.762  8930  9154 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+06-19 15:10:44.772  8930  8930 I cr_AppResProvider: #getApplicationRestrictionsFromUserManager() Only system may: get application restrictions for other user/app com.nekki.shadowfight3
+06-19 15:10:44.772  8930  8930 I cr_PolicyProvider: #notifySettingsAvailable() 0
+06-19 15:10:44.772  8930  8930 I cr_CombinedPProvider: #onSettingsAvailable() 0
+06-19 15:10:44.772  8930  8930 I cr_CombinedPProvider: #flushPolicies()
+06-19 15:10:44.773  8930  9206 I CameraManagerGlobal: Connecting to camera service
+06-19 15:10:44.779  8930  9023 I Unity   : Initializing localization..
+06-19 15:10:44.788  8930  9206 D VendorTagDescriptor: addVendorDescriptor: vendor tag id 8932615658386372252 added
+06-19 15:10:44.802  8930  9206 I CameraManager: registerAvailabilityCallback: Is device callback = false
+06-19 15:10:44.804  8930  9055 I CameraManagerGlobal: Camera 0 facing CAMERA_FACING_BACK state now CAMERA_STATE_CLOSED for client com.google.android.googlequicksearchbox API Level 2 User Id 0Device Id 0
+06-19 15:10:44.804  8930  9206 I CameraManagerGlobal: postSingleUpdate device: camera id 0 status STATUS_PRESENT
+06-19 15:10:44.804  8930  9206 I CameraManagerGlobal: postSingleUpdate device: camera id 1 status STATUS_PRESENT
+06-19 15:10:44.804  8930  9055 I CameraManagerGlobal: Camera 1 facing CAMERA_FACING_FRONT state now CAMERA_STATE_CLOSED for client android.system API Level 2 User Id 0Device Id 0
+06-19 15:10:44.805  8930  9055 I CameraManagerGlobal: Camera 2 facing CAMERA_FACING_FRONT state now CAMERA_STATE_CLOSED for client client.pid<1100> API Level 2 User Id 0Device Id 0
+06-19 15:10:44.815  8930  9023 I Unity   : Localization initialized: [English] []
+06-19 15:10:46.143  8930  8930 I VRI[NekkiNativeActivity]@251404f: ViewPostIme pointer 0
+06-19 15:10:46.146  8930  8930 I VRI[NekkiNativeActivity]@251404f: call setFrameRateCategory for touch hint category=high hint, reason=touch, vri=VRI[NekkiNativeActivity]@251404f
+06-19 15:10:46.262  8930  8930 I VRI[NekkiNativeActivity]@251404f: handleResized, frames=ClientWindowFrames{frame=[0,0][1340,800] display=[0,0][1340,800] parentFrame=[0,0][0,0]} displayId=0 dragResizing=false compatScale=1.0 frameChanged=false attachedFrameChanged=false configChanged=false displayChanged=false compatScaleChanged=false dragResizingChanged=false
+06-19 15:10:46.290  8930  8930 I VRI[NekkiNativeActivity]@251404f: ViewPostIme pointer 1
+06-19 15:10:46.688  8930  8930 V FA      : onUnbind called for intent. action: com.google.android.gms.measurement.START
+06-19 15:10:47.135  8930  8930 I InsetsController: onStateChanged: host=com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity, from=android.view.ViewRootImpl.onInsetsStateChanged:3026, state=InsetsState: {mDisplayFrame=Rect(0, 0 - 1340, 800), mDisplayCutout=DisplayCutout{insets=Rect(0, 0 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=0 displayHeight=0 physicalDisplayWidth=0 physicalDisplayHeight=0 density={0.0} cutoutSpec={} rotation={0} scale={0.0} physicalPixelDisplaySizeRatio={0.0}}} sideOverrides=null}, mRoundedCorners=RoundedCorners{[RoundedCorner{position=TopLeft, radius=9, center=Point(9, 9)}, RoundedCorner{position=TopRight, radius=9, center=Point(1331, 9)}, RoundedCorner{position=BottomRight, radius=9, center=Point(1331, 791)}, RoundedCorner{position=BottomLeft, radius=9, center=Point(9, 791)}]}  mRoundedCornerFrame=Rect(0, 0 - 1340, 800), mPrivacyIndicatorBounds=PrivacyIndicatorBounds {static bounds=Rect(1282, 0 - 1340, 39) rotation=1}, mDisplayShape=DisplayShape{ spec=-311912193 displayWidth=800 displayHeight=1340 physicalPixelDisplaySizeRatio=1.0 rotation=1 offsetX=0 offsetY=0 scale=1.0}, mSources= { InsetsSource: {887e0000 mType=statusBars mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {887e0005 mType=mandatorySystemGestures mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {887e0006 mType=tappableElement mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {3 mType=ime mFrame=[0,0][0,0] mVisible=false mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {292c0001 mType=navigationBars mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0004 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {292c0005 mType=mandatorySystemGestures mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0006 mType=tappableElement mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0024 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null} }
+06-19 15:10:47.150  8930  8930 I ImeFocusController: onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+06-19 15:10:47.150  8930  8930 I ImeFocusController: onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+06-19 15:10:47.363  8930  9228 D ProfileInstaller: Installing profile for com.nekki.shadowfight3
+06-19 15:10:47.482  8930  8930 E HCallbackStub: mActivityCallbacks is null for clientTransaction: ClientTransaction{
+06-19 15:10:47.482  8930  8930 E HCallbackStub:   transactionItems=[
+06-19 15:10:47.482  8930  8930 E HCallbackStub:     StopActivityItem{mActivityToken=android.os.BinderProxy@493a42b}
+06-19 15:10:47.482  8930  8930 E HCallbackStub:   ]
+06-19 15:10:47.482  8930  8930 E HCallbackStub: }
+06-19 15:10:47.484  8930  8930 D FirebaseSessions: App backgrounded on com.nekki.shadowfight3
+06-19 15:10:47.494  8930  8930 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=com.unity3d.player.a.e@ab75e09
+06-19 15:10:47.502  8930  9055 D Choreographer: BBA2 receive callback when in bg : 4
+06-19 15:10:47.504  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:10:47.505  8930  9023 I Unity   : Application Pause
+06-19 15:10:47.516  8930  9023 D AAudio  : AAudioStream_requestStop(s#1) called
+06-19 15:10:47.516  8930  9023 D AAudioStream: setState(s#1) from 4 to 9
+06-19 15:10:47.516  8930  9023 D AudioTrack: stop(1990): called with 123264 frames delivered
+06-19 15:10:47.519  8930  9023 D AAudioStream: setState(s#1) from 9 to 10
+06-19 15:10:47.525  8930  8930 I VRI[NekkiNativeActivity]@251404f: stopped(true) old = false
+06-19 15:10:47.525  8930  8930 D VRI[NekkiNativeActivity]@251404f: WindowStopped on com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity set to true
+06-19 15:10:47.525  8930  9009 D HWUI    : CacheManager::trimMemory(20)
+06-19 15:10:47.526  8930  9009 D SurfaceView: 204783900 windowPositionLost, frameNr = 0
+06-19 15:10:47.526  8930  9009 I SV[59384421 NekkiNativeActivity]: aOrMT: VRI[NekkiNativeActivity]@251404f t = android.view.SurfaceControl$Transaction@cf4f125 fN = 0 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionLost:2025 android.graphics.RenderNode$CompositePositionUpdateListener.positionLost:418 
+06-19 15:10:47.526  8930  9009 I VRI[NekkiNativeActivity]@251404f: mWNT: t=0x779e237810 mBlastBufferQueue=0x778e23a6b0 fn= 0 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.SurfaceView.applyOrMergeTransaction:1863 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionLost:2025 
+06-19 15:10:47.527  8930  8930 I SV[59384421 NekkiNativeActivity]: windowStopped(true) false com.unity3d.player.a.g{38a2265 VFED..... .F...... 0,0-1340,800 #7f0a03a2 app:id/unitySurfaceView aid=1073741824} of VRI[NekkiNativeActivity]@251404f
+06-19 15:10:47.527  8930  8930 I SurfaceView: 59384421 Changes: creating=false format=false size=false visible=true alpha=false hint=false left=false top=false z=false attached=true lifecycleStrategy=false
+06-19 15:10:47.528  8930  8930 I SurfaceView: 59384421 Cur surface: Surface(name=null mNativeObject=512680622912)/@0x94962a
+06-19 15:10:47.528  8930  8930 I SurfaceView: 59384421 surfaceDestroyed
+06-19 15:10:47.528  8930  8930 I SV[59384421 NekkiNativeActivity]: surfaceDestroyed callback.size 1 #1 com.unity3d.player.a.g{38a2265 VFED..... .F...... 0,0-1340,800 #7f0a03a2 app:id/unitySurfaceView aid=1073741824}
+06-19 15:10:47.543  8930  8983 D TransactionThrottler: Reset transaction throttler
+06-19 15:10:47.663  8930  8930 I SV[59384421 NekkiNativeActivity]: updateSurface: mVisible = false mSurface.isValid() = true
+06-19 15:10:47.663  8930  8930 D BLASTBufferQueue: [38a2265 SurfaceView[com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity]@0#1](f:0,a:1) destructor()
+06-19 15:10:47.663  8930  8930 D BufferQueueConsumer: [38a2265 SurfaceView[com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity]@0#1(BLAST Consumer)1](id:22e200000001,api:0,p:-1,c:8930) disconnect
+06-19 15:10:47.664  8930  8930 I SV[59384421 NekkiNativeActivity]: releaseSurfaces: viewRoot = VRI[NekkiNativeActivity]@251404f
+06-19 15:10:47.664  8930  8930 V SurfaceView: Layout: x=0 y=0 w=1340 h=800, frame=Rect(0, 0 - 1340, 800)
+06-19 15:10:47.672  8930  8930 D InputTransport: Input channel destroyed: 'ClientS', fd=193
+06-19 15:10:47.672  8930  8930 V FA      : onRebind called. action: com.google.android.gms.measurement.START
+06-19 15:10:47.688  8930  8930 I SV[59384421 NekkiNativeActivity]: onWindowVisibilityChanged(4) false com.unity3d.player.a.g{38a2265 VFED..... .F...... 0,0-1340,800 #7f0a03a2 app:id/unitySurfaceView aid=1073741824} of VRI[NekkiNativeActivity]@251404f
+06-19 15:10:47.688  8930  8930 D SV[59384421 NekkiNativeActivity]: updateSurface: surface is not valid
+06-19 15:10:47.688  8930  8930 I SV[59384421 NekkiNativeActivity]: releaseSurfaces: viewRoot = VRI[NekkiNativeActivity]@251404f
+06-19 15:10:47.690  8930  9009 D BLASTBufferQueue: [VRI[NekkiNativeActivity]@251404f#0](f:0,a:1) destructor()
+06-19 15:10:47.690  8930  9009 D BufferQueueConsumer: [VRI[NekkiNativeActivity]@251404f#0(BLAST Consumer)0](id:22e200000000,api:0,p:-1,c:8930) disconnect
+06-19 15:10:47.690  8930  9009 D HWUI    : CacheManager::trimMemory(20)
+06-19 15:10:47.695  8930  8930 I VRI[NekkiNativeActivity]@251404f: Relayout returned: old=(0,0,1340,800) new=(0,0,1340,800) relayoutAsync=false req=(1340,800)4 dur=4 res=0x2 s={false 0x0} ch=false seqId=0
+06-19 15:10:47.695  8930  8930 D SV[59384421 NekkiNativeActivity]: updateSurface: surface is not valid
+06-19 15:10:47.695  8930  8930 I SV[59384421 NekkiNativeActivity]: releaseSurfaces: viewRoot = VRI[NekkiNativeActivity]@251404f
+06-19 15:10:47.695  8930  8930 D VRI[NekkiNativeActivity]@251404f: applyTransactionOnDraw applyImmediately
+06-19 15:10:47.696  8930  8930 D VRI[NekkiNativeActivity]@251404f: Not drawing due to not visible. Reason=View.INVISIBLE
+06-19 15:10:47.696  8930  8930 D VRI[NekkiNativeActivity]@251404f: Pending transaction will not be applied in sync with a draw due to view not visible
+06-19 15:10:47.696  8930  8930 I VRI[NekkiNativeActivity]@251404f: mWNT: t=0x779e258350 mBlastBufferQueue=0xnull fn= 0 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl.handleSyncRequestWhenNoAsyncDraw:6733 android.view.ViewRootImpl.performTraversals:5504 android.view.ViewRootImpl.doTraversal:3924 
+06-19 15:10:47.698  8930  9009 D HWUI    : CacheManager::trimMemory(20)
+06-19 15:10:47.699  8930  8930 I VRI[NekkiNativeActivity]@251404f: handleAppVisibility mAppVisible = true visible = false
+06-19 15:10:47.704  8930  8930 D BBA2    : setIsFg isFg = false; delayValue 3999ms
+06-19 15:10:49.560  8930  8983 I FA      : Application backgrounded at: timestamp_millis: 1781862047555
+06-19 15:10:49.593  8930  8983 D ClassInvocationStub: AppOps invoke: Bypassing system for checkPackage, allowing operation
+06-19 15:10:50.640  8930  8930 D BBA2    : setIsFg isFg = false; delayValue 3999ms
+06-19 15:10:50.883  8930  8930 I VRI[NekkiNativeActivity]@251404f: handleAppVisibility mAppVisible = false visible = true
+06-19 15:10:50.888  8930  8930 I VRI[NekkiNativeActivity]@251404f: stopped(false) old = true
+06-19 15:10:50.888  8930  8930 D VRI[NekkiNativeActivity]@251404f: WindowStopped on com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity set to false
+06-19 15:10:50.896  8930  8930 D FirebaseSessions: App foregrounded on com.nekki.shadowfight3
+06-19 15:10:50.896  8930  8930 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+06-19 15:10:50.909  8930  8930 I SV[59384421 NekkiNativeActivity]: onWindowVisibilityChanged(0) false com.unity3d.player.a.g{38a2265 VFED..... .F...... 0,0-1340,800 #7f0a03a2 app:id/unitySurfaceView aid=1073741824} of VRI[NekkiNativeActivity]@251404f
+06-19 15:10:50.909  8930  8930 D SV[59384421 NekkiNativeActivity]: updateSurface: surface is not valid
+06-19 15:10:50.909  8930  8930 I SV[59384421 NekkiNativeActivity]: releaseSurfaces: viewRoot = VRI[NekkiNativeActivity]@251404f
+06-19 15:10:50.910  8930  8930 D VRI[NekkiNativeActivity]@251404f: applyTransactionOnDraw applyImmediately
+06-19 15:10:50.918  8930  9068 D TransactionThrottler: Reset transaction throttler
+06-19 15:10:50.918  8930  9068 I AppMetrica: AppMetrica-Attribution [4044-IAA-STE-10] Satellite content provider with preload info was not found.
+06-19 15:10:50.929  8930  9049 D TransactionThrottler: Reset transaction throttler
+06-19 15:10:50.968  8930  8930 D BufferQueueConsumer: [](id:22e200000002,api:0,p:-1,c:8930) connect: controlledByApp=false
+06-19 15:10:50.969  8930  8930 D BLASTBufferQueue: [VRI[NekkiNativeActivity]@251404f#2](f:0,a:0) constructor()
+06-19 15:10:50.969  8930  8930 I BLASTBufferQueue_Java: new BLASTBufferQueue, mName= VRI[NekkiNativeActivity]@251404f mNativeObject= 0x778e2a2470 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3585 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 android.view.Choreographer.doCallbacks:1367 android.view.Choreographer.doFrame:1292 android.view.Choreographer$FrameDisplayEventReceiver.run:1870 
+06-19 15:10:50.969  8930  8930 I BLASTBufferQueue_Java: update, w= 1340 h= 800 mName = VRI[NekkiNativeActivity]@251404f mNativeObject= 0x778e2a2470 sc.mNativeObject= 0x772e215a10 format= -3 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3590 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 
+06-19 15:10:50.970  8930  8930 D BLASTBufferQueue: [VRI[NekkiNativeActivity]@251404f#2](f:0,a:0) update width=1340 height=800 format=-3 mTransformHint=4
+06-19 15:10:50.971  8930  8930 I VRI[NekkiNativeActivity]@251404f: Relayout returned: old=(0,0,1340,800) new=(0,0,1340,800) relayoutAsync=false req=(1340,800)0 dur=57 res=0x3 s={true 0x775e210e40} ch=true seqId=0
+06-19 15:10:50.972  8930  8930 D VRI[NekkiNativeActivity]@251404f: mThreadedRenderer.initialize() mSurface={isValid=true 0x775e210e40} hwInitialized=true
+06-19 15:10:50.973  8930  8930 I SV[59384421 NekkiNativeActivity]: windowStopped(false) true com.unity3d.player.a.g{38a2265 VFED..... .F...... 0,0-1340,800 #7f0a03a2 app:id/unitySurfaceView aid=1073741824} of VRI[NekkiNativeActivity]@251404f
+06-19 15:10:50.973  8930  8930 I SurfaceView: 59384421 Changes: creating=true format=false size=false visible=true alpha=false hint=false left=false top=false z=false attached=true lifecycleStrategy=false
+06-19 15:10:50.978  8930  8930 D BufferQueueConsumer: [](id:22e200000003,api:0,p:-1,c:8930) connect: controlledByApp=false
+06-19 15:10:50.978  8930  8930 D BLASTBufferQueue: [38a2265 SurfaceView[com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity]@0#3](f:0,a:0) constructor()
+06-19 15:10:50.979  8930  8930 I BLASTBufferQueue_Java: new BLASTBufferQueue, mName= 38a2265 SurfaceView[com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity]@0 mNativeObject= 0x778e29dc30 caller= android.view.SurfaceView.createBlastSurfaceControls:1781 android.view.SurfaceView.updateSurface:1450 android.view.SurfaceView.setWindowStopped:539 android.view.SurfaceView.surfaceCreated:2327 android.view.ViewRootImpl.notifySurfaceCreated:3502 android.view.ViewRootImpl.performTraversals:5286 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 
+06-19 15:10:50.979  8930  8930 I BLASTBufferQueue_Java: update, w= 1340 h= 800 mName = 38a2265 SurfaceView[com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity]@0 mNativeObject= 0x778e29dc30 sc.mNativeObject= 0x772e218dd0 format= 4 caller= android.view.SurfaceView.createBlastSurfaceControls:1782 android.view.SurfaceView.updateSurface:1450 android.view.SurfaceView.setWindowStopped:539 android.view.SurfaceView.surfaceCreated:2327 android.view.ViewRootImpl.notifySurfaceCreated:3502 android.view.ViewRootImpl.performTraversals:5286 
+06-19 15:10:50.980  8930  8930 D BLASTBufferQueue: [38a2265 SurfaceView[com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity]@0#3](f:0,a:0) update width=1340 height=800 format=4 mTransformHint=4
+06-19 15:10:50.980  8930  8930 I SurfaceView: 59384421 Cur surface: Surface(name=null mNativeObject=0)/@0x94962a
+06-19 15:10:50.980  8930  8930 I SV[59384421 NekkiNativeActivity]: pST: sr = Rect(0, 0 - 1340, 800) sw = 1340 sh = 800
+06-19 15:10:50.980  8930  8930 D SurfaceView: 59384421 performSurfaceTransaction RenderWorker position = [0, 0, 1340, 800] surfaceSize = 1340x800
+06-19 15:10:50.980  8930  8930 I SV[59384421 NekkiNativeActivity]: updateSurface: mVisible = true mSurface.isValid() = true
+06-19 15:10:50.980  8930  8930 I SV[59384421 NekkiNativeActivity]: updateSurface: mSurfaceCreated = false surfaceChanged = true visibleChanged = true
+06-19 15:10:50.980  8930  8930 I SurfaceView: 59384421 visibleChanged -- surfaceCreated
+06-19 15:10:50.981  8930  8930 I SV[59384421 NekkiNativeActivity]: surfaceCreated 1 #1 com.unity3d.player.a.g{38a2265 VFED..... .F...... 0,0-1340,800 #7f0a03a2 app:id/unitySurfaceView aid=1073741824}
+06-19 15:10:50.982  8930  8930 I SurfaceView: 59384421 surfaceChanged -- format=4 w=1340 h=800
+06-19 15:10:50.982  8930  8930 I SV[59384421 NekkiNativeActivity]: surfaceChanged (1340,800) 1 #1 com.unity3d.player.a.g{38a2265 VFED..... .F...... 0,0-1340,800 #7f0a03a2 app:id/unitySurfaceView aid=1073741824}
+06-19 15:10:50.982  8930  8930 I SurfaceView: 59384421 surfaceRedrawNeeded
+06-19 15:10:50.983  8930  8930 I SurfaceView: 59384421 finishedDrawing
+06-19 15:10:50.983  8930  8930 V SurfaceView: Layout: x=0 y=0 w=1340 h=800, frame=Rect(0, 0 - 1340, 800)
+06-19 15:10:50.984  8930  8930 D VRI[NekkiNativeActivity]@251404f: reportNextDraw android.view.ViewRootImpl.performTraversals:5443 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 android.view.Choreographer$CallbackRecord.run:1910 
+06-19 15:10:50.984  8930  8930 D VRI[NekkiNativeActivity]@251404f: Setup new sync=wmsSync-VRI[NekkiNativeActivity]@251404f#6
+06-19 15:10:50.984  8930  8930 I VRI[NekkiNativeActivity]@251404f: Creating new active sync group VRI[NekkiNativeActivity]@251404f#7
+06-19 15:10:50.984  8930  8930 D VRI[NekkiNativeActivity]@251404f: Start draw after previous draw not visible
+06-19 15:10:50.985  8930  8930 D VRI[NekkiNativeActivity]@251404f: registerCallbacksForSync syncBuffer=false
+06-19 15:10:50.986  8930  9009 D SurfaceView: 59384421 updateSurfacePosition RenderWorker, frameNr = 1, position = [0, 0, 1340, 800] surfaceSize = 1340x800
+06-19 15:10:50.986  8930  9009 I SV[59384421 NekkiNativeActivity]: uSP: rtp = Rect(0, 0 - 1340, 800) rtsw = 1340 rtsh = 800
+06-19 15:10:50.986  8930  9009 I SV[59384421 NekkiNativeActivity]: onSSPAndSRT: pl = 0 pt = 0 sx = 1.0 sy = 1.0
+06-19 15:10:50.986  8930  9009 I SV[59384421 NekkiNativeActivity]: aOrMT: VRI[NekkiNativeActivity]@251404f t = android.view.SurfaceControl$Transaction@e1f52b0 fN = 1 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionChanged:1932 android.graphics.RenderNode$CompositePositionUpdateListener.positionChanged:401 
+06-19 15:10:50.986  8930  9009 I VRI[NekkiNativeActivity]@251404f: mWNT: t=0x779e2803d0 mBlastBufferQueue=0x778e2a2470 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.SurfaceView.applyOrMergeTransaction:1863 android.view.SurfaceView.-$$Nest$mapplyOrMergeTransaction:0 android.view.SurfaceView$SurfaceViewPositionUpdateListener.positionChanged:1932 
+06-19 15:10:50.989  8930  9030 D VRI[NekkiNativeActivity]@251404f: Received frameDrawingCallback syncResult=0 frameNum=1.
+06-19 15:10:50.989  8930  9030 I VRI[NekkiNativeActivity]@251404f: mWNT: t=0x779e2ca9d0 mBlastBufferQueue=0x778e2a2470 fn= 1 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl$12.onFrameDraw:15441 android.view.ThreadedRenderer$1.onFrameDraw:718 <bottom of call stack> 
+06-19 15:10:50.989  8930  9030 I VRI[NekkiNativeActivity]@251404f: Setting up sync and frameCommitCallback
+06-19 15:10:50.995  8930  9009 D BLASTBufferQueue: [VRI[NekkiNativeActivity]@251404f#2](f:0,a:1) acquireNextBufferLocked size=1340x800 mFrameNumber=1 applyTransaction=true mTimestamp=262978148497134(auto) mPendingTransactions.size=0 graphicBufferId=38354057953285 transform=7
+06-19 15:10:50.995  8930  9009 I VRI[NekkiNativeActivity]@251404f: Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true
+06-19 15:10:50.996  8930  8930 D VRI[NekkiNativeActivity]@251404f: reportDrawFinished seqId=0
+06-19 15:10:50.998  8930  8930 I VRI[NekkiNativeActivity]@251404f: handleResized, frames=ClientWindowFrames{frame=[0,0][1340,800] display=[0,0][1340,800] parentFrame=[0,0][0,0]} displayId=0 dragResizing=false compatScale=1.0 frameChanged=false attachedFrameChanged=false configChanged=false displayChanged=false compatScaleChanged=false dragResizingChanged=false
+06-19 15:10:50.998  8930  8930 I VRI[NekkiNativeActivity]@251404f: handleResized mSyncSeqId = 0
+06-19 15:10:50.998  8930  8930 D VRI[NekkiNativeActivity]@251404f: reportNextDraw android.view.ViewRootImpl.handleResized:2983 android.view.ViewRootImpl.-$$Nest$mhandleResized:0 android.view.ViewRootImpl$W.resized:14082 android.app.servertransaction.WindowStateResizeItem.execute:93 android.app.servertransaction.WindowStateTransactionItem.execute:62 
+06-19 15:10:50.999  8930  8930 D VRI[NekkiNativeActivity]@251404f: Setup new sync=wmsSync-VRI[NekkiNativeActivity]@251404f#8
+06-19 15:10:50.999  8930  8930 I VRI[NekkiNativeActivity]@251404f: Creating new active sync group VRI[NekkiNativeActivity]@251404f#9
+06-19 15:10:50.999  8930  8930 D VRI[NekkiNativeActivity]@251404f: registerCallbacksForSync syncBuffer=false
+06-19 15:10:51.002  8930  9031 D VRI[NekkiNativeActivity]@251404f: Received frameDrawingCallback syncResult=0 frameNum=2.
+06-19 15:10:51.002  8930  9031 I VRI[NekkiNativeActivity]@251404f: Setting up sync and frameCommitCallback
+06-19 15:10:51.009  8930  9009 I VRI[NekkiNativeActivity]@251404f: Received frameCommittedCallback lastAttemptedDrawFrameNum=2 didProduceBuffer=true
+06-19 15:10:51.010  8930  8930 D VRI[NekkiNativeActivity]@251404f: reportDrawFinished seqId=0
+06-19 15:10:51.014  8930  8930 I InsetsController: onStateChanged: host=com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity, from=android.view.ViewRootImpl.onInsetsStateChanged:3026, state=InsetsState: {mDisplayFrame=Rect(0, 0 - 1340, 800), mDisplayCutout=DisplayCutout{insets=Rect(0, 0 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=0 displayHeight=0 physicalDisplayWidth=0 physicalDisplayHeight=0 density={0.0} cutoutSpec={} rotation={0} scale={0.0} physicalPixelDisplaySizeRatio={0.0}}} sideOverrides=null}, mRoundedCorners=RoundedCorners{[RoundedCorner{position=TopLeft, radius=9, center=Point(9, 9)}, RoundedCorner{position=TopRight, radius=9, center=Point(1331, 9)}, RoundedCorner{position=BottomRight, radius=9, center=Point(1331, 791)}, RoundedCorner{position=BottomLeft, radius=9, center=Point(9, 791)}]}  mRoundedCornerFrame=Rect(0, 0 - 1340, 800), mPrivacyIndicatorBounds=PrivacyIndicatorBounds {static bounds=Rect(1282, 0 - 1340, 39) rotation=1}, mDisplayShape=DisplayShape{ spec=-311912193 displayWidth=800 displayHeight=1340 physicalPixelDisplaySizeRatio=1.0 rotation=1 offsetX=0 offsetY=0 scale=1.0}, mSources= { InsetsSource: {887e0000 mType=statusBars mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {887e0005 mType=mandatorySystemGestures mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {887e0006 mType=tappableElement mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {3 mType=ime mFrame=[0,0][0,0] mVisible=false mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {292c0001 mType=navigationBars mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0004 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {292c0005 mType=mandatorySystemGestures mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0006 mType=tappableElement mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0024 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null} }
+06-19 15:10:51.014  8930  8930 I InsetsController: controlAnimationUncheckedInner: Added types=statusBars navigationBars, animType=1, host=com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity, from=android.view.InsetsController.controlAnimationUnchecked:1608 android.view.InsetsController.applyAnimation:2416 android.view.InsetsController.applyAnimation:2343 
+06-19 15:10:51.015  8930  8930 I InsetsController: onStateChanged: host=com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity, from=android.view.ViewRootImpl.onInsetsStateChanged:3026, state=InsetsState: {mDisplayFrame=Rect(0, 0 - 1340, 800), mDisplayCutout=DisplayCutout{insets=Rect(0, 0 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=0 displayHeight=0 physicalDisplayWidth=0 physicalDisplayHeight=0 density={0.0} cutoutSpec={} rotation={0} scale={0.0} physicalPixelDisplaySizeRatio={0.0}}} sideOverrides=null}, mRoundedCorners=RoundedCorners{[RoundedCorner{position=TopLeft, radius=9, center=Point(9, 9)}, RoundedCorner{position=TopRight, radius=9, center=Point(1331, 9)}, RoundedCorner{position=BottomRight, radius=9, center=Point(1331, 791)}, RoundedCorner{position=BottomLeft, radius=9, center=Point(9, 791)}]}  mRoundedCornerFrame=Rect(0, 0 - 1340, 800), mPrivacyIndicatorBounds=PrivacyIndicatorBounds {static bounds=Rect(1282, 0 - 1340, 39) rotation=1}, mDisplayShape=DisplayShape{ spec=-311912193 displayWidth=800 displayHeight=1340 physicalPixelDisplaySizeRatio=1.0 rotation=1 offsetX=0 offsetY=0 scale=1.0}, mSources= { InsetsSource: {887e0000 mType=statusBars mFrame=[0,0][1340,39] mVisible=false mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {887e0005 mType=mandatorySystemGestures mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {887e0006 mType=tappableElement mFrame=[0,0][1340,39] mVisible=true mFlags= mSideHint=TOP mBoundingRects=null}, InsetsSource: {3 mType=ime mFrame=[0,0][0,0] mVisible=false mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {292c0001 mType=navigationBars mFrame=[0,737][1340,800] mVisible=false mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0004 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null}, InsetsSource: {292c0005 mType=mandatorySystemGestures mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0006 mType=tappableElement mFrame=[0,737][1340,800] mVisible=true mFlags= mSideHint=BOTTOM mBoundingRects=null}, InsetsSource: {292c0024 mType=systemGestures mFrame=[0,0][0,0] mVisible=true mFlags= mSideHint=NONE mBoundingRects=null} }
+06-19 15:10:51.016  8930  8930 I VRI[NekkiNativeActivity]@251404f: handleResized, frames=ClientWindowFrames{frame=[0,0][1340,800] display=[0,0][1340,800] parentFrame=[0,0][0,0]} displayId=0 dragResizing=false compatScale=1.0 frameChanged=false attachedFrameChanged=false configChanged=false displayChanged=false compatScaleChanged=false dragResizingChanged=false
+06-19 15:10:51.016  8930  8930 I VRI[NekkiNativeActivity]@251404f: handleResized mSyncSeqId = 0
+06-19 15:10:51.016  8930  8930 D VRI[NekkiNativeActivity]@251404f: reportNextDraw android.view.ViewRootImpl.handleResized:2983 android.view.ViewRootImpl.-$$Nest$mhandleResized:0 android.view.ViewRootImpl$W.resized:14082 android.app.servertransaction.WindowStateResizeItem.execute:93 android.app.servertransaction.WindowStateTransactionItem.execute:62 
+06-19 15:10:51.023  8930  8930 D VRI[NekkiNativeActivity]@251404f: Setup new sync=wmsSync-VRI[NekkiNativeActivity]@251404f#10
+06-19 15:10:51.023  8930  8930 I VRI[NekkiNativeActivity]@251404f: Creating new active sync group VRI[NekkiNativeActivity]@251404f#11
+06-19 15:10:51.025  8930  8930 D VRI[NekkiNativeActivity]@251404f: registerCallbacksForSync syncBuffer=false
+06-19 15:10:51.026  8930  9030 D VRI[NekkiNativeActivity]@251404f: Received frameDrawingCallback syncResult=0 frameNum=3.
+06-19 15:10:51.026  8930  9030 I VRI[NekkiNativeActivity]@251404f: Setting up sync and frameCommitCallback
+06-19 15:10:51.026  8930  9009 I VRI[NekkiNativeActivity]@251404f: Received frameCommittedCallback lastAttemptedDrawFrameNum=3 didProduceBuffer=false
+06-19 15:10:51.026  8930  9009 I BLASTBufferQueue_Java: gatherPendingTransactions, mName= VRI[NekkiNativeActivity]@251404f mNativeObject= 0x778e2a2470 frameNumber= 3 caller= android.view.ViewRootImpl$12.lambda$onFrameDraw$3:15525 android.view.ViewRootImpl$12.$r8$lambda$CTo3ExVBk8akdVTGlqHPAoYLRVI:0 android.view.ViewRootImpl$12$$ExternalSyntheticLambda1.onFrameCommit:0 android.view.ThreadedRenderer$1.lambda$onFrameDraw$0:730 android.view.ThreadedRenderer$1$$ExternalSyntheticLambda0.onFrameCommit:0 <bottom of call stack> 
+06-19 15:10:51.026  8930  8930 D VRI[NekkiNativeActivity]@251404f: reportDrawFinished seqId=0
+06-19 15:10:51.037  8930  8930 D VRI[NekkiNativeActivity]@251404f: mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0x775e210e40}
+06-19 15:10:51.038  8930  8930 D InputMethodManagerUtils: startInputInner - Id : 0
+06-19 15:10:51.038  8930  8930 I InputMethodManager: startInputInner - IInputMethodManagerGlobalInvoker.startInputOrWindowGainedFocus
+06-19 15:10:51.043  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:10:51.043  8930  9023 I Unity   : Application Resume
+06-19 15:10:51.043  8930  9023 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+06-19 15:10:51.044  8930  9023 D AAudio  : AAudioStream_requestStart(s#1) called --------------
+06-19 15:10:51.044  8930  9023 D AAudioStream: setState(s#1) from 10 to 3
+06-19 15:10:51.045  8930  9055 D InputTransport: Input channel constructed: 'ClientS', fd=203
+06-19 15:10:51.046  8930  8930 I InputMethodManager: handleMessage: setImeVisibility visible=false
+06-19 15:10:51.046  8930  8930 D InsetsController: hide(ime(), fromIme=false)
+06-19 15:10:51.046  8930  8930 I ImeTracker: top.niunaijun.blackbox:56b1f07a: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+06-19 15:10:51.082  8930  9023 D AAudio  : AAudioStream_requestStart(s#1) returned 0 ---------
+06-19 15:10:51.085  8930  9055 D AudioStreamLegacy: onAudioDeviceUpdate() devices 3 => 3
+06-19 15:10:51.089  8930  8930 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Tablet, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+06-19 15:10:51.089  8930  8930 V MediaRouter: Selecting route: RouteInfo{ name=Tablet, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+06-19 15:10:51.174  8930  9104 D AAudioStream: setState(s#1) from 3 to 4
+06-19 15:10:51.185  8930  9102 D BLASTBufferQueue: [38a2265 SurfaceView[com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity]@0#3](f:0,a:1) acquireNextBufferLocked size=1340x800 mFrameNumber=1 applyTransaction=true mTimestamp=262978338919288(auto) mPendingTransactions.size=0 graphicBufferId=38354057953287 transform=7
+06-19 15:10:51.372  8930  8930 I InsetsController: cancelAnimation: types=statusBars navigationBars, animType=1, host=com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity, from=android.view.InsetsController.notifyFinished:2006 android.view.InsetsAnimationThreadControlRunner$1.lambda$notifyFinished$0:82 android.view.InsetsAnimationThreadControlRunner$1.$r8$lambda$cDFF0h4Ncq-8EXdGszv69jrUu7c:0 
+06-19 15:10:51.632  8930  9255 W BillingClient: In-app billing API version 3 is not supported on this device.
+06-19 15:10:51.640  8930  8986 W JobServiceStub: Schedule: args[0] is null, returning RESULT_FAILURE
+06-19 15:10:55.921  8930  8930 V FA      : onUnbind called for intent. action: com.google.android.gms.measurement.START
+06-19 15:11:00.476  8930  9055 E LoadedApk: performReceive() called targeting raw IIntentReceiver for Intent { act=android.intent.action.BATTERY_CHANGED flg=0x60000010 (has extras) }
+06-19 15:11:01.107  8930  8985 E FirebaseCrashlytics: Settings request failed.
+06-19 15:11:01.497  8930  8960 D Banzai  : Request error: Unable to resolve host "sf3lb.nekki.com": No address associated with hostname Try: 0
+06-19 15:11:04.797  8930  9154 W UserMessagingPlatform: Metrics reporting URL is not set yet.
+06-19 15:11:04.797  8930  8930 W UserMessagingPlatform: Error making request.
+06-19 15:11:04.835  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:04.836  8930  9023 I Unity   : [LOJMGBEJJGO] Update. Failed. Error: Error making request. (2). Status: Unknown False
+06-19 15:11:10.607  8930  8930 D CrashMonitor: Performing periodic health check...
+06-19 15:11:10.607  8930  8930 W CrashMonitor: High thread count detected: 108
+06-19 15:11:10.607  8930  8930 D CrashMonitor: Health check completed - Memory: 2.6%, Threads: 108
+06-19 15:11:17.648  8930  9023 I Banzai  : Path: /storage/emulated/0/Android/data/top.niunaijun.blackbox/files/blackbox/storage/emulated/0/Android/data/com.nekki.shadowfight3/files/tou.file
+06-19 15:11:17.656  8930  9023 D Banzai  : Send request on url https://sf3lb.nekki.com/clog?guid=96b1a4edeac872bc&e=LOAD_HANG&ext=eyJSQU0iOiIzNjQyIiwiQVJDSCI6ImFybTY0LXY4YSIsIk9TIjoiMTYiLCJMQU5HIjoiRW5nbGlzaCIsIk5FVCI6IldJRkkiLCJPR0wiOiJPUEVOR0xFU18zXzAiLCJCTiI6IjE5MjA5IiwiUEwiOiJBbmRyb2lkIn0%3D
+06-19 15:11:21.009  8930  9355 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-19 15:11:21.009  8930  9355 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-19 15:11:21.031  8930  8955 W FileUtils: Failed to chmod(/data/user/0/top.niunaijun.blackbox/blackbox/data/user/0/com.nekki.shadowfight3/files/AppEventsLogger.persistedevents): android.system.ErrnoException: chmod failed: ENOENT (No such file or directory)
+06-19 15:11:21.538  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:21.538  8930  9023 I Unity   : [GAPLKBELEIG]; Get internet accessibility response: [NotAvailable]
+06-19 15:11:21.541  8930  9023 I Unity   : [ServerStatus] Load status
+06-19 15:11:21.562  8930  9023 E Unity   : [SF3MultiBalancerManager] Failed to resolve balancer at index 0: Failed with responseCode - 0 - Request timeout - ConnectionError
+06-19 15:11:21.562  8930  9023 E Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+06-19 15:11:21.562  8930  9023 E Unity   : JCICEBEKNOE:CBEJGNOBKMC(String)
+06-19 15:11:21.562  8930  9023 E Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+06-19 15:11:21.562  8930  9023 E Unity   : System.Delegate:DynamicInvokeImpl(Object[])
+06-19 15:11:21.562  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:21.562  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:21.562  8930  9023 E Unity   : DCEJACPOBHC:IPDOLEJNFJE(BanzaiWebRequest)
+06-19 15:11:21.562  8930  9023 E Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+06-19 15:11:21.562  8930  9023 E Unity   : System.Delegate:DynamicInvokeImpl(Object[])
+06-19 15:11:21.562  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:21.562  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:21.562  8930  9023 E Unity   : Banzai.WebRequest.BanzaiWebRequest:SendError(Boolean, DCEBFCEEKPC)
+06-19 15:11:21.562  8930  9023 E Unity   : Banzai.WebRequest.<FinishWhenWebHandlerDone>d__97:MoveNext()
+06-19 15:11:21.562  8930  9023 E Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+06-19 15:11:21.562  8930  9023 E Unity   : Banzai.WebRequest.<RequestRuntime>d__90:MoveNext()
+06-19 15:11:21.562  8930  9023 E Unity   : UnityEng
+06-19 15:11:21.565  8930  9023 D ConnectivityManager: StackLog: [android.net.ConnectivityManager.sendRequestForNetwork(ConnectivityManager.java:4744)] [android.net.ConnectivityManager.registerDefaultNetworkCallbackForUid(ConnectivityManager.java:5469)] [android.net.ConnectivityManager.registerDefaultNetworkCallback(ConnectivityManager.java:5436)] [android.net.ConnectivityManager.registerDefaultNetworkCallback(ConnectivityManager.java:5410)] [com.unity3d.player.a.v.<init>(SourceFile:64)] [com.unity3d.player.UnityPlayer.getNetworkConnectivity(SourceFile:855)] [com.unity3d.player.UnityPlayerForActivityOrService.nativeRender(Native Method)] [com.unity3d.player.V.handleMessage(SourceFile:93)]
+06-19 15:11:21.566  8930  9023 D IConnectivityManagerProxy: Intercepting requestNetwork call for internet access
+06-19 15:11:21.567  8930  9023 D IConnectivityManagerProxy: requestNetwork succeeded via original method
+06-19 15:11:21.568  8930  9023 I Unity   : [ServerStatus] Load in progress
+06-19 15:11:21.569  8930  9023 E Unity   : [SF3MultiBalancerManager] Failed to resolve balancer at index 1: Failed with responseCode - 0 - Cannot resolve destination host - ConnectionError
+06-19 15:11:21.569  8930  9023 E Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+06-19 15:11:21.569  8930  9023 E Unity   : JCICEBEKNOE:CBEJGNOBKMC(String)
+06-19 15:11:21.569  8930  9023 E Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+06-19 15:11:21.569  8930  9023 E Unity   : System.Delegate:DynamicInvokeImpl(Object[])
+06-19 15:11:21.569  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:21.569  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:21.569  8930  9023 E Unity   : DCEJACPOBHC:IPDOLEJNFJE(BanzaiWebRequest)
+06-19 15:11:21.569  8930  9023 E Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+06-19 15:11:21.569  8930  9023 E Unity   : System.Delegate:DynamicInvokeImpl(Object[])
+06-19 15:11:21.569  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:21.569  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:21.569  8930  9023 E Unity   : Banzai.WebRequest.BanzaiWebRequest:SendError(Boolean, DCEBFCEEKPC)
+06-19 15:11:21.569  8930  9023 E Unity   : Banzai.WebRequest.<FinishWhenWebHandlerDone>d__97:MoveNext()
+06-19 15:11:21.569  8930  9023 E Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+06-19 15:11:21.569  8930  9023 E Unity   : Banzai.WebRequest.<RequestRuntime>d__90:Mov
+06-19 15:11:21.572  8930  9023 E Unity   : Config update check failed: [All balancers failed!]
+06-19 15:11:21.572  8930  9023 E Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+06-19 15:11:21.572  8930  9023 E Unity   : KLNCABIDJAC:BBPCFBJGPNE(String)
+06-19 15:11:21.572  8930  9023 E Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+06-19 15:11:21.572  8930  9023 E Unity   : System.Delegate:DynamicInvokeImpl(Object[])
+06-19 15:11:21.572  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:21.572  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:21.572  8930  9023 E Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+06-19 15:11:21.572  8930  9023 E Unity   : System.Delegate:DynamicInvokeImpl(Object[])
+06-19 15:11:21.572  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:21.572  8930  9023 E Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+06-19 15:11:21.572  8930  9023 E Unity   : System.Delegate:DynamicInvokeImpl(Object[])
+06-19 15:11:21.572  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:21.572  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:21.572  8930  9023 E Unity   : DCEJACPOBHC:IPDOLEJNFJE(BanzaiWebRequest)
+06-19 15:11:21.572  8930  9023 E Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+06-19 15:11:21.572  8930  9023 E Unity   : System.Delegate:DynamicInvokeImpl(Objec
+06-19 15:11:21.577  8930  9023 W Unity   : [remote config] initialize before accessing!
+06-19 15:11:21.627  8930  9023 I Unity   : $<color=blue><b>CreateNativeJsEngine: PlatformDefault</b></color>
+06-19 15:11:21.645  8930  9023 D nativeloader: Load /data/app/~~b-kNTPL92oJmt3Gcmb6V-w==/com.nekki.shadowfight3-7kK4tjGugrQhSUVD9c6cmg==/lib/arm64/libbanzai-v8.so using class loader ns clns-10 (caller=/data/app/~~b-kNTPL92oJmt3Gcmb6V-w==/com.nekki.shadowfight3-7kK4tjGugrQhSUVD9c6cmg==/base.apk!classes7.dex): ok
+06-19 15:11:21.673  8930  9023 I Unity   : [V8 JS] Msg: [V8] Initialized
+06-19 15:11:21.693  8930  9023 I Unity   : [V8 JS] Msg: [V8] Isolate initialized
+06-19 15:11:21.695  8930  9023 I Unity   : [JS] Init params: chapterId=100, debug=False, allChapters=False, loadFromSnapshot=True, createSnapshot=True
+06-19 15:11:21.908  8930  9023 I Unity   : [JS] Snapshot data loaded in 188 ms
+06-19 15:11:21.911  8930  9023 I Unity   : [V8 JS] Msg: [V8] Isolate disposed
+06-19 15:11:22.415  8930  9023 I Unity   : [V8 JS] Msg: [V8] Isolate reinitialized from snapshot
+06-19 15:11:22.435  8930  9023 I Unity   : [JS] Init stats: exec 506 ms, total 720 ms
+06-19 15:11:22.435  8930  9023 W Unity   : [remote config] initialize before accessing!
+06-19 15:11:22.527  8930  9023 I Unity   : [FB] Init
+06-19 15:11:22.668  8930  9023 V com.facebook.unity.FB: SetUserAgentSuffix(Unity.18.0.0)
+06-19 15:11:22.670  8930  9023 V com.facebook.unity.FB: Init({"appId":"647386682120764","clientToken":"1fc47ffc09d4802ddba691bc6fde9479"})
+06-19 15:11:22.672  8930  9023 D com.facebook.unity.FB: KeyHash: 1hEJ12jtqjrS76nvNXvRrjPV8Ks=
+06-19 15:11:22.673  8930  9023 V com.facebook.unity.FB: sending to Unity OnInitComplete({"key_hash":"1hEJ12jtqjrS76nvNXvRrjPV8Ks=\n"})
+06-19 15:11:22.674  8930  9023 I Unity   : Using Facebook Unity SDK v18.0.0 with FBAndroidSDK/18.2.3
+06-19 15:11:22.674  8930  9355 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-19 15:11:22.676  8930  9355 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-19 15:11:22.712  8930  9023 I Unity   : [FB] ActivateApp
+06-19 15:11:22.713  8930  9023 W com.facebook.unity.FB: Activite app only needs to be called once
+06-19 15:11:22.717  8930  9023 I Unity   : [BCIOEFJGMMA] Init
+06-19 15:11:22.724  8930  9023 I Unity   : [UserManager]; Load user. Is new: False
+06-19 15:11:23.631  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:23.631  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:23.711  8930  9023 I Unity   : Load current preset: [joystick_small]
+06-19 15:11:23.735  8930  9023 I Unity   : [BattlePass] Scheduling BP end: ID=10080209, EndDate=06/29/2026 05:30:00
+06-19 15:11:24.174  8930  9023 W Unity   : Havnt any battle data to parse
+06-19 15:11:24.190  8930  9023 W Unity   : [UserDataSaver] DataSaver BATTLES already added
+06-19 15:11:24.202  8930  9023 I Unity   : [BMNNADNBPKN] Init
+06-19 15:11:24.218  8930  9023 I Unity   : [DJBCNKBGEGH] Init
+06-19 15:11:24.220  8930  9023 I Unity   : [DJBCNKBGEGH] InitInternal: False
+06-19 15:11:24.222  8930  9154 I UserMessagingPlatform: Use new ConsentDebugSettings.Builder().addTestDeviceHashedId("1654883292BEA2952023B0AF6A4DAB83") to set this as a debug device.
+06-19 15:11:24.224  8930  9154 D UserMessagingPlatform: Stored info not exists: IABTCF_TCString
+06-19 15:11:24.224  8930  9154 D UserMessagingPlatform: Stored info not exists: IABGPP_HDR_GppString
+06-19 15:11:24.224  8930  9154 D UserMessagingPlatform: Stored info not exists: IABGPP_GppSID
+06-19 15:11:24.224  8930  9154 D UserMessagingPlatform: Stored info not exists: IABUSPrivacy_String
+06-19 15:11:24.491  8930  9023 I Unity   : ***** log handler added
+06-19 15:11:24.506  8930  8930 V Banzai  : UnityPlayerActivity called onResume
+06-19 15:11:24.546  8930  9023 I Unity   : [BDINJAALCJK]; Input is blocked with condition: ActiveNetwork
+06-19 15:11:24.559  8930  9023 I Unity   : [LoadingBlocker]; Start blocking layer: blocker priority: Preloader, blocker delay: 0.5
+06-19 15:11:24.563  8930  9023 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-19 15:11:24.564  8930  9023 D Banzai  : Status of gaming service availability: 1
+06-19 15:11:24.565  8930  9023 I Unity   : [NGLDMEPPJLD]; Create gaming service: NGLDMEPPJLD
+06-19 15:11:25.088  8930  9023 I Unity   : Show loading icon. Lock: KLEBKOBNENM
+06-19 15:11:25.103  8930  9023 I Unity   : NativeScreenTexture: SetTexture; caller=[LoadingIcon]; layer=[988] camera=[Both]; filter=[Blur]; current callers=[empty]
+06-19 15:11:25.103  8930  9023 I Unity   : NativeScreenTexture: TakeScreenshot; autoSet=[True]; camera=[Both]; filter=[Blur]
+06-19 15:11:25.111  8930  9023 W Unity   : DontDestroyOnLoad only works for root GameObjects or components on root GameObjects.
+06-19 15:11:25.642  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:25.643  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:27.658  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:27.658  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:29.673  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:29.673  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:31.690  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:31.690  8930  9023 I Unity   : Showing alert with title: server_response_wait and message: no_internet_connection
+06-19 15:11:31.694  8930  9023 I Unity   : Audio configuration:
+06-19 15:11:31.694  8930  9023 I Unity   :   DSP buffer size: 512
+06-19 15:11:31.694  8930  9023 I Unity   :   Number real voices: 32
+06-19 15:11:31.694  8930  9023 I Unity   :   Number virtual voices: 512
+06-19 15:11:31.694  8930  9023 I Unity   :   Sample rate: 24000
+06-19 15:11:31.694  8930  9023 I Unity   :   Speaker mode: Stereo
+06-19 15:11:31.752  8930  9023 I Unity   : Hide loading icon. Lock: KLEBKOBNENM
+06-19 15:11:31.753  8930  9023 I Unity   : NativeScreenTexture: Clear; from=[LoadingIcon]; delayed=[False]; callers=[1]
+06-19 15:11:31.754  8930  9023 I Unity   : [LoadingBlocker]; Stop blocking layer: blocker priority: Preloader
+06-19 15:11:31.756  8930  9023 I Unity   : NativeScreenTexture: SetTexture; caller=[SystemAlert]; layer=[0] camera=[Both]; filter=[Blur]; current callers=[empty]
+06-19 15:11:31.757  8930  9023 I Unity   : NativeScreenTexture: TakeScreenshot; autoSet=[True]; camera=[Both]; filter=[Blur]
+06-19 15:11:33.701  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:33.702  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:35.475  8930  8930 I VRI[NekkiNativeActivity]@251404f: ViewPostIme pointer 0
+06-19 15:11:35.476  8930  8930 I VRI[NekkiNativeActivity]@251404f: call setFrameRateCategory for touch hint category=high hint, reason=touch, vri=VRI[NekkiNativeActivity]@251404f
+06-19 15:11:35.607  8930  8930 I VRI[NekkiNativeActivity]@251404f: ViewPostIme pointer 1
+06-19 15:11:35.617  8930  9023 I Unity   : [LoadingBlocker]; Start blocking layer: blocker priority: Preloader, blocker delay: 0.5
+06-19 15:11:35.619  8930  9023 I Unity   : NativeScreenTexture: Clear; from=[SystemAlert]; delayed=[False]; callers=[1]
+06-19 15:11:35.716  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:35.716  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:36.129  8930  9023 I Unity   : Show loading icon. Lock: KLEBKOBNENM
+06-19 15:11:36.130  8930  9023 I Unity   : NativeScreenTexture: SetTexture; caller=[LoadingIcon]; layer=[988] camera=[Both]; filter=[Blur]; current callers=[empty]
+06-19 15:11:36.130  8930  9023 I Unity   : NativeScreenTexture: TakeScreenshot; autoSet=[True]; camera=[Both]; filter=[Blur]
+06-19 15:11:37.731  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:37.732  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:38.610  8930  8930 I VRI[NekkiNativeActivity]@251404f: call setFrameRateCategory for touch hint category=no preference, reason=boost timeout, vri=VRI[NekkiNativeActivity]@251404f
+06-19 15:11:39.746  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:39.747  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:40.609  8930  8930 D CrashMonitor: Performing periodic health check...
+06-19 15:11:40.609  8930  8930 W CrashMonitor: High thread count detected: 102
+06-19 15:11:40.609  8930  8930 D CrashMonitor: Health check completed - Memory: 3.5%, Threads: 102
+06-19 15:11:41.520  8930  8960 D Banzai  : Request error: Unable to resolve host "sf3lb.nekki.com": No address associated with hostname Try: 1
+06-19 15:11:41.762  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:41.762  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:42.605  8930  9023 W Unity   : [GAPLKBELEIG]; Internet accessibility status is invalidate by time. Passed more than [10] seconds
+06-19 15:11:42.610  8930  9023 I Unity   : Showing alert with title: server_response_wait and message: no_internet_connection
+06-19 15:11:42.613  8930  9023 I Unity   : Hide loading icon. Lock: KLEBKOBNENM
+06-19 15:11:42.614  8930  9023 I Unity   : NativeScreenTexture: Clear; from=[LoadingIcon]; delayed=[False]; callers=[1]
+06-19 15:11:42.614  8930  9023 I Unity   : [LoadingBlocker]; Stop blocking layer: blocker priority: Preloader
+06-19 15:11:42.615  8930  9023 I Unity   : NativeScreenTexture: SetTexture; caller=[SystemAlert]; layer=[0] camera=[Both]; filter=[Blur]; current callers=[empty]
+06-19 15:11:42.616  8930  9023 I Unity   : NativeScreenTexture: TakeScreenshot; autoSet=[True]; camera=[Both]; filter=[Blur]
+06-19 15:11:43.470  8930  8930 I VRI[NekkiNativeActivity]@251404f: ViewPostIme pointer 0
+06-19 15:11:43.471  8930  8930 I VRI[NekkiNativeActivity]@251404f: call setFrameRateCategory for touch hint category=high hint, reason=touch, vri=VRI[NekkiNativeActivity]@251404f
+06-19 15:11:43.618  8930  8930 I VRI[NekkiNativeActivity]@251404f: ViewPostIme pointer 1
+06-19 15:11:43.628  8930  9023 I Unity   : [LoadingBlocker]; Start blocking layer: blocker priority: Preloader, blocker delay: 0.5
+06-19 15:11:43.629  8930  9023 I Unity   : NativeScreenTexture: Clear; from=[SystemAlert]; delayed=[False]; callers=[1]
+06-19 15:11:43.776  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:43.776  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:44.139  8930  9023 I Unity   : Show loading icon. Lock: KLEBKOBNENM
+06-19 15:11:44.140  8930  9023 I Unity   : NativeScreenTexture: SetTexture; caller=[LoadingIcon]; layer=[988] camera=[Both]; filter=[Blur]; current callers=[empty]
+06-19 15:11:44.140  8930  9023 I Unity   : NativeScreenTexture: TakeScreenshot; autoSet=[True]; camera=[Both]; filter=[Blur]
+06-19 15:11:44.248  8930  9154 W UserMessagingPlatform: Metrics reporting URL is not set yet.
+06-19 15:11:44.248  8930  8930 W UserMessagingPlatform: Error making request.
+06-19 15:11:44.272  8930  9023 I Unity   : [DJBCNKBGEGH] InitInternal: False
+06-19 15:11:44.273  8930  9154 I UserMessagingPlatform: Use new ConsentDebugSettings.Builder().addTestDeviceHashedId("1654883292BEA2952023B0AF6A4DAB83") to set this as a debug device.
+06-19 15:11:44.273  8930  9023 I Unity   : [LOJMGBEJJGO] Update. Failed. Error: Error making request. (2). Status: Unknown False
+06-19 15:11:44.276  8930  9154 D UserMessagingPlatform: Stored info not exists: IABTCF_TCString
+06-19 15:11:44.276  8930  9154 D UserMessagingPlatform: Stored info not exists: IABGPP_HDR_GppString
+06-19 15:11:44.276  8930  9154 D UserMessagingPlatform: Stored info not exists: IABGPP_GppSID
+06-19 15:11:44.276  8930  9154 D UserMessagingPlatform: Stored info not exists: IABUSPrivacy_String
+06-19 15:11:44.277  8930  9154 W UserMessagingPlatform: Metrics reporting URL is not set yet.
+06-19 15:11:44.277  8930  8930 W UserMessagingPlatform: Error making request.
+06-19 15:11:44.288  8930  9023 I Unity   : [LOJMGBEJJGO] Update. Failed. Error: Error making request. (2). Status: Unknown False
+06-19 15:11:44.608  8930  9023 I Unity   : [ServerStatus] Load in progress
+06-19 15:11:44.619  8930  9023 E Unity   : [SF3MultiBalancerManager] Failed to resolve balancer at index 0: Failed with responseCode - 0 - Request timeout - ConnectionError
+06-19 15:11:44.619  8930  9023 E Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+06-19 15:11:44.619  8930  9023 E Unity   : JCICEBEKNOE:CBEJGNOBKMC(String)
+06-19 15:11:44.619  8930  9023 E Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+06-19 15:11:44.619  8930  9023 E Unity   : System.Delegate:DynamicInvokeImpl(Object[])
+06-19 15:11:44.619  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:44.619  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:44.619  8930  9023 E Unity   : DCEJACPOBHC:IPDOLEJNFJE(BanzaiWebRequest)
+06-19 15:11:44.619  8930  9023 E Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+06-19 15:11:44.619  8930  9023 E Unity   : System.Delegate:DynamicInvokeImpl(Object[])
+06-19 15:11:44.619  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:44.619  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:44.619  8930  9023 E Unity   : Banzai.WebRequest.BanzaiWebRequest:SendError(Boolean, DCEBFCEEKPC)
+06-19 15:11:44.619  8930  9023 E Unity   : Banzai.WebRequest.<FinishWhenWebHandlerDone>d__97:MoveNext()
+06-19 15:11:44.619  8930  9023 E Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+06-19 15:11:44.619  8930  9023 E Unity   : Banzai.WebRequest.<RequestRuntime>d__90:MoveNext()
+06-19 15:11:44.619  8930  9023 E Unity   : UnityEng
+06-19 15:11:44.619  8930  9023 I Unity   : [ServerStatus] Load in progress
+06-19 15:11:44.624  8930  9023 E Unity   : [SF3MultiBalancerManager] Failed to resolve balancer at index 1: Failed with responseCode - 0 - Request timeout - ConnectionError
+06-19 15:11:44.624  8930  9023 E Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+06-19 15:11:44.624  8930  9023 E Unity   : JCICEBEKNOE:CBEJGNOBKMC(String)
+06-19 15:11:44.624  8930  9023 E Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+06-19 15:11:44.624  8930  9023 E Unity   : System.Delegate:DynamicInvokeImpl(Object[])
+06-19 15:11:44.624  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:44.624  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:44.624  8930  9023 E Unity   : DCEJACPOBHC:IPDOLEJNFJE(BanzaiWebRequest)
+06-19 15:11:44.624  8930  9023 E Unity   : System.Reflection.RuntimeMethodInfo:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo)
+06-19 15:11:44.624  8930  9023 E Unity   : System.Delegate:DynamicInvokeImpl(Object[])
+06-19 15:11:44.624  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:44.624  8930  9023 E Unity   : HHAHPCDHJLJ:EAEICJGIONF(MulticastDelegate, Object[])
+06-19 15:11:44.624  8930  9023 E Unity   : Banzai.WebRequest.BanzaiWebRequest:SendError(Boolean, DCEBFCEEKPC)
+06-19 15:11:44.624  8930  9023 E Unity   : Banzai.WebRequest.<FinishWhenWebHandlerDone>d__97:MoveNext()
+06-19 15:11:44.624  8930  9023 E Unity   : UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+06-19 15:11:44.624  8930  9023 E Unity   : Banzai.WebRequest.<RequestRuntime>d__90:MoveNext()
+06-19 15:11:44.624  8930  9023 E Unity   : UnityEng
+06-19 15:11:44.709  8930  9023 I Unity   : [ServerStatus] Get status errorFailed with responseCode - 0 - Cannot resolve destination host - ConnectionError
+06-19 15:11:45.792  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:45.792  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:46.619  8930  8930 I VRI[NekkiNativeActivity]@251404f: call setFrameRateCategory for touch hint category=no preference, reason=boost timeout, vri=VRI[NekkiNativeActivity]@251404f
+06-19 15:11:47.579  8930  8930 I ImeFocusController: onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+06-19 15:11:47.579  8930  8930 I ImeFocusController: onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+06-19 15:11:47.806  8930  9023 W Unity   : Client time was used instead of server time.
+06-19 15:11:47.806  8930  9023 W Unity   : Client time was used instead of server time.
