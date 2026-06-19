@@ -5,6 +5,7 @@ import android.net.VpnService
 import android.os.Build
 import android.os.ParcelFileDescriptor
 import android.util.Log
+import top.niunaijun.blackbox.utils.ShellUtils
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.util.concurrent.ConcurrentHashMap
@@ -84,13 +85,9 @@ class NetworkAnalyzerVpnService : VpnService() {
                 .addRoute("0.0.0.0", 0)
                 .addRoute(DNS_SERVER, 32) // Explicit route for DNS
 
-            // We always allow the host package because the container apps run in its processes
+            // Container apps share the host package's UID, so allowing the host package
+            // captures all container app traffic through the tun.
             builder.addAllowedApplication(packageName)
-            
-            // If a specific guest app is targeted, we still capture via the host process,
-            // but the UI will filter by IP/Port if needed.
-            // Note: In BlackBox, guest apps share the host's UID, so addAllowedApplication(guest)
-            // might not work as expected. We capture all container traffic and filter in UI.
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 builder.setMetered(false)
@@ -107,6 +104,12 @@ class NetworkAnalyzerVpnService : VpnService() {
             tunInput  = FileInputStream(pfd.fileDescriptor)
             tunOutput = FileOutputStream(pfd.fileDescriptor)
             vpnEstablished = true
+
+            // If root is available, add iptables rules that force-route all traffic from
+            // this UID (which covers every container app process) into the tun interface.
+            // This is belt-and-suspenders over addAllowedApplication, and it's also the
+            // foundation for SSL interception later (port 443 redirect to a local proxy).
+            setupRootRedirect()
 
             readerExecutor.submit(::readLoop)
             cleanupExecutor.scheduleAtFixedRate(::cleanupSessions, 15, 15, TimeUnit.SECONDS)
@@ -129,10 +132,94 @@ class NetworkAnalyzerVpnService : VpnService() {
         udpSessions.values.forEach { it.close() }
         udpSessions.clear()
 
+        cleanupRootRedirect()
+
         runCatching { tunPfd?.close() }
         tunPfd = null
         tunInput = null
         tunOutput = null
+    }
+
+    // -------------------------------------------------------------------------
+    // Root-based iptables MITM setup
+    // -------------------------------------------------------------------------
+    // Container apps run inside BlackBox's process tree and share its Linux UID.
+    // With root we can use iptables owner-match to force ALL traffic from that UID
+    // through the tun interface — catching even apps that open raw sockets or use
+    // native code that would otherwise bypass addAllowedApplication.
+    //
+    // FWMARK 0x539 ("BlackBox net-analyzer") is used to avoid colliding with other
+    // marks on the device. We also set up a separate routing table (200) so the
+    // marked packets are looked up there, which points default → tun0 (or whatever
+    // the active tun interface is named).  The VPN's protect() call on forwarded
+    // sockets prevents routing loops.
+    //
+    // For future SSL MITM: redirect port 443 → local proxy with
+    //   iptables -t nat -A OUTPUT -m owner --uid-owner $uid -p tcp --dport 443
+    //            -j REDIRECT --to-ports <local_ssl_proxy_port>
+    // and install your CA cert as system-trusted (needs root).
+
+    private fun setupRootRedirect() {
+        Thread({
+            try {
+                val hasRoot = ShellUtils.checkRootPermission()
+                if (!hasRoot) {
+                    Log.i(TAG, "Root not available — VPN-only capture (no iptables)")
+                    return@Thread
+                }
+
+                val uid = android.os.Process.myUid()
+                val tunIface = findTunInterface() ?: "tun0"
+                Log.i(TAG, "Root available — iptables MITM redirect for uid=$uid tun=$tunIface")
+
+                val rules = arrayOf(
+                    // Mark all outgoing packets from this UID
+                    "iptables -t mangle -I OUTPUT -m owner --uid-owner $uid -j MARK --set-mark 0x539",
+                    // Route marked packets through a dedicated table that sends everything to tun
+                    "ip rule add fwmark 0x539 table 200 priority 100",
+                    "ip route replace default dev $tunIface table 200"
+                )
+                val result = ShellUtils.execCommand(rules, true)
+                if (result.result == 0) {
+                    Log.i(TAG, "iptables MITM rules installed successfully")
+                } else {
+                    Log.w(TAG, "iptables setup returned non-zero (${result.result}): ${result.successMsg}")
+                }
+            } catch (e: Exception) {
+                Log.w(TAG, "setupRootRedirect failed: ${e.message}")
+            }
+        }, "vpn-iptables-setup").start()
+    }
+
+    private fun cleanupRootRedirect() {
+        Thread({
+            try {
+                if (!ShellUtils.checkRootPermission()) return@Thread
+
+                val uid = android.os.Process.myUid()
+                val tunIface = findTunInterface() ?: "tun0"
+
+                val rules = arrayOf(
+                    "iptables -t mangle -D OUTPUT -m owner --uid-owner $uid -j MARK --set-mark 0x539",
+                    "ip rule del fwmark 0x539 table 200 priority 100",
+                    "ip route del default dev $tunIface table 200"
+                )
+                ShellUtils.execCommand(rules, true)
+                Log.i(TAG, "iptables MITM rules cleaned up")
+            } catch (e: Exception) {
+                Log.w(TAG, "cleanupRootRedirect failed: ${e.message}")
+            }
+        }, "vpn-iptables-cleanup").start()
+    }
+
+    /** Finds the name of the first tun interface that is currently up. */
+    private fun findTunInterface(): String? {
+        return try {
+            java.net.NetworkInterface.getNetworkInterfaces()
+                ?.toList()
+                ?.firstOrNull { it.name.startsWith("tun") && it.isUp }
+                ?.name
+        } catch (e: Exception) { null }
     }
 
     private fun readLoop() {

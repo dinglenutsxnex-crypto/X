@@ -957,8 +957,15 @@ public class BlackBoxCore extends ClientConfiguration {
         }
         
         
-        initVpnService();
-        
+        // ProxyVpnService is intentionally NOT auto-started here.
+        // Android allows only one active VPN per app at a time. Auto-starting ProxyVpnService
+        // would revoke NetworkAnalyzerVpnService the moment the user opens the Network Analyzer.
+        // ProxyVpnService still exists in the manifest so VpnCommonProxy.establishVpn can
+        // redirect guest-app VPN calls through BlackBox's service identity (it only needs
+        // the class name as a string, not the service to be running).
+        // The VPN is started exclusively by NetworkAnalyzerFloatingService when the user
+        // enables the Network Analyzer tool.
+
         HookManager.get().init();
     }
 
