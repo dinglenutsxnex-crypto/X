@@ -390,7 +390,7 @@ class DebuggerFloatingService : Service() {
         logcatFuture = logExecutor.submit {
             try {
                 val cmd = arrayOf("logcat", "-b", "main", "-b", "system", "-b", "crash",
-                    "--pid=$pid", "-v", "threadtime")
+                    "--pid=$pid", "-v", "threadtime", "*:V")
                 logcatProcess = Runtime.getRuntime().exec(cmd)
                 val reader = BufferedReader(InputStreamReader(logcatProcess!!.inputStream))
                 appendSysMsg("[Debugger] Logcat stream started (PID $pid)")

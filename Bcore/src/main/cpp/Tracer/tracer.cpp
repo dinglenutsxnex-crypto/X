@@ -166,15 +166,20 @@ static bool hookArtInterpreter() {
 
 // ─── JNI exports ─────────────────────────────────────────────────────────────
 
-extern "C" JNIEXPORT void JNICALL
+extern "C" JNIEXPORT jboolean JNICALL
 Java_top_niunaijun_blackbox_fake_hook_MethodTracer_nativeInit(
         JNIEnv * /*env*/, jclass /*clazz*/, jint apiLevel) {
-    if (gInitialised) return;
-    gInitialised = true;
+    if (gInitialised) return JNI_TRUE;
     bool il2cpp = hookIl2Cpp();
     bool art    = hookArtInterpreter();
-    LOGI("Native tracer ready (API %d). il2cpp=%s art=%s",
+    LOGI("Native tracer probe (API %d). il2cpp=%s art=%s",
          apiLevel, il2cpp ? "yes" : "no", art ? "yes" : "no");
+    if (il2cpp || art) {
+        gInitialised = true;
+        return JNI_TRUE;
+    }
+    // Not hooked yet — caller should retry after libil2cpp.so loads
+    return JNI_FALSE;
 }
 
 extern "C" JNIEXPORT void JNICALL

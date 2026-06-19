@@ -35,12 +35,9 @@ public class MethodTracer implements IInjectHook {
         // Emit CLASS_LOAD events for every class already in the app's DEX files
         enumerateDexClasses();
 
-        // Initialise native hooks (il2cpp + ART) — failures are non-fatal
-        try {
-            nativeInit(Build.VERSION.SDK_INT);
-        } catch (UnsatisfiedLinkError | Exception e) {
-            Log.w(TAG, "nativeInit skipped: " + e.getMessage());
-        }
+        // Kick off native hook installation in a background thread so it can
+        // retry until libil2cpp.so is loaded by Unity (typically 1–5 s after start).
+        startNativeInitThread();
     }
 
     @Override
@@ -162,10 +159,43 @@ public class MethodTracer implements IInjectHook {
         return null;
     }
 
+    /**
+     * Background thread that retries nativeInit every second for up to 60 s.
+     * Unity loads libil2cpp.so lazily — it's usually ready 1–5 s after the
+     * app's Java layer starts.  We keep probing until Dobby confirms a hook.
+     */
+    private void startNativeInitThread() {
+        final int apiLevel = Build.VERSION.SDK_INT;
+        Thread t = new Thread(() -> {
+            for (int attempt = 0; attempt < 60; attempt++) {
+                try { Thread.sleep(1000); } catch (InterruptedException e) { break; }
+                try {
+                    boolean hooked = nativeInit(apiLevel);
+                    if (hooked) {
+                        Log.i(TAG, "Native hooks installed on attempt " + (attempt + 1));
+                        logTrace("CLASS_LOAD", "MethodTracer", "NATIVE_INIT_OK",
+                                 "bg-thread", "attempt=" + (attempt + 1), 0, 0);
+                        break;
+                    }
+                } catch (UnsatisfiedLinkError | Exception e) {
+                    Log.w(TAG, "nativeInit attempt " + attempt + " failed: " + e.getMessage());
+                    break;
+                }
+            }
+        }, "MethodTracer-init");
+        t.setDaemon(true);
+        t.start();
+    }
+
     // ── Native methods (in Tracer/tracer.cpp) ────────────────────────────────
 
-    /** Set up Dobby hooks for il2cpp and ART interpreter. Non-fatal if unsupported. */
-    public static native void nativeInit(int apiLevel);
+    /**
+     * Attempt to install Dobby hooks for il2cpp_runtime_invoke and
+     * art::interpreter::Execute.  Returns true if at least one hook was
+     * installed successfully; false if libil2cpp.so / libart.so are not
+     * loaded yet (caller should retry).
+     */
+    public static native boolean nativeInit(int apiLevel);
 
     /** Remove Dobby hooks when the debugger detaches. */
     public static native void nativeStop();
