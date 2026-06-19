@@ -373,6 +373,26 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         }
     }
 
+    @ProxyMethod("getInstallSourceInfo")
+    public static class GetInstallSourceInfo extends MethodHook {
+        @Override
+        protected Object hook(Object who, Method method, Object[] args) throws Throwable {
+            
+            
+            Object installSourceInfo = method.invoke(who, args);
+            if (installSourceInfo != null) {
+                try {
+                    Reflector.on(installSourceInfo).field("mInitiatingPackageName").set(installSourceInfo, "com.android.vending");
+                    Reflector.on(installSourceInfo).field("mInstallingPackageName").set(installSourceInfo, "com.android.vending");
+                    Reflector.on(installSourceInfo).field("mOriginatingPackageName").set(installSourceInfo, null);
+                } catch (Exception e) {
+                    Slog.e(TAG, "GetInstallSourceInfo: Failed to spoof: " + e.getMessage());
+                }
+            }
+            return installSourceInfo;
+        }
+    }
+
     @ProxyMethod("getSharedLibraries")
     public static class GetSharedLibraries extends MethodHook {
         @Override
@@ -712,32 +732,7 @@ public class IPackageManagerProxy extends BinderInvocationStub {
                 }
             }
             
-            
-            try {
-                return method.invoke(who, args);
-            } catch (SecurityException e) {
-                Slog.w(TAG, "XiaomiSecurityBypass: SecurityException in " + methodName + ", bypassing: " + e.getMessage());
-                
-                if (method.getReturnType() == boolean.class) {
-                    return false;
-                } else if (method.getReturnType() == int.class) {
-                    return -1;
-                } else {
-                    return null;
-                }
-            } catch (Exception e) {
-                if (e.getCause() instanceof SecurityException) {
-                    Slog.w(TAG, "XiaomiSecurityBypass: SecurityException (wrapped) in " + methodName + ", bypassing: " + e.getCause().getMessage());
-                    if (method.getReturnType() == boolean.class) {
-                        return false;
-                    } else if (method.getReturnType() == int.class) {
-                        return -1;
-                    } else {
-                        return null;
-                    }
-                }
-                throw e;
-            }
+            return method.invoke(who, args);
         }
     }
 }

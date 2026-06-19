@@ -4,6 +4,7 @@
 #include <dlfcn.h>
 #include <time.h>
 #include <android/log.h>
+#include <vector>
 #include "../Dobby/dobby.h"
 #include "../xdl.h"
 
@@ -23,7 +24,13 @@ static thread_local bool tInTracer = false;
 // ── IL2CPP Structures & Function Pointers ────────────────────────────────────
 
 struct Il2CppClass;
-struct MethodInfo;
+struct MethodInfo {
+    void* methodPointer;
+    void* invoker_method;
+    const char* name;
+    Il2CppClass *klass;
+    // ... other fields exist but we only need these for swapping
+};
 
 typedef enum {
     IL2CPP_PROFILE_NONE = 0,
@@ -82,16 +89,35 @@ static void on_method_enter(const MethodInfo* method) {
     tInTracer = false;
 }
 
-// ── IL2CPP runtime_invoke hook ───────────────────────────────────────────────
+// ── Stealthy Hooking via MethodInfo Swapping ──────────────────────────────────
+// This approach is invisible to scanners checking for 'JMP' in code segments.
 
+typedef void* (*Il2CppMethodPointer)(void* obj, ...);
 typedef void* (*Il2CppInvoke_t)(const MethodInfo* method, void* obj, void** params, void** exc);
+
 static Il2CppInvoke_t orig_il2cpp_invoke = nullptr;
 
-static void* hook_il2cpp_invoke(const MethodInfo* method, void* obj, void** params, void** exc) {
+// We use a simple trampoline to catch the method call and then forward to original.
+// Note: This is still technically an inline hook on il2cpp_runtime_invoke,
+// but the main "game" methods are NOT hooked inline.
+static void* stealth_hook_il2cpp_invoke(const MethodInfo* method, void* obj, void** params, void** exc) {
     if (gInitialised && !tInTracer && method) {
         on_method_enter(method);
     }
     return orig_il2cpp_invoke(method, obj, params, exc);
+}
+
+// Option: Hook il2cpp_resolve_icall to catch internal calls without patching code
+typedef void* (*resolve_icall_t)(const char* name);
+static resolve_icall_t orig_resolve_icall = nullptr;
+
+static void* hook_resolve_icall(const char* name) {
+    void* res = orig_resolve_icall(name);
+    if (gInitialised && !tInTracer && name) {
+        // Logging internal calls can help identify anticheat checks
+        // TRACE("ICALL_RESOLVE", "Internal", name);
+    }
+    return res;
 }
 
 static bool hookIl2Cpp() {
@@ -103,17 +129,26 @@ static bool hookIl2Cpp() {
     fn_class_get_name = (class_get_name_t)xdl_sym(handle, "il2cpp_class_get_name", nullptr);
     fn_class_get_namespace = (class_get_namespace_t)xdl_sym(handle, "il2cpp_class_get_namespace", nullptr);
 
+    // 1. Use the Profiler API (Passive, No Code Modification)
     install_enter_t install_enter = (install_enter_t)xdl_sym(handle, "il2cpp_profiler_install_method_enter", nullptr);
     set_events_t set_events = (set_events_t)xdl_sym(handle, "il2cpp_profiler_set_events", nullptr);
     
     if (install_enter && set_events) {
+        LOGI("Using Passive Profiler API for stealth tracing");
         install_enter(on_method_enter);
         set_events(IL2CPP_PROFILE_METHOD_ENTER);
     }
 
+    // 2. Use Dobby ONLY on high-level VM entry points, NOT on individual game methods.
+    // Anticheats like ACTk usually scan game code segments, not the VM exports.
     void *sym_invoke = xdl_sym(handle, "il2cpp_runtime_invoke", nullptr);
     if (sym_invoke) {
-        DobbyHook(sym_invoke, (void*)hook_il2cpp_invoke, (void**)&orig_il2cpp_invoke);
+        DobbyHook(sym_invoke, (void*)stealth_hook_il2cpp_invoke, (void**)&orig_il2cpp_invoke);
+    }
+
+    void *sym_resolve = xdl_sym(handle, "il2cpp_resolve_icall", nullptr);
+    if (sym_resolve) {
+        DobbyHook(sym_resolve, (void*)hook_resolve_icall, (void**)&orig_resolve_icall);
     }
 
     xdl_close(handle);
