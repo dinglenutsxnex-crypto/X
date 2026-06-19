@@ -336,16 +336,43 @@
                                 android:textSize="8sp"
                                 android:fontFamily="monospace" />
 
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/rv_logs"
+                            <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginEnd="8dp"
-                                android:layout_marginBottom="8dp"
-                                android:background="@drawable/bg_log_area"
-                                android:scrollbars="vertical" />
+                                android:layout_weight="1">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rv_logs"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:background="@drawable/bg_log_area"
+                                    android:scrollbars="vertical" />
+
+                                <!-- Scroll to bottom arrow -->
+                                <FrameLayout
+                                    android:id="@+id/btn_scroll_bottom_logs"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:layout_gravity="bottom|end"
+                                    android:layout_marginEnd="20dp"
+                                    android:layout_marginBottom="20dp"
+                                    android:background="@drawable/bg_debugger_bubble"
+                                    android:elevation="4dp"
+                                    android:visibility="gone"
+                                    android:clickable="true">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="↓"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+                                </FrameLayout>
+                            </FrameLayout>
                         </LinearLayout>
 
                         <!-- ── TRACE content ── -->
@@ -410,16 +437,43 @@
                                 android:textSize="8sp"
                                 android:fontFamily="monospace" />
 
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/rv_trace"
+                            <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginEnd="8dp"
-                                android:layout_marginBottom="8dp"
-                                android:background="@drawable/bg_log_area"
-                                android:scrollbars="vertical" />
+                                android:layout_weight="1">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rv_trace"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:background="@drawable/bg_log_area"
+                                    android:scrollbars="vertical" />
+
+                                <!-- Scroll to bottom arrow -->
+                                <FrameLayout
+                                    android:id="@+id/btn_scroll_bottom_trace"
+                                    android:layout_width="32dp"
+                                    android:layout_height="32dp"
+                                    android:layout_gravity="bottom|end"
+                                    android:layout_marginEnd="20dp"
+                                    android:layout_marginBottom="20dp"
+                                    android:background="@drawable/bg_debugger_bubble"
+                                    android:elevation="4dp"
+                                    android:visibility="gone"
+                                    android:clickable="true">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="↓"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+                                </FrameLayout>
+                            </FrameLayout>
                         </LinearLayout>
 
                     </FrameLayout>

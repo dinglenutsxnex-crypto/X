@@ -252,6 +252,36 @@ class DebuggerFloatingService : Service() {
             }
         )
 
+        // Scroll to bottom listeners
+        floatView?.findViewById<View>(R.id.btn_scroll_bottom_logs)?.setOnClickListener {
+            val rv = floatView?.findViewById<RecyclerView>(R.id.rv_logs)
+            rv?.scrollToPosition((logAdapter?.itemCount ?: 1) - 1)
+            it.visibility = View.GONE
+        }
+        floatView?.findViewById<View>(R.id.btn_scroll_bottom_trace)?.setOnClickListener {
+            val rv = floatView?.findViewById<RecyclerView>(R.id.rv_trace)
+            rv?.scrollToPosition((traceAdapter?.itemCount ?: 1) - 1)
+            it.visibility = View.GONE
+        }
+
+        // Scroll listeners to show/hide the arrow
+        floatView?.findViewById<RecyclerView>(R.id.rv_logs)?.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                val lm = recyclerView.layoutManager as LinearLayoutManager
+                val lastVisible = lm.findLastCompletelyVisibleItemPosition()
+                val atBottom = lastVisible >= (logAdapter?.itemCount ?: 0) - 5
+                floatView?.findViewById<View>(R.id.btn_scroll_bottom_logs)?.visibility = if (atBottom) View.GONE else View.VISIBLE
+            }
+        })
+        floatView?.findViewById<RecyclerView>(R.id.rv_trace)?.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                val lm = recyclerView.layoutManager as LinearLayoutManager
+                val lastVisible = lm.findLastCompletelyVisibleItemPosition()
+                val atBottom = lastVisible >= (traceAdapter?.itemCount ?: 0) - 5
+                floatView?.findViewById<View>(R.id.btn_scroll_bottom_trace)?.visibility = if (atBottom) View.GONE else View.VISIBLE
+            }
+        })
+
         // Processes RecyclerView
         val rv = floatView?.findViewById<RecyclerView>(R.id.rv_processes) ?: return
         processAdapter = ProcessListAdapter { info -> selectProcess(info) }
@@ -625,26 +655,29 @@ class DebuggerFloatingService : Service() {
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 val values = ContentValues().apply {
-                    put(MediaStore.Downloads.DISPLAY_NAME, name)
-                    put(MediaStore.Downloads.MIME_TYPE, if (name.endsWith(".json")) "application/json" else "text/plain")
-                    put(MediaStore.Downloads.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS)
+                    put(MediaStore.MediaColumns.DISPLAY_NAME, name)
+                    put(MediaStore.MediaColumns.MIME_TYPE, "text/plain")
+                    put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS)
                 }
                 val uri = contentResolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, values)
                 uri?.let {
                     contentResolver.openOutputStream(it)?.use { os -> os.write(content.toByteArray()) }
-                    showToast("$successMsg → Downloads/$name")
+                    showToast("$successMsg: Downloads/$name")
                 }
             } else {
-                val file = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), name)
+                val dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+                val file = File(dir, name)
                 file.writeText(content)
-                showToast("$successMsg → ${file.absolutePath}")
+                showToast("$successMsg: ${file.absolutePath}")
             }
         } catch (e: Exception) {
-            Log.e(TAG, "Save failed: ${e.message}")
             showToast("Save failed: ${e.message}")
         }
     }
 
-    private fun timestamp() = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(Date())
-    private fun showToast(msg: String) = mainHandler.post { Toast.makeText(this, msg, Toast.LENGTH_SHORT).show() }
+    private fun timestamp() = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
+
+    private fun showToast(msg: String) {
+        mainHandler.post { Toast.makeText(this, msg, Toast.LENGTH_SHORT).show() }
+    }
 }
