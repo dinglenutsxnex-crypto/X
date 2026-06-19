@@ -23,8 +23,8 @@ class NetworkAnalyzerVpnService : VpnService() {
         private const val TUN_IP    = "10.99.0.1"
         private const val TUN_MASK  = 24
         private const val DNS_SERVER = "8.8.8.8"
-        private const val TUN_MTU   = 16_384
-        private const val READ_BUF  = TUN_MTU + 20
+        private const val TUN_MTU   = 1400 // Standard MTU for stability
+        private const val READ_BUF  = 16384
 
         val tracker = ConnectionTracker()
 
@@ -82,6 +82,7 @@ class NetworkAnalyzerVpnService : VpnService() {
                 .addAddress(TUN_IP, TUN_MASK)
                 .addDnsServer(DNS_SERVER)
                 .addRoute("0.0.0.0", 0)
+                .addRoute(DNS_SERVER, 32) // Explicit route for DNS
 
             // We always allow the host package because the container apps run in its processes
             builder.addAllowedApplication(packageName)

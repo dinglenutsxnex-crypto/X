@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_log_line"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:paddingTop="1dp"
+    android:paddingBottom="1dp"
+    android:textColor="#FFFFFF"
+    android:textSize="9sp"
+    android:fontFamily="monospace"
+    android:lineSpacingMultiplier="1.2" />
