@@ -29,7 +29,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BlackBox"
         android:enableOnBackInvokedCallback="true"
-        tools:targetApi="n">
+        tools:targetApi="n"
+        tools:replace="android:allowBackup">
         <activity
             android:name=".view.fake.FollowMyLocationOverlay"
             android:exported="false" />

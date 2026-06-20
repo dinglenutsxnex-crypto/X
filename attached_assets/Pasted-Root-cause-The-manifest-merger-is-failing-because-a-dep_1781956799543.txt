@@ -1,0 +1,48 @@
+Root cause
+- The manifest merger is failing because a dependency (com.github.Othershe:CornerLabelView:1.0.0) declares android:allowBackup="true" while your app manifest sets android:allowBackup="false". The merger recommends using tools:replace to override.
+- There are also multiple duplicated uses-permission declarations coming from the Bcore module and/or other libraries (warnings in the logs). Usually those are warnings, but they can be turned into errors depending on merge settings or further conflicts.
+
+Minimal fix (recommended)
+1. Add tools:replace="android:allowBackup" to your <application> element in app/src/main/AndroidManifest.xml so your value (false) wins. You already have the tools namespace declared, so add the attribute.
+
+Patch example — change this tag:
+<application
+    android:name=".app.App"
+    android:allowBackup="false"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:networkSecurityConfig="@xml/network_security_config"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/Theme.BlackBox"
+    android:enableOnBackInvokedCallback="true"
+    tools:targetApi="n">
+
+to this (only one line added):
+<application
+    android:name=".app.App"
+    android:allowBackup="false"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:networkSecurityConfig="@xml/network_security_config"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/Theme.BlackBox"
+    android:enableOnBackInvokedCallback="true"
+    tools:targetApi="n"
+    tools:replace="android:allowBackup">
+
+Save and re-run the workflow. This should resolve the allowBackup conflict and allow the manifest merger to proceed.
+
+Optional / follow-up actions (if you still see manifest errors)
+- If duplicate uses-permission elements become errors (rather than warnings) after fixing allowBackup, remove or override the problematic permission declarations explicitly in your app manifest. Example to remove a permission injected by a library:
+
+<uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" tools:node="remove" />
+
+or (if you want to keep one copy only) explicitly declare the desired permission in your app and remove/ignore duplicates via tools:node as needed.
+
+- Alternatively, fix the source of duplicates by updating the Bcore module or the library that declares the permission twice.
+
+Notes
+- The tools namespace is already present on the root <manifest> in your file, so no extra xmlns declaration is required.
+- After applying the change, re-run the CI. If the build still fails, attach the updated manifest merge log (the expanded merger output, or run Gradle with --info/--debug or enable manifest merger full logs) and I’ll point to the remaining offending entries and exact removals.
