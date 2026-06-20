@@ -552,12 +552,15 @@ class AppsFragment : Fragment() {
                 message(text = getString(R.string.randomize_device_hint, info.name))
                 positiveButton(R.string.done) {
                     try {
-                        BlackBoxCore.get().stopPackage(info.packageName, userID)
+                        showLoading()
                         Thread {
                             try {
+                                BlackBoxCore.get().stopPackage(info.packageName, userID)
                                 DeviceProfileManager.get().randomize(info.packageName)
+                                BlackBoxCore.get().clearPackage(info.packageName, userID)
                                 activity?.runOnUiThread {
                                     try {
+                                        hideLoading()
                                         toast(getString(R.string.randomize_device_success, info.name))
                                     } catch (e: Exception) {
                                         Log.e(TAG, "Error showing toast: ${e.message}")
@@ -565,10 +568,12 @@ class AppsFragment : Fragment() {
                                 }
                             } catch (e: Exception) {
                                 Log.e(TAG, "Error randomizing device ID: ${e.message}")
+                                activity?.runOnUiThread { hideLoading() }
                             }
                         }.start()
                     } catch (e: Exception) {
                         Log.e(TAG, "Error in randomize device: ${e.message}")
+                        hideLoading()
                     }
                 }
                 negativeButton(R.string.cancel)

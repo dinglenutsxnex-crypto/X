@@ -35,21 +35,41 @@ public class ISettingsProviderProxy extends ClassInvocationStub {
         return false;
     }
 
+    private static boolean isAndroidIdKey(String key) {
+        return key != null && (key.equals("android_id") || key.equals("ANDROID_ID"));
+    }
+
+    private static String getFakeAndroidId() {
+        try {
+            String pkg = BActivityThread.getAppPackageName();
+            if (pkg != null && !pkg.isEmpty()) {
+                return DeviceProfileManager.get().getAndroidId(pkg);
+            }
+        } catch (Exception e) {
+            Slog.w(TAG, "Could not get package name for android_id intercept", e);
+        }
+        return null;
+    }
+
     @ProxyMethod("getStringForUser")
     public static class GetStringForUser extends MethodHook {
         @Override
         protected Object hook(Object who, Method method, Object[] args) throws Throwable {
             try {
-                
                 if (args != null && args.length > 0) {
                     String key = (String) args[0];
+                    if (isAndroidIdKey(key)) {
+                        String fakeId = getFakeAndroidId();
+                        if (fakeId != null) {
+                            Slog.d(TAG, "SettingsProvider: getStringForUser(android_id) -> " + fakeId);
+                            return fakeId;
+                        }
+                    }
                     if (key != null && key.contains("feature_flag")) {
                         Slog.d(TAG, "Intercepting feature flag query: " + key + ", returning safe default");
                         return "true"; 
                     }
                 }
-                
-                
                 return method.invoke(who, args);
             } catch (Exception e) {
                 String errorMsg = e.getMessage();
@@ -67,16 +87,20 @@ public class ISettingsProviderProxy extends ClassInvocationStub {
         @Override
         protected Object hook(Object who, Method method, Object[] args) throws Throwable {
             try {
-                
                 if (args != null && args.length > 0) {
                     String key = (String) args[0];
+                    if (isAndroidIdKey(key)) {
+                        String fakeId = getFakeAndroidId();
+                        if (fakeId != null) {
+                            Slog.d(TAG, "SettingsProvider: getString(android_id) -> " + fakeId);
+                            return fakeId;
+                        }
+                    }
                     if (key != null && key.contains("feature_flag")) {
                         Slog.d(TAG, "Intercepting feature flag query: " + key + ", returning safe default");
                         return "true"; 
                     }
                 }
-                
-                
                 return method.invoke(who, args);
             } catch (Exception e) {
                 String errorMsg = e.getMessage();
