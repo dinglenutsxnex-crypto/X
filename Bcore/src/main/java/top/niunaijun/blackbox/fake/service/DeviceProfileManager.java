@@ -20,6 +20,7 @@ public class DeviceProfileManager {
     private static final String KEY_IMEI       = "_imei";
     private static final String KEY_SERIAL     = "_serial";
     private static final String KEY_SUBSCRIBER = "_subscriber_id";
+    private static final String KEY_MAC        = "_mac";
 
     private static DeviceProfileManager sInstance;
 
@@ -56,6 +57,10 @@ public class DeviceProfileManager {
         return getOrCreate(packageName + KEY_SUBSCRIBER, () -> "310260" + randomDecimalString(9));
     }
 
+    public String getMacAddress(String packageName) {
+        return getOrCreate(packageName + KEY_MAC, () -> randomMac());
+    }
+
     /**
      * Wipes all stored IDs for the given package so fresh ones are generated
      * on the next launch — making the app see a completely different device.
@@ -68,6 +73,7 @@ public class DeviceProfileManager {
         editor.remove(packageName + KEY_IMEI);
         editor.remove(packageName + KEY_SERIAL);
         editor.remove(packageName + KEY_SUBSCRIBER);
+        editor.remove(packageName + KEY_MAC);
         editor.apply();
         Slog.d(TAG, "Randomized device profile for: " + packageName);
 
@@ -75,6 +81,15 @@ public class DeviceProfileManager {
         getImei(packageName);
         getSerial(packageName);
         getSubscriberId(packageName);
+        getMacAddress(packageName);
+    }
+
+    /** Returns a human-readable summary of current IDs for display in UI. */
+    public String getSummary(String packageName) {
+        return "ANDROID_ID: " + getAndroidId(packageName) + "\n"
+             + "IMEI: " + getImei(packageName) + "\n"
+             + "Serial: " + getSerial(packageName) + "\n"
+             + "MAC: " + getMacAddress(packageName);
     }
 
     private String getOrCreate(String key, IdGenerator generator) {
@@ -104,6 +119,16 @@ public class DeviceProfileManager {
             sb.append((int) (Math.random() * 10));
         }
         return sb.toString();
+    }
+
+    private static String randomMac() {
+        int[] octets = new int[6];
+        for (int i = 0; i < 6; i++) {
+            octets[i] = (int) (Math.random() * 256);
+        }
+        octets[0] = (octets[0] & 0xFC) | 0x02;
+        return String.format("%02x:%02x:%02x:%02x:%02x:%02x",
+                octets[0], octets[1], octets[2], octets[3], octets[4], octets[5]);
     }
 
     private interface IdGenerator {

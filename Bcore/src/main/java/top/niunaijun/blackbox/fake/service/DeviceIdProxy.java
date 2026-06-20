@@ -2,6 +2,7 @@ package top.niunaijun.blackbox.fake.service;
 
 import java.lang.reflect.Method;
 
+import top.niunaijun.blackbox.app.BActivityThread;
 import top.niunaijun.blackbox.fake.hook.ClassInvocationStub;
 import top.niunaijun.blackbox.fake.hook.MethodHook;
 import top.niunaijun.blackbox.fake.hook.ProxyMethod;
@@ -36,14 +37,17 @@ public class DeviceIdProxy extends ClassInvocationStub {
         @Override
         protected Object hook(Object who, Method method, Object[] args) throws Throwable {
             try {
-                if (who == null) {
-                    Slog.w(TAG, "GetDeviceId called on null object, returning default device ID");
-                    return "default_device_id";
+                String pkg = BActivityThread.getAppPackageName();
+                if (pkg != null && !pkg.isEmpty()) {
+                    String imei = DeviceProfileManager.get().getImei(pkg);
+                    Slog.d(TAG, "DeviceIdProxy: getDeviceId -> " + imei);
+                    return imei;
                 }
+                if (who == null) return "000000000000000";
                 return method.invoke(who, args);
             } catch (Exception e) {
-                Slog.w(TAG, "GetDeviceId error, returning default device ID: " + e.getMessage());
-                return "default_device_id";
+                Slog.w(TAG, "GetDeviceId error: " + e.getMessage());
+                return "000000000000000";
             }
         }
     }

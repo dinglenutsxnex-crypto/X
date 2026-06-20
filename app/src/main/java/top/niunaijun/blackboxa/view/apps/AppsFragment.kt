@@ -558,12 +558,17 @@ class AppsFragment : Fragment() {
                                 BlackBoxCore.get().stopPackage(info.packageName, userID)
                                 DeviceProfileManager.get().randomize(info.packageName)
                                 BlackBoxCore.get().clearPackage(info.packageName, userID)
+                                val summary = DeviceProfileManager.get().getSummary(info.packageName)
                                 activity?.runOnUiThread {
                                     try {
                                         hideLoading()
-                                        toast(getString(R.string.randomize_device_success, info.name))
+                                        MaterialDialog(requireContext()).show {
+                                            title(text = "New identity for ${info.name}")
+                                            message(text = summary)
+                                            positiveButton(R.string.done)
+                                        }
                                     } catch (e: Exception) {
-                                        Log.e(TAG, "Error showing toast: ${e.message}")
+                                        Log.e(TAG, "Error showing result: ${e.message}")
                                     }
                                 }
                             } catch (e: Exception) {
