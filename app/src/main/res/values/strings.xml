@@ -33,6 +33,10 @@
     <string name="app_clear_hint">Clear Data for %s?</string>
     <string name="app_remove">Uninstall App</string>
     <string name="app_shortcut">Create Shortcut</string>
+    <string name="app_randomize_device">Randomize Device ID</string>
+    <string name="randomize_device_title">Randomize Device ID</string>
+    <string name="randomize_device_hint">Assign %s a completely new random device identity (ANDROID_ID, IMEI, serial). The app will appear as if it\'s running on a different device. Stop the app first if it\'s running.</string>
+    <string name="randomize_device_success">New device identity assigned to %s. Relaunch the app for it to take effect.</string>
     <string name="shortcut_name">Shortcut Name</string>
     <string name="try_add_shortcut">Try Added To Desktop</string>
     <string name="add_shortcut_fail_msg">If the addition fails, please go to system settings and open the permission of "create desktop shortcut" for [ off-by-one ]</string>

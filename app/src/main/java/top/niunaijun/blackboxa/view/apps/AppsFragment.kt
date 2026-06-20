@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView
 import cbfg.rvadapter.RVAdapter
 import com.afollestad.materialdialogs.MaterialDialog
 import top.niunaijun.blackbox.BlackBoxCore
+import top.niunaijun.blackbox.fake.service.DeviceProfileManager
 import top.niunaijun.blackboxa.R
 import top.niunaijun.blackboxa.bean.AppInfo
 import top.niunaijun.blackboxa.databinding.FragmentAppsBinding
@@ -391,6 +392,10 @@ class AppsFragment : Fragment() {
                                     R.id.app_shortcut -> {
                                         ShortcutUtil.createShortcut(requireContext(), userID, data)
                                     }
+
+                                    R.id.app_randomize_device -> {
+                                        randomizeDeviceId(data)
+                                    }
                                 }
                                 return@setOnMenuItemClickListener true
                             } catch (e: Exception) {
@@ -537,6 +542,39 @@ class AppsFragment : Fragment() {
             }
         } catch (e: Exception) {
             Log.e(TAG, "Error showing clear dialog: ${e.message}")
+        }
+    }
+
+    private fun randomizeDeviceId(info: AppInfo) {
+        try {
+            MaterialDialog(requireContext()).show {
+                title(R.string.randomize_device_title)
+                message(text = getString(R.string.randomize_device_hint, info.name))
+                positiveButton(R.string.done) {
+                    try {
+                        BlackBoxCore.get().stopPackage(info.packageName, userID)
+                        Thread {
+                            try {
+                                DeviceProfileManager.get().randomize(info.packageName)
+                                activity?.runOnUiThread {
+                                    try {
+                                        toast(getString(R.string.randomize_device_success, info.name))
+                                    } catch (e: Exception) {
+                                        Log.e(TAG, "Error showing toast: ${e.message}")
+                                    }
+                                }
+                            } catch (e: Exception) {
+                                Log.e(TAG, "Error randomizing device ID: ${e.message}")
+                            }
+                        }.start()
+                    } catch (e: Exception) {
+                        Log.e(TAG, "Error in randomize device: ${e.message}")
+                    }
+                }
+                negativeButton(R.string.cancel)
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Error showing randomize device dialog: ${e.message}")
         }
     }
 

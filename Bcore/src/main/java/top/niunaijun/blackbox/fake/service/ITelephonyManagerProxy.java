@@ -44,13 +44,21 @@ public class ITelephonyManagerProxy extends BinderInvocationStub {
         return false;
     }
 
+    private static String getFakeImei() {
+        try {
+            String pkg = BActivityThread.getAppPackageName();
+            if (pkg != null && !pkg.isEmpty()) {
+                return DeviceProfileManager.get().getImei(pkg);
+            }
+        } catch (Exception ignored) {}
+        return Md5Utils.md5(BlackBoxCore.getHostPkg());
+    }
+
     @ProxyMethod("getDeviceId")
     public static class GetDeviceId extends MethodHook {
         @Override
         protected Object hook(Object who, Method method, Object[] args) throws Throwable {
-
-
-            return Md5Utils.md5(BlackBoxCore.getHostPkg());
+            return getFakeImei();
         }
     }
 
@@ -58,9 +66,7 @@ public class ITelephonyManagerProxy extends BinderInvocationStub {
     public static class getImeiForSlot extends MethodHook {
         @Override
         protected Object hook(Object who, Method method, Object[] args) throws Throwable {
-
-
-            return Md5Utils.md5(BlackBoxCore.getHostPkg());
+            return getFakeImei();
         }
     }
 
@@ -68,9 +74,7 @@ public class ITelephonyManagerProxy extends BinderInvocationStub {
     public static class GetMeidForSlot extends MethodHook {
         @Override
         protected Object hook(Object who, Method method, Object[] args) throws Throwable {
-
-
-            return Md5Utils.md5(BlackBoxCore.getHostPkg());
+            return getFakeImei();
         }
     }
 
@@ -95,6 +99,12 @@ public class ITelephonyManagerProxy extends BinderInvocationStub {
     public static class GetSubscriberId extends MethodHook {
         @Override
         protected Object hook(Object who, Method method, Object[] args) throws Throwable {
+            try {
+                String pkg = BActivityThread.getAppPackageName();
+                if (pkg != null && !pkg.isEmpty()) {
+                    return DeviceProfileManager.get().getSubscriberId(pkg);
+                }
+            } catch (Exception ignored) {}
             return Md5Utils.md5(BlackBoxCore.getHostPkg());
         }
     }
@@ -103,7 +113,7 @@ public class ITelephonyManagerProxy extends BinderInvocationStub {
     public static class GetDeviceIdWithFeature extends MethodHook {
         @Override
         protected Object hook(Object who, Method method, Object[] args) throws Throwable {
-            return Md5Utils.md5(BlackBoxCore.getHostPkg());
+            return getFakeImei();
         }
     }
 

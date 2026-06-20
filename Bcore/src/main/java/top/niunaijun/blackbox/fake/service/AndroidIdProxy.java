@@ -2,6 +2,7 @@ package top.niunaijun.blackbox.fake.service;
 
 import java.lang.reflect.Method;
 
+import top.niunaijun.blackbox.app.BActivityThread;
 import top.niunaijun.blackbox.fake.hook.ClassInvocationStub;
 import top.niunaijun.blackbox.fake.hook.MethodHook;
 import top.niunaijun.blackbox.fake.hook.ProxyMethod;
@@ -29,22 +30,25 @@ public class AndroidIdProxy extends ClassInvocationStub {
         return false;
     }
 
+    private static String getFakeAndroidId() {
+        try {
+            String pkg = BActivityThread.getAppPackageName();
+            if (pkg != null && !pkg.isEmpty()) {
+                return DeviceProfileManager.get().getAndroidId(pkg);
+            }
+        } catch (Exception e) {
+            Slog.w(TAG, "Could not get package name for AndroidId, using fallback", e);
+        }
+        return generateRandomAndroidId();
+    }
+
     @ProxyMethod("getAndroidId")
     public static class GetAndroidId extends MethodHook {
         @Override
         protected Object hook(Object who, Method method, Object[] args) throws Throwable {
-            try {
-                Slog.d(TAG, "AndroidId: Handling getAndroidId call");
-                Object result = method.invoke(who, args);
-                if (result == null || "0".equals(result.toString()) || "".equals(result.toString())) {
-                    Slog.w(TAG, "AndroidId: Invalid Android ID detected, returning mock ID");
-                    return generateMockAndroidId();
-                }
-                return result;
-            } catch (Exception e) {
-                Slog.w(TAG, "AndroidId: GetAndroidId error, returning mock ID", e);
-                return generateMockAndroidId();
-            }
+            String fakeId = getFakeAndroidId();
+            Slog.d(TAG, "AndroidId: getAndroidId -> " + fakeId);
+            return fakeId;
         }
     }
 
@@ -53,23 +57,18 @@ public class AndroidIdProxy extends ClassInvocationStub {
         @Override
         protected Object hook(Object who, Method method, Object[] args) throws Throwable {
             try {
-                Slog.d(TAG, "AndroidId: Handling getString call");
-                Object result = method.invoke(who, args);
-                
-                
                 if (args != null && args.length > 0 && args[0] instanceof String) {
                     String key = (String) args[0];
-                    if (key.contains("android_id") || key.contains("ANDROID_ID") || 
+                    if (key.contains("android_id") || key.contains("ANDROID_ID") ||
                         key.contains("secure_id") || key.contains("device_id")) {
-                        if (result == null || "0".equals(result.toString()) || "".equals(result.toString())) {
-                            Slog.w(TAG, "AndroidId: Invalid Android ID string detected, returning mock ID");
-                            return generateMockAndroidId();
-                        }
+                        String fakeId = getFakeAndroidId();
+                        Slog.d(TAG, "AndroidId: getString(" + key + ") -> " + fakeId);
+                        return fakeId;
                     }
                 }
-                return result;
+                return method.invoke(who, args);
             } catch (Exception e) {
-                Slog.w(TAG, "AndroidId: GetString error, returning original result", e);
+                Slog.w(TAG, "AndroidId: GetString error", e);
                 return method.invoke(who, args);
             }
         }
@@ -80,23 +79,20 @@ public class AndroidIdProxy extends ClassInvocationStub {
         @Override
         protected Object hook(Object who, Method method, Object[] args) throws Throwable {
             try {
-                Slog.d(TAG, "AndroidId: Handling getLong call");
-                Object result = method.invoke(who, args);
-                
-                
                 if (args != null && args.length > 0 && args[0] instanceof String) {
                     String key = (String) args[0];
-                    if (key.contains("android_id") || key.contains("ANDROID_ID") || 
+                    if (key.contains("android_id") || key.contains("ANDROID_ID") ||
                         key.contains("secure_id") || key.contains("device_id")) {
-                        if (result == null || ((Number) result).longValue() == 0) {
-                            Slog.w(TAG, "AndroidId: Invalid Android ID long detected, returning mock ID");
+                        try {
+                            return Long.parseLong(getFakeAndroidId(), 16);
+                        } catch (NumberFormatException ignored) {
                             return generateMockAndroidIdLong();
                         }
                     }
                 }
-                return result;
+                return method.invoke(who, args);
             } catch (Exception e) {
-                Slog.w(TAG, "AndroidId: GetLong error, returning original result", e);
+                Slog.w(TAG, "AndroidId: GetLong error", e);
                 return method.invoke(who, args);
             }
         }
@@ -107,23 +103,18 @@ public class AndroidIdProxy extends ClassInvocationStub {
         @Override
         protected Object hook(Object who, Method method, Object[] args) throws Throwable {
             try {
-                Slog.d(TAG, "AndroidId: Handling get call");
-                Object result = method.invoke(who, args);
-                
-                
                 if (args != null && args.length > 0 && args[0] instanceof String) {
                     String key = (String) args[0];
-                    if (key.contains("android_id") || key.contains("ANDROID_ID") || 
+                    if (key.contains("android_id") || key.contains("ANDROID_ID") ||
                         key.contains("secure_id") || key.contains("device_id")) {
-                        if (result == null || "0".equals(result.toString()) || "".equals(result.toString())) {
-                            Slog.w(TAG, "AndroidId: Invalid Android ID get detected, returning mock ID");
-                            return generateMockAndroidId();
-                        }
+                        String fakeId = getFakeAndroidId();
+                        Slog.d(TAG, "AndroidId: get(" + key + ") -> " + fakeId);
+                        return fakeId;
                     }
                 }
-                return result;
+                return method.invoke(who, args);
             } catch (Exception e) {
-                Slog.w(TAG, "AndroidId: Get error, returning original result", e);
+                Slog.w(TAG, "AndroidId: Get error", e);
                 return method.invoke(who, args);
             }
         }
@@ -134,44 +125,32 @@ public class AndroidIdProxy extends ClassInvocationStub {
         @Override
         protected Object hook(Object who, Method method, Object[] args) throws Throwable {
             try {
-                Slog.d(TAG, "AndroidId: Handling read call");
-                Object result = method.invoke(who, args);
-                
-                
                 if (args != null && args.length > 0 && args[0] instanceof String) {
                     String key = (String) args[0];
-                    if (key.contains("android_id") || key.contains("ANDROID_ID") || 
+                    if (key.contains("android_id") || key.contains("ANDROID_ID") ||
                         key.contains("secure_id") || key.contains("device_id")) {
-                        if (result == null || "0".equals(result.toString()) || "".equals(result.toString())) {
-                            Slog.w(TAG, "AndroidId: Invalid Android ID read detected, returning mock ID");
-                            return generateMockAndroidId();
-                        }
+                        String fakeId = getFakeAndroidId();
+                        Slog.d(TAG, "AndroidId: read(" + key + ") -> " + fakeId);
+                        return fakeId;
                     }
                 }
-                return result;
+                return method.invoke(who, args);
             } catch (Exception e) {
-                Slog.w(TAG, "AndroidId: Read error, returning original result", e);
+                Slog.w(TAG, "AndroidId: Read error", e);
                 return method.invoke(who, args);
             }
         }
     }
 
-    
-    private static String generateMockAndroidId() {
-        
+    private static String generateRandomAndroidId() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 16; i++) {
             sb.append(Integer.toHexString((int) (Math.random() * 16)));
         }
-        String mockId = sb.toString().toUpperCase();
-        Slog.d(TAG, "AndroidId: Generated mock Android ID: " + mockId);
-        return mockId;
+        return sb.toString().toUpperCase();
     }
 
     private static Long generateMockAndroidIdLong() {
-        
-        long mockId = (long) (Math.random() * Long.MAX_VALUE);
-        Slog.d(TAG, "AndroidId: Generated mock Android ID long: " + mockId);
-        return mockId;
+        return (long) (Math.random() * Long.MAX_VALUE);
     }
 }

@@ -6,5 +6,9 @@
     <item android:id="@+id/app_stop" android:title="@string/app_stop"/>
 
     <item android:id="@+id/app_remove" android:title="@string/app_remove"/>
+
     <item android:id="@+id/app_shortcut" android:title="@string/app_shortcut"/>
+
+    <item android:id="@+id/app_randomize_device" android:title="@string/app_randomize_device"/>
+
 </menu>
