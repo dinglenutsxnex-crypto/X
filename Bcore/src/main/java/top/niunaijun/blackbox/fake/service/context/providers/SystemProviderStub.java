@@ -1,13 +1,17 @@
 package top.niunaijun.blackbox.fake.service.context.providers;
 
+import android.os.Bundle;
 import android.os.IInterface;
 
 import java.lang.reflect.Method;
 
 import black.android.content.BRAttributionSource;
+import top.niunaijun.blackbox.app.BActivityThread;
 import top.niunaijun.blackbox.BlackBoxCore;
 import top.niunaijun.blackbox.fake.hook.ClassInvocationStub;
+import top.niunaijun.blackbox.fake.service.DeviceProfileManager;
 import top.niunaijun.blackbox.utils.compat.ContextCompat;
+import top.niunaijun.blackbox.utils.Slog;
 
 
 public class SystemProviderStub extends ClassInvocationStub implements BContentProvider {
@@ -60,6 +64,17 @@ public class SystemProviderStub extends ClassInvocationStub implements BContentP
                     if (arg != null && attributionSourceClass != null && 
                             arg.getClass().getName().equals(attributionSourceClass.getName())) {
                         ContextCompat.fixAttributionSourceState(arg, BlackBoxCore.getHostUid());
+                    }
+                }
+                
+                for (Object arg : args) {
+                    if ("android_id".equals(arg)) {
+                        String pkg = BActivityThread.getAppPackageName();
+                        String fakeId = DeviceProfileManager.get().getAndroidId(pkg != null ? pkg : "");
+                        Bundle result = new Bundle();
+                        result.putString("value", fakeId);
+                        Slog.d("SystemProviderStub", "android_id intercepted (call) for " + pkg + " -> " + fakeId);
+                        return result;
                     }
                 }
             }

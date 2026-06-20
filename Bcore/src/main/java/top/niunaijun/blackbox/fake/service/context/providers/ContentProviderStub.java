@@ -8,6 +8,7 @@ import black.android.content.BRAttributionSource;
 import top.niunaijun.blackbox.app.BActivityThread;
 import top.niunaijun.blackbox.BlackBoxCore;
 import top.niunaijun.blackbox.fake.hook.ClassInvocationStub;
+import top.niunaijun.blackbox.fake.service.DeviceProfileManager;
 import top.niunaijun.blackbox.utils.compat.ContextCompat;
 import top.niunaijun.blackbox.utils.Slog;
 import android.os.Bundle;
@@ -55,6 +56,14 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
         if ("call".equals(methodName)) {
             
             AttributionSourceUtils.fixAttributionSourceInArgs(args);
+            
+            if (isAndroidIdCallRequest(args)) {
+                String fakeId = DeviceProfileManager.get().getAndroidId(mAppPkg);
+                Bundle result = new Bundle();
+                result.putString("value", fakeId);
+                Slog.d(TAG, "android_id intercepted (call) for " + mAppPkg + " -> " + fakeId);
+                return result;
+            }
         } else {
             
             if (args != null && args.length > 0) {
@@ -143,6 +152,14 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
             default:
                 return null; 
         }
+    }
+
+    private static boolean isAndroidIdCallRequest(Object[] args) {
+        if (args == null) return false;
+        for (Object arg : args) {
+            if ("android_id".equals(arg)) return true;
+        }
+        return false;
     }
 
     private boolean isSystemProviderAuthority(String authority) {

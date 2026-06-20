@@ -1,0 +1,775 @@
+[Debugger] Attached to blackbox (PID 12466)
+[Debugger] Logcat stream started (PID 12466)
+--------- beginning of main
+06-20 17:53:16.240 12466 12560 I Banzai  : Path: /storage/emulated/0/Android/data/top.niunaijun.blackbox/files/blackbox/storage/emulated/0/Android/data/com.nekki.shadowfight3/files/tou.file
+06-20 17:53:16.240 12466 12560 W Banzai  : SendLog Terms of use not confirm!
+06-20 17:53:16.250 12466 12560 I Unity   : [KFNOKLGFLCC] Init
+06-20 17:53:16.309 12466 12560 I Unity   : New GUID: 6db487cc-b4ea-4595-a4a9-26017e4cfcf6
+06-20 17:53:16.311 12466 12560 I Unity   : [IHBEPIEEIJG] Init
+06-20 17:53:16.312 12466 12560 I Unity   : [IHBEPIEEIJG] Current state: None
+06-20 17:53:16.449 12466 12560 I Unity   : Overwrite external configs with internal
+06-20 17:53:16.481 12466 12466 V FA      : AppMeasurementService is shutting down.
+06-20 17:53:16.687 12466 12560 I Unity   : Migration to the new dto
+06-20 17:53:16.692 12466 12560 W Unity   : BlockInput was called, but we cannot block input yet
+06-20 17:53:16.699 12466 12724 D BLASTBufferQueue: [1470877 SurfaceView[com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity]@0#1](f:0,a:1) acquireNextBufferLocked size=1340x800 mFrameNumber=1 applyTransaction=true mTimestamp=298557260985178(auto) mPendingTransactions.size=0 graphicBufferId=53541062311938 transform=7
+06-20 17:53:16.729 12466 12560 I Unity   : [BOGDEHCNHOF]; Logs folder: [/storage/emulated/0/Android/data/top.niunaijun.blackbox/files/blackbox/storage/emulated/0/Android/data/com.nekki.shadowfight3/files/gamedata/Logs]; Available drive space: 6852MB; Limit space: 50MB
+06-20 17:53:16.747 12466 12560 I Unity   : [LOJMGBEJJGO] Init
+06-20 17:53:16.770 12466 12766 I UserMessagingPlatform: Use new ConsentDebugSettings.Builder().addTestDeviceHashedId("1654883292BEA2952023B0AF6A4DAB83") to set this as a debug device.
+06-20 17:53:16.770 12466 12560 I Unity   : [JOKOBCPEOPJ] Init
+06-20 17:53:16.771 12466 12560 I Unity   : [DHEDEFLIDPP] Init
+06-20 17:53:16.777 12466 12766 D UserMessagingPlatform: Stored info not exists: IABTCF_TCString
+06-20 17:53:16.777 12466 12766 D UserMessagingPlatform: Stored info not exists: IABGPP_HDR_GppString
+06-20 17:53:16.777 12466 12766 D UserMessagingPlatform: Stored info not exists: IABGPP_GppSID
+06-20 17:53:16.777 12466 12766 D UserMessagingPlatform: Stored info not exists: IABUSPrivacy_String
+06-20 17:53:16.790 12466 12766 I WebViewFactory: Loading com.google.android.webview version 149.0.7827.91 (code 782709103)
+--------- beginning of system
+06-20 17:53:16.793 12466 12766 V ResourcesManager: The following library key has been added: ResourcesKey{ mHash=577b64ab mResDir=null mSplitDirs=[] mOverlayDirs=[] mLibDirs=[/data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk,/system/framework/android.test.base.jar,/system_ext/framework/androidx.window.extensions.jar] mDisplayId=0 mOverrideConfig=v36 mCompatInfo={213dpi always-compat} mLoaders=[]}
+06-20 17:53:16.798 12466 12766 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+06-20 17:53:16.798 12466 12766 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+06-20 17:53:16.798 12466 12766 D NativeCore: openDexFileNative: /data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk
+06-20 17:53:16.805 12466 12766 D nativeloader: Configuring clns-11 for other apk /data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/lib/arm64:/data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand
+06-20 17:53:16.871 12466 12766 I cr_WVCFactoryProvider: version=149.0.7827.91 (782709103) minSdkVersion=29 multiprocess=true packageId=2 splits=config.arm64_v8a
+06-20 17:53:16.877 12466 12466 I BLASTBufferQueue_Java: update, w= 1340 h= 800 mName = VRI[NekkiNativeActivity]@66ed1c5 mNativeObject= 0x778e254620 sc.mNativeObject= 0x772e214f90 format= -3 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3574 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 
+06-20 17:53:16.877 12466 12466 I VRI[NekkiNativeActivity]@66ed1c5: Relayout returned: old=(0,0,1340,800) new=(0,0,1340,800) relayoutAsync=true req=(1340,800)0 dur=1 res=0x0 s={true 0x775e25b530} ch=false seqId=0
+06-20 17:53:16.877 12466 12466 I VRI[NekkiNativeActivity]@66ed1c5: updateBoundsLayer: t=android.view.SurfaceControl$Transaction@7c51644 sc=Surface(name=Bounds for - com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity@0)/@0x84b632d frame=5
+06-20 17:53:16.878 12466 12466 I VRI[NekkiNativeActivity]@66ed1c5: registerCallbackForPendingTransactions
+06-20 17:53:16.878 12466 12565 I VRI[NekkiNativeActivity]@66ed1c5: mWNT: t=0x779e2ab1d0 mBlastBufferQueue=0x778e254620 fn= 5 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl$10.onFrameDraw:6536 android.view.ViewRootImpl$4.onFrameDraw:2489 android.view.ThreadedRenderer$1.onFrameDraw:718 
+06-20 17:53:16.880 12466 12766 D nativeloader: Load /data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk!/lib/arm64-v8a/libwebviewchromium.so using class loader ns clns-11 (caller=/data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk): ok
+06-20 17:53:16.889 12466 12766 D nativeloader: Load /system/lib64/libwebviewchromium_plat_support.so using class loader ns clns-11 (caller=/data/app/~~Le3hgXek_hNQMhl1CO1F4g==/com.google.android.webview-2XJ4JQhZFpZKWJuOrRbbBA==/base.apk): ok
+06-20 17:53:16.902 12466 12769 I chromium: [0620/175316.896723:INFO:android_webview/browser/variations/variations_seed_loader.cc:67] Failed to open file for reading.: No such file or directory (2)
+06-20 17:53:16.902 12466 12769 I chromium: [0620/175316.902777:INFO:android_webview/browser/variations/variations_seed_loader.cc:67] Failed to open file for reading.: No such file or directory (2)
+06-20 17:53:16.931 12466 12466 I cr_LibraryLoader: Successfully loaded native library
+06-20 17:53:16.946 12466 12466 I cr_CachingUmaRecorder: Flushed 44 samples from 22 histograms, 0 samples were dropped.
+06-20 17:53:16.956 12466 12466 I cr_ChildProcLH: ScopedServiceBindingBatch.tryActivate: false
+06-20 17:53:16.965 12466 12466 I cr_CombinedPProvider: #registerProvider() provider:WV.wk@2104448 isPolicyCacheEnabled:false policyProvidersSize:0
+06-20 17:53:16.965 12466 12466 I cr_PolicyProvider: #setManagerAndSource() 0
+06-20 17:53:16.966 12466 12768 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:16.966 12466 12768 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:16.968 12466 12768 I cr_policy: registerReceiver succeeded after 2ms
+06-20 17:53:16.969 12466 12466 I cr_DisplayManager: Is Display Topology available: false
+06-20 17:53:16.970 12466 12772 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:16.981 12466 12772 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:16.983 12466 12560 D BanzaiLogcat: Starting Logcat process with command line: logcat -f /storage/emulated/0/Android/data/top.niunaijun.blackbox/files/blackbox/storage/emulated/0/Android/data/com.nekki.shadowfight3/files/gamedata/Logs/NativeLog_20-06-26_17-53-16.log *:S UnityIAP:V BillingClient:V BillingHelper:V BanzaiLogcat:V BanzaiExceptions:V BanzaiGpgTokens:V NativeBridgeActivity:V TokenFragment:V TokenPendingResult:V BanzaiBackups:V
+06-20 17:53:17.040 12466 12466 I cr_CombinedPProvider: #linkNativeInternal() 1
+06-20 17:53:17.043 12466 12560 W Unity   : Client time was used instead of server time.
+06-20 17:53:17.045 12466 12560 I Unity   : GcUtils_SetFreeSpaceDivisor(3)
+06-20 17:53:17.046 12466 12466 I cr_AppResProvider: #getApplicationRestrictionsFromUserManager() Only system may: get application restrictions for other user/app com.nekki.shadowfight3
+06-20 17:53:17.046 12466 12466 I cr_PolicyProvider: #notifySettingsAvailable() 0
+06-20 17:53:17.046 12466 12466 I cr_CombinedPProvider: #onSettingsAvailable() 0
+06-20 17:53:17.046 12466 12466 I cr_CombinedPProvider: #flushPolicies()
+06-20 17:53:17.046 12466 12560 D PackageManagerStub: GetPackageInfo: Providing fake Google Play Services info
+06-20 17:53:17.047 12466 12560 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:17.048 12466 12560 D Banzai  : Status of gaming service availability: 1
+06-20 17:53:17.049 12466 12560 I Unity   : GC Configuration:
+06-20 17:53:17.049 12466 12560 I Unity   : Adaptivity=1
+06-20 17:53:17.049 12466 12560 I Unity   : CrashMemoryLimit=1821
+06-20 17:53:17.049 12466 12560 I Unity   : MinFreeSpaceDivisor=3
+06-20 17:53:17.049 12466 12560 I Unity   : MaxFreeSpaceDivisor=8
+06-20 17:53:17.050 12466 12789 I jun.blackbox:p0: Using smaps_rollup for pss collection
+06-20 17:53:17.062 12466 12466 D VirtualSpoof: [spoof] ro.build.version.release = 12
+06-20 17:53:17.063 12466 12466 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+06-20 17:53:17.079 12466 12795 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:17.079 12466 12795 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:17.082 12466 12795 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:17.083 12466 12795 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:17.104 12466 12797 W chromium: [WARNING:net/dns/dns_config_service_android.cc:69] Failed to read DnsConfig.
+06-20 17:53:17.110 12466 12466 W cr_PlatformSer-Internal: Unable to find GMS package on device
+06-20 17:53:17.124 12466 12466 D VirtualSpoof: [spoof] ro.build.version.release = 12
+06-20 17:53:17.124 12466 12466 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+06-20 17:53:17.125 12466 12466 W chromium: [WARNING:android_webview/browser/network_service/net_helpers.cc:137] HTTP Cache size is: 20971520
+06-20 17:53:17.126 12466 12466 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:17.127 12466 12466 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:17.129 12466 12466 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:17.129 12466 12466 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:17.131 12466 12476 E LoadedApk: performReceive() called targeting raw IIntentReceiver for Intent { act=android.intent.action.PROXY_CHANGE flg=0x24000010 xflg=0x4 (has extras) }
+06-20 17:53:17.141 12466 12766 D VirtualSpoof: [spoof] ro.build.version.release = 12
+06-20 17:53:17.142 12466 12766 D VirtualSpoof: [spoof] ro.product.model = Pixel 6
+06-20 17:53:17.154 12466 12466 I cr_AppResProvider: #getApplicationRestrictionsFromUserManager() Only system may: get application restrictions for other user/app com.nekki.shadowfight3
+06-20 17:53:17.154 12466 12466 I cr_PolicyProvider: #notifySettingsAvailable() 0
+06-20 17:53:17.154 12466 12466 I cr_CombinedPProvider: #onSettingsAvailable() 0
+06-20 17:53:17.154 12466 12466 I cr_CombinedPProvider: #flushPolicies()
+06-20 17:53:17.157 12466 12813 I CameraManagerGlobal: Connecting to camera service
+06-20 17:53:17.170 12466 12813 D VendorTagDescriptor: addVendorDescriptor: vendor tag id 8932615658386372252 added
+06-20 17:53:17.177 12466 12560 I Unity   : [GAPLKBELEIG]; Get internet accessibility response: [Available]
+06-20 17:53:17.178 12466 12560 I Unity   : Initializing localization..
+06-20 17:53:17.185 12466 12476 I CameraManagerGlobal: Camera 0 facing CAMERA_FACING_BACK state now CAMERA_STATE_CLOSED for client com.google.android.googlequicksearchbox API Level 2 User Id 0Device Id 0
+06-20 17:53:17.186 12466 12476 I CameraManagerGlobal: Camera 1 facing CAMERA_FACING_FRONT state now CAMERA_STATE_CLOSED for client android.system API Level 2 User Id 0Device Id 0
+06-20 17:53:17.186 12466 12476 I CameraManagerGlobal: Camera 2 facing CAMERA_FACING_FRONT state now CAMERA_STATE_CLOSED for client client.pid<1100> API Level 2 User Id 0Device Id 0
+06-20 17:53:17.186 12466 12813 I CameraManager: registerAvailabilityCallback: Is device callback = false
+06-20 17:53:17.186 12466 12813 I CameraManagerGlobal: postSingleUpdate device: camera id 0 status STATUS_PRESENT
+06-20 17:53:17.186 12466 12813 I CameraManagerGlobal: postSingleUpdate device: camera id 1 status STATUS_PRESENT
+06-20 17:53:17.448 12466 12766 D UserMessagingPlatform: Action[clear]: {"keys":["UMP_eids"]}
+06-20 17:53:17.448 12466 12766 D UserMessagingPlatform: Action[write]: {"UMP_consentModeValues":"3334","IABTCF_CmpSdkID":300,"IABTCF_gdprApplies":0}
+06-20 17:53:17.448 12466 12766 D UserMessagingPlatform: Writing to storage: [UMP_consentModeValues] 3334
+06-20 17:53:17.448 12466 12766 D UserMessagingPlatform: Writing to storage: [IABTCF_CmpSdkID] 300
+06-20 17:53:17.448 12466 12766 D UserMessagingPlatform: Writing to storage: [IABTCF_gdprApplies] 0
+06-20 17:53:17.534 12466 12560 I Unity   : Localization initialized: [English] []
+06-20 17:53:17.593 12466 12560 I Unity   : [LOJMGBEJJGO] Update. Success. Status: NotRequired True
+06-20 17:53:17.869 12466 12466 I VRI[NekkiNativeActivity]@66ed1c5: call setFrameRateCategory for touch hint category=no preference, reason=boost timeout, vri=VRI[NekkiNativeActivity]@66ed1c5
+06-20 17:53:18.123 12466 12560 I Unity   : Audio configuration:
+06-20 17:53:18.123 12466 12560 I Unity   :   DSP buffer size: 512
+06-20 17:53:18.123 12466 12560 I Unity   :   Number real voices: 32
+06-20 17:53:18.123 12466 12560 I Unity   :   Number virtual voices: 512
+06-20 17:53:18.123 12466 12560 I Unity   :   Sample rate: 24000
+06-20 17:53:18.123 12466 12560 I Unity   :   Speaker mode: Stereo
+06-20 17:53:18.172 12466 12560 I Unity   : NativeScreenTexture: SetTexture; caller=[TermsOfUse]; layer=[990] camera=[Both]; filter=[Blur]; current callers=[empty]
+06-20 17:53:18.172 12466 12560 I Unity   : NativeScreenTexture: TakeScreenshot; autoSet=[True]; camera=[Both]; filter=[Blur]
+06-20 17:53:18.177 12466 12560 W Unity   : DontDestroyOnLoad only works for root GameObjects or components on root GameObjects.
+06-20 17:53:18.285 12466 12560 I Unity   : World changed: IN
+06-20 17:53:18.286 12466 12560 I Banzai  : Path: /storage/emulated/0/Android/data/top.niunaijun.blackbox/files/blackbox/storage/emulated/0/Android/data/com.nekki.shadowfight3/files/tou.file
+06-20 17:53:18.286 12466 12560 W Banzai  : SendLog Terms of use not confirm!
+06-20 17:53:18.449 12466 12560 I Unity   : Own config version (NetworkSettings.ConfigVersion [full version: 1.45.0.0.16655-prod]) need update to : NetworkSettings.ConfigVersion [full version: 1.45.0.21.16675-prod]
+06-20 17:53:18.456 12466 12560 D ConnectivityManager: StackLog: [android.net.ConnectivityManager.sendRequestForNetwork(ConnectivityManager.java:4744)] [android.net.ConnectivityManager.registerDefaultNetworkCallbackForUid(ConnectivityManager.java:5469)] [android.net.ConnectivityManager.registerDefaultNetworkCallback(ConnectivityManager.java:5436)] [android.net.ConnectivityManager.registerDefaultNetworkCallback(ConnectivityManager.java:5410)] [com.unity3d.player.a.v.<init>(SourceFile:64)] [com.unity3d.player.UnityPlayer.getNetworkConnectivity(SourceFile:855)] [com.unity3d.player.UnityPlayerForActivityOrService.nativeRender(Native Method)] [com.unity3d.player.V.handleMessage(SourceFile:93)]
+06-20 17:53:18.456 12466 12560 D IConnectivityManagerProxy: Intercepting requestNetwork call for internet access
+06-20 17:53:18.457 12466 12560 D IConnectivityManagerProxy: requestNetwork succeeded via original method
+06-20 17:53:18.897 12466 12560 I Unity   : Localization download meta: {"langs": {"Turkish": {"Journal": 1758, "Base": 1758, "News": 1758}, "Japanese": {"News": 1758, "Base": 1758, "Journal": 1758}, "English": {"Journal": 1758, "Base": 1758, "News": 1758}, "Russian": {"Base": 1758, "News": 1758, "Journal": 1758}, "Korean": {"News": 1758, "Base": 1758, "Journal": 1758}, "French": {"Journal": 1758, "News": 1758, "Base": 1758}, "Vietnamese": {"Journal": 1758, "Base": 1758, "News": 1758}, "Hindi": {"News": 1758, "Journal": 1758, "Base": 1758}, "ChineseSimplified": {"Base": 1758, "News": 1758, "Journal": 1758}, "Indonesian": {"Base": 1758, "Journal": 1758, "News": 1758}, "Spanish": {"Base": 1758, "News": 1758, "Journal": 1758}, "Portuguese": {"Journal": 1758, "News": 1758, "Base": 1758}, "ChineseTraditional": {"News": 1758, "Journal": 1758, "Base": 1758}, "Italian": {"Journal": 1758, "News": 1758, "Base": 1758}, "Thai": {"Base": 1758, "News": 1758, "Journal": 1758}, "German": {"News": 1758, "Base": 1758, "Journal": 1758}}, "baseUrl": "https://sf3assets.ne
+06-20 17:53:19.522 12466 12795 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:19.529 12466 12795 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:24.598 12466 12466 D VRI[NekkiNativeActivity]@66ed1c5: mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0x775e25b530}
+06-20 17:53:24.598 12466 12466 D InputMethodManagerUtils: startInputInner - Id : 0
+06-20 17:53:24.599 12466 12466 I InputMethodManager: startInputInner - IInputMethodManagerGlobalInvoker.startInputOrWindowGainedFocus
+06-20 17:53:24.605 12466 12466 I InputMethodManager: handleMessage: setImeVisibility visible=false
+06-20 17:53:24.605 12466 12466 D InsetsController: hide(ime(), fromIme=false)
+06-20 17:53:24.605 12466 12466 I ImeTracker: top.niunaijun.blackbox:dae1bb8f: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+06-20 17:53:24.608 12466 12578 D InputTransport: Input channel constructed: 'ClientS', fd=334
+06-20 17:53:25.191 12466 12466 I VRI[NekkiNativeActivity]@66ed1c5: ViewPostIme pointer 0
+06-20 17:53:25.191 12466 12466 I VRI[NekkiNativeActivity]@66ed1c5: call setFrameRateCategory for touch hint category=high hint, reason=touch, vri=VRI[NekkiNativeActivity]@66ed1c5
+06-20 17:53:25.240 12466 12466 D CrashMonitor: Performing periodic health check...
+06-20 17:53:25.240 12466 12466 W CrashMonitor: High thread count detected: 110
+06-20 17:53:25.240 12466 12466 D CrashMonitor: Health check completed - Memory: 2.7%, Threads: 110
+06-20 17:53:25.273 12466 12466 I VRI[NekkiNativeActivity]@66ed1c5: ViewPostIme pointer 1
+06-20 17:53:25.670 12466 12466 I VRI[NekkiNativeActivity]@66ed1c5: ViewPostIme pointer 0
+06-20 17:53:25.769 12466 12466 I VRI[NekkiNativeActivity]@66ed1c5: ViewPostIme pointer 1
+06-20 17:53:25.784 12466 12560 W Unity   : Client time was used instead of server time.
+06-20 17:53:25.784 12466 12560 I Unity   : NativeScreenTexture: Clear; from=[TermsOfUse]; delayed=[False]; callers=[1]
+06-20 17:53:25.817 12466 12560 I Unity   : $<color=blue><b>CreateNativeJsEngine: PlatformDefault</b></color>
+06-20 17:53:25.834 12466 12560 D nativeloader: Load /data/app/~~b-kNTPL92oJmt3Gcmb6V-w==/com.nekki.shadowfight3-7kK4tjGugrQhSUVD9c6cmg==/lib/arm64/libbanzai-v8.so using class loader ns clns-10 (caller=/data/app/~~b-kNTPL92oJmt3Gcmb6V-w==/com.nekki.shadowfight3-7kK4tjGugrQhSUVD9c6cmg==/base.apk!classes7.dex): ok
+06-20 17:53:25.861 12466 12560 I Unity   : [V8 JS] Msg: [V8] Initialized
+06-20 17:53:25.891 12466 12560 I Unity   : [V8 JS] Msg: [V8] Isolate initialized
+06-20 17:53:25.895 12466 12560 I Unity   : [JS] Init params: chapterId=100, debug=False, allChapters=False, loadFromSnapshot=True, createSnapshot=False
+06-20 17:53:26.491 12466 12592 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:26.513 12466 12466 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:26.514 12466 12466 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:26.517 12466 12578 E LoadedApk: performReceive() called targeting raw IIntentReceiver for Intent { act=android.intent.action.BATTERY_CHANGED flg=0x60000010 (has extras) }
+06-20 17:53:26.628 12466 12466 I ImeFocusController: onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+06-20 17:53:26.628 12466 12466 I ImeFocusController: onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+06-20 17:53:26.669 12466 12466 D InputTransport: Input channel destroyed: 'ClientS', fd=334
+06-20 17:53:28.772 12466 12466 I VRI[NekkiNativeActivity]@66ed1c5: call setFrameRateCategory for touch hint category=no preference, reason=boost timeout, vri=VRI[NekkiNativeActivity]@66ed1c5
+06-20 17:53:28.826 12466 12466 D VRI[NekkiNativeActivity]@66ed1c5: mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0x775e25b530}
+06-20 17:53:28.827 12466 12466 D InputMethodManagerUtils: startInputInner - Id : 0
+06-20 17:53:28.827 12466 12466 I InputMethodManager: startInputInner - IInputMethodManagerGlobalInvoker.startInputOrWindowGainedFocus
+06-20 17:53:28.831 12466 12466 I InputMethodManager: handleMessage: setImeVisibility visible=false
+06-20 17:53:28.832 12466 12466 D InsetsController: hide(ime(), fromIme=false)
+06-20 17:53:28.832 12466 12466 I ImeTracker: top.niunaijun.blackbox:54730422: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+06-20 17:53:28.835 12466 12476 D InputTransport: Input channel constructed: 'ClientS', fd=314
+06-20 17:53:30.213 12466 12466 I ImeFocusController: onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+06-20 17:53:30.213 12466 12466 I ImeFocusController: onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+06-20 17:53:30.267 12466 12466 D InputTransport: Input channel destroyed: 'ClientS', fd=314
+06-20 17:53:32.826 12466 12560 W Unity   : Client time was used instead of server time.
+06-20 17:53:32.826 12466 12560 I Unity   : [JS] Init stats: exec 6565 ms, total 6924 ms
+06-20 17:53:32.867 12466 12560 I Unity   : [FB] Init
+06-20 17:53:32.947 12466 12560 V com.facebook.unity.FB: SetUserAgentSuffix(Unity.18.0.0)
+06-20 17:53:32.947 12466 12560 V com.facebook.unity.FB: Init({"appId":"647386682120764","clientToken":"1fc47ffc09d4802ddba691bc6fde9479"})
+06-20 17:53:32.952 12466 12560 D com.facebook.unity.FB: KeyHash: 1hEJ12jtqjrS76nvNXvRrjPV8Ks=
+06-20 17:53:32.957 12466 12488 D PackageManagerStub: GetPackageInfo: Providing fake Google Play Services info
+06-20 17:53:32.957 12466 12560 V com.facebook.unity.FB: sending to Unity OnInitComplete({"key_hash":"1hEJ12jtqjrS76nvNXvRrjPV8Ks=\n"})
+06-20 17:53:32.957 12466 12560 I Unity   : Using Facebook Unity SDK v18.0.0 with FBAndroidSDK/18.2.3
+06-20 17:53:32.958 12466 12488 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:32.959 12466 12488 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:32.972 12466 12910 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:32.999 12466 12560 I Unity   : [FB] ActivateApp
+06-20 17:53:33.000 12466 12560 W com.facebook.unity.FB: Activite app only needs to be called once
+06-20 17:53:33.008 12466 12560 I Unity   : [BCIOEFJGMMA] Init
+06-20 17:53:33.010 12466 12560 I Unity   : [UserManager]; Load user. Is new: True
+06-20 17:53:33.434 12466 12466 D VRI[NekkiNativeActivity]@66ed1c5: mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0x775e25b530}
+06-20 17:53:33.434 12466 12466 D InputMethodManagerUtils: startInputInner - Id : 0
+06-20 17:53:33.434 12466 12466 I InputMethodManager: startInputInner - IInputMethodManagerGlobalInvoker.startInputOrWindowGainedFocus
+06-20 17:53:33.437 12466 12466 I InputMethodManager: handleMessage: setImeVisibility visible=false
+06-20 17:53:33.437 12466 12466 D InsetsController: hide(ime(), fromIme=false)
+06-20 17:53:33.438 12466 12466 I ImeTracker: top.niunaijun.blackbox:d39c4c47: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+06-20 17:53:33.441 12466 12476 D InputTransport: Input channel constructed: 'ClientS', fd=333
+06-20 17:53:33.597 12466 12910 E adservices: Failed binding to measurement service: com.android.adservices.shared.common.exception.ServiceUnavailableException: Service is not available.
+06-20 17:53:33.597 12466 12488 D class com.facebook.appevents.gps.ara.GpsAraTriggersManager: OUTCOME_RECEIVER_TRIGGER_FAILURE
+06-20 17:53:34.120 12466 12560 I Unity   : Create default server settings 
+06-20 17:53:34.120 12466 12560 I Unity   :  System.Collections.Generic.Dictionary`2[System.String,System.Object]{
+06-20 17:53:34.120 12466 12560 I Unity   :   "NTF": true,
+06-20 17:53:34.120 12466 12560 I Unity   :   "LNG": 10,
+06-20 17:53:34.120 12466 12560 I Unity   :   "TCTL": true,
+06-20 17:53:34.120 12466 12560 I Unity   :   "QLT": "high",
+06-20 17:53:34.120 12466 12560 I Unity   :   "SNDV": 0.0,
+06-20 17:53:34.120 12466 12560 I Unity   :   "SNDM": false,
+06-20 17:53:34.120 12466 12560 I Unity   :   "MSCV": 0.0,
+06-20 17:53:34.120 12466 12560 I Unity   :   "MSCM": false,
+06-20 17:53:34.120 12466 12560 I Unity   :   "CNTR": "joystick_small",
+06-20 17:53:34.120 12466 12560 I Unity   :   "SLMO": true,
+06-20 17:53:34.120 12466 12560 I Unity   :   "cjoy": "",
+06-20 17:53:34.120 12466 12560 I Unity   :   "cmag": "",
+06-20 17:53:34.120 12466 12560 I Unity   :   "ckic": "",
+06-20 17:53:34.120 12466 12560 I Unity   :   "cpun": "",
+06-20 17:53:34.120 12466 12560 I Unity   :   "cmis": "",
+06-20 17:53:34.120 12466 12560 I Unity   :   "ccon": "",
+06-20 17:53:34.120 12466 12560 I Unity   :   "cadd": "",
+06-20 17:53:34.120 12466 12560 I Unity   :   "cad2": ""
+06-20 17:53:34.120 12466 12560 I Unity   : }
+06-20 17:53:34.204 12466 12560 I Unity   : Load current preset: [joystick_small]
+06-20 17:53:34.243 12466 12560 I Unity   : [BattlePass] Scheduling BP end: ID=10080209, EndDate=06/29/2026 05:30:00
+06-20 17:53:34.771 12466 12466 I ImeFocusController: onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+06-20 17:53:34.771 12466 12466 I ImeFocusController: onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+06-20 17:53:34.815 12466 12466 D InputTransport: Input channel destroyed: 'ClientS', fd=333
+06-20 17:53:34.858 12466 12560 W Unity   : Client time was used instead of server time.
+06-20 17:53:34.858 12466 12560 W Unity   : Havnt any battle data to parse
+06-20 17:53:34.872 12466 12560 W Unity   : [UserDataSaver] DataSaver BATTLES already added
+06-20 17:53:34.888 12466 12560 I Unity   : [BMNNADNBPKN] Init
+06-20 17:53:34.915 12466 12560 I Unity   : [DJBCNKBGEGH] Init
+06-20 17:53:34.916 12466 12560 I Unity   : [DJBCNKBGEGH] InitInternal: False
+06-20 17:53:34.948 12466 12929 D PackageManagerStub: GetPackageInfo: Providing fake Google Play Services info
+06-20 17:53:34.949 12466 12929 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:34.956 12466 12933 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:34.957 12466 12929 D ConnectivityManager: StackLog: [android.net.ConnectivityManager.sendRequestForNetwork(ConnectivityManager.java:4744)] [android.net.ConnectivityManager.sendRequestForNetwork(ConnectivityManager.java:4912)] [android.net.ConnectivityManager.registerNetworkCallback(ConnectivityManager.java:5329)] [android.net.ConnectivityManager.registerNetworkCallback(ConnectivityManager.java:5299)] [com.appsflyer.internal.AFi1oSDK.<init>(:34)] [com.appsflyer.internal.AFa1uSDK.copy(:51047)] [com.appsflyer.internal.AFa1uSDK.$r8$lambda$afiUCNXcbaeS-eqsPnXdGJMH2qE(:0)] [com.appsflyer.internal.AFa1uSDK$$ExternalSyntheticLambda4.run(D8$$SyntheticClass:0)] [java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)] [java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)] [java.lang.Thread.run(Thread.java:1572)]
+06-20 17:53:34.962 12466 12933 D AdvertisingIdClient: AdvertisingIdClient already created.
+06-20 17:53:34.962 12466 12933 D AdvertisingIdClient: AdvertisingIdClient is not bounded. Starting to bind it...
+06-20 17:53:34.962 12466 12933 D PackageManagerStub: GetPackageInfo: Providing fake Google Play Services info
+06-20 17:53:34.963 12466 12933 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:34.965 12466 12933 I AdvertisingIdClient: shouldSendLog -1
+06-20 17:53:34.966 12466 12539 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:34.968 12466 12539 W GoogleApiManager: The service for com.google.android.gms.common.internal.service.zau is not available: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:34.968 12466 12933 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:34.969 12466 12466 I AdvertisingIdClient: getting error as 17: API: ClientTelemetry.API is not available on this device. Connection failed with: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:34.976 12466 12929 W ContextImpl: Failed to ensure /data/user/0/top.niunaijun.blackbox/blackbox/data/user/0/com.nekki.shadowfight3/code_cache: chown failed: EPERM (Operation not permitted)
+06-20 17:53:34.978 12466 12560 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:34.985 12466 12560 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:34.986 12466 12560 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:34.987 12466 12931 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:34.987 12466 12931 E ActivityThread: Failed to find provider info for com.samsung.android.mapsagent.providers.apptracking
+06-20 17:53:34.991 12466 12560 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:34.993 12466 12560 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:35.000 12466 12560 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:35.004 12466 12929 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:35.011 12466 12940 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:35.011 12466 12940 E ActivityThread: Failed to find provider info for com.aura.oobe.samsung.attributionreferrerprovider
+06-20 17:53:35.016 12466 12929 E PlayCore: UID: [10001]  PID: [12466] IntegrityService : Phonesky is not installed.
+06-20 17:53:35.027 12466 12560 I Unity   : ***** log handler added
+06-20 17:53:35.035 12466 12942 D SensorManager: registerListener :: 1, bma2xy_acc, 20000, 0, 
+06-20 17:53:35.041 12466 12942 D SensorManager: registerListener :: 2, qmc6308_mag, 20000, 0, 
+06-20 17:53:35.047 12466 12466 V Banzai  : UnityPlayerActivity called onResume
+06-20 17:53:35.053 12466 12560 I Unity   : [DJBCNKBGEGH] OnDeepLink
+06-20 17:53:35.066 12466 12560 E Unity   : [DJBCNKBGEGH] Deep link error NETWORK
+06-20 17:53:35.066 12466 12560 E Unity   : UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+06-20 17:53:35.066 12466 12560 E Unity   : DJBCNKBGEGH:EKEEAMEJFKL(Object, EventArgs)
+06-20 17:53:35.066 12466 12560 E Unity   : 
+06-20 17:53:35.090 12466 12560 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:35.095 12466 12560 D Banzai  : Status of gaming service availability: 1
+06-20 17:53:35.096 12466 12560 I Unity   : [NGLDMEPPJLD]; Create gaming service: NGLDMEPPJLD
+06-20 17:53:35.101 12466 12930 W libc    : Access denied finding property "ro.chipname"
+06-20 17:53:35.102 12466 12930 W libc    : Access denied finding property "vzw.os.rooted"
+06-20 17:53:35.182 12466 12942 D SensorManager: unregisterListener
+06-20 17:53:35.187 12466 12942 D SensorManager: unregisterListener
+06-20 17:53:35.281 12466 12470 I jun.blackbox:p0: Background young concurrent mark compact GC freed 6727KB AllocSpace bytes, 34(1432KB) LOS objects, 44% free, 6354KB/11MB, paused 2.083ms,3.856ms total 127.184ms
+06-20 17:53:35.315 12466 12560 I Unity   : ServerVersion - NetworkSettings.ConfigVersion [full version: 1.45.0.21.16675-prod] ---  CurrentVersion - NetworkSettings.ConfigVersion [full version: 1.45.0.0.16655-prod]
+06-20 17:53:35.324 12466 12560 I Unity   : [MKPDMLJNNLC] Start
+06-20 17:53:35.616 12466 12952 W libc    : Access denied finding property "ro.chipname"
+06-20 17:53:35.616 12466 12952 W libc    : Access denied finding property "vzw.os.rooted"
+06-20 17:53:35.680 12466 12470 I jun.blackbox:p0: Background young concurrent mark compact GC freed 6069KB AllocSpace bytes, 0(0B) LOS objects, 51% free, 6242KB/12MB, paused 2.245ms,5.280ms total 82.701ms
+06-20 17:53:35.749 12466 12560 I Unity   : BundlesNetworkState Download succeeded
+06-20 17:53:35.750 12466 12560 I Unity   : Start Connecting IP:ec2-52-66-28-201.ap-south-1.compute.amazonaws.com Port:443
+06-20 17:53:35.758 12466 12560 I Unity   : [NEBU INFO] Connecting to ec2-52-66-28-201.ap-south-1.compute.amazonaws.com:443
+06-20 17:53:35.806 12466 12560 I Unity   : [NEBU DEBUG] Reader task is started
+06-20 17:53:35.807 12466 12560 I Unity   : [NEBU DEBUG] Writer task is started
+06-20 17:53:35.839 12466 12560 I Unity   : OnConnectionSuccess
+06-20 17:53:35.841 12466 12560 I Banzai  : Path: /storage/emulated/0/Android/data/top.niunaijun.blackbox/files/blackbox/storage/emulated/0/Android/data/com.nekki.shadowfight3/files/tou.file
+06-20 17:53:35.852 12466 12560 D Banzai  : Send request on url https://sf3lb.nekki.com/clog?guid=96b1a4edeac872bc&e=SMARTFOX_CONNECT&ext=eyJSQU0iOiIzNjQyIiwiQVJDSCI6ImFybTY0LXY4YSIsIk9TIjoiMTYiLCJMQU5HIjoiRW5nbGlzaCIsIk5FVCI6IldJRkkiLCJPR0wiOiJPUEVOR0xFU18zXzAiLCJCTiI6IjE5MjA5IiwiUEwiOiJBbmRyb2lkIn0%3D
+06-20 17:53:35.882 12466 12560 W Unity   : AndroidJNIHelper.GetSignature: using Byte parameters is obsolete, use SByte parameters instead
+06-20 17:53:35.883 12466 12560 W Unity   : AndroidJNIHelper: converting from Byte array is obsolete, use SByte array instead
+06-20 17:53:35.894 12466 12560 I Unity   : Banzai.Networking.Proto.LoginRequest{
+06-20 17:53:35.894 12466 12560 I Unity   :   "Version": 6,
+06-20 17:53:35.894 12466 12560 I Unity   :   "PrimaryAuthToken": {
+06-20 17:53:35.894 12466 12560 I Unity   :     "Type": 1,
+06-20 17:53:35.894 12466 12560 I Unity   :     "Data": "{\"login\":\"6db487cc-b4ea-4595-a4a9-26017e4cfcf6\",\"password\":\"31bd05a19bded8fa35d26035b3e296ad\"}"
+06-20 17:53:35.894 12466 12560 I Unity   :   },
+06-20 17:53:35.894 12466 12560 I Unity   :   "SecondaryAuthToken": [
+06-20 17:53:35.894 12466 12560 I Unity   :     {
+06-20 17:53:35.894 12466 12560 I Unity   :       "Type": 6,
+06-20 17:53:35.894 12466 12560 I Unity   :       "Data": "96b1a4edeac872bc"
+06-20 17:53:35.894 12466 12560 I Unity   :     }
+06-20 17:53:35.894 12466 12560 I Unity   :   ],
+06-20 17:53:35.894 12466 12560 I Unity   :   "ExtData": "{\"platform\":\"Android\",\"v\":\"19209\",\"app_id\":\"com.nekki.shadowfight3\",\"f\":\"3AF464207FE99A3FD201EB7140692FF0201E4FB0\",\"bnumber\":\"19209\",\"bname\":\"UnityClient_ShadowFight3_UnityClientShadowFight3Release_ConfigurationAndroid\"}"
+06-20 17:53:35.894 12466 12560 I Unity   : }
+06-20 17:53:35.895 12466 12560 I Unity   : [MKPDMLJNNLC] Done in 570.481 ms
+06-20 17:53:35.899 12466 12560 I Unity   : [NEBU DEBUG] CompressionThreshold = 256
+06-20 17:53:35.939 12466 12954 W Unity   : Reader task was aborted by System.IO.EndOfStreamException : Attempted to read past the end of the stream.; StackTrace:   at LCDDJOIFKME.FIAPGJLMAPC (System.IO.Stream OIIELOMCEBN, System.Byte[] NCJFLFIKFHD) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:35.939 12466 12954 W Unity   :   at KKEGDLFDJJI.OKLIGPHLBNB (System.Net.Sockets.NetworkStream LNCPNLNPMAG) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:35.939 12466 12954 W Unity   :   at DDOPPLDBKIB.GAACDLDPBDC () [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:35.939 12466 12954 W Unity   :   at System.Threading.Tasks.Task.Execute () [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:35.939 12466 12954 W Unity   :   at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:35.939 12466 12954 W Unity   :   at System.Threading.Tasks.Task.ExecuteWithThreadLocal (System.Threading.Tasks.Task& currentTaskSlot) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:35.939 12466 12954 W Unity   :   at System.Threading.Tasks.Task.ExecuteEntry (System.Bo
+06-20 17:53:35.941 12466 12560 I Unity   : OnLogin - Guid:  
+06-20 17:53:35.956 12466 12560 I Unity   : [Server Event] cmd:<b>ban_event</b> type:sfDTO.BanEventData extensible:
+06-20 17:53:35.956 12466 12560 I Unity   : sfDTO.BanEventData{
+06-20 17:53:35.956 12466 12560 I Unity   :   "Type": 1,
+06-20 17:53:35.956 12466 12560 I Unity   :   "Reason": "Violation of the rules of the game",
+06-20 17:53:35.956 12466 12560 I Unity   :   "MillisLeft": 20361082,
+06-20 17:53:35.956 12466 12560 I Unity   :   "PlayerId": 69994873
+06-20 17:53:35.956 12466 12560 I Unity   : }
+06-20 17:53:35.960 12466 12560 I Unity   : [DarkPocket] entering to 'NetworkConnection'
+06-20 17:53:35.961 12466 12560 W Unity   : Restarting Connection. Reason: EnterDarkPocket: can't remain connection
+06-20 17:53:35.963 12466 12560 I Unity   : StopCurrentState
+06-20 17:53:35.964 12466 12560 W Unity   : Dispose nebu tasks
+06-20 17:53:35.972 12466 12560 I Unity   : [MILMDPBPDDF]; Network initialize finished with active state = [False]
+06-20 17:53:35.974 12466 12560 W Unity   : BlockInput was called, but we cannot block input yet
+06-20 17:53:35.976 12466 12560 W Unity   : Restarting Connection. Reason: ban
+06-20 17:53:35.976 12466 12560 I Unity   : StopCurrentState
+06-20 17:53:35.990 12466 12560 I Unity   : Showing alert with title: title_you_are_banned and message: message_you_are_banned
+06-20 17:53:36.001 12466 12470 I jun.blackbox:p0: Background concurrent mark compact GC freed 7484KB AllocSpace bytes, 7(204KB) LOS objects, 49% free, 6626KB/12MB, paused 2.067ms,7.149ms total 148.227ms
+06-20 17:53:36.012 12466 12560 I Unity   : Showing alert with title: title_you_are_banned and message: message_you_are_banned
+06-20 17:53:36.014 12466 12560 W Unity   : [NEBU WARN] Reader task was aborted by System.IO.EndOfStreamException : Attempted to read past the end of the stream.; StackTrace:   at LCDDJOIFKME.FIAPGJLMAPC (System.IO.Stream OIIELOMCEBN, System.Byte[] NCJFLFIKFHD) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:36.014 12466 12560 W Unity   :   at KKEGDLFDJJI.OKLIGPHLBNB (System.Net.Sockets.NetworkStream LNCPNLNPMAG) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:36.014 12466 12560 W Unity   :   at DDOPPLDBKIB.GAACDLDPBDC () [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:36.014 12466 12560 W Unity   :   at System.Threading.Tasks.Task.Execute () [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:36.014 12466 12560 W Unity   :   at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:36.014 12466 12560 W Unity   :   at System.Threading.Tasks.Task.ExecuteWithThreadLocal (System.Threading.Tasks.Task& currentTaskSlot) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:36.014 12466 12560 W Unity   :   at System.Threading.Tasks.Task.ExecuteEntr
+06-20 17:53:36.014 12466 12560 I Unity   : [NEBU DEBUG] Reader task terminated
+06-20 17:53:36.015 12466 12560 I Unity   : NativeScreenTexture: SetTexture; caller=[SystemAlert]; layer=[994] camera=[Both]; filter=[Blur]; current callers=[empty]
+06-20 17:53:36.016 12466 12560 I Unity   : NativeScreenTexture: TakeScreenshot; autoSet=[True]; camera=[Both]; filter=[Blur]
+06-20 17:53:36.030 12466 12560 I Unity   : [NEBU DEBUG] Writer task was cancelled
+06-20 17:53:36.031 12466 12560 I Unity   : [NEBU DEBUG] Writer task terminated
+06-20 17:53:36.147 12466 12934 W libc    : Access denied finding property "ro.chipname"
+06-20 17:53:36.147 12466 12934 W libc    : Access denied finding property "vzw.os.rooted"
+06-20 17:53:36.147 12466 12560 I Unity   : CurrentQualityPreset: [high], CurrentDeviceType: [TABLET]
+06-20 17:53:36.151 12466 12560 I Unity   : AppsFlyer_Unity_v6.17.72 AppsFlyerTrackerCallbacks:: didReceiveConversionDataWithError called with Launch exception: Failed to connect to xsj9qt.conversions.appsflyersdk.com/0.0.0.0:443
+06-20 17:53:36.161 12466 12560 I Unity   : [GAPLKBELEIG]; Get internet accessibility response: [Available]
+06-20 17:53:36.401 12466 12470 I jun.blackbox:p0: Background concurrent mark compact GC freed 9028KB AllocSpace bytes, 3(124KB) LOS objects, 49% free, 7130KB/13MB, paused 3.511ms,1.756ms total 112.637ms
+06-20 17:53:36.531 12466 12488 D Banzai  : Request code: 200
+06-20 17:53:36.537 12466 12466 D Banzai  : Request result: 
+06-20 17:53:36.820 12466 12466 D VRI[NekkiNativeActivity]@66ed1c5: mThreadedRenderer.initializeIfNeeded()#2 mSurface={isValid=true 0x775e25b530}
+06-20 17:53:36.821 12466 12466 D InputMethodManagerUtils: startInputInner - Id : 0
+06-20 17:53:36.821 12466 12466 I InputMethodManager: startInputInner - IInputMethodManagerGlobalInvoker.startInputOrWindowGainedFocus
+06-20 17:53:36.824 12466 12466 I InputMethodManager: handleMessage: setImeVisibility visible=false
+06-20 17:53:36.825 12466 12466 D InsetsController: hide(ime(), fromIme=false)
+06-20 17:53:36.825 12466 12466 I ImeTracker: top.niunaijun.blackbox:b3c53726: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+06-20 17:53:36.826 12466 12475 D InputTransport: Input channel constructed: 'ClientS', fd=199
+06-20 17:53:37.731 12466 12560 W Unity   : Client time was used instead of server time.
+06-20 17:53:37.731 12466 12560 W Unity   : Client time was used instead of server time.
+06-20 17:53:37.743 12466 12560 I Unity   : ServerVersion - NetworkSettings.ConfigVersion [full version: 1.45.0.21.16675-prod] ---  CurrentVersion - NetworkSettings.ConfigVersion [full version: 1.45.0.0.16655-prod]
+06-20 17:53:37.743 12466 12560 I Unity   : [MKPDMLJNNLC] Start
+06-20 17:53:37.744 12466 12560 I Unity   : [MKPDMLJNNLC] Done in 0.028 ms
+06-20 17:53:37.746 12466 12560 I Unity   : Sf3BundlesController init
+06-20 17:53:37.877 12466 12560 W Unity   : [StringHash] Keeping only hash
+06-20 17:53:38.090 12466 12466 I ImeFocusController: onPreWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+06-20 17:53:38.090 12466 12466 I ImeFocusController: onPostWindowFocus: skipped hasWindowFocus=false mHasImeFocus=true
+06-20 17:53:38.141 12466 12466 D InputTransport: Input channel destroyed: 'ClientS', fd=199
+06-20 17:53:38.883 12466 12560 I Unity   : Initialize android haptic feedback
+06-20 17:53:39.006 12466 12560 I Unity   : Preload quests triggers by locks [INIT]
+06-20 17:53:39.006 12466 12560 I Unity   : [Achievements] Not supported platform
+06-20 17:53:39.334 12466 12560 I Unity   : Load triggers by locks. Loaded splits=[69]
+06-20 17:53:39.346 12466 12560 W Unity   : AndroidJNIHelper.GetSignature: using Byte parameters is obsolete, use SByte parameters instead
+06-20 17:53:39.346 12466 12560 W Unity   : AndroidJNIHelper: converting from Byte array is obsolete, use SByte array instead
+06-20 17:53:39.348 12466 12560 I Unity   : Showing alert with title: title_you_are_banned and message: message_you_are_banned
+06-20 17:53:39.360 12466 12560 I Unity   : BundlesNetworkState Download succeeded
+06-20 17:53:39.361 12466 12560 I Unity   : Start Connecting IP:ec2-13-126-233-176.ap-south-1.compute.amazonaws.com Port:443
+06-20 17:53:39.403 12466 12560 I Unity   : Set mute volume on mixer [MasterMixer] to [False]
+06-20 17:53:39.403 12466 12560 I Unity   : Initialize mixers volume:
+06-20 17:53:39.403 12466 12560 I Unity   : Ambient: 0
+06-20 17:53:39.403 12466 12560 I Unity   : Battle: 0
+06-20 17:53:39.403 12466 12560 I Unity   : MasterMixer: 0
+06-20 17:53:39.403 12466 12560 I Unity   : Music: 0
+06-20 17:53:39.403 12466 12560 I Unity   : UI: 0
+06-20 17:53:39.404 12466 12560 I Unity   : [NEBU INFO] Connecting to ec2-13-126-233-176.ap-south-1.compute.amazonaws.com:443
+06-20 17:53:39.464 12466 12983 D AdvertisingIdClient: AdvertisingIdClient already created.
+06-20 17:53:39.464 12466 12983 D AdvertisingIdClient: AdvertisingIdClient is not bounded. Starting to bind it...
+06-20 17:53:39.464 12466 12983 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:39.468 12466 12983 I AdvertisingIdClient: shouldSendLog -1
+06-20 17:53:39.469 12466 12539 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:39.476 12466 12539 W GoogleApiManager: The service for com.google.android.gms.common.internal.service.zau is not available: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:39.504 12466 12560 I Unity   : [NEBU DEBUG] Reader task is started
+06-20 17:53:39.504 12466 12560 I Unity   : [NEBU DEBUG] Writer task is started
+06-20 17:53:39.513 12466 12560 I Unity   : [BMNNADNBPKN] Init shop data from null
+06-20 17:53:39.549 12466 12560 I Unity   : Preloading in-apps...
+06-20 17:53:39.558 12466 12983 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:39.558 12466 12539 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:39.558 12466 12466 I AdvertisingIdClient: getting error as 17: API: ClientTelemetry.API is not available on this device. Connection failed with: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:39.560 12466 12539 W GoogleApiManager: The service for com.google.android.gms.internal.appset.zzd is not available: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:39.586 12466 12560 I Unity   : Frame:[545], Type:[ThrowEvent], Body:[Event: Type: NetworkConnection | Data: 
+06-20 17:53:39.586 12466 12560 I Unity   :  HasTrigger: False QueueCount: 0 - ], List:[0:]
+06-20 17:53:39.586 12466 12560 I Unity   : OnConnectionSuccess
+06-20 17:53:39.586 12466 12560 I Banzai  : Path: /storage/emulated/0/Android/data/top.niunaijun.blackbox/files/blackbox/storage/emulated/0/Android/data/com.nekki.shadowfight3/files/tou.file
+06-20 17:53:39.587 12466 12560 D Banzai  : Send request on url https://sf3lb.nekki.com/clog?guid=96b1a4edeac872bc&e=SMARTFOX_CONNECT&ext=eyJSQU0iOiIzNjQyIiwiQVJDSCI6ImFybTY0LXY4YSIsIk9TIjoiMTYiLCJMQU5HIjoiRW5nbGlzaCIsIk5FVCI6IldJRkkiLCJPR0wiOiJPUEVOR0xFU18zXzAiLCJCTiI6IjE5MjA5IiwiUEwiOiJBbmRyb2lkIn0%3D
+06-20 17:53:39.589 12466 12560 W Unity   : AndroidJNIHelper.GetSignature: using Byte parameters is obsolete, use SByte parameters instead
+06-20 17:53:39.589 12466 12560 W Unity   : AndroidJNIHelper: converting from Byte array is obsolete, use SByte array instead
+06-20 17:53:39.589 12466 12560 I Unity   : Banzai.Networking.Proto.LoginRequest{
+06-20 17:53:39.589 12466 12560 I Unity   :   "Version": 6,
+06-20 17:53:39.589 12466 12560 I Unity   :   "PrimaryAuthToken": {
+06-20 17:53:39.589 12466 12560 I Unity   :     "Type": 1,
+06-20 17:53:39.589 12466 12560 I Unity   :     "Data": "{\"login\":\"6db487cc-b4ea-4595-a4a9-26017e4cfcf6\",\"password\":\"a801b7e6ce1cc85cd4bdc167ed0cd68c\"}"
+06-20 17:53:39.589 12466 12560 I Unity   :   },
+06-20 17:53:39.589 12466 12560 I Unity   :   "SecondaryAuthToken": [
+06-20 17:53:39.589 12466 12560 I Unity   :     {
+06-20 17:53:39.589 12466 12560 I Unity   :       "Type": 6,
+06-20 17:53:39.589 12466 12560 I Unity   :       "Data": "96b1a4edeac872bc"
+06-20 17:53:39.589 12466 12560 I Unity   :     }
+06-20 17:53:39.589 12466 12560 I Unity   :   ],
+06-20 17:53:39.589 12466 12560 I Unity   :   "ExtData": "{\"platform\":\"Android\",\"v\":\"19209\",\"app_id\":\"com.nekki.shadowfight3\",\"f\":\"1E5940145F86002C72C3A17E303A427D088E756B\",\"bnumber\":\"19209\",\"bname\":\"UnityClient_ShadowFight3_UnityClientShadowFight3Release_ConfigurationAndroid\"}"
+06-20 17:53:39.589 12466 12560 I Unity   : }
+06-20 17:53:39.595 12466 12560 I Unity   : [NEBU DEBUG] CompressionThreshold = 256
+06-20 17:53:39.608 12466 12983 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+06-20 17:53:39.609 12466 12983 D AudioPermissionProxy: AudioPermission: getStreamMaxVolume called, allowing
+06-20 17:53:39.614 12466 12983 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+06-20 17:53:39.632 12466 12979 W Unity   : Reader task was aborted by System.IO.EndOfStreamException : Attempted to read past the end of the stream.; StackTrace:   at LCDDJOIFKME.FIAPGJLMAPC (System.IO.Stream OIIELOMCEBN, System.Byte[] NCJFLFIKFHD) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:39.632 12466 12979 W Unity   :   at KKEGDLFDJJI.OKLIGPHLBNB (System.Net.Sockets.NetworkStream LNCPNLNPMAG) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:39.632 12466 12979 W Unity   :   at DDOPPLDBKIB.GAACDLDPBDC () [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:39.632 12466 12979 W Unity   :   at System.Threading.Tasks.Task.Execute () [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:39.632 12466 12979 W Unity   :   at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:39.632 12466 12979 W Unity   :   at System.Threading.Tasks.Task.ExecuteWithThreadLocal (System.Threading.Tasks.Task& currentTaskSlot) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:39.632 12466 12979 W Unity   :   at System.Threading.Tasks.Task.ExecuteEntry (System.Bo
+06-20 17:53:39.665 12466 12560 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.665 12466 12560 D BlackManager: Creating service for: top.niunaijun.blackbox.core.system.notification.IBNotificationManagerService$Stub
+06-20 17:53:39.665 12466 12560 D BlackManager: Successfully created service: notification_manager
+06-20 17:53:39.671 12466 12560 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.678 12466 12560 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.681 12466 12560 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.685 12466 12560 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.694 12466 12989 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.698 12466 12989 D UnityNotifications: Checking for invalid notification IDs still hanging around
+06-20 17:53:39.700 12466 12989 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.701 12466 12989 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.712 12466 12989 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.715 12466 12989 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.718 12466 12989 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.720 12466 12989 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.721 12466 12560 I Unity   : OnLogin - Guid:  
+06-20 17:53:39.722 12466 12560 I Unity   : [Server Event] cmd:<b>ban_event</b> type:sfDTO.BanEventData extensible:
+06-20 17:53:39.722 12466 12560 I Unity   : sfDTO.BanEventData{
+06-20 17:53:39.722 12466 12560 I Unity   :   "Type": 1,
+06-20 17:53:39.722 12466 12560 I Unity   :   "Reason": "Violation of the rules of the game",
+06-20 17:53:39.722 12466 12560 I Unity   :   "MillisLeft": 20357367,
+06-20 17:53:39.722 12466 12560 I Unity   :   "PlayerId": 69994873
+06-20 17:53:39.722 12466 12560 I Unity   : }
+06-20 17:53:39.723 12466 12560 I Unity   : [DarkPocket] entering to 'NetworkConnection'
+06-20 17:53:39.723 12466 12560 W Unity   : BlockInput was called, but we cannot block input yet
+06-20 17:53:39.723 12466 12560 W Unity   : Restarting Connection. Reason: ban
+06-20 17:53:39.723 12466 12560 I Unity   : StopCurrentState
+06-20 17:53:39.724 12466 12560 W Unity   : Dispose nebu tasks
+06-20 17:53:39.726 12466 12560 I Unity   : C#: Fyber User ID: 69994873
+06-20 17:53:39.726 12466 12989 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.732 12466 12989 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.734 12466 12989 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.740 12466 12989 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.744 12466 12560 W PrivacySettings: Stored IAB US Privacy string = null
+06-20 17:53:39.744 12466 12560 D AdvertisingIdClient: AdvertisingIdClient already created.
+06-20 17:53:39.744 12466 12560 D AdvertisingIdClient: AdvertisingIdClient is not bounded. Starting to bind it...
+06-20 17:53:39.744 12466 12560 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:39.744 12466 12989 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:39.746 12466 12560 I AdvertisingIdClient: shouldSendLog -1
+06-20 17:53:39.747 12466 12539 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:39.748 12466 12539 W GoogleApiManager: The service for com.google.android.gms.common.internal.service.zau is not available: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:39.749 12466 12466 I AdvertisingIdClient: getting error as 17: API: ClientTelemetry.API is not available on this device. Connection failed with: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:39.749 12466 12488 D Banzai  : Request code: 200
+06-20 17:53:39.749 12466 12560 W Unity   : Client time was used instead of server time.
+06-20 17:53:39.749 12466 12560 W Unity   : Client time was used instead of server time.
+06-20 17:53:39.749 12466 12466 D Banzai  : Request result: 
+06-20 17:53:39.752 12466 12560 W Unity   : [NEBU WARN] Reader task was aborted by System.IO.EndOfStreamException : Attempted to read past the end of the stream.; StackTrace:   at LCDDJOIFKME.FIAPGJLMAPC (System.IO.Stream OIIELOMCEBN, System.Byte[] NCJFLFIKFHD) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:39.752 12466 12560 W Unity   :   at KKEGDLFDJJI.OKLIGPHLBNB (System.Net.Sockets.NetworkStream LNCPNLNPMAG) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:39.752 12466 12560 W Unity   :   at DDOPPLDBKIB.GAACDLDPBDC () [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:39.752 12466 12560 W Unity   :   at System.Threading.Tasks.Task.Execute () [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:39.752 12466 12560 W Unity   :   at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:39.752 12466 12560 W Unity   :   at System.Threading.Tasks.Task.ExecuteWithThreadLocal (System.Threading.Tasks.Task& currentTaskSlot) [0x00000] in <00000000000000000000000000000000>:0 
+06-20 17:53:39.752 12466 12560 W Unity   :   at System.Threading.Tasks.Task.ExecuteEntr
+06-20 17:53:39.753 12466 12560 I Unity   : [NEBU DEBUG] Reader task terminated
+06-20 17:53:39.758 12466 12560 I Unity   : [NEBU DEBUG] Writer task was cancelled
+06-20 17:53:39.758 12466 12560 I Unity   : [NEBU DEBUG] Writer task terminated
+06-20 17:53:39.762 12466 12560 I Banzai  : Path: /storage/emulated/0/Android/data/top.niunaijun.blackbox/files/blackbox/storage/emulated/0/Android/data/com.nekki.shadowfight3/files/tou.file
+06-20 17:53:39.763 12466 12560 D Banzai  : Send request on url https://sf3lb.nekki.com/clog?guid=96b1a4edeac872bc&e=APP_OPEN_CONTROL&ext=eyJSQU0iOiIzNjQyIiwiQVJDSCI6ImFybTY0LXY4YSIsIk9TIjoiMTYiLCJMQU5HIjoiRW5nbGlzaCIsIk5FVCI6IldJRkkiLCJPR0wiOiJPUEVOR0xFU18zXzAiLCJCTiI6IjE5MjA5IiwiUEwiOiJBbmRyb2lkIn0%3D
+06-20 17:53:39.803 12466 12560 I Unity   : [LNPGDLHLKNM] Init
+06-20 17:53:39.825 12466 12560 I Unity   : [ICCEKPDBECH] Init
+06-20 17:53:39.828 12466 12560 I Unity   : [LevelPlayHandler] Initializing...
+06-20 17:53:39.829 12466 12560 I Unity   : [LevelPlayHandler] RecreateThreadDispatcher
+06-20 17:53:39.920 12466 12488 D Banzai  : Request code: 200
+06-20 17:53:39.923 12466 12466 D Banzai  : Request result: 
+06-20 17:53:39.971 12466 12560 I Unity   : [ISAdQualityHandler] Init start with 66bcc545
+06-20 17:53:40.038 12466 12998 D AdvertisingIdClient: AdvertisingIdClient already created.
+06-20 17:53:40.038 12466 12998 D AdvertisingIdClient: AdvertisingIdClient is not bounded. Starting to bind it...
+06-20 17:53:40.039 12466 12998 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.041 12466 12998 I AdvertisingIdClient: shouldSendLog -1
+06-20 17:53:40.041 12466 12539 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.043 12466 12539 W GoogleApiManager: The service for com.google.android.gms.common.internal.service.zau is not available: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.043 12466 12466 I AdvertisingIdClient: getting error as 17: API: ClientTelemetry.API is not available on this device. Connection failed with: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.059 12466 13003 I IronSource AdQuality: AdQualitySDK: Initializing with app key 66bcc545
+06-20 17:53:40.065 12466 12560 I LevelPlaySDK: API: LevelPlay setConsent - consent: true
+06-20 17:53:40.065 12466 13003 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:40.066 12466 13003 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:40.069 12466 12476 E LoadedApk: performReceive() called targeting raw IIntentReceiver for Intent { act=android.net.conn.CONNECTIVITY_CHANGE flg=0x4200010 xflg=0x4 (has extras) }
+06-20 17:53:40.079 12466 13006 V LevelPlaySDK: EVENT: UIThread: false Activity: 196463325 l3 b.run - {"eventId":40
+06-20 17:53:40.079 12466 13006 V LevelPlaySDK: EVENT: "timestamp":1781958220070
+06-20 17:53:40.079 12466 13006 V LevelPlaySDK: EVENT: "provider":"Mediation"
+06-20 17:53:40.079 12466 13006 V LevelPlaySDK: EVENT: "euid":"a0528311-e1d8-4599-ab6c-73cc68fed637"
+06-20 17:53:40.079 12466 13006 V LevelPlaySDK: EVENT: "esat":1
+06-20 17:53:40.079 12466 13006 V LevelPlaySDK: EVENT: "eventSessionId":"0363b022-c88c-4a50-923c-e4e0da4e3763"
+06-20 17:53:40.079 12466 13006 V LevelPlaySDK: EVENT: "essn":-1
+06-20 17:53:40.079 12466 13006 V LevelPlaySDK: EVENT: "rawConnectionType":"NETWORK_TYPE_UNKNOWN"}}
+06-20 17:53:40.083 12466 12598 I LevelPlaySDK: API: tb c - LevelPlay.init() appkey: 66bcc545, userId: 0_IN, legacyAdFormats: [], context: NekkiNativeActivity
+06-20 17:53:40.089 12466 13007 V LevelPlaySDK: API: UIThread: false Activity: 196463325 p j - userId = 0_IN
+06-20 17:53:40.091 12466 13007 V LevelPlaySDK: INTERNAL: UIThread: false Activity: 196463325 p a - GitHash: e56df04
+06-20 17:53:40.091 12466 13006 V LevelPlaySDK: EVENT: UIThread: false Activity: 196463325 l3 b.run - {"eventId":52
+06-20 17:53:40.091 12466 13006 V LevelPlaySDK: EVENT: "timestamp":1781958220089
+06-20 17:53:40.091 12466 13006 V LevelPlaySDK: EVENT: "provider":"Mediation"
+06-20 17:53:40.091 12466 13006 V LevelPlaySDK: EVENT: "euid":"25152053-6390-434f-83e9-527d31e1c845"
+06-20 17:53:40.091 12466 13006 V LevelPlaySDK: EVENT: "esat":1
+06-20 17:53:40.091 12466 13006 V LevelPlaySDK: EVENT: "eventSessionId":"0363b022-c88c-4a50-923c-e4e0da4e3763"
+06-20 17:53:40.091 12466 13006 V LevelPlaySDK: EVENT: "essn":-1
+06-20 17:53:40.091 12466 13006 V LevelPlaySDK: EVENT: "rawConnectionType":"NETWORK_TYPE_UNKNOWN"}}
+06-20 17:53:40.094 12466 12560 I Unity   : [CNBPMHDFKIK] Init
+06-20 17:53:40.096 12466 13007 V LevelPlaySDK: INTERNAL: UIThread: false Activity: 196463325 Ie a - set first session timestamp = 1781958220096
+06-20 17:53:40.097 12466 13007 V LevelPlaySDK: INTERNAL: UIThread: false Activity: 196463325 p a - activity is updated to: 196463325
+06-20 17:53:40.099 12466 13007 I LevelPlaySDK: API: p a - init(appKey:66bcc545)
+06-20 17:53:40.100 12466 13007 V LevelPlaySDK: INTERNAL: UIThread: false Activity: 196463325 p a - init cache does not exist
+06-20 17:53:40.102 12466 12560 I Unity   : [InterstitialAd] enabled: False, enabledInConfig: False
+06-20 17:53:40.103 12466 12560 I Unity   : [GAPLKBELEIG]; Get internet accessibility response: [Available]
+06-20 17:53:40.105 12466 13007 I LevelPlaySDK: API: LevelPlay getSdkVersion
+06-20 17:53:40.116 12466 12560 I Unity   : [BPBOEPMOBHL] Init
+06-20 17:53:40.118 12466 12560 I Unity   : ServerVersion - NetworkSettings.ConfigVersion [full version: 1.45.0.21.16675-prod] ---  CurrentVersion - NetworkSettings.ConfigVersion [full version: 1.45.0.0.16655-prod]
+06-20 17:53:40.118 12466 12560 I Unity   : [MKPDMLJNNLC] Start
+06-20 17:53:40.119 12466 12560 I Unity   : [MKPDMLJNNLC] Done in 0.034 ms
+06-20 17:53:40.143 12466 12560 I Unity   : Frame:[557], Type:[ListChange], Body:[Add  - NEW_PLAYERS_IN_NEW_LOBBY], List:[0:]
+06-20 17:53:40.143 12466 12560 I Unity   : Frame:[557], Type:[ListChange], Body:[Add  - SESSION_START_MUSIC_START], List:[1:NEW_PLAYERS_IN_NEW_LOBBY,]
+06-20 17:53:40.144 12466 13011 D AdvertisingIdClient: AdvertisingIdClient already created.
+06-20 17:53:40.145 12466 13011 D AdvertisingIdClient: AdvertisingIdClient is not bounded. Starting to bind it...
+06-20 17:53:40.145 12466 12560 I Unity   : Frame:[557], Type:[ListChange], Body:[Add  - SET_DOJO_1_1], List:[2:SESSION_START_MUSIC_START,NEW_PLAYERS_IN_NEW_LOBBY,]
+06-20 17:53:40.145 12466 13011 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.147 12466 13011 I AdvertisingIdClient: shouldSendLog -1
+06-20 17:53:40.147 12466 12539 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.149 12466 13011 V LevelPlaySDK: INTERNAL: UIThread: false Activity: 196463325 n4 a - isInitialized=false
+06-20 17:53:40.149 12466 13011 D AdvertisingIdClient: AdvertisingIdClient already created.
+06-20 17:53:40.149 12466 13011 D AdvertisingIdClient: AdvertisingIdClient is not bounded. Starting to bind it...
+06-20 17:53:40.149 12466 13011 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.151 12466 13011 I AdvertisingIdClient: shouldSendLog -1
+06-20 17:53:40.152 12466 13011 V LevelPlaySDK: INTERNAL: UIThread: false Activity: 196463325 n4 a - isInitialized=false
+06-20 17:53:40.155 12466 12560 I Unity   : Frame:[557], Type:[ListChange], Body:[Add  - LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET], List:[3:SESSION_START_MUSIC_START,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.155 12466 12560 I Unity   : Frame:[557], Type:[ListChange], Body:[Add  - TUTORIAL_SKIP], List:[4:SESSION_START_MUSIC_START,LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.156 12466 12539 W GoogleApiManager: The service for com.google.android.gms.common.internal.service.zau is not available: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.157 12466 12560 I Unity   : Frame:[557], Type:[ThrowEvent], Body:[Event: Type: PlayerDataReceived | Data: 
+06-20 17:53:40.157 12466 12560 I Unity   :  HasTrigger: True QueueCount: 5 - ], List:[5:SESSION_START_MUSIC_START,LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET,TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.157 12466 12560 I Unity   : Frame:[557], Type:[ListChange], Body:[Remove  - SESSION_START_MUSIC_START], List:[5:SESSION_START_MUSIC_START,LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET,TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.157 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[SESSION_START_MUSIC_START - PlayMusic], List:[4:LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET,TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.157 12466 13011 I LevelPlaySDK: API: LevelPlay getSdkVersion
+06-20 17:53:40.158 12466 12466 I AdvertisingIdClient: getting error as 17: API: ClientTelemetry.API is not available on this device. Connection failed with: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.159 12466 12539 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.162 12466 12539 W GoogleApiManager: The service for com.google.android.gms.common.internal.service.zau is not available: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.163 12466 12466 I AdvertisingIdClient: getting error as 17: API: ClientTelemetry.API is not available on this device. Connection failed with: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.163 12466 13011 V LevelPlaySDK: INTERNAL: UIThread: false Activity: 196463325 K6 a - collecting data for events: {appVersion=1.45.2, tz=Asia/Calcutta, icc=in, advertisingId=1a237c3f-7f47-4f18-9675-08a99204fcb4, language=en, battery=49, mcc=0, connectionType=wifi, internalFreeMemory=6837, osVersion=36(16), appKey=66bcc545, firstSession=true, deviceOEM=samsung, auid=95e31636-2cb0-46e4-b2b4-2727f5d1cabb, pluginType=Unity, plugin_fw_v=6000.3.11f1, mnc=0, rawConnectionType=NETWORK_TYPE_WIFI, deviceOS=Android, bundleId=com.nekki.shadowfight3, sessionId=0363b022-c88c-4a50-923c-e4e0da4e3763, externalFreeMemory=6837, pluginVersion=9.4.1, advertisingIdType=UUID, AdvIdOptOutReason=missingDependencies, jb=false, sdkVersion=9.4.1, deviceModel=SM-X115, gmtMinutesOffset=330}
+06-20 17:53:40.166 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[SESSION_START_MUSIC_START - PlayMusic], List:[4:LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET,TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.166 12466 12560 I Unity   : Frame:[557], Type:[ListChange], Body:[Remove  - LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET], List:[4:LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET,TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.167 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - SetUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.167 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - SetUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.167 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.168 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.168 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.175 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.175 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.176 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.178 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.178 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.180 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.181 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.182 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.182 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.182 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.184 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.184 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.184 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.184 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.185 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.186 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.187 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.187 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.187 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.187 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.188 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.188 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.188 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.188 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.188 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.188 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.189 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.189 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.190 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.190 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.190 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.190 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.191 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.191 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.191 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.191 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.192 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.192 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.192 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.192 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.192 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.192 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.192 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.193 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.193 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.193 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.193 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.193 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.193 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.194 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.194 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.194 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.194 12466 12560 I Unity   : Frame:[557], Type:[CloseAction], Body:[LOST_FIGHTS_IN_A_ROW_COUNT_DAILY_RESET - RemoveUserVariable], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.194 12466 12560 I Unity   : Frame:[557], Type:[ListChange], Body:[Remove  - TUTORIAL_SKIP], List:[3:TUTORIAL_SKIP,NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.194 12466 12560 I Unity   : Frame:[557], Type:[RunAction], Body:[TUTORIAL_SKIP - GoToModule], List:[2:NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.211 12466 13003 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:40.212 12466 13003 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:40.218 12466 12475 E LoadedApk: performReceive() called targeting raw IIntentReceiver for Intent { act=android.net.conn.CONNECTIVITY_CHANGE flg=0x4200010 xflg=0x4 (has extras) }
+06-20 17:53:40.219 12466 12563 D AdvertisingIdClient: AdvertisingIdClient already created.
+06-20 17:53:40.219 12466 12563 D AdvertisingIdClient: AdvertisingIdClient is not bounded. Starting to bind it...
+06-20 17:53:40.220 12466 12563 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.220 12466 13007 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.223 12466 12539 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.223 12466 12563 I AdvertisingIdClient: shouldSendLog -1
+06-20 17:53:40.224 12466 12563 V LevelPlaySDK: INTERNAL: UIThread: false Activity: 196463325 n4 a - isInitialized=false
+06-20 17:53:40.224 12466 12563 D AdvertisingIdClient: AdvertisingIdClient already created.
+06-20 17:53:40.224 12466 12563 D AdvertisingIdClient: AdvertisingIdClient is not bounded. Starting to bind it...
+06-20 17:53:40.226 12466 12563 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.234 12466 12563 I AdvertisingIdClient: shouldSendLog -1
+06-20 17:53:40.234 12466 12539 W GoogleApiManager: The service for com.google.android.gms.internal.appset.zzd is not available: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.235 12466 12539 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.235 12466 12563 V LevelPlaySDK: INTERNAL: UIThread: false Activity: 196463325 n4 a - isInitialized=false
+06-20 17:53:40.236 12466 13007 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+06-20 17:53:40.237 12466 13007 D AudioPermissionProxy: AudioPermission: getStreamMaxVolume called, allowing
+06-20 17:53:40.240 12466 13003 I IronSource AdQuality: AdQualitySDK: Your ISAdQuality SDK user ID is: 4b937bf9-75f2-448e-b682-206e9aca085c
+06-20 17:53:40.245 12466 12539 W GoogleApiManager: The service for com.google.android.gms.common.internal.service.zau is not available: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.245 12466 13007 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+06-20 17:53:40.246 12466 12560 I Unity   : Frame:[557], Type:[ThrowEvent], Body:[Event: Type: PreSceneChange | Data: [key:ModuleFrom, value:None] [key:TabFrom, value:] [key:ModuleTo, value:CharacterCreator] [key:TabTo, value:] 
+06-20 17:53:40.246 12466 12560 I Unity   :  HasTrigger: False QueueCount: 2 - ], List:[2:NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.245 12466 12466 I AdvertisingIdClient: getting error as 17: API: ClientTelemetry.API is not available on this device. Connection failed with: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.246 12466 12560 I Unity   : Frame:[557], Type:[ListChange], Body:[Add  - SESSION_CHECK_PENDING_QUICK_ACTIONS], List:[2:NEW_PLAYERS_IN_NEW_LOBBY,SET_DOJO_1_1,]
+06-20 17:53:40.246 12466 12560 I Unity   : Frame:[557], Type:[ListChange], Body:[Add  - SESSION_CHECK_RICH_NOTIFICATION_TRANSITION], List:[3:SESSION_CHECK_PENDING_QUICK_ACTIONS,SET_DOJO_1_1,NEW_PLAYERS_IN_NEW_LOBBY,]
+06-20 17:53:40.247 12466 12560 I Unity   : Frame:[557], Type:[ListChange], Body:[Add  - SESSION_START_SPHINX], List:[4:SESSION_CHECK_PENDING_QUICK_ACTIONS,SESSION_CHECK_RICH_NOTIFICATION_TRANSITION,SET_DOJO_1_1,NEW_PLAYERS_IN_NEW_LOBBY,]
+06-20 17:53:40.247 12466 12539 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.248 12466 12477 W jun.blackbox:p0: Couldn't lock the profile file /data/misc/profiles/cur/0/com.nekki.shadowfight3/primary.prof: Failed to open file '/data/misc/profiles/cur/0/com.nekki.shadowfight3/primary.prof': Permission denied
+06-20 17:53:40.248 12466 12477 W jun.blackbox:p0: Could not forcefully load profile /data/misc/profiles/cur/0/com.nekki.shadowfight3/primary.prof
+06-20 17:53:40.251 12466 12560 I Unity   : Frame:[557], Type:[ThrowEvent], Body:[Event: Type: SessionStart | Data: 
+06-20 17:53:40.251 12466 12560 I Unity   :  HasTrigger: True QueueCount: 5 - ], List:[5:SESSION_START_SPHINX,SESSION_CHECK_PENDING_QUICK_ACTIONS,SESSION_CHECK_RICH_NOTIFICATION_TRANSITION,SET_DOJO_1_1,NEW_PLAYERS_IN_NEW_LOBBY,]
+06-20 17:53:40.252 12466 13007 D AttributionSourceUtils: Fixed AttributionSource UID in method arguments
+06-20 17:53:40.256 12466 12560 I Unity   : Module opened: [CharacterCreatorIntentModule]|[Time:12.95621; MonoHeapSize:216.4219; MonoUsedSize:131.0977; TempAllocator:4; TotalAllocatedMemory:179.2233; TotalReservedMemory:249.9844; TotalUnusedReservedMemory:70.76106; usedHeapSize:179.2233;]
+06-20 17:53:40.256 12466 12560 I Unity   : Unloading unused triggers. Splits unloaded - 0 ],  left - 
+06-20 17:53:40.256 12466 12560 I Unity   : 0 ]
+06-20 17:53:40.257 12466 12539 W GoogleApiManager: The service for com.google.android.gms.common.internal.service.zau is not available: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.261 12466 12466 I AdvertisingIdClient: getting error as 17: API: ClientTelemetry.API is not available on this device. Connection failed with: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.267 12466 13007 D AdvertisingIdClient: AdvertisingIdClient already created.
+06-20 17:53:40.267 12466 13007 D AdvertisingIdClient: AdvertisingIdClient is not bounded. Starting to bind it...
+06-20 17:53:40.267 12466 13007 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.269 12466 13007 I AdvertisingIdClient: shouldSendLog -1
+06-20 17:53:40.270 12466 12539 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.271 12466 13007 V LevelPlaySDK: INTERNAL: UIThread: false Activity: 196463325 n4 a - isInitialized=false
+06-20 17:53:40.271 12466 13007 I LevelPlaySDK: INTERNAL: using custom identifier
+06-20 17:53:40.273 12466 13007 I LevelPlaySDK: API: LevelPlay getSdkVersion
+06-20 17:53:40.276 12466 13003 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:40.277 12466 12539 W GoogleApiManager: The service for com.google.android.gms.common.internal.service.zau is not available: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.277 12466 13003 D TransactionThrottler: Reset transaction throttler
+06-20 17:53:40.277 12466 12466 I AdvertisingIdClient: getting error as 17: API: ClientTelemetry.API is not available on this device. Connection failed with: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.285 12466 12475 E LoadedApk: performReceive() called targeting raw IIntentReceiver for Intent { act=android.intent.action.BATTERY_CHANGED flg=0x60000010 (has extras) }
+06-20 17:53:40.287 12466 13006 V LevelPlaySDK: EVENT: UIThread: false Activity: 196463325 l3 b.run - {"eventId":14
+06-20 17:53:40.287 12466 13006 V LevelPlaySDK: EVENT: "timestamp":1781958220261
+06-20 17:53:40.287 12466 13006 V LevelPlaySDK: EVENT: "provider":"Mediation"
+06-20 17:53:40.287 12466 13006 V LevelPlaySDK: EVENT: "ext1":"
+06-20 17:53:40.287 12466 13006 V LevelPlaySDK: EVENT: cachedUserAgent=false"
+06-20 17:53:40.287 12466 13006 V LevelPlaySDK: EVENT: "sessionDepth":1
+06-20 17:53:40.287 12466 13006 V LevelPlaySDK: EVENT: "isMultipleAdUnits":1
+06-20 17:53:40.287 12466 13006 V LevelPlaySDK: EVENT: "euid":"2e16f92c-e795-4117-879c-d2d5fa31a6cd"
+06-20 17:53:40.287 12466 13006 V LevelPlaySDK: EVENT: "esat":1
+06-20 17:53:40.287 12466 13006 V LevelPlaySDK: EVENT: "eventSessionId":"0363b022-c88c-4a50-923c-e4e0da4e3763"
+06-20 17:53:40.287 12466 13006 V LevelPlaySDK: EVENT: "essn":1
+06-20 17:53:40.287 12466 13006 V LevelPlaySDK: EVENT: "connectionType":"wifi"
+06-20 17:53:40.287 12466 13006 V LevelPlaySDK: EVENT: "rawConnectionType":"NETWORK_TYPE_WIFI"
+06-20 17:53:40.287 12466 13006 V LevelPlaySDK: EVENT: "firstSessionTimestamp":1781958220096}}
+06-20 17:53:40.292 12466 13007 I LevelPlaySDK: API: LevelPlay getSdkVersion
+06-20 17:53:40.294 12466 13006 V LevelPlaySDK: EVENT: UIThread: false Activity: 196463325 l3 b.run - {"eventId":65
+06-20 17:53:40.294 12466 13006 V LevelPlaySDK: EVENT: "timestamp":1781958220271
+06-20 17:53:40.294 12466 13006 V LevelPlaySDK: EVENT: "provider":"Mediation"
+06-20 17:53:40.294 12466 13006 V LevelPlaySDK: EVENT: "euid":"afa57bcd-94a4-4d6f-87da-8dc687ff44d9"
+06-20 17:53:40.294 12466 13006 V LevelPlaySDK: EVENT: "esat":1
+06-20 17:53:40.294 12466 13006 V LevelPlaySDK: EVENT: "eventSessionId":"0363b022-c88c-4a50-923c-e4e0da4e3763"
+06-20 17:53:40.294 12466 13006 V LevelPlaySDK: EVENT: "essn":1
+06-20 17:53:40.294 12466 13006 V LevelPlaySDK: EVENT: "connectionType":"wifi"
+06-20 17:53:40.294 12466 13006 V LevelPlaySDK: EVENT: "rawConnectionType":"NETWORK_TYPE_WIFI"
+06-20 17:53:40.294 12466 13006 V LevelPlaySDK: EVENT: "firstSessionTimestamp":1781958220096}}
+06-20 17:53:40.294 12466 13007 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.294 12466 12563 D AdvertisingIdClient: AdvertisingIdClient already created.
+06-20 17:53:40.295 12466 12563 D AdvertisingIdClient: AdvertisingIdClient is not bounded. Starting to bind it...
+06-20 17:53:40.296 12466 12563 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.303 12466 12466 E IronSource AdQuality: RemoteConfig: Error getting config from server: -1
+06-20 17:53:40.303 12466 12539 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.304 12466 12563 I AdvertisingIdClient: shouldSendLog -1
+06-20 17:53:40.305 12466 12563 V LevelPlaySDK: INTERNAL: UIThread: false Activity: 196463325 n4 a - isInitialized=false
+06-20 17:53:40.305 12466 12563 D AdvertisingIdClient: AdvertisingIdClient already created.
+06-20 17:53:40.305 12466 12563 D AdvertisingIdClient: AdvertisingIdClient is not bounded. Starting to bind it...
+06-20 17:53:40.306 12466 12563 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.307 12466 12539 W GoogleApiManager: The service for com.google.android.gms.internal.appset.zzd is not available: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.308 12466 12539 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.308 12466 12563 I AdvertisingIdClient: shouldSendLog -1
+06-20 17:53:40.308 12466 12560 I Unity   : [BOGDEHCNHOF]; Logs folder: [/storage/emulated/0/Android/data/top.niunaijun.blackbox/files/blackbox/storage/emulated/0/Android/data/com.nekki.shadowfight3/files/gamedata/Logs]; Available drive space: 6837MB; Limit space: 50MB
+06-20 17:53:40.309 12466 12563 V LevelPlaySDK: INTERNAL: UIThread: false Activity: 196463325 n4 a - isInitialized=false
+06-20 17:53:40.309 12466 13007 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+06-20 17:53:40.310 12466 13007 D AudioPermissionProxy: AudioPermission: getStreamMaxVolume called, allowing
+06-20 17:53:40.311 12466 12539 W GoogleApiManager: The service for com.google.android.gms.common.internal.service.zau is not available: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.311 12466 12466 I AdvertisingIdClient: getting error as 17: API: ClientTelemetry.API is not available on this device. Connection failed with: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.312 12466 12539 W GooglePlayServicesUtil: com.nekki.shadowfight3 requires Google Play services, but they are missing.
+06-20 17:53:40.314 12466 12539 W GoogleApiManager: The service for com.google.android.gms.common.internal.service.zau is not available: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.318 12466 12466 I AdvertisingIdClient: getting error as 17: API: ClientTelemetry.API is not available on this device. Connection failed with: ConnectionResult{statusCode=SERVICE_MISSING, resolution=null, message=null, clientMethodKey=null}
+06-20 17:53:40.326 12466 13007 V LevelPlaySDK: INTERNAL: UIThread: false Activity: 196463325 n4 a - isInitialized=false
+06-20 17:53:40.327 12466 13007 E LevelPlaySDK: INTERNAL: e7 a - exception while sending request Failed to connect to i-sdk.mediation.unity3d.com/0.0.0.0:443
+06-20 17:53:40.328 12466 13007 W LevelPlaySDK: INTERNAL: Qe a - HTTP init request failed: Exception - Failed to connect to i-sdk.mediation.unity3d.com/0.0.0.0:443
+06-20 17:53:40.328 12466 13007 V LevelPlaySDK: INTERNAL: UIThread: false Activity: 196463325 Null or invalid response. Trying to get cached response
+06-20 17:53:40.329 12466 13007 I LevelPlaySDK: API: Mediation availability false reason: SdkError(errorCode=2070, errorMessage=Exception - Failed to connect to i-sdk.mediation.unity3d.com/0.0.0.0:443)
+06-20 17:53:40.336 12466 12466 I LevelPlaySDK: CALLBACK: tb a - LevelPlayInitListener.LevelPlayInitError() error: SdkError(errorCode=2070, errorMessage=Exception - Failed to connect to i-sdk.mediation.unity3d.com/0.0.0.0:443)
+06-20 17:53:40.338 12466 13006 V LevelPlaySDK: EVENT: UIThread: false Activity: 196463325 l3 b.run - {"eventId":515
+06-20 17:53:40.338 12466 13006 V LevelPlaySDK: EVENT: "timestamp":1781958220334
+06-20 17:53:40.338 12466 13006 V LevelPlaySDK: EVENT: "provider":"Mediation"
+06-20 17:53:40.338 12466 13006 V LevelPlaySDK: EVENT: "errorCode":2070
+06-20 17:53:40.338 12466 13006 V LevelPlaySDK: EVENT: "reason":"Exception - Failed to connect to i-sdk.mediation.unity3d.com\/0.0.0.0:443"
+06-20 17:53:40.338 12466 13006 V LevelPlaySDK: EVENT: "isMultipleAdUnits":1
+06-20 17:53:40.338 12466 13006 V LevelPlaySDK: EVENT: "duration":247
+06-20 17:53:40.338 12466 13006 V LevelPlaySDK: EVENT: "euid":"25004a6f-4ebf-4ee3-b552-a966eca55189"
+06-20 17:53:40.338 12466 13006 V LevelPlaySDK: EVENT: "esat":1
+06-20 17:53:40.338 12466 13006 V LevelPlaySDK: EVENT: "eventSessionId":"0363b022-c88c-4a50-923c-e4e0da4e3763"
+06-20 17:53:40.338 12466 13006 V LevelPlaySDK: EVENT: "essn":1
+06-20 17:53:40.338 12466 13006 V LevelPlaySDK: EVENT: "connectionType":"wifi"
+06-20 17:53:40.338 12466 13006 V LevelPlaySDK: EVENT: "rawConnectionType":"NETWORK_TYPE_WIFI"
+06-20 17:53:40.338 12466 13006 V LevelPlaySDK: EVENT: "firstSessionTimestamp":1781958220096}}
+06-20 17:53:40.339 12466 12560 I Unity   : [EmulatorDetector] isEmulator: false
+06-20 17:53:40.339 12466 12560 I Unity   : Initialization completed
+06-20 17:53:40.420 12466 12560 I Unity   : Clearing cache. Entries: 32
+06-20 17:53:40.423 12466 13031 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+06-20 17:53:40.424 12466 13031 D AudioPermissionProxy: AudioPermission: getStreamMaxVolume called, allowing
+06-20 17:53:40.455 12466 12560 I Unity   : [LevelPlayHandler] SDK initialization failed. Message: noServerResponse. ErrorCode: 2070
+06-20 17:53:40.464 12466 12560 I Unity   : C#: Handle Connect Success
+06-20 17:53:40.465 12466 13032 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+06-20 17:53:40.465 12466 13032 D AudioPermissionProxy: AudioPermission: getStreamMaxVolume called, allowing
+06-20 17:53:40.469 12466 13032 D AudioPermissionProxy: AudioPermission: getStreamVolume called, allowing
+06-20 17:53:40.470 12466 13032 D AudioPermissionProxy: AudioPermission: getStreamMaxVolume called, allowing
+06-20 17:53:40.785 12466 12560 W Unity   : [IBDPJFMKJMM] ExecuteRequest HTTP/1.1 404 Not Found
+06-20 17:53:40.785 12466 12560 W Unity   : Bundle not found, bundleName: 1691038791, bundlePath: /storage/emulated/0/Android/data/top.niunaijun.blackbox/files/blackbox/storage/emulated/0/Android/data/com.nekki.shadowfight3/files/gamedata/Resources/Bundles/49c106143b9311ea2228c7e72cb79abb
+06-20 17:53:40.864 12466 12560 I Unity   : [GPGv2Support] !!!-> False || False
+06-20 17:53:40.875 12466 12560 I Unity   : NativeScreenTexture: Clear; from=[reloadTexture]; delayed=[False]; callers=[1]
+06-20 17:53:40.876 12466 12560 W Unity   : NativeScreenTexture: Can't find caller's name [reloadTexture] to remove from list 
+06-20 17:53:41.024 12466 12560 I Unity   : Current camera aspect [_16X9]
+06-20 17:53:41.028 12466 12560 I Unity   : [NCJAHEJBHAN]; Load location [dojo_inventory/dojo_inventory] at position [(34.70, 26.00, -43.82)]
+06-20 17:53:41.253 12466 12560 I Unity   : Load moves for [PLAYER]
+06-20 17:53:41.255 12466 12560 I Unity   : Load battle triggers by locks
+06-20 17:53:41.262 12466 12560 I Unity   : Load triggers by locks. Loaded splits=[1]
+06-20 17:53:41.337 12466 12466 I BLASTBufferQueue_Java: update, w= 1340 h= 800 mName = VRI[NekkiNativeActivity]@66ed1c5 mNativeObject= 0x778e254620 sc.mNativeObject= 0x772e214f90 format= -3 caller= android.view.ViewRootImpl.updateBlastSurfaceIfNeeded:3574 android.view.ViewRootImpl.relayoutWindow:11685 android.view.ViewRootImpl.performTraversals:4804 android.view.ViewRootImpl.doTraversal:3924 android.view.ViewRootImpl$TraversalRunnable.run:12903 android.view.Choreographer$CallbackRecord.run:1901 
+06-20 17:53:41.338 12466 12466 I VRI[NekkiNativeActivity]@66ed1c5: Relayout returned: old=(0,0,1340,800) new=(0,0,1340,800) relayoutAsync=true req=(1340,800)0 dur=0 res=0x0 s={true 0x775e25b530} ch=false seqId=0
+06-20 17:53:41.338 12466 12466 I VRI[NekkiNativeActivity]@66ed1c5: updateBoundsLayer: t=android.view.SurfaceControl$Transaction@7c51644 sc=Surface(name=Bounds for - com.nekki.shadowfight3/com.nekki.unityplugins.NekkiNativeActivity@0)/@0x84b632d frame=7
+06-20 17:53:41.339 12466 12466 I VRI[NekkiNativeActivity]@66ed1c5: registerCallbackForPendingTransactions
+06-20 17:53:41.340 12466 12566 I VRI[NekkiNativeActivity]@66ed1c5: mWNT: t=0x779e356810 mBlastBufferQueue=0x778e254620 fn= 7 HdrRenderState mRenderHdrSdrRatio=1.0 caller= android.view.ViewRootImpl$10.onFrameDraw:6536 android.view.ViewRootImpl$4.onFrameDraw:2489 android.view.ThreadedRenderer$1.onFrameDraw:718 
+06-20 17:53:41.348 12466 12560 I Unity   : FakeCursorInput. initialized: True
+06-20 17:53:41.351 12466 12560 I Unity   : InputModuleManager initialized
+06-20 17:53:41.369 12466 12560 I Unity   : BundlesNetworkState Download succeeded
+06-20 17:53:41.369 12466 12560 I Unity   : Start Connecting IP:ec2-13-126-233-176.ap-south-1.compute.amazonaws.com Port:443
+06-20 17:53:41.371 12466 12560 I Unity   : Frame:[567], Type:[CloseAction], Body:[TUTORIAL_SKIP - GoToModule], List:[5:SESSION_START_SPHINX,SESSION_CHECK_PENDING_QUICK_ACTIONS,SESSION_CHECK_RICH_NOTIFICATION_TRANSITION,SET_DOJO_1_1,NEW_PLAYERS_IN_NEW_LOBBY,]
+06-20 17:53:41.371 12466 12560 I Unity   : Frame:[567], Type:[RunAction], Body:[TUTORIAL_SKIP - SetUserVariable], List:[5:SESSION_START_SPHINX,SESSION_CHECK_PENDING_QUICK_ACTIONS,SESSION_CHECK_RICH_NOTIFICATION_TRANSITION,SET_DOJO_1_1,NEW_PLAYERS_IN_NEW_LOBBY,]
+06-20 17:53:41.372 12466 12560 I Unity   : Frame:[567], Type:[CloseAction], Body:[TUTORIAL_SKIP - SetUserVariable], List:[5:SESSION_START_SPHINX,SESSION_CHECK_PENDING_QUICK_ACTIONS,SESSION_CHECK_RICH_NOTIFICATION_TRANSITION,SET_DOJO_1_1,NEW_PLAYERS_IN_NEW_LOBBY,]
+06-20 17:53:41.372 12466 12560 I Unity   : Frame:[567], Type:[RunAction], Body:[TUTORIAL_SKIP - Call], List:[5:SESSION_START_SPHINX,SESSION_CHECK_PENDING_QUICK_ACTIONS,SESSION_CHECK_RICH_NOTIFICATION_TRANSITION,SET_DOJO_1_1,NEW_PLAYERS_IN_NEW_LOBBY,]
