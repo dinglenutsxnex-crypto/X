@@ -15,6 +15,9 @@ public interface ContextImpl {
     String mBasePackageName();
 
     @BField
+    String mPackageName();
+
+    @BField
     ContentResolver mContentResolver();
 
     @BField

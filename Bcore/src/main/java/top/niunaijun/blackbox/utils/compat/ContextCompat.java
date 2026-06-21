@@ -83,4 +83,47 @@ public class ContextCompat {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Patches mPackageName on the ContextImpl so that Context.getPackageName()
+     * returns the guest app package name instead of the host container package.
+     *
+     * Must be called AFTER fix() because fix() sets mBasePackageName to the host
+     * (needed for Binder authentication). On modern Android (API 29+), getPackageName()
+     * reads mPackageName first and only falls back to mBasePackageName when null, so
+     * setting mPackageName here lets the guest see its own identity while keeping
+     * mBasePackageName as the host for system-service Binder calls.
+     */
+    public static void fixGuestPackageName(Context context, String guestPackageName) {
+        if (context == null || guestPackageName == null) return;
+        try {
+            int deep = 0;
+            Context ctx = context;
+            while (ctx instanceof ContextWrapper) {
+                ctx = ((ContextWrapper) ctx).getBaseContext();
+                if (++deep >= 10 || ctx == null) break;
+            }
+            if (ctx == null) return;
+
+            try {
+                BRContextImpl.get(ctx)._set_mPackageName(guestPackageName);
+                Slog.d(TAG, "fixGuestPackageName: set mPackageName=" + guestPackageName);
+            } catch (Exception e) {
+                Slog.w(TAG, "fixGuestPackageName: mPackageName unavailable, patching mBasePackageName: " + e.getMessage());
+                try {
+                    BRContextImpl.get(ctx)._set_mBasePackageName(guestPackageName);
+                } catch (Exception e2) {
+                    Slog.w(TAG, "fixGuestPackageName: mBasePackageName fallback failed: " + e2.getMessage());
+                }
+            }
+
+            try {
+                BRContentResolver.get(ctx.getContentResolver())._set_mPackageName(guestPackageName);
+            } catch (Exception e) {
+                Slog.w(TAG, "fixGuestPackageName: ContentResolver patch failed: " + e.getMessage());
+            }
+        } catch (Exception e) {
+            Slog.e(TAG, "fixGuestPackageName error: " + e.getMessage());
+        }
+    }
 }

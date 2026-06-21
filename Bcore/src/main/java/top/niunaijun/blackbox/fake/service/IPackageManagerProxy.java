@@ -364,6 +364,25 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         }
     }
 
+    @ProxyMethod("getNameForUid")
+    public static class GetNameForUid extends MethodHook {
+        @Override
+        protected Object hook(Object who, Method method, Object[] args) throws Throwable {
+            int uid = (Integer) args[0];
+            if (uid == BlackBoxCore.getHostUid()) {
+                String guestPkg = BActivityThread.getAppPackageName();
+                if (guestPkg != null) {
+                    return guestPkg;
+                }
+            }
+            String[] guestPackages = BlackBoxCore.getBPackageManager().getPackagesForUid(uid);
+            if (guestPackages != null && guestPackages.length > 0) {
+                return guestPackages[0];
+            }
+            return method.invoke(who, args);
+        }
+    }
+
     @ProxyMethod("getInstallerPackageName")
     public static class GetInstallerPackageName extends MethodHook {
         @Override
